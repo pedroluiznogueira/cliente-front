@@ -12,9 +12,7 @@ export class CadastroService {
     this.apiURL = 'http://localhost:8080'; 
   }
 
-  public listarProdutos(): void {
+  public listarClientes(): void {
     this.http.get(`${this.apiURL}/api/cliente`).subscribe(resultado => console.log(resultado));
   }
-
-
 }

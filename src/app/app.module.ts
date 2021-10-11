@@ -7,6 +7,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import { CadastroService } from './services/cadastro.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule, CadastroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

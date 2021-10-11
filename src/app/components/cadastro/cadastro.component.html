@@ -1,12 +1,22 @@
 <main class="font">
     <button class="botao" (click)="listarClientes()">Consultar</button>
-    <table>
-        <th>
-            <tr *ngFor="let cliente of getClientes">
-                <td>{{cliente.id}}</td>
-                <td>{{cliente.nome}}</td>
-                <td>{{cliente.sobrenome}}</td>
-            </tr>
-        </th>
-    </table>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col"> </th>  
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let cliente of getClientes">
+          <th scope="row">cliente</th>
+          <td>{{cliente.nome}}</td>
+          <td>{{cliente.sobrenome}}</td>
+          <td>{{cliente.email}}</td>
+        </tr>
+        </tbody>
+      </table>
 </main>

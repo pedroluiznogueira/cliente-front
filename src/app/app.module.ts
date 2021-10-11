@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroService } from './services/cadastro.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

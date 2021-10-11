@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Cliente } from '../model/cliente.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class CadastroService {
     this.apiURL = 'http://localhost:8080'; 
   }
 
-  public listarClientes(): void {
-    this.http.get(`${this.apiURL}/api/cliente`).subscribe(resultado => console.log(resultado));
+  public listarClientes(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(`${this.apiURL}/api/cliente`);
   }
 }

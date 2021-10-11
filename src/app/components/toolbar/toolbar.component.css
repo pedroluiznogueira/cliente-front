@@ -2,4 +2,5 @@
 .tool-bar {
     background-color: rgb(216, 96, 17);
     font-family: 'Fira Sans';
+    box-shadow: 0px 5px 10px gray;
 }

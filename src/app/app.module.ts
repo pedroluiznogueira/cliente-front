@@ -8,6 +8,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroService } from './services/cadastro.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CadastroService } from './services/cadastro.service';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [HttpClientModule, CadastroService],
   bootstrap: [AppComponent]

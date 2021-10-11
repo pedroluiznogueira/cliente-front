@@ -6,5 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CadastroService {
   
-  constructor(private http: HttpClient) { }
+  private apiURL: String;
+
+  constructor(private http: HttpClient) { 
+    this.apiURL = 'http://localhost:8080'; 
+  }
+
+  
 }

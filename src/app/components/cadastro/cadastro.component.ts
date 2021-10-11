@@ -17,7 +17,7 @@ export class CadastroComponent implements OnInit {
   }
 
   public listarClientes(): void {
-    this.cadastroService.listarClientes();
+    this.cadastroService.listarClientes().subscribe(clientes => this.clientes = clientes);
   }
 
 }

@@ -13,4 +13,7 @@ export class CadastroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public listarProdutos(): void {
+    this.cadastroService.listarProdutos();
+  }
 }

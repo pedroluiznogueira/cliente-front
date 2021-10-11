@@ -9,11 +9,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroService } from './services/cadastro.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroComponent
+    CadastroComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from 'src/app/model/cliente.model';
 
 @Component({
   selector: 'app-formulario',
@@ -10,6 +11,7 @@ export class FormularioComponent implements OnInit {
   nome?: string;
   sobrenome?: string;
   email?: string;
+  cliente?: Cliente;
 
   constructor() { }
 
@@ -17,7 +19,12 @@ export class FormularioComponent implements OnInit {
   }
 
   public envioFormulario(): void {
-    console.log(this.nome)
+    this.cliente =  new Cliente();
+    this.cliente.nome = this.nome;
+    this.cliente.sobrenome = this.sobrenome;
+    this.cliente.email = this.email;
+
+    console.log(this.cliente)
   }
 
 }

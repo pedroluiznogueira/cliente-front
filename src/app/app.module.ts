@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TabelaComponent } from './components/tabela/tabela.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { BotoesComponent } from './components/botoes/botoes.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BotoesComponent } from './components/botoes/botoes.component';
     MatToolbarModule,
     MatFormFieldModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [HttpClientModule, CadastroService],
   bootstrap: [AppComponent]

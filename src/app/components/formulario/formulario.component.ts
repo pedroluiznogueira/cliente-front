@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
+  nome?: string;
+  sobrenome?: string;
+  email?: string;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public envioFormulario(): void {
+    console.log(this.nome)
   }
 
 }

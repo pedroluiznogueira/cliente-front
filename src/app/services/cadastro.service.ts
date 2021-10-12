@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cliente } from '../model/cliente.model';
@@ -7,6 +7,8 @@ import { Cliente } from '../model/cliente.model';
   providedIn: 'root'
 })
 export class CadastroService {
+
+  @Output() onConsultarClick: EventEmitter<null> = new EventEmitter();
   
   private apiURL: String;
 
@@ -19,6 +21,6 @@ export class CadastroService {
   }
 
   public emitir(): void {
-
+    this.onConsultarClick.emit();
   }
 }

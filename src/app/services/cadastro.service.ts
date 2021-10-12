@@ -17,11 +17,11 @@ export class CadastroService {
   }
 
   public listarClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(`${this.apiURL}/api/cliente`);
+    return this.http.get<Cliente[]>("http://localhost:4200/api/cliente");
   }
 
   public criarCliente(cliente: Cliente): void {
-    this.http.post(`${this.apiURL}/api/cliente`, cliente);
+    this.http.post("http://localhost:4200/api/cliente", cliente);
   }
 
   public emitir(): void {

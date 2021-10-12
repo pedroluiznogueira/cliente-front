@@ -1,7 +1,6 @@
 <table class="table table-striped">
     <thead>
-    <tr>
-      <th class="row-table" scope="col"> </th>  
+    <tr class="header">
       <th class="row-table" scope="col">Nome</th>
       <th class="row-table" scope="col">Sobrenome</th>
       <th class="row-table" scope="col">Email</th>
@@ -9,7 +8,6 @@
     </thead>
     <tbody>
     <tr *ngFor="let cliente of getClientes">
-      <th class="row-table" scope="row">cliente</th>
       <td class="row-table">{{cliente.nome}}</td>
       <td class="row-table">{{cliente.sobrenome}}</td>
       <td class="row-table">{{cliente.email}}</td>

@@ -1,18 +1,18 @@
 <table class="table table-striped">
     <thead>
     <tr>
-      <th scope="col"> </th>  
-      <th scope="col">Nome</th>
-      <th scope="col">Sobrenome</th>
-      <th scope="col">Email</th>
+      <th class="row-table" scope="col"> </th>  
+      <th class="row-table" scope="col">Nome</th>
+      <th class="row-table" scope="col">Sobrenome</th>
+      <th class="row-table" scope="col">Email</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let cliente of getClientes">
-      <th scope="row">cliente</th>
-      <td>{{cliente.nome}}</td>
-      <td>{{cliente.sobrenome}}</td>
-      <td>{{cliente.email}}</td>
+      <th class="row-table" scope="row">cliente</th>
+      <td class="row-table">{{cliente.nome}}</td>
+      <td class="row-table">{{cliente.sobrenome}}</td>
+      <td class="row-table">{{cliente.email}}</td>
     </tr>
     </tbody>
   </table>

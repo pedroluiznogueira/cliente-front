@@ -4,6 +4,20 @@
 }
 
 .btn:hover {
-    background-color: #f4511e;
+    background-color: #8f2f12;
+    border: 2px solid #8f2f12;
     color: #fff
+}
+
+.form-control:focus {
+    border: 1px solid #8f2f12;
+    box-shadow: 2px 5px 5px #8f2f12;
+}
+
+.form {
+    margin: 10px auto;
+}
+
+.label {
+    margin-top: 15px;
 }

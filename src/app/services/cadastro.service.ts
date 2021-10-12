@@ -20,6 +20,10 @@ export class CadastroService {
     return this.http.get<Cliente[]>(`${this.apiURL}/api/cliente`);
   }
 
+  public criarCliente(cliente: Cliente): void {
+    this.http.post(`${this.apiURL}/api/cliente`, cliente);
+  }
+
   public emitir(): void {
     this.onConsultarClick.emit();
   }

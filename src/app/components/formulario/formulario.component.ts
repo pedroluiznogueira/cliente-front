@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/model/cliente.model';
+import { CadastroService } from 'src/app/services/cadastro.service';
 
 @Component({
   selector: 'app-formulario',
@@ -13,7 +14,7 @@ export class FormularioComponent implements OnInit {
   email?: string;
   cliente?: Cliente;
 
-  constructor() { }
+  constructor(private cadastroService: CadastroService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,8 @@ export class FormularioComponent implements OnInit {
     this.cliente.email = this.email;
 
     console.log(this.cliente)
+
+    this.cadastroService.criarCliente(this.cliente);
   }
 
 }

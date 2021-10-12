@@ -17,6 +17,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { BotoesComponent } from './components/botoes/botoes.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { FormularioUpdateComponent } from './components/formulario-update/formulario-update.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RouterModule, Routes } from '@angular/router';
     FooterComponent,
     TabelaComponent,
     FormularioComponent,
-    BotoesComponent
+    BotoesComponent,
+    FormularioUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { RouterModule, Routes } from '@angular/router';
     FormsModule,
     RouterModule.forRoot([
       { path: 'tabela', component:  TabelaComponent },  
-      { path: 'formulario', component:  FormularioComponent }
+      { path: 'formulario', component:  FormularioComponent },
     ]
     )
   ],

@@ -8,12 +8,8 @@ import { CadastroService } from 'src/app/services/cadastro.service';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private cadastroService: CadastroService) { }
+  constructor() { }
   
   ngOnInit(): void {
-  }
-
-  public consultar(): void {
-    this.cadastroService.emitir();
   }
 }

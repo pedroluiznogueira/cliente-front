@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CadastroService } from 'src/app/services/cadastro.service';
 
 @Component({
   selector: 'app-botoes',
@@ -7,15 +8,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class BotoesComponent implements OnInit {
 
-  @Output() onConsultarClick: EventEmitter<null> = new EventEmitter();
-
-  constructor() { }
+  constructor(private cadastroService: CadastroService) { }
 
   ngOnInit(): void {
   }
 
   listarClientes(): void {
-    this.onConsultarClick.emit();
+    this.cadastroService.emitir();
   }
 
 }

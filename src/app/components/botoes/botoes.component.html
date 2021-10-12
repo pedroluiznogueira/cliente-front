@@ -1,6 +1,6 @@
 <div class="botao-container">
-    <button [routerLink]="['/tabela']" (click)="listarClientes()" type="button" class="btn btn-outline-warning">Consultar</button>
-    <button [routerLink]="['/formulario']"type="button" class="btn btn-outline-warning">Cadastrar</button>
+    <button (click)="listarClientes()" [routerLink]="['/tabela']" type="button" class="btn btn-outline-warning">Consultar</button>
+    <button [routerLink]="['/formulario']" type="button" class="btn btn-outline-warning">Cadastrar</button>
     <button type="button" class="btn btn-outline-warning">Alterar</button>
     <button type="button" class="btn btn-outline-warning">Deletar</button>
   </div>

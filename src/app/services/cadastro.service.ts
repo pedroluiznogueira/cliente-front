@@ -21,7 +21,7 @@ export class CadastroService {
   }
 
   public criarCliente(cliente: Cliente): void {
-    this.http.post("http://localhost:4200/api/cliente", cliente);
+    this.http.post("http://localhost:4200/api/cliente", cliente).subscribe(resultado => console.log(resultado));
   }
 
   public emitir(): void {

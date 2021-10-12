@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-botoes',
@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotoesComponent implements OnInit {
 
+  @Output() onConsultarClick: EventEmitter<null> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  listarClientes(): string {
-    return "sdufjis";
+  listarClientes(): void {
+    this.onConsultarClick.emit();
   }
 
 }

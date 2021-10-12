@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/model/cliente.model';
 import { CadastroService } from 'src/app/services/cadastro.service';
-import { TabelaComponent } from '../tabela/tabela.component';
 
 @Component({
   selector: 'app-cadastro',

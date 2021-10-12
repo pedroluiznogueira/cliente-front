@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let cliente of getClientes">
-      <td class="row-table">{{cliente.nome}}</td>
+      <td class="row-table" (click)="consultarId(cliente)">{{cliente.nome}}</td>
       <td class="row-table">{{cliente.sobrenome}}</td>
       <td class="row-table">{{cliente.email}}</td>
     </tr>

@@ -25,4 +25,8 @@ export class TabelaComponent implements OnInit {
     return this.clientes;
   }
 
+  public consultarId(cliente: Cliente | undefined) {
+    console.log(cliente?.id);
+  }
+
 }

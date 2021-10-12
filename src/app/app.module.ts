@@ -16,6 +16,7 @@ import { TabelaComponent } from './components/tabela/tabela.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { BotoesComponent } from './components/botoes/botoes.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,14 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: 'tabela', component:  TabelaComponent },  
+      { path: 'formulario', component:  FormularioComponent }
+    ]
+    )
   ],
+  exports: [RouterModule],
   providers: [HttpClientModule, CadastroService],
   bootstrap: [AppComponent]
 })

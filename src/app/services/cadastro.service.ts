@@ -7,8 +7,6 @@ import { Cliente } from '../model/cliente.model';
   providedIn: 'root'
 })
 export class CadastroService {
-
-  @Output() onConsultarClick: EventEmitter<null> = new EventEmitter();
   
   private apiURL: String;
 
@@ -22,9 +20,5 @@ export class CadastroService {
 
   public criarCliente(cliente: Cliente): void {
     this.http.post("http://localhost:4200/api/cliente", cliente).subscribe(resultado => console.log(resultado));
-  }
-
-  public emitir(): void {
-    this.onConsultarClick.emit();
   }
 }

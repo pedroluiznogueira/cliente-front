@@ -14,9 +14,7 @@ export class TabelaComponent implements OnInit {
   constructor(private cadastroService: CadastroService) { }
 
   ngOnInit(): void {
-    this.cadastroService.onConsultarClick.subscribe(() => {
-      this.listarClientes();
-    });
+    this.listarClientes();
   }
 
   public listarClientes(): void {

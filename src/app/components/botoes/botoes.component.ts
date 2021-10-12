@@ -8,13 +8,9 @@ import { CadastroService } from 'src/app/services/cadastro.service';
 })
 export class BotoesComponent implements OnInit {
 
-  constructor(private cadastroService: CadastroService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  listarClientes(): void {
-    this.cadastroService.emitir();
   }
 
 }

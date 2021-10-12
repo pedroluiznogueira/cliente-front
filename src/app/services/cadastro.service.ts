@@ -17,4 +17,8 @@ export class CadastroService {
   public listarClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(`${this.apiURL}/api/cliente`);
   }
+
+  public emitir(): void {
+
+  }
 }

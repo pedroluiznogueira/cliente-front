@@ -14,6 +14,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TabelaComponent } from './components/tabela/tabela.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { BotoesComponent } from './components/botoes/botoes.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     CarouselComponent,
     FooterComponent,
     TabelaComponent,
-    FormularioComponent
+    FormularioComponent,
+    BotoesComponent
   ],
   imports: [
     BrowserModule,

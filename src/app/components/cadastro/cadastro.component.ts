@@ -13,8 +13,4 @@ export class CadastroComponent implements OnInit {
   
   ngOnInit(): void {
   }
-
-  listarClientes(): string {
-    return "sdufjis";
-  }
 }

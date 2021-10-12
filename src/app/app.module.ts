@@ -12,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TabelaComponent } from './components/tabela/tabela.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FooterComponent } from './components/footer/footer.component';
     CadastroComponent,
     ToolbarComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
+    TabelaComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

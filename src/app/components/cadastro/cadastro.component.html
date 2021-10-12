@@ -5,23 +5,5 @@
       <button class="botao">Alterar</button>
       <button class="botao">Deletar</button>
     </div>
-
-    <table class="table table-striped">
-        <thead>
-        <tr>
-          <th scope="col"> </th>  
-          <th scope="col">Nome</th>
-          <th scope="col">Sobrenome</th>
-          <th scope="col">Email</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let cliente of getClientes">
-          <th scope="row">cliente</th>
-          <td>{{cliente.nome}}</td>
-          <td>{{cliente.sobrenome}}</td>
-          <td>{{cliente.email}}</td>
-        </tr>
-        </tbody>
-      </table>
+    <app-tabela></app-tabela>
 </main>

@@ -42,6 +42,7 @@ import { FormularioUpdateComponent } from './components/formulario-update/formul
     RouterModule.forRoot([
       { path: 'tabela', component:  TabelaComponent },  
       { path: 'formulario', component:  FormularioComponent },
+      { path: 'update', component:  FormularioUpdateComponent }
     ]
     )
   ],

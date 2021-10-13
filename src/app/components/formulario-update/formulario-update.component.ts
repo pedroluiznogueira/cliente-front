@@ -19,17 +19,23 @@ export class FormularioUpdateComponent implements OnInit {
   }
 
   public envioFormulario(){
+    this.novoCliente();
+
+    this.nome = "";
+    this.sobrenome = "";
+    this.email = "";
+  }
+
+  public novoCliente(): void {
     this.cliente = new Cliente();
-    
+
     this.cliente.nome = this.nome;
     this.cliente.sobrenome = this.sobrenome;
     this.cliente.email = this.email;
 
     this.cadastroService.dadosAlterados(this.cliente);
     this.cadastroService.alterarCliente();
-
-    this.nome = "";
-    this.sobrenome = "";
-    this.email = "";
   }
+
+  
 }

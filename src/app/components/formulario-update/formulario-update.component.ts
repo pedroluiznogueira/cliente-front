@@ -11,6 +11,7 @@ export class FormularioUpdateComponent implements OnInit {
   nome?: string;
   sobrenome?: string;
   email?: string;
+  cliente?: Cliente;
 
   constructor(private cadastroService: CadastroService) { }
 
@@ -18,6 +19,12 @@ export class FormularioUpdateComponent implements OnInit {
   }
 
   public envioFormulario(){
-    console.log("teste")
+    this.cliente = new Cliente();
+    this.cliente.nome = this.nome;
+    this.cliente.sobrenome = this.sobrenome;
+    this.cliente.email = this.email;
+
+    this.cadastroService.dadosAlterados(this.cliente);
+    this.cadastroService.alterarCliente();
   }
 }

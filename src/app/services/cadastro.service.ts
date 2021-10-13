@@ -9,6 +9,7 @@ import { Cliente } from '../model/cliente.model';
 export class CadastroService {
 
   constructor(private http: HttpClient) {}
+  cliente: Cliente = new Cliente();
 
   public listarClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>("http://localhost:4200/api/cliente");
@@ -19,6 +20,17 @@ export class CadastroService {
   }
 
   public receberCliente(cliente: Cliente) {
-    console.log(cliente);
+    this.cliente.id = cliente.id;
   }
+
+  public dadosAlterados(clienteNovo: Cliente) {
+    this.cliente.nome = clienteNovo.nome;
+    this.cliente.sobrenome = clienteNovo.sobrenome;
+    this.cliente.email = clienteNovo.email;
+  }
+
+  public alterarCliente(): void {
+    console.log(this.cliente)
+  }
+
 }

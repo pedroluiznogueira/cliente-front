@@ -12,8 +12,4 @@ export class CadastroComponent implements OnInit {
   
   ngOnInit(): void {
   }
-
-  public receberCliente() {
-    console.log("cliente recebido");
-  }
 }

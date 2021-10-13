@@ -44,7 +44,7 @@ import {MatIconModule} from '@angular/material/icon';
     RouterModule.forRoot([
       { path: 'tabela', component:  TabelaComponent },  
       { path: 'formulario', component:  FormularioComponent },
-      { path: 'update', component:  FormularioUpdateComponent }
+      { path: 'formulario-update', component:  FormularioUpdateComponent }
     ]
     )
   ],

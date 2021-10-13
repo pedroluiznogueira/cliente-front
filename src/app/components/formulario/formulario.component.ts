@@ -9,10 +9,10 @@ import { CadastroService } from 'src/app/services/cadastro.service';
 })
 export class FormularioComponent implements OnInit {
 
-  nome?: string;
-  sobrenome?: string;
-  email?: string;
-  cliente?: Cliente;
+  public nome?: string;
+  public sobrenome?: string;
+  public email?: string;
+  public cliente?: Cliente;
 
   constructor(private cadastroService: CadastroService) { }
 

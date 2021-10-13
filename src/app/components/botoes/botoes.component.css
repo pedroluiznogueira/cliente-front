@@ -5,13 +5,13 @@
 }
 
 .btn{
-    border: 2px solid #f4511e;
+    border: 2px solid #2B2B2B;
     color: #ffffff;
-    background-color: #f4511e;
+    background-color: #2B2B2B;
 }
 
 .btn:hover {
-    background-color: #8f2f12;
-    border: 2px solid #8f2f12;
+    background-color: #43B02A;
+    border: 2px solid #43B02A;
     color: #fff
 }

@@ -10,7 +10,7 @@
 }
 
 th{
-    background-color: #f4511e;
+    background-color: #2B2B2B;
     color: #fff;
 }
 
@@ -29,6 +29,11 @@ th{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #2B2B2B;
+}
+
+.icon:hover {
+    color: #26890D;
 }
 
 #nome {

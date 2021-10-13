@@ -29,8 +29,8 @@ export class TabelaComponent implements OnInit {
     this.cadastroService.receberIdCliente(id);
   }
 
-  public deletarCliente(cliente: Cliente): void {
-    this.cadastroService.deletarCliente(cliente);
+  public deletarCliente(id: number | undefined): void {
+    this.cadastroService.deletarCliente(id);
     this.ngOnInit();
   }
 

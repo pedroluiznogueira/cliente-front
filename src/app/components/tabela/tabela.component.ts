@@ -25,8 +25,8 @@ export class TabelaComponent implements OnInit {
     return this.clientes;
   }
 
-  public consultarCliente(cliente: Cliente) {
-    this.cadastroService.receberCliente(cliente);
+  public enviarIdCliente(cliente: Cliente) {
+    this.cadastroService.receberIdCliente(cliente);
   }
 
   public deletarCliente(cliente: Cliente): void {

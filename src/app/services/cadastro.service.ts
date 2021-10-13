@@ -8,8 +8,9 @@ import { Cliente } from '../model/cliente.model';
 })
 export class CadastroService {
 
-  constructor(private http: HttpClient) {}
   cliente: Cliente = new Cliente();
+
+  constructor(private http: HttpClient) {}
 
   public listarClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>("http://localhost:4200/api/cliente");
@@ -17,16 +18,6 @@ export class CadastroService {
 
   public criarCliente(cliente: Cliente): void {
     this.http.post("http://localhost:4200/api/cliente", cliente).subscribe(resultado => console.log(resultado));
-  }
-
-  public receberCliente(cliente: Cliente) {
-    this.cliente.id = cliente.id;
-  }
-
-  public dadosAlterados(clienteNovo: Cliente) {
-    this.cliente.nome = clienteNovo.nome;
-    this.cliente.sobrenome = clienteNovo.sobrenome;
-    this.cliente.email = clienteNovo.email;
   }
 
   public alterarCliente(): void {
@@ -38,4 +29,13 @@ export class CadastroService {
     this.http.delete(`http://localhost:4200/api/cliente/${cliente.id}`).subscribe(resultado => console.log(resultado));
   }
 
+  public receberIdCliente(cliente: Cliente) {
+    this.cliente.id = cliente.id;
+  }
+
+  public dadosAlterados(clienteNovo: Cliente) {
+    this.cliente.nome = clienteNovo.nome;
+    this.cliente.sobrenome = clienteNovo.sobrenome;
+    this.cliente.email = clienteNovo.email;
+  }
 }

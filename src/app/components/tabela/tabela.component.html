@@ -14,7 +14,7 @@
       <td class="row-table">{{cliente.email}} </td>
       <div class="icons" id="icons-table">
         <mat-icon (click)="deletarCliente(cliente)" class="icon">delete</mat-icon>
-        <mat-icon (click)="consultarCliente(cliente)" [routerLink]="['/update']" class="icon">edit</mat-icon>
+        <mat-icon (click)="enviarIdCliente(cliente)" [routerLink]="['/update']" class="icon">edit</mat-icon>
       </div>
     </tr>
     </tbody>

@@ -8,6 +8,7 @@ import { Cliente } from '../model/cliente.model';
 })
 export class CadastroService {
   
+  @Output() enviarCliente: EventEmitter<Cliente> = new EventEmitter();
   private apiURL: String;
 
   constructor(private http: HttpClient) { 
@@ -20,5 +21,10 @@ export class CadastroService {
 
   public criarCliente(cliente: Cliente): void {
     this.http.post("http://localhost:4200/api/cliente", cliente).subscribe(resultado => console.log(resultado));
+  }
+
+  public receberCliente(cliente: Cliente) {
+    console.log(cliente);
+    this.enviarCliente.emit(cliente);
   }
 }

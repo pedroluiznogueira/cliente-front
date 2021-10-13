@@ -8,7 +8,7 @@ import { CadastroService } from 'src/app/services/cadastro.service';
   styleUrls: ['./tabela.component.css']
 })
 export class TabelaComponent implements OnInit {
-  
+
   private clientes: Array<Cliente> = new Array();
 
   constructor(private cadastroService: CadastroService) { }
@@ -25,8 +25,8 @@ export class TabelaComponent implements OnInit {
     return this.clientes;
   }
 
-  public consultarId(cliente: Cliente | undefined) {
-    console.log(cliente?.id);
+  public consultarCliente(cliente: Cliente) {
+    this.cadastroService.receberCliente(cliente);
   }
 
 }

@@ -8,8 +8,12 @@ import { CadastroService } from 'src/app/services/cadastro.service';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cadastroService: CadastroService) { }
   
   ngOnInit(): void {
+  }
+
+  public receberCliente() {
+    console.log("cliente recebido");
   }
 }

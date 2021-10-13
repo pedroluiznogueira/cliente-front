@@ -9,12 +9,12 @@
     </thead>
     <tbody>
     <tr *ngFor="let cliente of getClientes">
-      <td id="nome" class="row-table" [routerLink]="['/update']" (click)="consultarCliente(cliente)">{{cliente.nome}}</td>
+      <td id="nome" class="row-table" (click)="consultarCliente(cliente)">{{cliente.nome}}</td>
       <td class="row-table">{{cliente.sobrenome}}</td>
       <td class="row-table">{{cliente.email}} </td>
       <div class="icons">
         <mat-icon (click)="deletarCliente(cliente)" class="delete">delete</mat-icon>
-        <mat-icon class="delete">edit</mat-icon>
+        <mat-icon [routerLink]="['/update']" class="delete">edit</mat-icon>
       </div>
     </tr>
     </tbody>

@@ -33,9 +33,11 @@ export class CadastroService {
     this.cliente.id = id;
   }
 
-  public dadosAlterados(clienteNovo: Cliente) {
+  public novoCliente(clienteNovo: Cliente) {
     this.cliente.nome = clienteNovo.nome;
     this.cliente.sobrenome = clienteNovo.sobrenome;
     this.cliente.email = clienteNovo.email;
+
+    this.alterarCliente();
   }
 }

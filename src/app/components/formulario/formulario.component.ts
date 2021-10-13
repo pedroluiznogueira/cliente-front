@@ -28,6 +28,9 @@ export class FormularioComponent implements OnInit {
     console.log(this.cliente)
 
     this.cadastroService.criarCliente(this.cliente);
+    this.nome = "";
+    this.sobrenome = "";
+    this.email = "";
   }
 
 }

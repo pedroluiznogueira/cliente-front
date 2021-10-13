@@ -31,6 +31,7 @@ export class TabelaComponent implements OnInit {
 
   public deletarCliente(cliente: Cliente): void {
     this.cadastroService.deletarCliente(cliente);
+    this.ngOnInit();
   }
 
 }

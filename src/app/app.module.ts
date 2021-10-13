@@ -18,6 +18,7 @@ import { BotoesComponent } from './components/botoes/botoes.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { FormularioUpdateComponent } from './components/formulario-update/formulario-update.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FormularioUpdateComponent } from './components/formulario-update/formul
     MatFormFieldModule,
     HttpClientModule,
     NgbModule,
+    MatIconModule,
     FormsModule,
     RouterModule.forRoot([
       { path: 'tabela', component:  TabelaComponent },  

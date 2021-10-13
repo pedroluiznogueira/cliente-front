@@ -30,8 +30,12 @@ export class CadastroService {
   }
 
   public alterarCliente(): void {
-    console.log(this.cliente)
     this.http.put("http://localhost:4200/api/cliente", this.cliente).subscribe(resultado => console.log(resultado));
+  }
+
+  public deletarCliente(cliente: Cliente): void {
+    console.log(cliente);
+    this.http.delete(`http://localhost:4200/api/cliente/${cliente.id}`).subscribe(resultado => console.log(resultado));
   }
 
 }

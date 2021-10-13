@@ -6,11 +6,26 @@
 }
 
 .row-table{
-    max-width: 20px;
-
+    max-width: 25px;
 }
 
 th{
     background-color: #f4511e;
     color: #fff;
 }
+
+.delete {
+    width: 50px;
+    margin: 10px;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+#nome {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+

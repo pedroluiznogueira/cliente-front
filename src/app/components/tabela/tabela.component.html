@@ -4,13 +4,15 @@
       <th class="row-table" scope="col">Nome</th>
       <th class="row-table" scope="col">Sobrenome</th>
       <th class="row-table" scope="col">Email</th>
+      <th class="row-table" class="delete" scope="col"></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let cliente of getClientes">
-      <td class="row-table" [routerLink]="['/update']" (click)="consultarCliente(cliente)">{{cliente.nome}}</td>
+      <td id="nome" class="row-table" [routerLink]="['/update']" (click)="consultarCliente(cliente)">{{cliente.nome}}</td>
       <td class="row-table">{{cliente.sobrenome}}</td>
-      <td class="row-table">{{cliente.email}}</td>
+      <td class="row-table">{{cliente.email}} </td>
+      <mat-icon (click)="deletarCliente(cliente)" class="delete">delete</mat-icon>
     </tr>
     </tbody>
   </table>

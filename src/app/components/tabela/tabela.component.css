@@ -14,9 +14,17 @@ th{
     color: #fff;
 }
 
-.delete {
-    width: 50px;
-    margin: 10px;
+.icons {
+    max-width: 5px;
+}
+
+#icons-table {
+    display: flex;
+    margin: 0 auto;
+}
+
+.icon {
+    
 }
 
 mat-icon {

@@ -26,5 +26,9 @@ export class FormularioUpdateComponent implements OnInit {
 
     this.cadastroService.dadosAlterados(this.cliente);
     this.cadastroService.alterarCliente();
+
+    this.nome = "";
+    this.sobrenome = "";
+    this.email = "";
   }
 }

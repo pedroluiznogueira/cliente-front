@@ -7,13 +7,8 @@ import { Cliente } from '../model/cliente.model';
   providedIn: 'root'
 })
 export class CadastroService {
-  
-  @Output() enviarCliente: EventEmitter<Cliente> = new EventEmitter();
-  private apiURL: String;
 
-  constructor(private http: HttpClient) { 
-    this.apiURL = 'http://localhost:8080'; 
-  }
+  constructor(private http: HttpClient) {}
 
   public listarClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>("http://localhost:4200/api/cliente");
@@ -25,6 +20,5 @@ export class CadastroService {
 
   public receberCliente(cliente: Cliente) {
     console.log(cliente);
-    this.enviarCliente.emit(cliente);
   }
 }

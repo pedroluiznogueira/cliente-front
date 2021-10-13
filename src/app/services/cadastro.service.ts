@@ -29,8 +29,8 @@ export class CadastroService {
     this.http.delete(`http://localhost:4200/api/cliente/${cliente.id}`).subscribe(resultado => console.log(resultado));
   }
 
-  public receberIdCliente(cliente: Cliente) {
-    this.cliente.id = cliente.id;
+  public receberIdCliente(id: number | undefined) {
+    this.cliente.id = id;
   }
 
   public dadosAlterados(clienteNovo: Cliente) {

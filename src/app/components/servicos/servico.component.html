@@ -5,15 +5,16 @@
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
-        <mat-panel-title>
-          Nossos serviços
-        </mat-panel-title>
-        <mat-panel-description>
-          Serviço
-        </mat-panel-description>
+
       </mat-expansion-panel-header>
       <table class="table">
         <thead>
+          <tr>
+            <th scope="col"><mat-icon class="icon">delete</mat-icon></th>
+            <th scope="col"><mat-icon class="icon">edit</mat-icon></th>
+            <th scope="col"><mat-icon class="icon" (click)="inserirServico()">login</mat-icon></th>
+          </tr>
+
           <tr>
             <th scope="col">Titulo</th>
             <th scope="col">Descricao</th>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CadastroService } from 'src/app/services/cadastro.service';
+import { CadastroService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-cadastro',

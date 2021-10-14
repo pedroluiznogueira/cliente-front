@@ -24,6 +24,7 @@ import {MatTableModule} from '@angular/material/table';
 import { FormularioServicoComponent } from './components/formulario-servico/formulario-servico.component';
 import { FormularioServicoUpdateComponent } from './components/formulario-servico-update/formulario-servico-update.component';
 import { BodyComponent } from './components/body/body.component';
+import { ClientesComponent } from './components/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BodyComponent } from './components/body/body.component';
     ServicoComponent,
     FormularioServicoComponent,
     FormularioServicoUpdateComponent,
-    BodyComponent
+    BodyComponent,
+    ClientesComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { BodyComponent } from './components/body/body.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component:  CarouselComponent },
-      { path: 'tabela', component:  TabelaComponent },  
+      { path: 'tabela', component:  TabelaComponent }, 
+      { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario', component:  FormularioComponent },
       { path: 'formulario-update', component:  FormularioUpdateComponent },
       { path: 'servico', component:  ServicoComponent },      

@@ -14,7 +14,7 @@ export class FormularioClienteUpdateComponent implements OnInit {
   email?: string;
   cliente?: Cliente;
 
-  constructor(private cadastroService: ClienteService) { }
+  constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
   }
@@ -34,7 +34,7 @@ export class FormularioClienteUpdateComponent implements OnInit {
     this.cliente.sobrenome = this.sobrenome;
     this.cliente.email = this.email;
 
-    this.cadastroService.novoCliente(this.cliente);
+    this.clienteService.novoCliente(this.cliente);
   }
 
 }

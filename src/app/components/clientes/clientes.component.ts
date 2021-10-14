@@ -11,14 +11,14 @@ export class ClientesComponent implements OnInit {
 
   private clientes: Array<Cliente> = new Array();
 
-  constructor(private cadastroService: ClienteService) { }
+  constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
     this.listarClientes();
   }
 
   public listarClientes(): void {
-    this.cadastroService.listarClientes().subscribe(clientes => this.clientes = clientes);
+    this.clienteService.listarClientes().subscribe(clientes => this.clientes = clientes);
   }
   
   public get getClientes(): Array<Cliente> {
@@ -26,11 +26,11 @@ export class ClientesComponent implements OnInit {
   }
 
   public enviarIdCliente(id: number | undefined) {
-    this.cadastroService.receberIdCliente(id);
+    this.clienteService.receberIdCliente(id);
   }
 
   public deletarCliente(id: number | undefined): void {
-    this.cadastroService.deletarCliente(id);
+    this.clienteService.deletarCliente(id);
     this.ngOnInit();
   }
 

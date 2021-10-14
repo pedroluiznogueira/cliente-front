@@ -58,7 +58,8 @@ import { FormularioServicoUpdateComponent } from './components/formulario-servic
       { path: 'formulario', component:  FormularioComponent },
       { path: 'formulario-update', component:  FormularioUpdateComponent },
       { path: 'servico', component:  ServicoComponent },      
-      { path: 'formulario-servico', component:  FormularioServicoComponent }
+      { path: 'formulario-servico', component:  FormularioServicoComponent },
+      { path: 'formulario-servico-update', component:  FormularioServicoUpdateComponent }
     ]
     )
   ],

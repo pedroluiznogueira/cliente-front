@@ -27,4 +27,17 @@ export class ServicoService {
   public receberIdServico(id: number | undefined): void {
     this.servico.id = id;
   }
+
+  public novoServico(servico: Servico): void {
+    servico.id = this.servico.id;
+    servico.titulo = this.servico.titulo;
+    servico.descricao = this.servico.descricao;
+    servico.valor = this.servico.valor;
+
+    this.alterarServico();
+  }
+
+  public alterarServico(): void {
+    this.http.put("http://localhost:4200/api/servico", this.servico).subscribe(resultado => console.log(resultado));
+  }
 }

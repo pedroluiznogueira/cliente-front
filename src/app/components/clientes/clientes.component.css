@@ -1,8 +1,8 @@
 .table {
     margin: 30px auto;
-
     border: 1px solid #999;
     box-shadow: 1px 1px 2px #333;
+    width: 900px;
 }
 
 .row-table{
@@ -14,8 +14,13 @@ th{
     color: #fff;
 }
 
+td {
+    margin: 0;
+}
+
 .icons {
     max-width: 10px;
+    margin: 0;
 }
 
 #icons-table {

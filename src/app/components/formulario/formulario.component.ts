@@ -25,13 +25,10 @@ export class FormularioComponent implements OnInit {
     this.cliente.sobrenome = this.sobrenome;
     this.cliente.email = this.email;
 
-    console.log(this.cliente)
-
     this.cadastroService.criarCliente(this.cliente);
     this.nome = "";
     this.sobrenome = "";
     this.email = "";
-    console.log("Formulario enviado")
   }
 
 }

@@ -13,4 +13,8 @@ export class ServicoService {
   public listarServicos(): Observable<Servico[]> {
     return this.http.get<Servico[]>("http://localhost:4200/api/servico");
   }
+
+  public criarServico(servico: Servico): void {
+    this.http.post("http://localhost:4200/api/servico", servico).subscribe(resultado => console.log(resultado));
+  }
 }

@@ -24,6 +24,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
 import { FormularioServicoComponent } from './components/formulario-servico/formulario-servico.component';
+import { FormularioServicoUpdateComponent } from './components/formulario-servico-update/formulario-servico-update.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormularioServicoComponent } from './components/formulario-servico/form
     BotoesComponent,
     FormularioUpdateComponent,
     ServicoComponent,
-    FormularioServicoComponent
+    FormularioServicoComponent,
+    FormularioServicoUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { FormularioUpdateComponent } from './components/formulario-update/formulario-update.component';
 import {MatIconModule} from '@angular/material/icon';
+import { ServicoComponent } from './components/servico/servico.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatIconModule} from '@angular/material/icon';
     TabelaComponent,
     FormularioComponent,
     BotoesComponent,
-    FormularioUpdateComponent
+    FormularioUpdateComponent,
+    ServicoComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import {MatIconModule} from '@angular/material/icon';
     RouterModule.forRoot([
       { path: 'tabela', component:  TabelaComponent },  
       { path: 'formulario', component:  FormularioComponent },
-      { path: 'formulario-update', component:  FormularioUpdateComponent }
+      { path: 'formulario-update', component:  FormularioUpdateComponent },
+      { path: 'servico', component:  ServicoComponent }      
     ]
     )
   ],

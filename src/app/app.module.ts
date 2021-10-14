@@ -22,6 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { ServicoComponent } from './components/servicos/servico.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatExpansionModule,
     MatIconModule,
     MatTabsModule,
+    MatTableModule,
     FormsModule,
     RouterModule.forRoot([
       { path: 'tabela', component:  TabelaComponent },  

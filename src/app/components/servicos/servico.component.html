@@ -12,13 +12,21 @@
           Serviço
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <table>
-          <tr *ngFor="let servico of servicos">
-              <td>{{ servico.id }}</td>
-              <td>{{ servico.titulo }}</td>
-              <td>{{ servico.descricao }}</td>
-              <td>{{ servico.valor }}</td>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Descricao</th>
+            <th scope="col">Valor</th>
           </tr>
-      </table>
+        </thead>
+        <tbody>
+          <tr *ngFor="let servico of servicos">
+            <td>{{ servico.titulo }}</td>
+            <td>{{ servico.descricao }}</td>
+            <td>{{ servico.valor }}</td>
+          </tr>
+        </tbody>
+      </table>    
     </mat-expansion-panel>
   </mat-accordion>

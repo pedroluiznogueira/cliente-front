@@ -16,9 +16,8 @@ export class FormularioServicoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   public envioFormulario(): void {
-    
+
   }
 
 }

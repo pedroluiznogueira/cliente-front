@@ -1,0 +1,34 @@
+.btn{
+    border: 3px solid #2B2B2B;
+    color: #2B2B2B;
+    font-weight: 700; 
+}
+
+.btn:hover {
+    background-color: #43B02A;
+    border: 3px solid #43B02A;
+    color: #fff
+}
+
+.form-control:focus {
+    border: 1px solid #2B2B2B;
+    box-shadow: 1px 1px 3px #2B2B2B;
+}
+
+.btn:active {
+    background-color: #2B2B2B;
+    border: 3px solid #2B2B2B;
+    color: #fff
+}
+
+.form {
+    margin: 30px auto;
+
+    border: 1px solid #999;
+    box-shadow: 1px 1px 2px #2B2B2B;
+    padding: 30px;
+}
+
+.label {
+    margin-top: 15px;
+}

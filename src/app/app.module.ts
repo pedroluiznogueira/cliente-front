@@ -55,7 +55,8 @@ import { FormularioServicoComponent } from './components/formulario-servico/form
       { path: 'tabela', component:  TabelaComponent },  
       { path: 'formulario', component:  FormularioComponent },
       { path: 'formulario-update', component:  FormularioUpdateComponent },
-      { path: 'servico', component:  ServicoComponent }      
+      { path: 'servico', component:  ServicoComponent },      
+      { path: 'formulario-servico', component:  FormularioServicoComponent }
     ]
     )
   ],

@@ -38,6 +38,9 @@ th{
     padding: 0;
     cursor: pointer;
 }
+.icon-cadastrar:hover{
+    color: #26890D;
+}
 
 .th-cadastrar {
     display: flex;

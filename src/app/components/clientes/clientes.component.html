@@ -1,21 +1,21 @@
 <table class="table table-striped">
-    <thead>
-    <tr class="header">
-      <th class="row-table" scope="col">Nome</th>
-      <th class="row-table" scope="col">Sobrenome</th>
-      <th class="row-table" scope="col">Email</th>
-      <th class="row-table" class="th-cadastrar" scope="col"><mat-icon [routerLink]="['/formulario']" class="icon-cadastrar">login</mat-icon></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let cliente of getClientes">
-      <td id="nome" class="row-table">{{cliente.nome}}</td>
-      <td class="row-table">{{cliente.sobrenome}}</td>
-      <td class="row-table">{{cliente.email}} </td>
-      <div class="icons" id="icons-table">
-        <mat-icon (click)="deletarCliente(cliente.id)" class="icon">delete</mat-icon>
-        <mat-icon (click)="enviarIdCliente(cliente.id)" [routerLink]="['/formulario-update']" class="icon">edit</mat-icon>
-      </div>
-    </tr>
-    </tbody>
-  </table>
+  <thead>
+  <tr class="header">
+    <th class="row-table" scope="col">Nome</th>
+    <th class="row-table" scope="col">Sobrenome</th>
+    <th class="row-table" scope="col">Email</th>
+    <th class="row-table" class="th-cadastrar" scope="col"><mat-icon [routerLink]="['/formulario']" class="icon-cadastrar">login</mat-icon></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cliente of getClientes">
+    <td id="nome" class="row-table">{{cliente.nome}}</td>
+    <td class="row-table">{{cliente.sobrenome}}</td>
+    <td class="row-table">{{cliente.email}} </td>
+    <div class="icons" id="icons-table">
+      <mat-icon (click)="deletarCliente(cliente.id)" class="icon">delete</mat-icon>
+      <mat-icon (click)="enviarIdCliente(cliente.id)" [routerLink]="['/formulario-update']" class="icon">edit</mat-icon>
+    </div>
+  </tr>
+  </tbody>
+</table>

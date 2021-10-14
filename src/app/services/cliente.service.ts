@@ -6,7 +6,7 @@ import { Cliente } from '../models/cliente.model';
 @Injectable({
   providedIn: 'root'
 })
-export class CadastroService {
+export class ClienteService {
 
   cliente: Cliente = new Cliente();
 

@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente.model';
-import { CadastroService } from 'src/app/services/cliente.service';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.css']
+  selector: 'app-formulario-cliente',
+  templateUrl: './formulario-cliente.component.html',
+  styleUrls: ['./formulario-cliente.component.css']
 })
-export class FormularioComponent implements OnInit {
+export class FormularioClienteComponent implements OnInit {
 
   public nome?: string;
   public sobrenome?: string;
   public email?: string;
   public cliente?: Cliente;
 
-  constructor(private cadastroService: CadastroService) { }
+  constructor(private cadastroService: ClienteService) { }
 
   ngOnInit(): void {
   }

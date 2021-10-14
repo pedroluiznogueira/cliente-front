@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente.model';
-import { CadastroService } from 'src/app/services/cliente.service';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-formulario-update',
-  templateUrl: './formulario-update.component.html',
-  styleUrls: ['./formulario-update.component.css']
+  selector: 'app-formulario-cliente-update',
+  templateUrl: './formulario-cliente-update.component.html',
+  styleUrls: ['./formulario-cliente-update.component.css']
 })
-export class FormularioUpdateComponent implements OnInit {
+export class FormularioClienteUpdateComponent implements OnInit {
+
   nome?: string;
   sobrenome?: string;
   email?: string;
   cliente?: Cliente;
 
-  constructor(private cadastroService: CadastroService) { }
+  constructor(private cadastroService: ClienteService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   public envioFormulario(){
@@ -36,5 +37,4 @@ export class FormularioUpdateComponent implements OnInit {
     this.cadastroService.novoCliente(this.cliente);
   }
 
-  
 }

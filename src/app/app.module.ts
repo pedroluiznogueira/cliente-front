@@ -6,15 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-import { CadastroService } from './services/cliente.service';
+import { ClienteService } from './services/cliente.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormularioComponent } from './components/formulario/formulario.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { FormularioUpdateComponent } from './components/formulario-update/formulario-update.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ServicoComponent } from './components/servicos/servico.component';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -22,22 +19,23 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
 import { FormularioServicoComponent } from './components/formulario-servico/formulario-servico.component';
 import { FormularioServicoUpdateComponent } from './components/formulario-servico-update/formulario-servico-update.component';
-import { BodyComponent } from './components/body/body.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { HomeComponent } from './components/home/home.component';
+import { FormularioClienteComponent } from './components/formulario-cliente/formulario-cliente.component';
+import { FormularioClienteUpdateComponent } from './components/formulario-cliente-update/formulario-cliente-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    CarouselComponent,
     FooterComponent,
-    FormularioComponent,
-    FormularioUpdateComponent,
     ServicoComponent,
     FormularioServicoComponent,
     FormularioServicoUpdateComponent,
-    BodyComponent,
-    ClientesComponent
+    ClientesComponent,
+    HomeComponent,
+    FormularioClienteComponent,
+    FormularioClienteUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -52,10 +50,12 @@ import { ClientesComponent } from './components/clientes/clientes.component';
     MatTableModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component:  CarouselComponent },
+      { path: '', component:  HomeComponent },
+
       { path: 'clientes', component:  ClientesComponent },  
-      { path: 'formulario', component:  FormularioComponent },
-      { path: 'formulario-update', component:  FormularioUpdateComponent },
+      { path: 'formulario', component:  FormularioClienteComponent },
+      { path: 'formulario-update', component:  FormularioServicoUpdateComponent },
+      
       { path: 'servico', component:  ServicoComponent },      
       { path: 'formulario-servico', component:  FormularioServicoComponent },
       { path: 'formulario-servico-update', component:  FormularioServicoUpdateComponent }
@@ -63,7 +63,7 @@ import { ClientesComponent } from './components/clientes/clientes.component';
     )
   ],
   exports: [RouterModule],
-  providers: [HttpClientModule, CadastroService],
+  providers: [HttpClientModule, ClienteService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

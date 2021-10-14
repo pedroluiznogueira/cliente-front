@@ -54,6 +54,7 @@ import { BodyComponent } from './components/body/body.component';
     MatTableModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: '', component:  CarouselComponent },
       { path: 'tabela', component:  TabelaComponent },  
       { path: 'formulario', component:  FormularioComponent },
       { path: 'formulario-update', component:  FormularioUpdateComponent },

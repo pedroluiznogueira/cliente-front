@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { CadastroComponent } from './components/clientes/cadastro.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { FormularioUpdateComponent } from './components/formulario-update/formulario-update.component';
 import {MatIconModule} from '@angular/material/icon';
-import { ServicoComponent } from './components/servico/servico.component';
+import { ServicoComponent } from './components/servicos/servico.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 

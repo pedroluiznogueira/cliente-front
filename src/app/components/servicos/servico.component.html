@@ -25,7 +25,7 @@
             <td>{{ servico.descricao }}</td>
             <td>{{ servico.valor }}</td>
             <mat-icon class="icon" (click)="deletarServico(servico.id)">delete</mat-icon>
-            <mat-icon class="icon">edit</mat-icon>
+            <mat-icon class="icon" (click)="enviarIdServico(servico.id)">edit</mat-icon>
           </tr>
         </tbody>
       </table>    

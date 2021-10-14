@@ -8,6 +8,8 @@ import { Servico } from '../models/servico.model';
 })
 export class ServicoService {
 
+  servico: Servico = new Servico();
+
   constructor(private http: HttpClient) { }
 
   public listarServicos(): Observable<Servico[]> {
@@ -20,5 +22,9 @@ export class ServicoService {
 
   public deletarServico(id: number | undefined): void {
     this.http.delete(`http://localhost:4200/api/servico/${id}`).subscribe(resultado => console.log(resultado));
+  }
+
+  public receberIdServico(id: number | undefined): void {
+    this.servico.id = id;
   }
 }

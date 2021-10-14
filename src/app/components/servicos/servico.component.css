@@ -2,6 +2,11 @@
     color: #fff;
 }
 
+
+.icon {
+    margin-left: 10px;
+}
+
 .icon:hover {
     cursor: pointer;
 }

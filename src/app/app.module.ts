@@ -23,6 +23,7 @@ import { ServicoComponent } from './components/servicos/servico.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
+import { FormularioServicoComponent } from './components/formulario-servico/formulario-servico.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatTableModule} from '@angular/material/table';
     FormularioComponent,
     BotoesComponent,
     FormularioUpdateComponent,
-    ServicoComponent
+    ServicoComponent,
+    FormularioServicoComponent
   ],
   imports: [
     BrowserModule,

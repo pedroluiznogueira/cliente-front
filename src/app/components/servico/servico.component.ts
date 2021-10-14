@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicoComponent implements OnInit {
 
+  nomes: string[] = ["djks", "djks", "djks", "djks", "djks", "djks", "djks"];
+
+  panelOpenState = false;
+  
   constructor() { }
 
   ngOnInit(): void {

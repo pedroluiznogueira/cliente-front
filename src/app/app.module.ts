@@ -21,6 +21,7 @@ import { FormularioUpdateComponent } from './components/formulario-update/formul
 import {MatIconModule} from '@angular/material/icon';
 import { ServicoComponent } from './components/servico/servico.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatFormFieldModule,
     HttpClientModule,
     NgbModule,
+    MatExpansionModule,
     MatIconModule,
     MatTabsModule,
     FormsModule,

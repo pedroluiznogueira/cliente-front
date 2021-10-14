@@ -1,5 +1,27 @@
 .container{
-    margin: 0 auto
+    margin: 0 auto;
+}
+.body{
+    margin: 30px 0;
+}
+
+.btn{
+    border: 3px solid #43B02A;
+    background-color: #43B02A;
+    color: #fff;
+    font-weight: 700; 
+}
+
+.btn:hover {
+    background-color: #2c8019;
+    border: 3px solid #2c8019;
+    color: #fff
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .table {

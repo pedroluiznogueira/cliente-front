@@ -1,4 +1,4 @@
-<mat-accordion class="container">
+<!-- <mat-accordion class="container">
     <mat-expansion-panel hideToggle>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -26,4 +26,14 @@
         </tbody>
       </table>    
     </mat-expansion-panel>
-  </mat-accordion>
+  </mat-accordion> -->
+
+  <mat-card class="container" *ngFor="let servico of servicos">
+    <mat-card-title-group class="header">
+      <mat-card-title>{{servico.titulo}}</mat-card-title>
+      <button type="submit" class="btn btn-outline-warning">R$ {{servico.valor}}</button>
+    </mat-card-title-group>
+    <mat-card-content class="body">
+      {{servico.descricao}}
+    </mat-card-content>
+  </mat-card>

@@ -1,7 +1,10 @@
+.container{
+    margin: 0 auto
+}
+
 .table {
     color: #fff;
 }
-
 
 .icon {
     margin-left: 10px;

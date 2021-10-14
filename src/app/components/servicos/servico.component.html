@@ -1,6 +1,5 @@
-<mat-accordion>
+<mat-accordion class="container">
     <mat-expansion-panel hideToggle>
-      <p>This is the primary content of the panel.</p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
@@ -9,14 +8,11 @@
       </mat-expansion-panel-header>
       <table class="table">
         <thead>
-          <tr>
-            <th scope="col"><mat-icon class="icon" [routerLink]="['/formulario-servico']">login</mat-icon></th>
-          </tr>
-
-          <tr>
+          <tr class="header">
             <th scope="col">Titulo</th>
             <th scope="col">Descricao</th>
             <th scope="col">Valor</th>
+            <th scope="col"><mat-icon class="icon" [routerLink]="['/formulario-servico']">login</mat-icon></th>
           </tr>
         </thead>
         <tbody>

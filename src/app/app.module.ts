@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CadastroComponent } from './components/cadastro/cadastro.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,7 +28,6 @@ import { BodyComponent } from './components/body/body.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroComponent,
     ToolbarComponent,
     CarouselComponent,
     FooterComponent,

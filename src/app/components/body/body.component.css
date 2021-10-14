@@ -1,0 +1,7 @@
+.section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-family: 'Fira Sans', sans-serif;
+}

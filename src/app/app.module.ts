@@ -25,6 +25,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
 import { FormularioServicoComponent } from './components/formulario-servico/formulario-servico.component';
 import { FormularioServicoUpdateComponent } from './components/formulario-servico-update/formulario-servico-update.component';
+import { BodyComponent } from './components/body/body.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FormularioServicoUpdateComponent } from './components/formulario-servic
     FormularioUpdateComponent,
     ServicoComponent,
     FormularioServicoComponent,
-    FormularioServicoUpdateComponent
+    FormularioServicoUpdateComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,

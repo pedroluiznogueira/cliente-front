@@ -12,7 +12,14 @@
 
 .menu-itens{
     padding-top: 4px;
+}
+
+.item{
     cursor: pointer;
+}
+
+.item:hover{
+    color: #43B02A
 }
 
 .img {

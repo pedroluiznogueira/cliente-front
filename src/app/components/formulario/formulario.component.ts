@@ -31,6 +31,7 @@ export class FormularioComponent implements OnInit {
     this.nome = "";
     this.sobrenome = "";
     this.email = "";
+    console.log("Formulario enviado")
   }
 
 }

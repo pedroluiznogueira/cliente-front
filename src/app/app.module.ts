@@ -14,7 +14,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TabelaComponent } from './components/tabela/tabela.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
-import { BotoesComponent } from './components/botoes/botoes.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { FormularioUpdateComponent } from './components/formulario-update/formulario-update.component';
@@ -36,7 +35,6 @@ import { BodyComponent } from './components/body/body.component';
     FooterComponent,
     TabelaComponent,
     FormularioComponent,
-    BotoesComponent,
     FormularioUpdateComponent,
     ServicoComponent,
     FormularioServicoComponent,

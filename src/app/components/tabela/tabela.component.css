@@ -29,7 +29,20 @@ th{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #2B2B2B;
+    color: #333;
+}
+
+.icon-cadastrar {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.th-cadastrar {
+    display: flex;
+    justify-content: center;
+    padding-left: 55px; 
 }
 
 .icon:hover {

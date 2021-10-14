@@ -1,5 +1,5 @@
 export class Servico {
-    id?: number;
+    id?: number | undefined;
     titulo?: string;
     descricao?: string;
     valor?: number;

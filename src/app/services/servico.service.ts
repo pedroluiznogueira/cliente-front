@@ -17,4 +17,8 @@ export class ServicoService {
   public criarServico(servico: Servico): void {
     this.http.post("http://localhost:4200/api/servico", servico).subscribe(resultado => console.log(resultado));
   }
+
+  public deletarServico(id: number | undefined): void {
+    this.http.delete(`http://localhost:4200/api/servico/${id}`).subscribe(resultado => console.log(resultado));
+  }
 }

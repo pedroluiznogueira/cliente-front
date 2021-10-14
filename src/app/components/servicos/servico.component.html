@@ -10,9 +10,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col"><mat-icon class="icon">delete</mat-icon></th>
-            <th scope="col"><mat-icon class="icon">edit</mat-icon></th>
-            <th scope="col"><mat-icon class="icon" [routerLink]="['/formulario-servico']" (click)="inserirServico()">login</mat-icon></th>
+            <th scope="col"><mat-icon class="icon" [routerLink]="['/formulario-servico']">login</mat-icon></th>
           </tr>
 
           <tr>
@@ -26,6 +24,8 @@
             <td>{{ servico.titulo }}</td>
             <td>{{ servico.descricao }}</td>
             <td>{{ servico.valor }}</td>
+            <mat-icon class="icon" (click)="deletarServico(servico.id)">delete</mat-icon>
+            <mat-icon class="icon">edit</mat-icon>
           </tr>
         </tbody>
       </table>    

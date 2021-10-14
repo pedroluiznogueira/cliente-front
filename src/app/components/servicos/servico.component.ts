@@ -22,8 +22,8 @@ export class ServicoComponent implements OnInit {
     this.servicoService.listarServicos().subscribe(servicos => this.servicos = servicos);
   }
 
-  public inserirServico(): void {
-    
+  public deletarServico(id: number | undefined): void {
+    this.servicoService.deletarServico(id);
   }
 
 }

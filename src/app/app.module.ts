@@ -11,7 +11,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TabelaComponent } from './components/tabela/tabela.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -32,7 +31,6 @@ import { ClientesComponent } from './components/clientes/clientes.component';
     ToolbarComponent,
     CarouselComponent,
     FooterComponent,
-    TabelaComponent,
     FormularioComponent,
     FormularioUpdateComponent,
     ServicoComponent,
@@ -55,7 +53,6 @@ import { ClientesComponent } from './components/clientes/clientes.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component:  CarouselComponent },
-      { path: 'tabela', component:  TabelaComponent }, 
       { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario', component:  FormularioComponent },
       { path: 'formulario-update', component:  FormularioUpdateComponent },

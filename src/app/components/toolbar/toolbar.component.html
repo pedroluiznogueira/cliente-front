@@ -1,6 +1,10 @@
 <mat-toolbar class="tool-bar">
     <img class="img" src="https://www2.deloitte.com/content/dam/assets/logos/deloitte.svg" alt="logo-deloitte">
     <div class="menu-itens">
-        <h3 class="item" [routerLink]="['/servico']">Serviços</h3>
+        <mat-tab-group>
+            <mat-tab class="item" label="Servico" [routerLink]="['/servico']"></mat-tab>
+            <mat-tab label="Second"></mat-tab>
+            <mat-tab label="Third"></mat-tab>
+          </mat-tab-group>
     </div>
 </mat-toolbar>

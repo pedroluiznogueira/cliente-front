@@ -20,6 +20,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormularioUpdateComponent } from './components/formulario-update/formulario-update.component';
 import {MatIconModule} from '@angular/material/icon';
 import { ServicoComponent } from './components/servico/servico.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ServicoComponent } from './components/servico/servico.component';
     HttpClientModule,
     NgbModule,
     MatIconModule,
+    MatTabsModule,
     FormsModule,
     RouterModule.forRoot([
       { path: 'tabela', component:  TabelaComponent },  

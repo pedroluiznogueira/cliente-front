@@ -3,11 +3,11 @@
         <a class="fechar"><i class="material-icons" [routerLink]="['/']">close</i></a>
         <label>
             Usuario:
-            <input type="text" name="usuario" id="usuario">
+            <input type="text" name="usuario" id="usuario" [(ngModel)]="nomeUsuario">
         </label>
         <label>
             Senha:
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senha" [(ngModel)]="senha">
         </label>
         <div class="controles">
             <button type="button" class="link">Remover contato</button>

@@ -52,8 +52,8 @@ article form .controles{
 }
 
 article form .controles .salvar{
-    width: 60px;
-    height: 25px;
+    width: 70px;
+    height: 35px;
     border: none;
     border-radius: 5px;
     background-color: #43B02A;
@@ -62,6 +62,8 @@ article form .controles .salvar{
 }
 article form .controles .salvar:hover{
     background-color: #2c8019;
+    width: 72px;
+    height: 37px;
 }
 
 article form .controles .link{

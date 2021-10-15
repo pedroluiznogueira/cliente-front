@@ -4,7 +4,7 @@
     <th class="row-table" scope="col">Nome</th>
     <th class="row-table" scope="col">Sobrenome</th>
     <th class="row-table" scope="col">Email</th>
-    <th class="row-table" id="th-cadastrar" scope="col"><mat-icon [routerLink]="['/formulario']" class="icon-cadastrar" >add</mat-icon></th>
+    <th class="row-table" id="th-cadastrar" scope="col"><mat-icon [routerLink]="['/formulario-cliente']" class="icon-cadastrar" >add</mat-icon></th>
   </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
     <td class="row-table">{{cliente.email}} </td>
     <td class="icons" id="icons-table">
       <mat-icon (click)="deletarCliente(cliente.id)" class="icon">delete</mat-icon>
-      <mat-icon (click)="enviarIdCliente(cliente.id)" [routerLink]="['/formulario-update']" class="icon">edit</mat-icon>
+      <mat-icon (click)="enviarIdCliente(cliente.id)" [routerLink]="['/formulario-cliente-update']" class="icon">edit</mat-icon>
     </td>
   </tr>
   </tbody>

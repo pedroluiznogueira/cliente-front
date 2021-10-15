@@ -67,8 +67,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
       { path: 'cadastro', component:FormularioUsuarioComponent},
 
       { path: 'clientes', component:  ClientesComponent },  
-      { path: 'formulario', component:  FormularioClienteComponent },
-      { path: 'formulario-update', component:  FormularioServicoUpdateComponent },
+      { path: 'formulario-cliente', component:  FormularioClienteComponent },
+      { path: 'formulario-cliente-update', component:  FormularioServicoUpdateComponent },
       
       { path: 'servico', component:  ServicoComponent },      
       { path: 'formulario-servico', component:  FormularioServicoComponent },

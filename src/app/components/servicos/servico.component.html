@@ -1,19 +1,21 @@
-  <div id="create-button" class="container">
-    <button [routerLink]="['/formulario-servico']" type="button" class="btn btn-outline-warning">Adicionar servico</button>
+  <div class="container">
+    <div id="create-button" class="sub-container">
+      <button [routerLink]="['/formulario-servico']" type="button" class="btn btn-outline-warning">Adicionar servico</button>
+    </div>
+  
+    <mat-card class="sub-container" *ngFor="let servico of servicos">
+      <mat-card-title-group class="header">
+        <mat-card-title id="titulo">{{servico.titulo}}</mat-card-title>
+        <div class="icons">
+          <mat-icon class="icon" (click)="deletarServico(servico.id)">delete</mat-icon>
+          <mat-icon class="icon" (click)="enviarIdServico(servico.id)" [routerLink]="['/formulario-servico']">edit</mat-icon>
+        </div>
+      </mat-card-title-group>
+      <mat-card-content class="body">
+        {{servico.descricao}}
+      </mat-card-content>
+      <mat-card-content class="botoes">
+        <button type="submit" class="btn btn-outline-warning">R$ {{servico.valor}}</button>
+      </mat-card-content>
+    </mat-card>
   </div>
-
-  <mat-card class="container" *ngFor="let servico of servicos">
-    <mat-card-title-group class="header">
-      <mat-card-title id="titulo">{{servico.titulo}}</mat-card-title>
-      <div class="icons">
-        <mat-icon class="icon" (click)="deletarServico(servico.id)">delete</mat-icon>
-        <mat-icon class="icon" (click)="enviarIdServico(servico.id)" [routerLink]="['/formulario-servico']">edit</mat-icon>
-      </div>
-    </mat-card-title-group>
-    <mat-card-content class="body">
-      {{servico.descricao}}
-    </mat-card-content>
-    <mat-card-content class="botoes">
-      <button type="submit" class="btn btn-outline-warning">R$ {{servico.valor}}</button>
-    </mat-card-content>
-  </mat-card>

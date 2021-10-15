@@ -2,12 +2,13 @@
 
 .container{
     margin: 30px auto;
+    margin-bottom: 100px;
     font-family: 'Montserrat', sans-serif;
+
 }
-.body{
+.sub-container{
     margin: 30px 0;
     font-size: 18px;
-    width: 75%;
 }
 
 .btn{

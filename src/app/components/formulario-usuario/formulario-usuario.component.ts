@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioUsuarioComponent implements OnInit {
 
+  novoUsuario?: string;
+  senha?: string;
+  senhaConfirmada?: string;
+
   constructor() { }
 
   ngOnInit(): void {

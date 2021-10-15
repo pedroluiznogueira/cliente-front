@@ -3,19 +3,15 @@
         <a class="fechar"><i class="material-icons">close</i></a>
         <label>
             Usuario:
-            <input type="text" name="usuario" id="usuario">
+            <input type="text" name="usuario" id="usuario" [(ngModel)]="novoUsuario">
         </label>
         <label>
             Senha:
-            <input type="password" name="senha" id="senha">
-        </label>
-        <label>
-            Senha:
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senha" [(ngModel)]="senha">
         </label>
         <label>
             Confirme sua senha:
-            <input type="password" name="senha" id="senha">
+            <input type="password" name="senha" id="senha" [(ngModel)]="senhaConfirmada">
         </label>
         <div class="controles">
             <button type="button" class="link">voltar</button>

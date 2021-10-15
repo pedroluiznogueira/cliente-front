@@ -13,6 +13,7 @@ export class FormularioUsuarioComponent implements OnInit {
   senha?: string;
   senhaConfirmada?: string;
   novoUsuario?: Usuario;
+  senhaValida?: boolean;
 
   constructor(private usuarioService: UsuarioService) { }
 
@@ -20,7 +21,7 @@ export class FormularioUsuarioComponent implements OnInit {
   }
 
   public envioFormulario(): void {
-    
+
     this.novoUsuario = new Usuario();
 
     this.novoUsuario.nomeUsuario = this.novoNomeUsuario;
@@ -29,4 +30,13 @@ export class FormularioUsuarioComponent implements OnInit {
     this.usuarioService.criarNovoUsuario(this.novoUsuario);
   }
 
+  public validarSenha(senha: string | undefined, senhaConfirmada: string | undefined): boolean {
+    if (senha != senhaConfirmada || senha == null || senhaConfirmada == null) {
+      return false;
+    } else {
+      this.envioFormulario();
+      this.ngOnInit();
+      return true;
+    }
+  }
 }

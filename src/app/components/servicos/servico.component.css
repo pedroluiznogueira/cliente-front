@@ -1,8 +1,10 @@
 .container{
-    margin: 0 auto;
+    margin: 30px auto;
 }
 .body{
     margin: 30px 0;
+    font-size: 18px;
+    width: 75%;
 }
 
 .btn{
@@ -10,6 +12,11 @@
     background-color: #43B02A;
     color: #fff;
     font-weight: 700; 
+}
+
+.botoes{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .btn:hover {
@@ -24,14 +31,26 @@
     align-items: center;
 }
 
+#titulo{
+    font-size: 40px;
+}
+
 .table {
     color: #fff;
 }
 
 .icon {
-    margin-left: 10px;
+    margin: 10px;
 }
 
 .icon:hover {
     cursor: pointer;
+    color: #43B02A;
+}
+
+.icons{
+display: flex;
+justify-content: flex-end;
+flex-direction: column;
+
 }

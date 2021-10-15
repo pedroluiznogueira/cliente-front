@@ -18,8 +18,7 @@ export class ClientesComponent implements OnInit {
   }
 
   public listarClientes(): void {
-    this.clienteService.listarClientes().subscribe(clientes => this.clientes = clientes);
-  }
+    this.clienteService.listarClientes().subscribe(clientes => this.clientes = clientes)}
   
   public get getClientes(): Array<Cliente> {
     return this.clientes;

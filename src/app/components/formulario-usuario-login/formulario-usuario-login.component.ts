@@ -28,4 +28,26 @@ export class FormularioUsuarioLoginComponent implements OnInit {
     this.usuarioService.criarUsuario(this.usuario);
   }
 
+  public validarCampos(): void {
+    let inputUsuario: HTMLInputElement = <HTMLInputElement>document.getElementById("usuario");
+    let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senha");
+
+    if (this.nomeUsuario == null || this.senha == null || this.nomeUsuario == "" || this.senha == "") {
+      inputUsuario.classList.add("campos-vazios");
+      inputSenha.classList.add("campos-vazios");
+
+      this.nomeUsuario = "";
+      this.senha = "";
+
+    } else {
+      this.envioFormulario();
+      inputUsuario.classList.remove("campos-vazios");
+      inputSenha.classList.remove("campos-vazios");
+
+      this.nomeUsuario = "";
+      this.senha = "";
+      
+    }
+  }
+
 }

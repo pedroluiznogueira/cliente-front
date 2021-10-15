@@ -1,5 +1,5 @@
 <article>
-    <form (submit)="envioFormulario()">
+    <form>
         <a class="fechar"><i class="material-icons" [routerLink]="['/']">close</i></a>
         <label>
             Usuario:
@@ -11,7 +11,7 @@
         </label>
         <div class="controles">
             <p class="link">Voltar</p>
-            <button type="submit" class="salvar" >Salvar</button>
+            <button type="submit" class="salvar" (click)="validarCampos()">Salvar</button>
         </div>
     </form>
 </article>

@@ -86,3 +86,6 @@ article form .controles .link:hover{
     font-weight: 700;
 }
 
+.campos-vazios {
+    border: 1px solid red;
+}

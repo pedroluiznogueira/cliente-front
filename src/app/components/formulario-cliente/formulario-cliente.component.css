@@ -1,7 +1,9 @@
-.form {
+.container{
     font-family: 'Montserrat', sans-serif;
     margin: 30px auto;
+}
 
+.form {
     border: 4px solid #333;
     background-color: #333;
     border-radius: 5px;
@@ -16,12 +18,18 @@
 }
 .form-control::placeholder{
     color: #fff;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .form-control:focus {
     border: 1px solid #43B02A;
     box-shadow: 1px 1px 3px #43B02A;
+}
+
+.control{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .botao{
@@ -42,6 +50,16 @@
     color: #fff
 }
 
+.voltar{
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+}
+
+.voltar:hover{
+    color: #43B02A;
+    font-weight: 800;
+}
 
 .label {
     margin-top: 15px;

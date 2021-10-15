@@ -93,3 +93,7 @@ span {
     cursor: pointer;
     margin-left: 50px;
 }
+
+.campos-vazios {
+    border: 1px solid red;
+}

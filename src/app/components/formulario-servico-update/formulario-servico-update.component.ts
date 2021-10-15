@@ -12,7 +12,8 @@ export class FormularioServicoUpdateComponent implements OnInit {
   novoTitulo?: string;
   novaDescricao?: string;
   novoValor?: number | undefined;
-  servico: Servico = new Servico();
+
+  servico?: Servico;
 
   constructor(private servicoService: ServicoService) { }
 
@@ -34,6 +35,8 @@ export class FormularioServicoUpdateComponent implements OnInit {
     this.servico.titulo = this.novoTitulo;
     this.servico.descricao = this.novaDescricao;
     this.servico.valor = this.novoValor;
+
+    console.log(this.servico.titulo);
 
     this.servicoService.novoServico(this.servico)
   }

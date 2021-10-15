@@ -29,10 +29,9 @@ export class ServicoService {
   }
 
   public novoServico(servico: Servico): void {
-    servico.id = this.servico.id;
-    servico.titulo = this.servico.titulo;
-    servico.descricao = this.servico.descricao;
-    servico.valor = this.servico.valor;
+    this.servico.titulo = servico.titulo;
+    this.servico.descricao = servico.descricao;
+    this.servico.valor = servico.valor;
 
     this.alterarServico();
   }

@@ -24,13 +24,23 @@ article form {
 }
 
 article form .fechar{
+    color: #43B02A;
     align-self: flex-end;
     cursor: pointer;
+}
+article form .fechar:hover{
+    color: #2c8019;
 }
 
 article form input{
     display: block;
     width: 100%;
+}
+article form input:focus{
+    outline-style: solid;
+    outline-color: #43B02A;
+    outline-width: 2px;
+    border-radius: 5px;
 }
 
 article form div {
@@ -62,8 +72,7 @@ article form .controles .salvar{
 }
 article form .controles .salvar:hover{
     background-color: #2c8019;
-    width: 72px;
-    height: 37px;
+    font-weight: 800;
 }
 
 article form .controles .link{

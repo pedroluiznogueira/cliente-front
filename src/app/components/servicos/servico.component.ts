@@ -24,6 +24,7 @@ export class ServicoComponent implements OnInit {
 
   public deletarServico(id: number | undefined): void {
     this.servicoService.deletarServico(id);
+    this.ngOnInit();
   }
 
   public enviarIdServico(id: number | undefined): void {

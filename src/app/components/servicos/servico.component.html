@@ -1,32 +1,3 @@
-<!-- <mat-accordion class="container">
-    <mat-expansion-panel hideToggle>
-    </mat-expansion-panel>
-    <mat-expansion-panel (opened)="panelOpenState = true"
-                         (closed)="panelOpenState = false">
-      <mat-expansion-panel-header>
-
-      </mat-expansion-panel-header>
-      <table class="table">
-        <thead>
-          <tr class="header">
-            <th scope="col">Titulo</th>
-            <th scope="col">Descricao</th>
-            <th scope="col">Valor</th>
-            <th scope="col"><mat-icon class="icon" [routerLink]="['/formulario-servico']">login</mat-icon></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let servico of servicos">
-            <td>{{ servico.titulo }}</td>
-            <td>{{ servico.descricao }}</td>
-            <td>{{ servico.valor }}</td>
-            <mat-icon class="icon" (click)="deletarServico(servico.id)">delete</mat-icon>
-            <mat-icon class="icon" (click)="enviarIdServico(servico.id)" [routerLink]="['/formulario-servico']">edit</mat-icon>
-          </tr>
-        </tbody>
-      </table>    
-    </mat-expansion-panel>
-  </mat-accordion> -->
   <div id="create-button" class="container">
     <button [routerLink]="['/formulario-servico']" type="button" class="btn btn-outline-warning">Adicionar servico</button>
   </div>

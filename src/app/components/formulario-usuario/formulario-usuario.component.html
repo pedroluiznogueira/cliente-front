@@ -1,6 +1,6 @@
 <article>
     <form (submit)="envioFormulario()">
-        <a class="fechar"><i class="material-icons">close</i></a>
+        <a class="fechar"><i class="material-icons" [routerLink]="['/']">close</i></a>
         <label>
             Usuario:
             <input type="text" name="novoUsuario" id="usuario" [(ngModel)]="novoNomeUsuario">

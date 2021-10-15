@@ -1,5 +1,5 @@
 <article>
-    <form>
+    <form (submit)="envioFormulario()">
         <a class="fechar"><i class="material-icons">close</i></a>
         <label>
             Usuario:
@@ -15,7 +15,7 @@
         </label>
         <div class="controles">
             <button type="button" class="link">voltar</button>
-            <button class="salvar" >Salvar</button>
+            <button type="submit" class="salvar" >Salvar</button>
         </div>
     </form>
 </article>

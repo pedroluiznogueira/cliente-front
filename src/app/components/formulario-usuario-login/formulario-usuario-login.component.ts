@@ -23,6 +23,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
     this.usuario.nomeUsuario = this.nomeUsuario;
     this.usuario.senha = this.senha;
+    this.usuario.estaLogado = this.usuario.estaLogado;
 
     this.usuarioService.criarUsuario(this.usuario);
   }

@@ -31,3 +31,7 @@ mat-icon{
     text-align: end;
     cursor: pointer;
 }
+
+.icon:hover {
+    color: #43B02A;
+}

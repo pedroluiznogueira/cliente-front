@@ -24,6 +24,8 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormularioClienteComponent } from './components/formulario-cliente/formulario-cliente.component';
 import { FormularioClienteUpdateComponent } from './components/formulario-cliente-update/formulario-cliente-update.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { FormularioClienteUpdateComponent } from './components/formulario-client
     ClientesComponent,
     HomeComponent,
     FormularioClienteComponent,
-    FormularioClienteUpdateComponent
+    FormularioClienteUpdateComponent,
+    CadastroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

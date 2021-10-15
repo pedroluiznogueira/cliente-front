@@ -37,6 +37,10 @@ td {
     color: #333;
 }
 
+#icon-cadastrar{
+    color: #fff;
+}
+
 .icon-cadastrar {
     color: #fff;
     margin: 0;
@@ -47,10 +51,9 @@ td {
     color: #26890D;
 }
 
-.th-cadastrar {
-    display: flex;
-    justify-content: center;
-    padding-left: 55px; 
+#th-cadastrar {
+    text-align: end;
+
 }
 
 .icon:hover {

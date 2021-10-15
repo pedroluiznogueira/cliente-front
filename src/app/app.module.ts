@@ -62,6 +62,7 @@ import { FormularioUsuarioComponent } from './components/formulario-usuario/form
       { path: '', component:  HomeComponent },
       
       { path: 'login', component: FormularioUsuarioLoginComponent},
+      { path: 'cadastro', component:FormularioUsuarioComponent},
 
       { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario', component:  FormularioClienteComponent },

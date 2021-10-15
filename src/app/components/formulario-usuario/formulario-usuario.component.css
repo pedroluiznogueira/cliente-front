@@ -62,3 +62,8 @@ article form .controles{
 article form .controles .link{
     margin-right: auto;
 }
+
+span {
+    cursor: pointer;
+    margin-left: 50px;
+}

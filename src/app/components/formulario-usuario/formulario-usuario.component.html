@@ -13,9 +13,14 @@
             Confirme sua senha:
             <input type="password" name="senha" id="senha" [(ngModel)]="senhaConfirmada">
         </label>
-        <div class="controles">
+        <div *ngIf="senhaInvalida" class="alert alert-danger" role="alert">
+            Confirmação de senha inválida
+            <span (click)="esconderErro()">x</span>
+        </div>
+        <div class="controles">      
             <button type="button" class="link">voltar</button>
             <button type="submit" class="salvar" (click)="validarSenha(senha, senhaConfirmada)">Salvar</button>
         </div>
     </form>
+
 </article>

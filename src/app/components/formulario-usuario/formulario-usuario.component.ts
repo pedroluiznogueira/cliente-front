@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -13,9 +14,11 @@ export class FormularioUsuarioComponent implements OnInit {
   senha?: string;
   senhaConfirmada?: string;
   novoUsuario?: Usuario;
-  senhaValida?: boolean;
+  senhaInvalida?: boolean = false;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(
+    private usuarioService: UsuarioService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -30,13 +33,20 @@ export class FormularioUsuarioComponent implements OnInit {
     this.usuarioService.criarNovoUsuario(this.novoUsuario);
   }
 
-  public validarSenha(senha: string | undefined, senhaConfirmada: string | undefined): boolean {
+  public validarSenha(senha: string | undefined, senhaConfirmada: string | undefined): void {
     if (senha != senhaConfirmada || senha == null || senhaConfirmada == null) {
-      return false;
+      this.mostrarErro();
     } else {
       this.envioFormulario();
       this.ngOnInit();
-      return true;
     }
+  }
+
+  public mostrarErro(): void {
+    this.senhaInvalida = true;
+  }
+
+  public esconderErro(): void {
+    this.senhaInvalida =  false;
   }
 }

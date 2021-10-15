@@ -27,6 +27,7 @@ import { FormularioClienteUpdateComponent } from './components/formulario-client
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { FormularioUsuarioLoginComponent } from './components/formulario-usuario-login/formulario-usuario-login.component';
 import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { FormularioUsuarioComponent } from './components/formulario-usuario/form
     BrowserAnimationsModule,
     MatToolbarModule,
     MatFormFieldModule,
+    MatSnackBarModule,
     HttpClientModule,
     NgbModule,
     MatCardModule,

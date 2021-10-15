@@ -29,4 +29,5 @@
 
 mat-icon{
     text-align: end;
+    cursor: pointer;
 }

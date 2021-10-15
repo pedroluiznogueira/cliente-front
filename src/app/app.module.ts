@@ -58,9 +58,10 @@ import { FormularioUsuarioComponent } from './components/formulario-usuario/form
     MatTableModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: FormularioUsuarioLoginComponent},
-
-      { path: 'home', component:  HomeComponent },
+      
+      { path: '', component:  HomeComponent },
+      
+      { path: 'login', component: FormularioUsuarioLoginComponent},
 
       { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario', component:  FormularioClienteComponent },

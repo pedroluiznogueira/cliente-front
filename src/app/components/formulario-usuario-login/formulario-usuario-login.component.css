@@ -28,6 +28,9 @@ article form .fechar{
     align-self: flex-end;
     cursor: pointer;
 }
+article form .fechar:hover{
+    color: #2c8019;
+}
 
 article form input{
     display: block;

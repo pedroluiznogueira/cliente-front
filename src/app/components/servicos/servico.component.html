@@ -8,7 +8,7 @@
         <mat-card-title id="titulo">{{servico.titulo}}</mat-card-title>
         <div class="icons">
           <mat-icon class="icon" (click)="deletarServico(servico.id)">delete</mat-icon>
-          <mat-icon class="icon" (click)="enviarIdServico(servico.id)" [routerLink]="['/formulario-servico']">edit</mat-icon>
+          <mat-icon class="icon" (click)="enviarIdServico(servico.id)" [routerLink]="['/formulario-servico-update']">edit</mat-icon>
         </div>
       </mat-card-title-group>
       <mat-card-content class="body">

@@ -1,7 +1,12 @@
 <mat-toolbar class="tool-bar">
-    <img [routerLink]="['/']" class="img" src="assets\img\Consult-logo.png" alt="logo-deloitte">
-    <h3 class="item" [routerLink]="['/servico']">Serviços</h3>
-    <h3 class="item" [routerLink]="['/clientes']">Clientes</h3>
-    <mat-icon [routerLink]="['/login']" class="icon">login</mat-icon>
-    <mat-icon [routerLink]="['/cadastro']" class="icon">person_add</mat-icon>
+    <div class="container-menu">
+        <img [routerLink]="['/']" class="img" src="assets\img\Consult-logo.png" alt="logo-deloitte">
+        <h3 class="item" [routerLink]="['/servico']">Serviços</h3>
+        <h3 class="item" [routerLink]="['/clientes']">Clientes</h3>
+    </div>
+
+    <div class="container-options">
+        <mat-icon [routerLink]="['/login']" class="icon">login</mat-icon>
+        <mat-icon [routerLink]="['/cadastro']" class="icon">person_add</mat-icon>
+    </div>
 </mat-toolbar>

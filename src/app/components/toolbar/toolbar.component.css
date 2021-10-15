@@ -3,18 +3,32 @@
 .tool-bar {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 30px;
+    justify-content: space-between;
     background-color: rgb(0, 0, 0);
     font-family: 'Montserrat', sans-serif;
     box-shadow: 0px 5px 10px gray;
     height: 90px;
 }
 
+.container-menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.container-options{
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    padding-right: 30px;
+}
+
 .item{
     cursor: pointer;
-    color: #b4b4b4;
-    font-size: 25px;
+    color: #fff;
+    font-size: 23px;
+    font-weight: 400;
 }
 
 .item:hover{
@@ -22,14 +36,14 @@
 }
 
 .img {
-    width: 100px;
+    width: 205px;
     height: 100px;
     cursor: pointer;
 }
 
-mat-icon{
-    text-align: end;
+.icon{
     cursor: pointer;
+    color: #fff;
 }
 
 .icon:hover {

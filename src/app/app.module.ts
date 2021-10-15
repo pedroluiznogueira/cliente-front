@@ -26,6 +26,9 @@ import { FormularioClienteComponent } from './components/formulario-cliente/form
 import { FormularioClienteUpdateComponent } from './components/formulario-cliente-update/formulario-cliente-update.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { LoginComponent } from './components/login/login.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { FormularioUsuarioLoginComponent } from './components/formulario-usuario-login/formulario-usuario-login.component';
+import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { LoginComponent } from './components/login/login.component';
     FormularioClienteComponent,
     FormularioClienteUpdateComponent,
     CadastroComponent,
-    LoginComponent
+    LoginComponent,
+    UsuariosComponent,
+    FormularioUsuarioLoginComponent,
+    FormularioUsuarioComponent
   ],
   imports: [
     BrowserModule,

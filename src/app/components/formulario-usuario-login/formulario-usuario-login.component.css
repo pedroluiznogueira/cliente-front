@@ -24,6 +24,7 @@ article form {
 }
 
 article form .fechar{
+    color: #43B02A;
     align-self: flex-end;
     cursor: pointer;
 }
@@ -31,6 +32,12 @@ article form .fechar{
 article form input{
     display: block;
     width: 100%;
+}
+article form input:focus{
+    outline-style: solid;
+    outline-color: #43B02A;
+    outline-width: 2px;
+    border-radius: 5px;
 }
 
 article form div {

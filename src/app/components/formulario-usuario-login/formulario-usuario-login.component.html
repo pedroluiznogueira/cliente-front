@@ -1,13 +1,12 @@
 <article>
     <form>
-        <a class="fechar"><i class="material-icons" [routerLink]="['/']">close</i></a>
         <label>
             Usuario:
-            <input type="text" name="usuario" id="usuario" [(ngModel)]="nomeUsuario">
+            <input type="text" name="usuario" id="usuario" placeholder="Entre seu usuario" [(ngModel)]="nomeUsuario">
         </label>
         <label>
             Senha:
-            <input type="password" name="senha" id="senha" [(ngModel)]="senha">
+            <input type="password" name="senha" id="senha" placeholder="Entre sua senha" [(ngModel)]="senha">
         </label>
         <div class="controles">
             <p class="link" [routerLink]="['/']">Voltar</p>

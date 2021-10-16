@@ -1,6 +1,19 @@
 .container{
+    max-width: 100%;
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
-    margin: 30px auto;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 3s linear;
 }
 
 .form {

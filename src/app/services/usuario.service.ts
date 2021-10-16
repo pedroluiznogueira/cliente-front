@@ -20,10 +20,9 @@ export class UsuarioService {
     res.subscribe(
       (data: Response) => {
         if (data.status == "erro") {
-          console.log("não permitir login")
           this.loginValidado.emit(data.status);
         } else {
-          console.log("permitir login")
+          this.loginValidado.emit(data.status);
         }
       }
     )
@@ -32,6 +31,6 @@ export class UsuarioService {
 
   public cadastroUsuario(novoUsuario: Usuario): void {
     console.log(novoUsuario);
-    this.http.post("http://localhost:4200/api/registrar", novoUsuario).subscribe(resultado => console.log(resultado));    
+    this.http.post("http://localhost:4200/api/cadastro", novoUsuario).subscribe(resultado => console.log(resultado));    
   }
 }

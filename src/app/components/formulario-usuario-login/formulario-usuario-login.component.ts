@@ -18,8 +18,12 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioService.loginValidado.subscribe((data: string) => {
-      console.log(data)
-      this.mostrarErro()
+      if (data == "erro") {
+        console.log(data)
+        this.mostrarErro()
+      } else {
+        console.log(data)
+      }
     }
   );
   }

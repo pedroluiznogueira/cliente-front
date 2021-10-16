@@ -25,7 +25,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
     this.usuario.senha = this.senha;
     this.usuario.estaLogado = this.usuario.estaLogado;
 
-    this.usuarioService.criarUsuario(this.usuario);
+    this.usuarioService.loginUsuario(this.usuario);
   }
 
   public validarCampos(): void {

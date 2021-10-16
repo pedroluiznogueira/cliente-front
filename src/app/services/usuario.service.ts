@@ -9,11 +9,11 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  public criarUsuario(usuario: Usuario): void {
+  public loginUsuario(usuario: Usuario): void {
     this.http.post("http://localhost:4200/api/login", usuario).subscribe(resultado => console.log(resultado));
   }
 
-  public criarNovoUsuario(novoUsuario: Usuario): void {
+  public cadastroUsuario(novoUsuario: Usuario): void {
     console.log(novoUsuario);
     this.http.post("http://localhost:4200/api/registrar", novoUsuario).subscribe(resultado => console.log(resultado));    
   }

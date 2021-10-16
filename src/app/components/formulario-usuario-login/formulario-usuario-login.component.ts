@@ -16,6 +16,10 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.usuarioService.loginValidado.subscribe(() => {
+      this.loginUsuario()
+    }
+    );
   }
 
   public envioFormulario(): void {
@@ -48,6 +52,10 @@ export class FormularioUsuarioLoginComponent implements OnInit {
       this.senha = "";
       
     }
+  }
+
+  public loginUsuario(): void {
+    console.log("não deixar usuário logar")
   }
 
 }

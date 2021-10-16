@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Response } from '../models/response.model';
 import { Usuario } from '../models/usuario.model';
@@ -9,21 +9,24 @@ import { Usuario } from '../models/usuario.model';
 })
 export class UsuarioService {
 
+  @Output() loginValidado: EventEmitter<null> = new EventEmitter();
+
   response: Response =  new Response();
 
   constructor(private http: HttpClient) { }
 
   public loginUsuario(usuario: Usuario): Observable<Response> {
-    let res = this.http.post<Response>("http://localhost:4200/api/login", usuario);
+    let res: Observable<Response> = this.http.post<Response>("http://localhost:4200/api/login", usuario);
     res.subscribe(
       (data: Response) => {
-        if (data.msg == "login realizado com sucesso") {
-          console.log("permitir login")
-        } else {
+        if (data.status == "erro") {
           console.log("não permitir login")
+          this.loginValidado.emit();
+        } else {
+          console.log("permitir login")
         }
       }
-      )
+    )
     return res;
   }
 

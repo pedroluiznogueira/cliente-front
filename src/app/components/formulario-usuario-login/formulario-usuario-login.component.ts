@@ -17,7 +17,8 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
-    this.usuarioService.loginValidado.subscribe(() => {
+    this.usuarioService.loginValidado.subscribe((data: string) => {
+      console.log(data)
       this.mostrarErro()
     }
   );

@@ -9,7 +9,7 @@ import { Usuario } from '../models/usuario.model';
 })
 export class UsuarioService {
 
-  @Output() loginValidado: EventEmitter<null> = new EventEmitter();
+  @Output() loginValidado: EventEmitter<string> = new EventEmitter();
 
   response: Response =  new Response();
 
@@ -21,7 +21,7 @@ export class UsuarioService {
       (data: Response) => {
         if (data.status == "erro") {
           console.log("não permitir login")
-          this.loginValidado.emit();
+          this.loginValidado.emit(data.status);
         } else {
           console.log("permitir login")
         }

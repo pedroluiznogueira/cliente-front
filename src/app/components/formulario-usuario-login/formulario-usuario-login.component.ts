@@ -12,14 +12,15 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   nomeUsuario?: string;
   senha?: string;
   usuario?: Usuario;
+  loginNaoRealizado: boolean = false;
 
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
     this.usuarioService.loginValidado.subscribe(() => {
-      this.loginUsuario()
+      this.mostrarErro()
     }
-    );
+  );
   }
 
   public envioFormulario(): void {
@@ -54,8 +55,12 @@ export class FormularioUsuarioLoginComponent implements OnInit {
     }
   }
 
-  public loginUsuario(): void {
-    console.log("não deixar usuário logar")
+  public mostrarErro(): void {
+    this.loginNaoRealizado = !this.loginNaoRealizado;
+  }
+
+  public esconderErro(): void {
+    this.loginNaoRealizado = !this.loginNaoRealizado;
   }
 
 }

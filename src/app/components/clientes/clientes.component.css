@@ -7,6 +7,10 @@
     margin-bottom: 100px;
 }
 
+.header{
+    border: 2px solid #333
+}
+
 .row-table{
     max-width: 25px;
 }

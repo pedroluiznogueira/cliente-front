@@ -29,6 +29,7 @@ export class FormularioAdminComponent implements OnInit {
 
     this.novoAdmin.nomeUsuario = this.nomeAdmin;
     this.novoAdmin.senha = this.senhaAdmin;
+    this.novoAdmin.tipoConta = "admin";
 
     this.adminService.cadastroAdmin(this.novoAdmin);
   }
@@ -44,6 +45,7 @@ export class FormularioAdminComponent implements OnInit {
 
       this.nomeAdmin = "";
       this.senhaAdmin = "";
+      this.senhaConfAdmin = "";
 
     } else {
       this.validarSenha(senhaAdmin, senhaConfAdmin)
@@ -52,6 +54,7 @@ export class FormularioAdminComponent implements OnInit {
 
       this.nomeAdmin = "";
       this.senhaAdmin = "";
+      this.senhaConfAdmin == "";
       
     }
   }

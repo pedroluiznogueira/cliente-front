@@ -1,4 +1,5 @@
 <article>
+    <img class="img" src="assets\img\Consult-logo.png" alt="logo-deloitte">
     <form>
         <label>
             Usuario:
@@ -17,12 +18,12 @@
             <span (click)="esconderSucesso()">x</span>
         </div>
         <div class="controles">
-            <p class="link" [routerLink]="['/']">Voltar</p>
             <button type="submit" class="salvar" (click)="validarCampos()">Salvar</button>
         </div>
 
-        <div>
-            <p [routerLink]="['/login-admin']">Login como administrador</p>
+        <div class="links">
+            <p [routerLink]="['/login-admin']" class="link">Login como administrador</p>
+            <p [routerLink]="['/cadastro']" class="link">Cadastre-se como usuário</p>
         </div>
     </form>
 </article>

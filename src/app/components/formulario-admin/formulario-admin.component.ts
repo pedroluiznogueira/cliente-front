@@ -13,7 +13,9 @@ export class FormularioAdminComponent implements OnInit {
   nomeAdmin?: string;
   senhaAdmin?: string;
   senhaConfAdmin?: string;
+
   senhaInvalida?: boolean = false;
+
   novoAdmin?: Usuario;
 
   constructor(private adminService: AdminService, private router: Router) { }
@@ -31,16 +33,7 @@ export class FormularioAdminComponent implements OnInit {
     this.adminService.cadastroAdmin(this.novoAdmin);
   }
 
-  public validarSenha(senhaAdmin: string | undefined, senhaConfAdmin: string | undefined): void {
-    if (senhaAdmin != senhaConfAdmin || senhaAdmin == null || senhaConfAdmin == null) {
-      this.mostrarErro();
-    } else {
-      this.envioFormulario();
-      this.ngOnInit();
-    }
-  }
-
-  public validarCampos(): void {
+  public validarCampos(senhaAdmin: string | undefined, senhaConfAdmin: string | undefined): void {
     let inputUsuario: HTMLInputElement = <HTMLInputElement>document.getElementById("usuario");
     let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senha");
     let inputSenhaConfirmada: HTMLInputElement = <HTMLInputElement>document.getElementById("senha-confirmada");
@@ -53,13 +46,22 @@ export class FormularioAdminComponent implements OnInit {
       this.senhaAdmin = "";
 
     } else {
-      this.envioFormulario();
+      this.validarSenha(senhaAdmin, senhaConfAdmin)
       inputUsuario.classList.remove("campos-vazios");
       inputSenha.classList.remove("campos-vazios");
 
       this.nomeAdmin = "";
       this.senhaAdmin = "";
       
+    }
+  }
+
+  public validarSenha(senhaAdmin: string | undefined, senhaConfAdmin: string | undefined): void {
+    if (senhaAdmin != senhaConfAdmin || senhaAdmin == null || senhaConfAdmin == null) {
+      this.mostrarErro();
+    } else {
+      this.envioFormulario();
+      this.ngOnInit();
     }
   }
 

@@ -13,8 +13,10 @@ export class FormularioUsuarioComponent implements OnInit {
   novoNomeUsuario?: string;
   senha?: string;
   senhaConfirmada?: string;
-  novoUsuario?: Usuario;
+
   senhaInvalida?: boolean = false;
+
+  novoUsuario?: Usuario;
 
   constructor(
     private usuarioService: UsuarioService
@@ -33,16 +35,7 @@ export class FormularioUsuarioComponent implements OnInit {
     this.usuarioService.cadastroUsuario(this.novoUsuario);
   }
 
-  public validarSenha(senha: string | undefined, senhaConfirmada: string | undefined): void {
-    if (senha != senhaConfirmada || senha == null || senhaConfirmada == null) {
-      this.mostrarErro();
-    } else {
-      this.envioFormulario();
-      this.ngOnInit();
-    }
-  }
-
-  public validarCampos(): void {
+  public validarCampos(senha: string | undefined, senhaConfirmada: string | undefined): void {
     let inputUsuario: HTMLInputElement = <HTMLInputElement>document.getElementById("usuario");
     let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senha");
     let inputSenhaConfirmada: HTMLInputElement = <HTMLInputElement>document.getElementById("senha-confirmada");
@@ -53,15 +46,26 @@ export class FormularioUsuarioComponent implements OnInit {
 
       this.novoNomeUsuario = "";
       this.senha = "";
+      this.senhaConfirmada = "";
 
     } else {
-      this.envioFormulario();
+      this.validarSenha(senha, senhaConfirmada);
       inputUsuario.classList.remove("campos-vazios");
       inputSenha.classList.remove("campos-vazios");
 
       this.novoNomeUsuario = "";
       this.senha = "";
+      this.senhaConfirmada = "";
       
+    }
+  }
+
+  public validarSenha(senha: string | undefined, senhaConfirmada: string | undefined): void {
+    if (senha != senhaConfirmada || senha == null || senhaConfirmada == null) {
+      this.mostrarErro();
+    } else {
+      this.envioFormulario();
+      this.ngOnInit();
     }
   }
 

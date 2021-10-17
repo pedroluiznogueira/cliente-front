@@ -1,1 +1,22 @@
-<p>formulario-admin works!</p>
+<article>
+    <form>
+        <label>
+            Usuario:
+            <input type="text" name="novoUsuario" id="usuario" placeholder="Entre seu novo nome">
+        </label>
+        <label>
+            Senha:
+            <input type="password" name="senha" id="senha" placeholder="Entre sua nova senha">
+        </label>
+        <label>
+            Confirme sua senha:
+            <input type="password" name="senha-confirmada" id="senha" placeholder="Confirme sua nova senha">
+        </label>
+        <div class="controles">      
+            <p class="link" (click)="voltar()">Voltar</p>
+            <button type="submit" class="salvar">Salvar</button>
+        </div>
+        <p (click)="loginUsuario()">Cadastro como usuário</p>
+    </form>
+
+</article>

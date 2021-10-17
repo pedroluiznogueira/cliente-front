@@ -68,9 +68,10 @@ import { FormularioAdminComponent } from './components/formulario-admin/formular
       { path: '', component:  HomeComponent },
       
       { path: 'login', component: FormularioUsuarioLoginComponent},
-      { path: 'cadastro', component:FormularioUsuarioComponent},
+      { path: 'cadastro', component: FormularioUsuarioComponent},
 
       { path: 'login-admin', component: FormularioAdminLoginComponent },
+      { path: 'cadastro-admin', component: FormularioAdminComponent },
 
       { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario-cliente', component:  FormularioClienteComponent },

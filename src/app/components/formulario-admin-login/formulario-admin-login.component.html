@@ -1,0 +1,20 @@
+<article>
+    <form>
+        <label>
+            Usuario do administrador:
+            <input type="text" name="usuario" id="usuario" placeholder="Entre seu usuario" >
+        </label>
+        <label>
+            Senha:  do administrador:
+            <input type="password" name="senha" id="senha" placeholder="Entre sua senha" >
+        </label>
+        <div class="controles">
+            <p class="link" [routerLink]="['/']">Voltar</p>
+            <button type="submit" class="salvar">Salvar</button>
+        </div>
+
+        <div>
+            <p [routerLink]="['/login']">Login como usuário</p>
+        </div>
+    </form>
+</article>

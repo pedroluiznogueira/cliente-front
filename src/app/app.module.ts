@@ -28,6 +28,9 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { FormularioUsuarioLoginComponent } from './components/formulario-usuario-login/formulario-usuario-login.component';
 import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FormularioAdminLoginComponent } from './components/formulario-admin-login/formulario-admin-login.component';
+import { FormularioAdminComponent } from './components/formulario-admin/formulario-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormularioClienteUpdateComponent,
     UsuariosComponent,
     FormularioUsuarioLoginComponent,
-    FormularioUsuarioComponent
+    FormularioUsuarioComponent,
+    FormularioAdminLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +69,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
       
       { path: 'login', component: FormularioUsuarioLoginComponent},
       { path: 'cadastro', component:FormularioUsuarioComponent},
+
+      { path: 'login-admin', component: FormularioAdminLoginComponent },
 
       { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario-cliente', component:  FormularioClienteComponent },

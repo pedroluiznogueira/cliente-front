@@ -28,6 +28,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormularioAdminLoginComponent } from './components/conta/formulario-admin-login/formulario-admin-login.component';
 import { FormularioAdminComponent } from './components/conta/formulario-admin/formulario-admin.component';
 import { AuthenticationComponent } from './components/layout/authentication/authentication.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -60,33 +61,8 @@ import { AuthenticationComponent } from './components/layout/authentication/auth
     MatTabsModule,
     MatTableModule,
     FormsModule,
-    RouterModule.forRoot([
-      
-      
-      {
-        path: '', component: HomeComponent,
-        children: [       
-          { path: 'clientes', component:  ClientesComponent },  
-          { path: 'formulario-cliente', component:  FormularioClienteComponent },
-          { path: 'formulario-cliente-update', component:  FormularioClienteUpdateComponent },
-
-          { path: 'servicos', component:  ServicoComponent }, 
-          { path: 'formulario-servico', component:  FormularioServicoComponent },
-          { path: 'formulario-servico-update', component:  FormularioServicoUpdateComponent }
-        ]
-      },
-      {
-        path: 'auth', component: AuthenticationComponent,
-        children: [
-          { path: 'login', component: FormularioUsuarioLoginComponent},
-          { path: 'cadastro', component: FormularioUsuarioComponent},
-
-          { path: 'login-admin', component: FormularioAdminLoginComponent },
-          { path: 'cadastro-admin', component: FormularioAdminComponent },
-        ]
-      }
-    ]
-    )
+    RouterModule.forRoot([]),
+    AppRoutingModule
   ],
   exports: [RouterModule],
   providers: [HttpClientModule, ClienteService ],

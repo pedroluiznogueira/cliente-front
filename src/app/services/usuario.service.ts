@@ -16,7 +16,7 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   public loginUsuario(usuario: Usuario): Observable<Response> {
-    let res: Observable<Response> = this.http.post<Response>("http://localhost:4200/api/login", usuario);
+    let res: Observable<Response> = this.http.post<Response>("https://consultoria-api.herokuapp.com/login", usuario);
     res.subscribe(
       (data: Response) => {
         if (data.status == "erro") {
@@ -31,6 +31,6 @@ export class UsuarioService {
 
   public cadastroUsuario(novoUsuario: Usuario): void {
     console.log(novoUsuario);
-    this.http.post("http://localhost:4200/api/cadastro", novoUsuario).subscribe(resultado => console.log(resultado));    
+    this.http.post("https://consultoria-api.herokuapp.com/cadastro", novoUsuario).subscribe(resultado => console.log(resultado));    
   }
 }

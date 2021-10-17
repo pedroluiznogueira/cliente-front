@@ -38,7 +38,7 @@ export class FormularioUsuarioComponent implements OnInit {
   public validarCampos(senha: string | undefined, senhaConfirmada: string | undefined): void {
     let inputUsuario: HTMLInputElement = <HTMLInputElement>document.getElementById("usuario");
     let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senha");
-    let inputSenhaConfirmada: HTMLInputElement = <HTMLInputElement>document.getElementById("senha-confirmada");
+    let inputSenhaConfirmada: HTMLInputElement = <HTMLInputElement>document.getElementById("senhaC");
 
     if (this.novoNomeUsuario == null || this.senha == null || this.novoNomeUsuario == "" || this.senha == "") {
       inputUsuario.classList.add("campos-vazios");

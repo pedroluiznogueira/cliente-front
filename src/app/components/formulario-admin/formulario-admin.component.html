@@ -3,15 +3,15 @@
     <form>
         <label>
             Usuario:
-            <input type="text" name="novoUsuario" id="usuario" placeholder="Entre seu usuario admin" [(ngModel)]="nomeAdmin">
+            <input type="text" name="novoUsuario" id="usuarioAdminC" placeholder="Entre seu usuario admin" [(ngModel)]="nomeAdmin">
         </label>
         <label>
             Senha:
-            <input type="password" name="senha" id="senha" placeholder="Entre sua senha admin" [(ngModel)]="senhaAdmin">
+            <input type="password" name="senha" id="senhaAdminC" placeholder="Entre sua senha admin" [(ngModel)]="senhaAdmin">
         </label>
         <label>
             Confirme sua senha:
-            <input type="password" name="senha-confirmada" id="senha" placeholder="Confirme sua senha admin"  [(ngModel)]="senhaConfAdmin">
+            <input type="password" name="senha-confirmada" id="senhaAdminCC" placeholder="Confirme sua senha admin"  [(ngModel)]="senhaConfAdmin">
         </label>
         <div *ngIf="senhaInvalida" class="alert alert-danger" role="alert">
             Confirmação de senha inválida

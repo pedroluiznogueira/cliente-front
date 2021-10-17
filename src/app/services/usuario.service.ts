@@ -16,7 +16,8 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   public loginUsuario(usuario: Usuario): Observable<Response> {
-    let res: Observable<Response> = this.http.post<Response>("https://consultoria-api.herokuapp.com/login", usuario);
+    let res: Observable<Response> = this.http.post<Response>("http://localhost:8080/login", usuario);
+    
     res.subscribe(
       (data: Response) => {
         if (data.status == "erro") {

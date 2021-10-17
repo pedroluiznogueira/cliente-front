@@ -12,6 +12,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
   nomeUsuario?: string;
   senha?: string;
+
   usuario?: Usuario;
   
   loginNaoRealizado: boolean = false;
@@ -26,10 +27,8 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   ngOnInit(): void {
     this.usuarioService.loginValidado.subscribe((data: string) => {
       if (data == "erro") {
-        console.log(data)
         this.mostrarErro()
       } else {
-        console.log(data)
         this.mostrarSucesso()
       }
     }
@@ -41,7 +40,6 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
     this.usuario.nomeUsuario = this.nomeUsuario;
     this.usuario.senha = this.senha;
-    this.usuario.estaLogado = this.usuario.estaLogado;
 
     this.usuarioService.loginUsuario(this.usuario);
   }

@@ -3,14 +3,22 @@
     <form>
         <label>
             Usuario do administrador:
-            <input type="text" name="usuario" id="usuario" placeholder="Entre seu usuario" >
+            <input type="text" name="usuario" id="usuarioAdmin" placeholder="Entre seu usuario" [(ngModel)]="nomeUsuarioAdmin">
         </label>
         <label>
             Senha do administrador:
-            <input type="password" name="senha" id="senha" placeholder="Entre sua senha" >
+            <input type="password" id="senhaAdmin" name="senha" placeholder="Entre sua senha" [(ngModel)]="senhaAdmin">
         </label>
+        <div *ngIf="loginNaoRealizado" class="alert alert-danger" role="alert">
+            Login não realizado
+            <span (click)="esconderErro()">x</span>
+        </div>
+        <div *ngIf="loginRealizado" class="alert alert-success" role="alert">
+            Login realizado com sucesso
+            <span (click)="esconderSucesso()">x</span>
+        </div>
         <div class="controles">
-            <button type="submit" class="salvar" [routerLink]="['/home']">Salvar</button>
+            <button type="submit" class="salvar" (click)="validarCampos()">Salvar</button>
         </div>
 
         <div class="links">

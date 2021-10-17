@@ -35,9 +35,9 @@ export class FormularioAdminComponent implements OnInit {
   }
 
   public validarCampos(senhaAdmin: string | undefined, senhaConfAdmin: string | undefined): void {
-    let inputUsuario: HTMLInputElement = <HTMLInputElement>document.getElementById("usuario");
-    let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senha");
-    let inputSenhaConfirmada: HTMLInputElement = <HTMLInputElement>document.getElementById("senha-confirmada");
+    let inputUsuario: HTMLInputElement = <HTMLInputElement>document.getElementById("usuarioAdminC");
+    let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senhaAdminC");
+    let inputSenhaConfirmada: HTMLInputElement = <HTMLInputElement>document.getElementById("senhaAdminCC");
 
     if (this.nomeAdmin == null || this.senhaAdmin == null || this.nomeAdmin == "" || this.senhaAdmin == "") {
       inputUsuario.classList.add("campos-vazios");

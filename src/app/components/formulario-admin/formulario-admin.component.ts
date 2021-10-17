@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario.model';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-formulario-admin',
@@ -15,7 +16,7 @@ export class FormularioAdminComponent implements OnInit {
   senhaInvalida?: boolean = false;
   novoAdmin?: Usuario;
 
-  constructor(private router: Router) { }
+  constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +28,7 @@ export class FormularioAdminComponent implements OnInit {
     this.novoAdmin.nomeUsuario = this.nomeAdmin;
     this.novoAdmin.senha = this.senhaAdmin;
     
-    this.adminService.cadastroUsuario(this.novoAdmin);
+    this.adminService.cadastrarAdmin(this.novoAdmin);
   }
 
   public validarSenha(senhaAdmin: string | undefined, senhaConfAdmin: string | undefined): void {

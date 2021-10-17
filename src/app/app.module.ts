@@ -9,34 +9,30 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { ClienteService } from './services/cliente.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
-import { ServicoComponent } from './components/servicos/servico.component';
+import { ServicoComponent } from './components/entidades/servicos/servico.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
-import { FormularioServicoComponent } from './components/formulario-servico/formulario-servico.component';
-import { FormularioServicoUpdateComponent } from './components/formulario-servico-update/formulario-servico-update.component';
-import { ClientesComponent } from './components/clientes/clientes.component';
-import { HomeComponent } from './components/home/home.component';
-import { FormularioClienteComponent } from './components/formulario-cliente/formulario-cliente.component';
-import { FormularioClienteUpdateComponent } from './components/formulario-cliente-update/formulario-cliente-update.component';
-import { UsuariosComponent } from './components/usuarios/usuarios.component';
-import { FormularioUsuarioLoginComponent } from './components/formulario-usuario-login/formulario-usuario-login.component';
-import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
+import { FormularioServicoComponent } from './components/entidades/formulario-servico/formulario-servico.component';
+import { FormularioServicoUpdateComponent } from './components/entidades/formulario-servico-update/formulario-servico-update.component';
+import { ClientesComponent } from './components/entidades/clientes/clientes.component';
+import { HomeComponent } from './components/layout/home/home.component';
+import { FormularioClienteComponent } from './components/entidades/formulario-cliente/formulario-cliente.component';
+import { FormularioClienteUpdateComponent } from './components/entidades/formulario-cliente-update/formulario-cliente-update.component';
+import { FormularioUsuarioLoginComponent } from './components/conta/formulario-usuario-login/formulario-usuario-login.component';
+import { FormularioUsuarioComponent } from './components/conta/formulario-usuario/formulario-usuario.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { FormularioAdminLoginComponent } from './components/formulario-admin-login/formulario-admin-login.component';
-import { FormularioAdminComponent } from './components/formulario-admin/formulario-admin.component';
+import { FormularioAdminLoginComponent } from './components/conta/formulario-admin-login/formulario-admin-login.component';
+import { FormularioAdminComponent } from './components/conta/formulario-admin/formulario-admin.component';
+import { AuthenticationComponent } from './components/layout/authentication/authentication.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent,
-    FooterComponent,
     ServicoComponent,
     FormularioServicoComponent,
     FormularioServicoUpdateComponent,
@@ -44,11 +40,11 @@ import { FormularioAdminComponent } from './components/formulario-admin/formular
     HomeComponent,
     FormularioClienteComponent,
     FormularioClienteUpdateComponent,
-    UsuariosComponent,
     FormularioUsuarioLoginComponent,
     FormularioUsuarioComponent,
     FormularioAdminLoginComponent,
-    FormularioAdminComponent
+    FormularioAdminComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
@@ -67,21 +63,28 @@ import { FormularioAdminComponent } from './components/formulario-admin/formular
     RouterModule.forRoot([
       
       
-      { path: '', component: FormularioUsuarioLoginComponent},
-      { path: 'cadastro', component: FormularioUsuarioComponent},
-      
-      { path: 'login-admin', component: FormularioAdminLoginComponent },
-      { path: 'cadastro-admin', component: FormularioAdminComponent },
+      {
+        path: '', component: HomeComponent,
+        children: [       
+          { path: 'clientes', component:  ClientesComponent },  
+          { path: 'formulario-cliente', component:  FormularioClienteComponent },
+          { path: 'formulario-cliente-update', component:  FormularioClienteUpdateComponent },
 
-      { path: 'clientes', component:  ClientesComponent },  
-      { path: 'formulario-cliente', component:  FormularioClienteComponent },
-      { path: 'formulario-cliente-update', component:  FormularioClienteUpdateComponent },
+          { path: 'servicos', component:  ServicoComponent }, 
+          { path: 'formulario-servico', component:  FormularioServicoComponent },
+          { path: 'formulario-servico-update', component:  FormularioServicoUpdateComponent }
+        ]
+      },
+      {
+        path: 'auth', component: AuthenticationComponent,
+        children: [
+          { path: 'login', component: FormularioUsuarioLoginComponent},
+          { path: 'cadastro', component: FormularioUsuarioComponent},
 
-      { path: 'home', component:  HomeComponent },
-      
-      { path: 'servicos', component:  ServicoComponent },      
-      { path: 'formulario-servico', component:  FormularioServicoComponent },
-      { path: 'formulario-servico-update', component:  FormularioServicoUpdateComponent }
+          { path: 'login-admin', component: FormularioAdminLoginComponent },
+          { path: 'cadastro-admin', component: FormularioAdminComponent },
+        ]
+      }
     ]
     )
   ],

@@ -47,7 +47,8 @@ import { FormularioAdminComponent } from './components/formulario-admin/formular
     UsuariosComponent,
     FormularioUsuarioLoginComponent,
     FormularioUsuarioComponent,
-    FormularioAdminLoginComponent
+    FormularioAdminLoginComponent,
+    FormularioAdminComponent
   ],
   imports: [
     BrowserModule,

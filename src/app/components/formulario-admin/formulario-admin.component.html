@@ -2,21 +2,21 @@
     <form>
         <label>
             Usuario:
-            <input type="text" name="novoUsuario" id="usuario" placeholder="Entre seu novo nome">
+            <input type="text" name="novoUsuario" id="usuario" placeholder="Entre seu nome" [(ngModel)]="nomeAdmin">
         </label>
         <label>
             Senha:
-            <input type="password" name="senha" id="senha" placeholder="Entre sua nova senha">
+            <input type="password" name="senha" id="senha" placeholder="Entre sua senha" [(ngModel)]="senhaAdmin">
         </label>
         <label>
             Confirme sua senha:
-            <input type="password" name="senha-confirmada" id="senha" placeholder="Confirme sua nova senha">
+            <input type="password" name="senha-confirmada" id="senha" placeholder="Confirme sua senha"  [(ngModel)]="senhaConfAdmin">
         </label>
         <div class="controles">      
-            <p class="link" (click)="voltar()">Voltar</p>
-            <button type="submit" class="salvar">Salvar</button>
+            <p class="link" [routerLink]="['/']">Voltar</p>
+            <button type="submit" class="salvar" (click)="validarSenha(senhaAdmin, senhaConfAdmin)">Salvar</button>
         </div>
-        <p (click)="loginUsuario()">Cadastro como usuário</p>
+        <p [routerLink]="['/cadastro']">Cadastro como usuário</p>
     </form>
 
 </article>

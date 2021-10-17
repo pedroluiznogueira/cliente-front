@@ -3,4 +3,5 @@ export class Usuario {
     nomeUsuario?: string;
     senha?: string;
     estaLogado?: boolean = false;
+    tipoConta?: string = "usuario";
 }

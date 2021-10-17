@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-usuario-login',
@@ -12,9 +13,15 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   nomeUsuario?: string;
   senha?: string;
   usuario?: Usuario;
+  
   loginNaoRealizado: boolean = false;
+  loginRealizado: boolean = false;
 
-  constructor(private usuarioService: UsuarioService) { }
+  router: Router;
+
+  constructor(private usuarioService: UsuarioService, router: Router) { 
+    this.router = router
+  }
 
   ngOnInit(): void {
     this.usuarioService.loginValidado.subscribe((data: string) => {
@@ -23,6 +30,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
         this.mostrarErro()
       } else {
         console.log(data)
+        this.mostrarSucesso()
       }
     }
   );
@@ -66,6 +74,16 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
   public esconderErro(): void {
     this.loginNaoRealizado = !this.loginNaoRealizado;
+  }
+
+  public mostrarSucesso(): void {
+    this.loginRealizado = !this.loginRealizado;
+    this.router.navigate(['/']);
+
+  }
+
+  public esconderSucesso(): void {
+    this.loginRealizado = !this.loginRealizado;
   }
 
 }

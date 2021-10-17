@@ -27,8 +27,8 @@ export class FormularioAdminComponent implements OnInit {
 
     this.novoAdmin.nomeUsuario = this.nomeAdmin;
     this.novoAdmin.senha = this.senhaAdmin;
-    
-    this.adminService.cadastrarAdmin(this.novoAdmin);
+
+    this.adminService.cadastroAdmin(this.novoAdmin);
   }
 
   public validarSenha(senhaAdmin: string | undefined, senhaConfAdmin: string | undefined): void {

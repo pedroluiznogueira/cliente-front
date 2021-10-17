@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from '../models/usuario.model';
 
@@ -6,9 +7,10 @@ import { Usuario } from '../models/usuario.model';
 })
 export class AdminService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public cadastrarAdmin(admin: Usuario): void {
-    console.log("cadastrando admin")
+  public cadastroAdmin(admin: Usuario): void {
+    console.log(admin)
+    this.http.post("http://localhost:8080/cadastro", admin).subscribe(resultado => console.log(resultado))
   }
 }

@@ -12,9 +12,13 @@
             Confirme sua senha:
             <input type="password" name="senha-confirmada" id="senha" placeholder="Confirme sua senha"  [(ngModel)]="senhaConfAdmin">
         </label>
+        <div *ngIf="senhaInvalida" class="alert alert-danger" role="alert">
+            Confirmação de senha inválida
+            <span (click)="esconderErro()">x</span>
+        </div>
         <div class="controles">      
             <p class="link" [routerLink]="['/']">Voltar</p>
-            <button type="submit" class="salvar" (click)="validarSenha(senhaAdmin, senhaConfAdmin)">Salvar</button>
+            <button type="submit" class="salvar" (click)="validarSenha(senhaAdmin, senhaConfAdmin)" (click)="validarCampos()">Salvar</button>
         </div>
         <p [routerLink]="['/cadastro']">Cadastro como usuário</p>
     </form>

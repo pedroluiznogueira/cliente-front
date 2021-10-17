@@ -72,12 +72,12 @@ import { FormularioAdminComponent } from './components/formulario-admin/formular
       
       { path: 'login-admin', component: FormularioAdminLoginComponent },
       { path: 'cadastro-admin', component: FormularioAdminComponent },
-      
-      { path: 'home', component:  HomeComponent },
 
       { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario-cliente', component:  FormularioClienteComponent },
       { path: 'formulario-cliente-update', component:  FormularioClienteUpdateComponent },
+
+      { path: 'home', component:  HomeComponent },
       
       { path: 'servicos', component:  ServicoComponent },      
       { path: 'formulario-servico', component:  FormularioServicoComponent },

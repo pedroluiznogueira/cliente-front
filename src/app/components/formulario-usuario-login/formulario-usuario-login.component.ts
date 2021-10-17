@@ -76,7 +76,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
   public mostrarSucesso(): void {
     this.loginRealizado = !this.loginRealizado;
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
 
   }
 

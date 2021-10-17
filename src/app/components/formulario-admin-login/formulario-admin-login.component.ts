@@ -56,14 +56,10 @@ export class FormularioAdminLoginComponent implements OnInit {
       inputUsuario.classList.add("campos-vazios");
       inputSenha.classList.add("campos-vazios");
 
-      console.log("teste if")
-
       this.nomeUsuarioAdmin = "";
       this.senhaAdmin = "";
 
     } else {
-
-      console.log("teste else")
       this.envioFormulario();
       inputUsuario.classList.remove("campos-vazios");
       inputSenha.classList.remove("campos-vazios");
@@ -84,7 +80,7 @@ export class FormularioAdminLoginComponent implements OnInit {
 
   public mostrarSucesso(): void {
     this.loginRealizado = !this.loginRealizado;
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
 
   }
 

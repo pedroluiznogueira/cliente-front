@@ -31,6 +31,7 @@ export class FormularioUsuarioComponent implements OnInit {
     this.novoUsuario = new Usuario();
 
     this.novoUsuario.nomeUsuario = this.novoNomeUsuario;
+    this.novoUsuario.email = this.email;
     this.novoUsuario.senha = this.senha;
 
     this.contaUsuarioService.cadastroUsuario(this.novoUsuario);
@@ -41,11 +42,12 @@ export class FormularioUsuarioComponent implements OnInit {
     let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senha");
     let inputSenhaConfirmada: HTMLInputElement = <HTMLInputElement>document.getElementById("senhaC");
 
-    if (this.novoNomeUsuario == null || this.senha == null || this.novoNomeUsuario == "" || this.senha == "") {
+    if (this.novoNomeUsuario == null || this.email == null || this.senha == null || this.novoNomeUsuario == "" ||  this.email == "" || this.senha == "") {
       inputUsuario.classList.add("campos-vazios");
       inputSenha.classList.add("campos-vazios");
 
       this.novoNomeUsuario = "";
+      this.email = "";
       this.senha = "";
       this.senhaConfirmada = "";
 
@@ -55,6 +57,7 @@ export class FormularioUsuarioComponent implements OnInit {
       inputSenha.classList.remove("campos-vazios");
 
       this.novoNomeUsuario = "";
+      this.email = "";
       this.senha = "";
       this.senhaConfirmada = "";
       

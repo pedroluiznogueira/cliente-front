@@ -18,10 +18,10 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   loginNaoRealizado: boolean = false;
   loginRealizado: boolean = false;
 
-  router: Router;
-
-  constructor(private contaUsuarioService: ContaUsuarioService, router: Router) { 
-    this.router = router
+  constructor(
+    private contaUsuarioService: ContaUsuarioService,
+    private router: Router
+    ) { 
   }
 
   ngOnInit(): void {
@@ -49,7 +49,8 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
     } else {
       this.envioFormulario();
-      this.mostrarSucesso();
+      this.router.navigateByUrl("/");
+
       inputUsuario.classList.remove("campos-vazios");
       inputSenha.classList.remove("campos-vazios");
 
@@ -69,7 +70,6 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
   public mostrarSucesso(): void {
     this.loginRealizado = !this.loginRealizado;
-    this.router.navigate(['/']);
 
   }
 

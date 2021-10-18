@@ -21,7 +21,7 @@ export class ContaUsuarioService {
     let res: Observable<Usuario> = this.http.post<Usuario>("http://localhost:8080/login", usuario);
     
     res.subscribe((data: Usuario) => {
-      window.sessionStorage.setItem("token", data.token!)
+      window.sessionStorage.setItem("token", data.token!);
     }
     )
     return res;

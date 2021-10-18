@@ -3,5 +3,7 @@ export class Usuario {
     nomeUsuario?: string;
     senha?: string;
     estaLogado?: boolean = false;
+    email?: string;
     tipoConta?: string = "usuario";
+    token: string | undefined;
 }

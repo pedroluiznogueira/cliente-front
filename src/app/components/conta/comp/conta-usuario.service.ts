@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Response } from 'src/app/models/response.model';
 import { Usuario } from 'src/app/models/usuario.model';
+import { catchError, map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -30,8 +31,14 @@ export class ContaUsuarioService {
     return res;
   }
 
-  public cadastroUsuario(novoUsuario: Usuario): void {
-    console.log(novoUsuario);
-    this.http.post("https://consultoria-api.herokuapp.com/cadastro", novoUsuario).subscribe(resultado => console.log(resultado));    
+  public cadastroUsuario(novoUsuario: Usuario): Observable<Usuario> {
+    let usuario = this.http.post<Usuario>("http://localhost:8080/cadastro", novoUsuario);
+
+    usuario.subscribe((data: Usuario) => {
+      console.log(data.token)
+      window.localStorage.setItem("token", data.token!)
+    })
+
+    return usuario;
   }
 }

@@ -42,9 +42,9 @@ export class FormularioAdminLoginComponent implements OnInit {
     console.log("login enviado")
     this.admin = new Usuario();
 
-    this.admin.nomeUsuario = this.nomeUsuarioAdmin;
+    this.admin.nome = this.nomeUsuarioAdmin;
     this.admin.senha = this.senhaAdmin;
-    this.admin.tipoConta = "admin";
+    this.admin.tipo = "admin";
 
     this.contaAdminService.loginAdmin(this.admin);
   }

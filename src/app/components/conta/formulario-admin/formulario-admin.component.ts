@@ -28,9 +28,9 @@ export class FormularioAdminComponent implements OnInit {
 
     this.novoAdmin = new Usuario();
 
-    this.novoAdmin.nomeUsuario = this.nomeAdmin;
+    this.novoAdmin.nome = this.nomeAdmin;
     this.novoAdmin.senha = this.senhaAdmin;
-    this.novoAdmin.tipoConta = "admin";
+    this.novoAdmin.tipo = "admin";
 
     this.contaAdminService.cadastroAdmin(this.novoAdmin);
   }

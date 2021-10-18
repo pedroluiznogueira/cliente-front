@@ -30,7 +30,7 @@ export class FormularioUsuarioComponent implements OnInit {
 
     this.novoUsuario = new Usuario();
 
-    this.novoUsuario.nomeUsuario = this.novoNomeUsuario;
+    this.novoUsuario.nome = this.novoNomeUsuario;
     this.novoUsuario.email = this.email;
     this.novoUsuario.senha = this.senha;
 

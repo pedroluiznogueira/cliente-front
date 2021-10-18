@@ -31,7 +31,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   public envioFormulario(): void {
     this.usuario = new Usuario();
 
-    this.usuario.nomeUsuario = this.nomeUsuario;
+    this.usuario.nome = this.nomeUsuario;
     this.usuario.senha = this.senha;
 
     this.contaUsuarioService.loginUsuario(this.usuario);

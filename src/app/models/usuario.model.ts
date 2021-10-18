@@ -1,9 +1,9 @@
 export class Usuario {
     id?: number;
-    nomeUsuario?: string;
+    nome?: string;
     senha?: string;
-    estaLogado?: boolean = false;
+    logado?: boolean = false;
     email?: string;
-    tipoConta?: string = "usuario";
+    tipo?: string = "usuario";
     token?: string;
 }

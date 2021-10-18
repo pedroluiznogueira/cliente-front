@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { Response } from 'src/app/models/response.model';
 import { Usuario } from 'src/app/models/usuario.model';
 import { catchError, map } from "rxjs/operators";
+import { isJSDocThisTag } from 'typescript';
 
 @Injectable({
   providedIn: 'root'
@@ -16,29 +17,23 @@ export class ContaUsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  public loginUsuario(usuario: Usuario): Observable<Response> {
-    let res: Observable<Response> = this.http.post<Response>("http://localhost:8080/login", usuario);
+  public getToken(): Observable<Usuario> {
+    return this.http.get<Usuario>("http://localhost:8080/token");
+  }
+
+  public loginUsuario(usuario: Usuario): Observable<Usuario> {
+    usuarioT?: Usuario = this.getToken();
+    let res: Observable<Usuario> = this.http.post<Usuario>("http://localhost:8080/login", usuario);
     
-    res.subscribe(
-      (data: Response) => {
-        if (data.status == "erro") {
-          this.loginValidado.emit(data.status);
-        } else {
-          this.loginValidado.emit(data.status);
-        }
-      }
+    res.subscribe((data: Usuario) => {
+      console.log(data.token)
+      window.localStorage.setItem("token", data.token!)
+    }
     )
     return res;
   }
 
-  public cadastroUsuario(novoUsuario: Usuario): Observable<Usuario> {
-    let usuario = this.http.post<Usuario>("http://localhost:8080/cadastro", novoUsuario);
-
-    usuario.subscribe((data: Usuario) => {
-      console.log(data.token)
-      window.localStorage.setItem("token", data.token!)
-    })
-
-    return usuario;
+  public cadastroUsuario(novoUsuario: Usuario): void {
+    this.http.post<Usuario>("http://localhost:8080/cadastro", novoUsuario).subscribe(resultado => console.log(resultado));
   }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Usuario } from 'src/app/models/usuario.model';
-import { UsuarioService } from 'src/app/services/usuario.service';
 import { ContaUsuarioService } from '../comp/conta-usuario.service';
 
 @Component({

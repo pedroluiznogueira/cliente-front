@@ -6,11 +6,6 @@ import { Usuario } from 'src/app/models/usuario.model';
 import { catchError, map } from "rxjs/operators";
 import { isJSDocThisTag } from 'typescript';
 
-interface Resposta {
-  msg:string,
-  token:string
-} 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,16 +17,11 @@ export class ContaUsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  public getToken(email: string): Observable<Usuario> {
-    return this.http.get("http://localhost:8080/login");
-  }
-
   public loginUsuario(usuario: Usuario): Observable<Usuario> {
     let res: Observable<Usuario> = this.http.post<Usuario>("http://localhost:8080/login", usuario);
     
     res.subscribe((data: Usuario) => {
-      console.log((<Resposta>data).token)
-      window.localStorage.setItem("token", (<Resposta>data).token)
+      window.sessionStorage.setItem("token", data.token!)
     }
     )
     return res;

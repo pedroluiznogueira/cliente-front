@@ -13,6 +13,7 @@ import { FormularioUsuarioLoginComponent } from './components/conta/formulario-u
 import { FormularioUsuarioComponent } from './components/conta/formulario-usuario/formulario-usuario.component';
 import { FormularioAdminLoginComponent } from './components/conta/formulario-admin-login/formulario-admin-login.component';
 import { FormularioAdminComponent } from './components/conta/formulario-admin/formulario-admin.component';
+import { AuthGuard } from './components/conta/comp/auth.guard';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
       { path: 'servicos', component:  ServicoComponent }, 
       { path: 'formulario-servico', component:  FormularioServicoComponent },
       { path: 'formulario-servico-update', component:  FormularioServicoUpdateComponent }
-    ]
+    ],
+    canActivate: [AuthGuard],
   },
   {
     path: '', component: AuthenticationComponent,

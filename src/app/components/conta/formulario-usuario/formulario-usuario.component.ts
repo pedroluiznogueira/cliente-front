@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { ContaUsuarioService } from '../comp/conta-usuario.service';
 
 @Component({
   selector: 'app-formulario-usuario',
@@ -19,7 +20,7 @@ export class FormularioUsuarioComponent implements OnInit {
   novoUsuario?: Usuario;
 
   constructor(
-    private usuarioService: UsuarioService
+    private contaUsuarioService: ContaUsuarioService
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +33,7 @@ export class FormularioUsuarioComponent implements OnInit {
     this.novoUsuario.nomeUsuario = this.novoNomeUsuario;
     this.novoUsuario.senha = this.senha;
 
-    this.usuarioService.cadastroUsuario(this.novoUsuario);
+    this.contaUsuarioService.cadastroUsuario(this.novoUsuario);
   }
 
   public validarCampos(senha: string | undefined, senhaConfirmada: string | undefined): void {

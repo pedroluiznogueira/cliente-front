@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
+import { ContaUsuarioService } from '../comp/conta-usuario.service';
 
 @Component({
   selector: 'app-formulario-usuario-login',
@@ -20,12 +21,12 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
   router: Router;
 
-  constructor(private usuarioService: UsuarioService, router: Router) { 
+  constructor(private contaUsuarioService: ContaUsuarioService, router: Router) { 
     this.router = router
   }
 
   ngOnInit(): void {
-    this.usuarioService.loginValidado.subscribe((data: string) => {
+    this.contaUsuarioService.loginValidado.subscribe((data: string) => {
       if (data == "erro") {
         this.mostrarErro()
       } else {
@@ -41,7 +42,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
     this.usuario.nomeUsuario = this.nomeUsuario;
     this.usuario.senha = this.senha;
 
-    this.usuarioService.loginUsuario(this.usuario);
+    this.contaUsuarioService.loginUsuario(this.usuario);
   }
 
   public validarCampos(): void {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario.model';
 import { AdminService } from 'src/app/services/admin.service';
+import { ContaAdminService } from '../comp/conta-admin.service';
 
 @Component({
   selector: 'app-formulario-admin-login',
@@ -20,12 +21,12 @@ export class FormularioAdminLoginComponent implements OnInit {
 
   router: Router;
 
-  constructor(private adminService: AdminService,router: Router) { 
+  constructor(private contaAdminService: ContaAdminService,router: Router) { 
     this.router = router;
   }
 
   ngOnInit(): void {
-    this.adminService.loginAdminValidado.subscribe((data: string) => {
+    this.contaAdminService.loginAdminValidado.subscribe((data: string) => {
       if (data == "erro") {
         console.log(data)
         this.mostrarErro()
@@ -45,7 +46,7 @@ export class FormularioAdminLoginComponent implements OnInit {
     this.admin.senha = this.senhaAdmin;
     this.admin.tipoConta = "admin";
 
-    this.adminService.loginAdmin(this.admin);
+    this.contaAdminService.loginAdmin(this.admin);
   }
 
   public validarCampos(): void {

@@ -36,7 +36,7 @@ export class ContaUsuarioService {
     let usuario = this.http.post<Usuario>("http://localhost:8080/cadastro", novoUsuario);
     
     usuario.subscribe((data: Usuario) => {
-      window.localStorage.setItem("token", data.token!);
+      window.sessionStorage.setItem("token", data.token!);
     });
 
     return usuario;

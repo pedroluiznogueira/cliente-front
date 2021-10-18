@@ -3,15 +3,15 @@
     <form>
         <label>
             Usuario:
-            <input type="text" name="usuario" id="usuario" placeholder="Entre seu usuario" [(ngModel)]="nomeUsuario">
+            <input type="text" name="usuario" id="usuario" placeholder="" [(ngModel)]="nomeUsuario">
         </label>
         <label>
             Email:
-            <input type="text" name="usuario" id="usuario" placeholder="Entre seu usuario" [(ngModel)]="email">
+            <input type="text" name="usuario" id="usuario" placeholder="" [(ngModel)]="email">
         </label>
         <label>
             Senha:
-            <input type="password" name="senha" id="senha" placeholder="Entre sua senha" [(ngModel)]="senha">
+            <input type="password" name="senha" id="senha" placeholder="" [(ngModel)]="senha">
         </label>
         <div *ngIf="loginNaoRealizado" class="alert alert-danger" role="alert">
             Login não realizado

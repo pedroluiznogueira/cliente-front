@@ -12,6 +12,7 @@ export class FormularioAdminLoginComponent implements OnInit {
 
   nomeUsuarioAdmin?: string;
   senhaAdmin?: string;
+  emailAdmin?: string;
 
   admin?: Usuario;
 

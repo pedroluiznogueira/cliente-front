@@ -12,6 +12,7 @@ export class FormularioAdminComponent implements OnInit {
 
   nomeAdmin?: string;
   senhaAdmin?: string;
+  email?: string;
   senhaConfAdmin?: string;
 
   senhaInvalida?: boolean = false;

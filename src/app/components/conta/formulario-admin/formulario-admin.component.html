@@ -2,16 +2,20 @@
     <img class="img" src="assets\img\Consult-logo.png" alt="logo-deloitte">
     <form>
         <label>
-            Usuario:
-            <input type="text" name="novoUsuario" id="usuarioAdminC" placeholder="Entre seu usuario admin" [(ngModel)]="nomeAdmin">
+            Usuario de administrador:
+            <input type="text" name="novoUsuario" id="usuarioAdminC" placeholder="" [(ngModel)]="nomeAdmin">
         </label>
         <label>
-            Senha:
-            <input type="password" name="senha" id="senhaAdminC" placeholder="Entre sua senha admin" [(ngModel)]="senhaAdmin">
+            Email de administrador:
+            <input type="text" name="novoUsuario" id="usuarioAdminC" placeholder="" [(ngModel)]="email">
+        </label>
+        <label>
+            Senha de administrador:
+            <input type="password" name="senha" id="senhaAdminC" placeholder="" [(ngModel)]="senhaAdmin">
         </label>
         <label>
             Confirme sua senha:
-            <input type="password" name="senha-confirmada" id="senhaAdminCC" placeholder="Confirme sua senha admin"  [(ngModel)]="senhaConfAdmin">
+            <input type="password" name="senha-confirmada" id="senhaAdminCC" placeholder=""  [(ngModel)]="senhaConfAdmin">
         </label>
         <div *ngIf="senhaInvalida" class="alert alert-danger" role="alert">
             Confirmação de senha inválida

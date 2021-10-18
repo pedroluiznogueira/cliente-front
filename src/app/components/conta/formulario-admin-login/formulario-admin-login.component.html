@@ -2,12 +2,16 @@
     <img class="img" src="assets\img\Consult-logo.png" alt="logo-deloitte">
     <form>
         <label>
-            Usuario do administrador:
-            <input type="text" name="usuario" id="usuarioAdmin" placeholder="Entre seu usuario" [(ngModel)]="nomeUsuarioAdmin">
+            Usuario de administrador:
+            <input type="text" name="usuario" id="usuarioAdmin" placeholder="" [(ngModel)]="nomeUsuarioAdmin">
         </label>
         <label>
-            Senha do administrador:
-            <input type="password" id="senhaAdmin" name="senha" placeholder="Entre sua senha" [(ngModel)]="senhaAdmin">
+            Email de administrador:
+            <input type="text" name="usuario" id="usuarioAdmin" placeholder="" [(ngModel)]="emailAdmin">
+        </label>
+        <label>
+            Senha de administrador:
+            <input type="password" id="senhaAdmin" name="senha" placeholder="" [(ngModel)]="senhaAdmin">
         </label>
         <div *ngIf="loginNaoRealizado" class="alert alert-danger" role="alert">
             Login não realizado

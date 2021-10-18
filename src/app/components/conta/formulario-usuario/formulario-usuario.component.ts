@@ -13,6 +13,7 @@ export class FormularioUsuarioComponent implements OnInit {
   novoNomeUsuario?: string;
   senha?: string;
   senhaConfirmada?: string;
+  email?: string;
 
   senhaInvalida?: boolean = false;
 

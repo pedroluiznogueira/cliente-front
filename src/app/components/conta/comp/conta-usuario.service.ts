@@ -6,6 +6,11 @@ import { Usuario } from 'src/app/models/usuario.model';
 import { catchError, map } from "rxjs/operators";
 import { isJSDocThisTag } from 'typescript';
 
+interface Resposta {
+  msg:string,
+  token:string
+} 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,8 +30,8 @@ export class ContaUsuarioService {
     let res: Observable<Usuario> = this.http.post<Usuario>("http://localhost:8080/login", usuario);
     
     res.subscribe((data: Usuario) => {
-      console.log(data.token)
-      window.localStorage.setItem("token", data.token!)
+      console.log((<Resposta>data).token)
+      window.localStorage.setItem("token", (<Resposta>data).token)
     }
     )
     return res;
@@ -36,7 +41,7 @@ export class ContaUsuarioService {
     let usuario = this.http.post<Usuario>("http://localhost:8080/cadastro", novoUsuario);
     
     usuario.subscribe((data: Usuario) => {
-      window.sessionStorage.setItem("token", data.token!);
+      window.sessionStorage.setItem("token", (<Resposta>data).token);
     });
 
     return usuario;

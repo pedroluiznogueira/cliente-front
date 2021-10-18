@@ -17,12 +17,11 @@ export class ContaUsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  public getToken(): Observable<Usuario> {
-    return this.http.get<Usuario>("http://localhost:8080/token");
+  public getToken(email: string): Observable<Usuario> {
+    return this.http.get("http://localhost:8080/login");
   }
 
   public loginUsuario(usuario: Usuario): Observable<Usuario> {
-    usuarioT?: Usuario = this.getToken();
     let res: Observable<Usuario> = this.http.post<Usuario>("http://localhost:8080/login", usuario);
     
     res.subscribe((data: Usuario) => {
@@ -33,7 +32,14 @@ export class ContaUsuarioService {
     return res;
   }
 
-  public cadastroUsuario(novoUsuario: Usuario): void {
-    this.http.post<Usuario>("http://localhost:8080/cadastro", novoUsuario).subscribe(resultado => console.log(resultado));
+  public cadastroUsuario(novoUsuario: Usuario): Observable<Usuario> {
+    let usuario = this.http.post<Usuario>("http://localhost:8080/cadastro", novoUsuario);
+    
+    usuario.subscribe((data: Usuario) => {
+      window.localStorage.setItem("token", data.token!);
+    });
+
+    return usuario;
+
   }
 }

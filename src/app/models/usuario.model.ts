@@ -5,5 +5,5 @@ export class Usuario {
     estaLogado?: boolean = false;
     email?: string;
     tipoConta?: string = "usuario";
-    token: string | undefined;
+    token?: string;
 }

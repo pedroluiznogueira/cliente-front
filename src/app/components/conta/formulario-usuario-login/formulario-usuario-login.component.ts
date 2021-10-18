@@ -12,6 +12,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
   nomeUsuario?: string;
   senha?: string;
+  email?: string;
 
   usuario?: Usuario;
   
@@ -25,14 +26,6 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contaUsuarioService.loginValidado.subscribe((data: string) => {
-      if (data == "erro") {
-        this.mostrarErro()
-      } else {
-        this.mostrarSucesso()
-      }
-    }
-  );
   }
 
   public envioFormulario(): void {
@@ -57,6 +50,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
     } else {
       this.envioFormulario();
+      this.mostrarSucesso();
       inputUsuario.classList.remove("campos-vazios");
       inputSenha.classList.remove("campos-vazios");
 
@@ -76,7 +70,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
 
   public mostrarSucesso(): void {
     this.loginRealizado = !this.loginRealizado;
-    this.router.navigate(['/home']);
+    this.router.navigate(['/clientes']);
 
   }
 

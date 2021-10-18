@@ -10,9 +10,8 @@ import { ContaUsuarioService } from '../comp/conta-usuario.service';
 })
 export class FormularioUsuarioLoginComponent implements OnInit {
 
-  nomeUsuario?: string;
-  senha?: string;
   email?: string;
+  senha?: string;
 
   usuario?: Usuario;
   
@@ -31,7 +30,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
   public envioFormulario(): void {
     this.usuario = new Usuario();
 
-    this.usuario.nome = this.nomeUsuario;
+    this.usuario.email = this.email;
     this.usuario.senha = this.senha;
 
     this.contaUsuarioService.loginUsuario(this.usuario);
@@ -41,11 +40,11 @@ export class FormularioUsuarioLoginComponent implements OnInit {
     let inputUsuario: HTMLInputElement = <HTMLInputElement>document.getElementById("usuario");
     let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senha");
 
-    if (this.nomeUsuario == null || this.senha == null || this.nomeUsuario == "" || this.senha == "") {
+    if (this.email == null || this.senha == null || this.email == "" || this.senha == "") {
       inputUsuario.classList.add("campos-vazios");
       inputSenha.classList.add("campos-vazios");
 
-      this.nomeUsuario = "";
+      this.email = "";
       this.senha = "";
 
     } else {
@@ -54,7 +53,7 @@ export class FormularioUsuarioLoginComponent implements OnInit {
       inputUsuario.classList.remove("campos-vazios");
       inputSenha.classList.remove("campos-vazios");
 
-      this.nomeUsuario = "";
+      this.email = "";
       this.senha = "";
       
     }

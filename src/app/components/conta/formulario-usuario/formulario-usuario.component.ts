@@ -34,6 +34,8 @@ export class FormularioUsuarioComponent implements OnInit {
     this.novoUsuario.email = this.email;
     this.novoUsuario.senha = this.senha;
 
+    console.log(this.novoUsuario);
+
     this.contaUsuarioService.cadastroUsuario(this.novoUsuario);
   }
 

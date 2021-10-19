@@ -66,6 +66,7 @@ export class FormularioAdminComponent implements OnInit {
       this.mostrarErro();
     } else {
       this.envioFormulario();
+      this.router.navigate(['/login-admin']);
       this.ngOnInit();
     }
   }

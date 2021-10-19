@@ -14,11 +14,14 @@ import { FormularioUsuarioComponent } from './components/conta/formulario-usuari
 import { FormularioAdminLoginComponent } from './components/conta/formulario-admin-login/formulario-admin-login.component';
 import { FormularioAdminComponent } from './components/conta/formulario-admin/formulario-admin.component';
 import { AuthGuard } from './components/conta/comp/auth.guard';
+import { MainComponent } from './components/entidades/main/main.component';
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent,
     children: [       
+      { path: '', component: MainComponent},  
+
       { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario-cliente', component:  FormularioClienteComponent },
       { path: 'formulario-cliente-update', component:  FormularioClienteUpdateComponent },

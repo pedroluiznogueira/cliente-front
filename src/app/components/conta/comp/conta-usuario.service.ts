@@ -22,12 +22,12 @@ export class ContaUsuarioService {
     ) { }
 
   public loginUsuario(usuario: Usuario): Observable<Usuario> {
-    let res: Observable<Usuario> = this.http.post<Usuario>("https://consult-back.herokuapp.com/login", usuario);
+    let res: Observable<Usuario> = this.http.post<Usuario>("https://consultoria-api.herokuapp.com/login", usuario);
     return res;
   }
 
   public cadastroUsuario(novoUsuario: Usuario): Observable<Usuario> {
-    let usuario = this.http.post<Usuario>("https://consult-back.herokuapp.com/cadastro", novoUsuario);
+    let usuario = this.http.post<Usuario>("https://consultoria-api.herokuapp.com/cadastro", novoUsuario);
     
     usuario.subscribe((data: Usuario) => {
     });

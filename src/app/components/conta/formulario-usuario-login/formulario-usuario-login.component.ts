@@ -33,7 +33,11 @@ export class FormularioUsuarioLoginComponent implements OnInit {
     this.usuario.email = this.email;
     this.usuario.senha = this.senha;
 
-    this.contaUsuarioService.loginUsuario(this.usuario);
+    this.contaUsuarioService.loginUsuario(this.usuario).subscribe((data: Usuario) => {
+      window.sessionStorage.setItem("token", data.token!)
+      this.router.navigate(['/'])
+    }
+    )
   }
 
   public validarCampos(): void {

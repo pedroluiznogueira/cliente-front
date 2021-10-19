@@ -5,6 +5,7 @@ import { Response } from 'src/app/models/response.model';
 import { Usuario } from 'src/app/models/usuario.model';
 import { catchError, map } from "rxjs/operators";
 import { isJSDocThisTag } from 'typescript';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +16,13 @@ export class ContaUsuarioService {
 
   response: Response =  new Response();
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router
+    ) { }
 
   public loginUsuario(usuario: Usuario): Observable<Usuario> {
     let res: Observable<Usuario> = this.http.post<Usuario>("http://localhost:8080/login", usuario);
-    
-    res.subscribe((data: Usuario) => {
-      window.sessionStorage.setItem("token", data.token!);
-    }
-    )
     return res;
   }
 

@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent,
     children: [       
-      { path: '', component:  ClientesComponent },  
+      { path: 'clientes', component:  ClientesComponent },  
       { path: 'formulario-cliente', component:  FormularioClienteComponent },
       { path: 'formulario-cliente-update', component:  FormularioClienteUpdateComponent },
 

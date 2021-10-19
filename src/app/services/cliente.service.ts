@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Cliente } from '../models/cliente.model';
 
 @Injectable({
@@ -38,5 +38,14 @@ export class ClienteService {
     this.cliente.email = clienteNovo.email;
 
     this.alterarCliente();
+  }
+
+  // pesquisar clientes
+  public pesquisarClientes(cliente: Cliente): Observable<Cliente[]> {
+    if (cliente.nome?.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.post<Cliente[]>("http://localhost:8080/cliente/pesquisa", cliente);
   }
 }

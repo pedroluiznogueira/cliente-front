@@ -1,6 +1,36 @@
+.container{
+    margin: 30px auto;
+    color: #fff;
+}
+.container-info {
+    max-width: 1366px;
+    margin: 30px auto;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.descricao{
+    display: flex;
+    flex-direction: column;
+    
+}
+
 .picsum-img-wrapper{
     width: 100%;
 }
-img{
+.banner{
     width: 100%;
+}
+
+.img{
+    width: 400px;
+    height: 400px;
+    
+    border-radius: 10px;
 }

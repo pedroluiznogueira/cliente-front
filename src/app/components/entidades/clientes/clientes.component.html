@@ -5,10 +5,22 @@
     <th class="row-table" scope="col">Sobrenome</th>
     <th class="row-table" scope="col">Email</th>
     <th class="row-table" id="th-cadastrar" scope="col">
+
       <div class="tools">
-        <input type="text" placeholder="">
+        <input #searchInput (input)="pesquisar(searchInput.value)" type="text" placeholder="Cliente...">
         <mat-icon [routerLink]="['/formulario-cliente']" class="icon-cadastrar" >add</mat-icon>
       </div>
+
+      <ul class="resultado-pesquisa">
+        <li *ngFor="let c of cFiltrados$ | async" >
+          <a>
+            {{c}}
+          </a>
+        </li>
+      </ul>
+
+
+
     </th>
   </tr>
   </thead>

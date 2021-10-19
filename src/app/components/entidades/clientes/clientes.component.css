@@ -78,7 +78,7 @@ input{
     border: 2px solid #222;
 }
 
-article form input::placeholder{
+input::placeholder{
     padding: 5px;
     background-color: #999;
     color: #fff;

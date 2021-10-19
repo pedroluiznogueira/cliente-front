@@ -10,54 +10,47 @@ import { ContaAdminService } from '../comp/conta-admin.service';
 })
 export class FormularioAdminLoginComponent implements OnInit {
 
-  nomeUsuarioAdmin?: string;
-  senhaAdmin?: string;
   emailAdmin?: string;
+  senhaAdmin?: string;
 
   admin?: Usuario;
 
   loginNaoRealizado: boolean = false;
   loginRealizado: boolean = false;
 
-  router: Router;
-
-  constructor(private contaAdminService: ContaAdminService,router: Router) { 
-    this.router = router;
+  constructor(
+    private contaAdminService: ContaAdminService,
+    private router: Router
+    ) { 
   }
 
   ngOnInit(): void {
-    this.contaAdminService.loginAdminValidado.subscribe((data: string) => {
-      if (data == "erro") {
-        console.log(data)
-        this.mostrarErro()
-      } else {
-        console.log(data)
-        this.mostrarSucesso()
-      }
-    }
-  );
   }
 
   public envioFormulario(): void {
     console.log("login enviado")
     this.admin = new Usuario();
 
-    this.admin.nome = this.nomeUsuarioAdmin;
+    this.admin.email = this.emailAdmin;
     this.admin.senha = this.senhaAdmin;
     this.admin.tipo = "admin";
 
-    this.contaAdminService.loginAdmin(this.admin);
+    this.contaAdminService.loginAdmin(this.admin).subscribe(
+      (data: Usuario) => {
+        window.sessionStorage.setItem("token", data.token!)
+        this.router.navigate(['/'])
+    });
   }
 
   public validarCampos(): void {
     let inputUsuario: HTMLInputElement = <HTMLInputElement>document.getElementById("usuarioAdmin");
     let inputSenha: HTMLInputElement = <HTMLInputElement>document.getElementById("senhaAdmin");
 
-    if (this.nomeUsuarioAdmin == null || this.senhaAdmin == null || this.nomeUsuarioAdmin == "" || this.senhaAdmin == "") {
+    if (this.emailAdmin == null || this.senhaAdmin == null || this.emailAdmin == "" || this.senhaAdmin == "") {
       inputUsuario.classList.add("campos-vazios");
       inputSenha.classList.add("campos-vazios");
 
-      this.nomeUsuarioAdmin = "";
+      this.emailAdmin = "";
       this.senhaAdmin = "";
 
     } else {
@@ -65,7 +58,7 @@ export class FormularioAdminLoginComponent implements OnInit {
       inputUsuario.classList.remove("campos-vazios");
       inputSenha.classList.remove("campos-vazios");
 
-      this.nomeUsuarioAdmin = "";
+      this.emailAdmin = "";
       this.senhaAdmin = "";
       
     }
@@ -81,7 +74,6 @@ export class FormularioAdminLoginComponent implements OnInit {
 
   public mostrarSucesso(): void {
     this.loginRealizado = !this.loginRealizado;
-    this.router.navigate(['/home']);
 
   }
 

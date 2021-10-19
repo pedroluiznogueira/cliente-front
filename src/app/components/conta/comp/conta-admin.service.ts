@@ -13,18 +13,8 @@ export class ContaAdminService {
 
   constructor(private http: HttpClient) { }
 
-  public loginAdmin(admin: Usuario): Observable<Response> {
-    let res: Observable<Response> = this.http.post<Response>("http://localhost:8080/login", admin);
-
-    res.subscribe(
-      (data: Response) => {
-        if (data.status == "erro") {
-          this.loginAdminValidado.emit(data.status);
-        } else {
-          this.loginAdminValidado.emit(data.status);
-        }
-      }
-    )
+  public loginAdmin(admin: Usuario): Observable<Usuario> {
+    let res: Observable<Usuario> = this.http.post<Usuario>("http://localhost:8080/login", admin);
     return res;
   }
 

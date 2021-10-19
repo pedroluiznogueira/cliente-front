@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario.model';
 import { ContaUsuarioService } from '../comp/conta-usuario.service';
 
@@ -20,7 +21,8 @@ export class FormularioUsuarioComponent implements OnInit {
   novoUsuario?: Usuario;
 
   constructor(
-    private contaUsuarioService: ContaUsuarioService
+    private contaUsuarioService: ContaUsuarioService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -71,6 +73,7 @@ export class FormularioUsuarioComponent implements OnInit {
       this.mostrarErro();
     } else {
       this.envioFormulario();
+      this.router.navigate(['/login']);
       this.ngOnInit();
     }
   }

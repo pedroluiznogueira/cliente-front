@@ -7,25 +7,14 @@
     <th class="row-table" id="th-cadastrar" scope="col">
 
       <div class="tools">
-        <input #searchInput (input)="pesquisar(searchInput.value)" type="text" placeholder="Cliente...">
+        <input #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Cliente...">
         <mat-icon [routerLink]="['/formulario-cliente']" class="icon-cadastrar" >add</mat-icon>
       </div>
-
-      <ul class="resultado-pesquisa">
-        <li *ngFor="let cliente of clientesFiltrados$ | async" >
-          <a>
-            {{c}}
-          </a>
-        </li>
-      </ul>
-
-
-
     </th>
   </tr>
   </thead>
-  <tbody>
-  <tr *ngFor="let cliente of getClientes">
+  <tbody  *ngIf="pesquisando">
+  <tr  *ngFor="let cliente of getClientes">
     <td id="nome" class="row-table">{{cliente.nome}}</td>
     <td class="row-table">{{cliente.sobrenome}}</td>
     <td class="row-table">{{cliente.email}} </td>
@@ -35,4 +24,15 @@
     </td>
   </tr>
   </tbody>
+  <tbody>
+    <tr  *ngFor="let clienteF of clientesFiltrados$ | async">
+      <td id="nome" class="row-table">{{clienteF.nome}}</td>
+      <td class="row-table">{{clienteF.sobrenome}}</td>
+      <td class="row-table">{{clienteF.email}} </td>
+      <td class="icons" id="icons-table">
+        <mat-icon (click)="deletarCliente(clienteF.id)" class="icon">delete</mat-icon>
+        <mat-icon (click)="enviarIdCliente(clienteF.id)" [routerLink]="['/formulario-cliente-update']" class="icon">edit</mat-icon>
+      </td>
+    </tr>
+    </tbody>
 </table>

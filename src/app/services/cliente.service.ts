@@ -2,6 +2,7 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Cliente } from '../models/cliente.model';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { Cliente } from '../models/cliente.model';
 export class ClienteService {
 
   cliente: Cliente = new Cliente();
+  c: Cliente = new Cliente();
 
   constructor(private http: HttpClient) {}
 
@@ -41,11 +43,18 @@ export class ClienteService {
   }
 
   // pesquisar clientes
-  public pesquisarClientes(cliente: Cliente): Observable<Cliente[]> {
-    if (cliente.nome?.trim()) {
+  public pesquisarClientes(term: string): Observable<Cliente[]> {
+    if (!term.trim()) {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.post<Cliente[]>("http://localhost:8080/cliente/pesquisa", cliente);
+    
+    this.c.nome = term;
+
+    let obs = this.http.post<Cliente[]>("https://consultoria-api.herokuapp.com/cliente/pesquisa", this.c)
+    obs.subscribe(res => {
+        console.log(res)
+      })
+    return obs;
   }
 }

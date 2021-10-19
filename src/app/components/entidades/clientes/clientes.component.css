@@ -57,11 +57,6 @@ td {
     color: #26890D;
 }
 
-#th-cadastrar {
-    text-align: end;
-
-}
-
 .icon:hover {
     color: #26890D;
 }
@@ -70,4 +65,38 @@ td {
     font-weight: 500;
 }
 
+input{
+    color: #fff;
+    margin: 5px auto;
+    display: block;
+    width: 100%;
+    height: 35px;
 
+    
+    border-radius: 7px;
+    background-color: #888;
+    border: 2px solid #222;
+}
+
+article form input::placeholder{
+    padding: 5px;
+    background-color: #999;
+    color: #fff;
+}
+
+input:focus{
+    outline-style: solid;
+    outline-color: #43B02A;
+    outline-width: 2px;
+    border-radius: 7px;
+
+    border: 1px solid #43B02A;
+    box-shadow: 1px 1px 3px #43B02A;
+}
+
+.tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}

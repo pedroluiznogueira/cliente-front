@@ -4,7 +4,12 @@
     <th class="row-table" scope="col">Nome</th>
     <th class="row-table" scope="col">Sobrenome</th>
     <th class="row-table" scope="col">Email</th>
-    <th class="row-table" id="th-cadastrar" scope="col"><mat-icon [routerLink]="['/formulario-cliente']" class="icon-cadastrar" >add</mat-icon></th>
+    <th class="row-table" id="th-cadastrar" scope="col">
+      <div class="tools">
+        <input type="text" placeholder="">
+        <mat-icon [routerLink]="['/formulario-cliente']" class="icon-cadastrar" >add</mat-icon>
+      </div>
+    </th>
   </tr>
   </thead>
   <tbody>

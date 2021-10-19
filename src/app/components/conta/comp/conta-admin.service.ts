@@ -14,12 +14,12 @@ export class ContaAdminService {
   constructor(private http: HttpClient) { }
 
   public loginAdmin(admin: Usuario): Observable<Usuario> {
-    let res: Observable<Usuario> = this.http.post<Usuario>("https://consultoria-api.herokuapp.com/login", admin);
+    let res: Observable<Usuario> = this.http.post<Usuario>("https://consult-back.herokuapp.com/login", admin);
     return res;
   }
 
   public cadastroAdmin(admin: Usuario): void {
     console.log(admin)
-    this.http.post("https://consultoria-api.herokuapp.com/cadastro", admin).subscribe(resultado => console.log(resultado))
+    this.http.post("https://consult-back.herokuapp.com/cadastro", admin).subscribe(resultado => console.log(resultado))
   }
 }

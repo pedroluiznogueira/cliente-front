@@ -15,19 +15,19 @@ export class ClienteService {
   constructor(private http: HttpClient) {}
 
   public listarClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>("https://consultoria-api.herokuapp.com/cliente");
+    return this.http.get<Cliente[]>("https://consult-back.herokuapp.com/cliente");
   }
 
   public criarCliente(cliente: Cliente): void {
-    this.http.post("https://consultoria-api.herokuapp.com/cliente", cliente).subscribe(resultado => console.log(resultado));
+    this.http.post("https://consult-back.herokuapp.com/cliente", cliente).subscribe(resultado => console.log(resultado));
   }
 
   public alterarCliente(): void {
-    this.http.put("https://consultoria-api.herokuapp.com/cliente", this.cliente).subscribe(resultado => console.log(resultado));
+    this.http.put("https://consult-back.herokuapp.com/cliente", this.cliente).subscribe(resultado => console.log(resultado));
   }
 
   public deletarCliente(id: number | undefined): void {
-    this.http.delete(`https://consultoria-api.herokuapp.com/cliente/${id}`).subscribe(resultado => console.log(resultado));
+    this.http.delete(`https://consult-back.herokuapp.com/cliente/${id}`).subscribe(resultado => console.log(resultado));
   }
 
   public receberIdCliente(id: number | undefined) {
@@ -51,7 +51,7 @@ export class ClienteService {
     
     this.c.nome = term;
 
-    let obs = this.http.post<Cliente[]>("https://consultoria-api.herokuapp.com/cliente/pesquisa", this.c)
+    let obs = this.http.post<Cliente[]>("https://consult-back.herokuapp.com/cliente/pesquisa", this.c)
     obs.subscribe(res => {
         console.log(res)
       })

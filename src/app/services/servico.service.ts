@@ -13,15 +13,15 @@ export class ServicoService {
   constructor(private http: HttpClient) { }
 
   public listarServicos(): Observable<Servico[]> {
-    return this.http.get<Servico[]>("https://consultoria-api.herokuapp.com/servico");
+    return this.http.get<Servico[]>("https://consult-back.herokuapp.com/servico");
   }
 
   public criarServico(servico: Servico): void {
-    this.http.post("https://consultoria-api.herokuapp.com/servico", servico).subscribe(resultado => console.log(resultado));
+    this.http.post("https://consult-back.herokuapp.com/servico", servico).subscribe(resultado => console.log(resultado));
   }
 
   public deletarServico(id: number | undefined): void {
-    this.http.delete(`https://consultoria-api.herokuapp.com/servico/${id}`).subscribe(resultado => console.log(resultado));
+    this.http.delete(`https://consult-back.herokuapp.com/servico/${id}`).subscribe(resultado => console.log(resultado));
   }
 
   public receberIdServico(id: number | undefined): void {
@@ -37,6 +37,6 @@ export class ServicoService {
   }
 
   public alterarServico(): void {
-    this.http.put("https://consultoria-api.herokuapp.com/servico", this.servico).subscribe(resultado => console.log(resultado));
+    this.http.put("https://consult-back.herokuapp.com/servico", this.servico).subscribe(resultado => console.log(resultado));
   }
 }

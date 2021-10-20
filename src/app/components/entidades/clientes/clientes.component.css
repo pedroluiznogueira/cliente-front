@@ -30,8 +30,8 @@ td {
 }
 
 #icons-table {
-    margin: 0 auto;
     display: flex;
+    
 }
 
 .icon {

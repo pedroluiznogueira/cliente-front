@@ -61,3 +61,17 @@ justify-content: flex-end;
 flex-direction: column;
 
 }
+
+.input-group {
+    margin-left: 200px;
+    width: 500px;
+}
+
+#icon-pesq {
+    cursor: pointer;
+    background-color: white;
+}
+
+.input-group-text {
+    background-color: white;
+}

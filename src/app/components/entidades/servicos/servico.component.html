@@ -3,7 +3,14 @@
       <button [routerLink]="['/formulario-servico']" type="button" class="botao">Adicionar serviço</button>
     </div>
 
-    <input #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Servico...">
+    <div id="div-pai" class="col-sm-3 my-1">
+      <div class="input-group">
+        <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Servico...">
+        <div class="input-group-append">
+          <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
+        </div>
+      </div>
+    </div>
 
     <ul *ngFor="let servicoF of servicosFiltrados$ | async">
       <mat-card class="sub-container">

@@ -1,16 +1,21 @@
 <section class="container">
-    <div class="">
-        <p>Nome: {{cliente.nome}}</p>
-        <p>Sobrenome: {{cliente.sobrenome}}</p>
-        <p>Email: {{cliente.email}}</p>
-    </div>
-
-    <div class="controll">
-        <button (click) = "listarServicosCliente(cliente)">Servicos</button>
-        <div class="servicos" *ngFor="let servico of servicosCliente">
-            <p>Titulo:{{servico.titulo}}</p>
-            <p>Descricao:{{servico.titulo}}</p>
-            <p>Valor:{{servico.titulo}}</p>
+    <div class="sub-container">
+        <div class="">
+            <p>Nome: {{cliente.nome}}</p>
+            <p>Sobrenome: {{cliente.sobrenome}}</p>
+            <p>Email: {{cliente.email}}</p>
+        </div>
+    
+        <div class="servicos">
+            <div class="controller">
+                <button class = "button" (click) = "listarServicosCliente(cliente)">Servicos</button>
+                <button class = "button" (click) = "enviarCLiente(cliente)" [routerLink]="['/formulario-servico']">Adicionar Servico</button>
+            </div>
+            <div class="lista-servicos" *ngFor="let servico of servicosCliente">
+                <p>Titulo:{{servico.titulo}}</p>
+                <p>Descricao:{{servico.titulo}}</p>
+                <p>Valor:{{servico.titulo}}</p>
+            </div>
         </div>
     </div>
 </section>

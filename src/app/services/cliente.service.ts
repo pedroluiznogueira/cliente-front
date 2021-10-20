@@ -16,6 +16,7 @@ export class ClienteService {
   c: Cliente = new Cliente();
 
   @Output() onClickDetails: EventEmitter<Cliente> = new EventEmitter<Cliente>();
+  @Output() onClickAddServico: EventEmitter<Cliente> = new EventEmitter<Cliente>();
 
   constructor(private http: HttpClient) {}
 
@@ -23,7 +24,9 @@ export class ClienteService {
     return this.http.get<Cliente[]>(`${this.url}cliente`);
   }
 
-
+  public enviarCliente(cliente: Cliente){
+      this.onClickAddServico.emit(cliente);
+  }
 
   public criarCliente(cliente: Cliente): void {
     this.http.post(`${this.url}cliente`, cliente).subscribe(resultado => console.log(resultado));
@@ -76,6 +79,5 @@ export class ClienteService {
       })
     return obs;
   }
-
   
 }

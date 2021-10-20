@@ -24,6 +24,10 @@ export class ClienteDetailsComponent implements OnInit {
       }
     )
   }
+
+  public enviarCLiente(cliente: Cliente){
+    this.clienteService.enviarCliente(cliente)
+  }
   
   public listarServicosCliente(cliente: Cliente): void {
     this.servicoService.listarServicosCliente(cliente).subscribe(servicos => this.servicosCliente = servicos);

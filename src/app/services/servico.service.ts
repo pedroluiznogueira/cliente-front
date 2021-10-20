@@ -17,7 +17,7 @@ export class ServicoService {
   constructor(private http: HttpClient) { }
 
   public listarServicos(): Observable<Servico[]> {
-    return this.http.get<Servico[]>("this.url");
+    return this.http.get<Servico[]>("http://localhost:8080/servico");
   }
 
   public criarServico(servico: Servico): void {
@@ -41,25 +41,23 @@ export class ServicoService {
   }
 
   public alterarServico(): void {
-    this.http.put("this.url", this.servico).subscribe(resultado => console.log(resultado));
+    this.http.put(`${this.url}/servico`, this.servico).subscribe(resultado => console.log(resultado));
   }
 
   // pesquisar servicos
-  public pesquisarServico(term: string): Observable<Servico[]> {
+  public pesquisarServicos(term: string): Observable<Servico[]> {
     if (!term.trim()) {
       return of([])
     }
 
     this.servicoPesq.titulo = term;
 
-    let obs =  this.http.post<Servico[]>("this.url", this.servicoPesq);
-
+    let obs =  this.http.post<Servico[]>("http://localhost:8080/servico/pesquisa", this.servicoPesq);
     obs.subscribe(
       (res) => {
         console.log(res)
       }                  
     )
-
     return obs;
   }
 

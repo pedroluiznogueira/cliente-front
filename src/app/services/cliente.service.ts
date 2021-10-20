@@ -4,10 +4,13 @@ import { Observable, of } from 'rxjs';
 import { Cliente } from '../models/cliente.model';
 import { tap } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
+
+  private url: string = "http://localhost:8080/";
 
   cliente: Cliente = new Cliente();
   c: Cliente = new Cliente();
@@ -17,21 +20,21 @@ export class ClienteService {
   constructor(private http: HttpClient) {}
 
   public listarClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>("http://localhost:8080/cliente");
+    return this.http.get<Cliente[]>(`${this.url}cliente`);
   }
 
 
 
   public criarCliente(cliente: Cliente): void {
-    this.http.post("https://consultoria-api.herokuapp.com/cliente", cliente).subscribe(resultado => console.log(resultado));
+    this.http.post(`${this.url}cliente`, cliente).subscribe(resultado => console.log(resultado));
   }
 
   public alterarCliente(): void {
-    this.http.put("https://consultoria-api.herokuapp.com/cliente", this.cliente).subscribe(resultado => console.log(resultado));
+    this.http.put(`${this.url}cliente`, this.cliente).subscribe(resultado => console.log(resultado));
   }
 
   public deletarCliente(id: number | undefined): void {
-    this.http.delete(`https://consultoria-api.herokuapp.com/cliente/${id}`).subscribe(resultado => console.log(resultado));
+    this.http.delete(`${this.url}cliente/${id}`).subscribe(resultado => console.log(resultado));
   }
 
   public receberIdCliente(id: number | undefined) {
@@ -39,7 +42,7 @@ export class ClienteService {
   }
 
   public getClienteById(id: number | undefined): Observable<Cliente>{
-    let obs = this.http.get<Cliente>(`http://localhost:8080/cliente/pesquisa/${id}`);
+    let obs = this.http.get<Cliente>(`${this.url}cliente/pesquisa/${id}`);
 
     obs.subscribe(
       (cliente: Cliente) => {
@@ -67,10 +70,12 @@ export class ClienteService {
     
     this.c.nome = term;
 
-    let obs = this.http.post<Cliente[]>("https://consult-back.herokuapp.com/cliente/pesquisa", this.c)
+    let obs = this.http.post<Cliente[]>(`${this.url}cliente/pesquisa`, this.c)
     obs.subscribe(res => {
         console.log(res)
       })
     return obs;
   }
+
+  
 }

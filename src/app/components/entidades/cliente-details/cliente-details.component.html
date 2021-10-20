@@ -5,9 +5,12 @@
         <p>Email: {{cliente.email}}</p>
     </div>
 
-    <div class="servicos">
-        <p>Titulo:</p>
-        <p>Descricao:</p>
-        <p>Valor:</p>
+    <div class="controll">
+        <button (click) = "listarServicosCliente(cliente)">Servicos</button>
+        <div class="servicos" *ngFor="let servico of servicosCliente">
+            <p>Titulo:{{servico.titulo}}</p>
+            <p>Descricao:{{servico.titulo}}</p>
+            <p>Valor:{{servico.titulo}}</p>
+        </div>
     </div>
 </section>

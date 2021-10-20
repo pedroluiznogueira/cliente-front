@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { Cliente } from '../models/cliente.model';
 import { Servico } from '../models/servico.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Servico } from '../models/servico.model';
 })
 export class ServicoService {
 
-  private url: string = "https://consultoria-api.herokuapp.com";
+  private url: string = "http://localhost:8080/";
 
   servicoPesq: Servico = new Servico();
 
@@ -17,15 +18,15 @@ export class ServicoService {
   constructor(private http: HttpClient) { }
 
   public listarServicos(): Observable<Servico[]> {
-    return this.http.get<Servico[]>("http://localhost:8080/servico");
+    return this.http.get<Servico[]>(`${this.url}servico`);
   }
 
   public criarServico(servico: Servico): void {
-    this.http.post("this.url", servico).subscribe(resultado => console.log(resultado));
+    this.http.post(`${this.url}servico`, servico).subscribe(resultado => console.log(resultado));
   }
 
   public deletarServico(id: number | undefined): void {
-    this.http.delete(`${this.url}/servico/${id}`).subscribe(resultado => console.log(resultado));
+    this.http.delete(`${this.url}servico/${id}`).subscribe(resultado => console.log(resultado));
   }
 
   public receberIdServico(id: number | undefined): void {
@@ -41,7 +42,7 @@ export class ServicoService {
   }
 
   public alterarServico(): void {
-    this.http.put(`${this.url}/servico`, this.servico).subscribe(resultado => console.log(resultado));
+    this.http.put(`${this.url}servico`, this.servico).subscribe(resultado => console.log(resultado));
   }
 
   // pesquisar servicos
@@ -58,6 +59,19 @@ export class ServicoService {
         console.log(res)
       }                  
     )
+    return obs;
+  }
+
+  public listarServicosCliente(cliente: Cliente): Observable<Servico[]> {
+
+    let obs =  this.http.get<Servico[]>(`http://localhost:8080/servico/find-by-cliente}`);
+
+    obs.subscribe(
+      (servicos: Servico[]) => {
+        console.log(servicos)
+      }
+    )
+
     return obs;
   }
 

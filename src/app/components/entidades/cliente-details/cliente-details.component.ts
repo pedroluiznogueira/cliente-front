@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente.model';
+import { Servico } from 'src/app/models/servico.model';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { ServicoService } from 'src/app/services/servico.service';
 
 @Component({
   selector: 'app-cliente-details',
@@ -11,7 +13,9 @@ export class ClienteDetailsComponent implements OnInit {
 
   cliente: Cliente = new Cliente();
 
-  constructor(private clienteService:ClienteService) { }
+  servicosCliente: Array<Servico> = new Array();
+
+  constructor(private clienteService:ClienteService, private servicoService: ServicoService) { }
 
   ngOnInit(): void {
     this.clienteService.onClickDetails.subscribe(
@@ -20,7 +24,9 @@ export class ClienteDetailsComponent implements OnInit {
       }
     )
   }
-
-
+  
+  public listarServicosCliente(cliente: Cliente): void {
+    this.servicoService.listarServicosCliente(cliente).subscribe(servicos => this.servicosCliente = servicos);
+  }
 
 }

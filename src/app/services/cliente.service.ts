@@ -18,6 +18,8 @@ export class ClienteService {
     return this.http.get<Cliente[]>("https://consultoria-api.herokuapp.com/cliente");
   }
 
+  
+
   public criarCliente(cliente: Cliente): void {
     this.http.post("https://consultoria-api.herokuapp.com/cliente", cliente).subscribe(resultado => console.log(resultado));
   }

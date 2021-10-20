@@ -19,8 +19,9 @@
     <td class="row-table">{{cliente.sobrenome}}</td>
     <td class="row-table">{{cliente.email}} </td>
     <td class="icons" id="icons-table">
-      <mat-icon (click)="deletarCliente(cliente.id)" class="icon">delete</mat-icon>
+      <mat-icon (click)="enviarIdCliente(cliente.id)" [routerLink]="['/cliente-details']" class="icon">person_search</mat-icon>
       <mat-icon (click)="enviarIdCliente(cliente.id)" [routerLink]="['/formulario-cliente-update']" class="icon">edit</mat-icon>
+      <mat-icon (click)="deletarCliente(cliente.id)" class="icon">delete</mat-icon>
     </td>
   </tr>
   </tbody>

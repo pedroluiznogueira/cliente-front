@@ -15,6 +15,7 @@ import { FormularioAdminLoginComponent } from './components/conta/formulario-adm
 import { FormularioAdminComponent } from './components/conta/formulario-admin/formulario-admin.component';
 import { AuthGuard } from './components/conta/comp/auth.guard';
 import { MainComponent } from './components/entidades/main/main.component';
+import { ClienteDetailsComponent } from './components/entidades/cliente-details/cliente-details.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     children: [       
       { path: '', component: MainComponent},  
 
-      { path: 'clientes', component:  ClientesComponent },  
+      { path: 'clientes', component:  ClientesComponent }, 
+      { path: 'cliente-details', component:  ClienteDetailsComponent }, 
       { path: 'formulario-cliente', component:  FormularioClienteComponent },
       { path: 'formulario-cliente-update', component:  FormularioClienteUpdateComponent },
 

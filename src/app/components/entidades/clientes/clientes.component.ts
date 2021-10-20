@@ -53,6 +53,10 @@ export class ClientesComponent implements OnInit {
     return this.clientes;
   }
 
+  public getClienteById(id:number | undefined): void {
+    this.clienteService.getClienteById(id);
+  } 
+
   public enviarIdCliente(id: number | undefined) {
     this.clienteService.receberIdCliente(id);
   }

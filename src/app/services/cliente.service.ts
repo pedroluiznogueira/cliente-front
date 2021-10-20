@@ -12,13 +12,15 @@ export class ClienteService {
   cliente: Cliente = new Cliente();
   c: Cliente = new Cliente();
 
+  @Output() onClickDetails: EventEmitter<Cliente> = new EventEmitter<Cliente>();
+
   constructor(private http: HttpClient) {}
 
   public listarClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>("https://consultoria-api.herokuapp.com/cliente");
+    return this.http.get<Cliente[]>("http://localhost:8080/cliente");
   }
 
-  
+
 
   public criarCliente(cliente: Cliente): void {
     this.http.post("https://consultoria-api.herokuapp.com/cliente", cliente).subscribe(resultado => console.log(resultado));
@@ -34,6 +36,18 @@ export class ClienteService {
 
   public receberIdCliente(id: number | undefined) {
     this.cliente.id = id;
+  }
+
+  public getClienteById(id: number | undefined): Observable<Cliente>{
+    let obs = this.http.get<Cliente>(`http://localhost:8080/cliente/pesquisa/${id}`);
+
+    obs.subscribe(
+      (cliente: Cliente) => {
+        this.onClickDetails.emit(cliente)
+      }
+    )
+
+    return obs;
   }
 
   public novoCliente(clienteNovo: Cliente) {

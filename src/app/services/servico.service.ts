@@ -64,7 +64,7 @@ export class ServicoService {
 
   public listarServicosCliente(cliente: Cliente): Observable<Servico[]> {
 
-    let obs =  this.http.get<Servico[]>(`http://localhost:8080/servico/find-by-cliente}`);
+    let obs =  this.http.post<Servico[]>(`http://localhost:8080/servico/find-by-cliente`, cliente);
 
     obs.subscribe(
       (servicos: Servico[]) => {

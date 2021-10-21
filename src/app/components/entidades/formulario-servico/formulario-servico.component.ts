@@ -15,7 +15,7 @@ export class FormularioServicoComponent implements OnInit {
   public descricao?: string;
   public valor?: number | undefined;
   public servico?: Servico;
-  public cliente?: Cliente = new Cliente();
+  public cliente: Cliente = new Cliente();
 
   constructor(private servicoService: ServicoService, private clienteService: ClienteService) { }
 
@@ -27,15 +27,15 @@ export class FormularioServicoComponent implements OnInit {
   }
 
   public envioFormulario(): void {
-
-    console.log(this.cliente)
     this.servico = new Servico();
+    this.servico.cliente = new Cliente();
 
     this.servico.titulo = this.titulo;
     this.servico.descricao = this.descricao;
     this.servico.valor = this.valor;
+    this.servico.cliente = this.cliente;
 
-    console.log(this.servico.cliente)
+    console.log(this.servico.cliente);
 
     this.servicoService.criarServico(this.servico);
 

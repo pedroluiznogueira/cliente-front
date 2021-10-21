@@ -15,7 +15,10 @@ export class ClienteDetailsComponent implements OnInit {
 
   servicosCliente: Array<Servico> = new Array();
 
-  constructor(private clienteService:ClienteService, private servicoService: ServicoService) { }
+  constructor(
+    private clienteService:ClienteService, 
+    private servicoService: ServicoService
+  ) { }
 
   ngOnInit(): void {
     this.clienteService.onClickDetails.subscribe(
@@ -30,7 +33,17 @@ export class ClienteDetailsComponent implements OnInit {
   }
   
   public listarServicosCliente(cliente: Cliente): void {
-    this.servicoService.listarServicosCliente(cliente).subscribe(servicos => this.servicosCliente = servicos);
+    this.servicoService.listarServicosCliente(cliente).subscribe(
+      servicos => this.servicosCliente = servicos);
+  }
+
+  public deletarServico(id: number | undefined): void {
+    this.servicoService.deletarServico(id);
+    this.ngOnInit();
+  }
+
+  public enviarIdServico(id: number | undefined): void {
+    this.servicoService.receberIdServico(id);
   }
 
 }

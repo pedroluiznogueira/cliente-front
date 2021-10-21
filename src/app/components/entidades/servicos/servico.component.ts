@@ -42,13 +42,4 @@ export class ServicoComponent implements OnInit {
     this.servicoService.listarServicos().subscribe(servicos => this.servicos = servicos);
   }
 
-  public deletarServico(id: number | undefined): void {
-    this.servicoService.deletarServico(id);
-    this.ngOnInit();
-  }
-
-  public enviarIdServico(id: number | undefined): void {
-    this.servicoService.receberIdServico(id);
-  }
-
 }

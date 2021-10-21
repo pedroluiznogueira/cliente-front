@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/models/cliente.model';
-import { Servico } from 'src/app/models/servico.model';
+import { Cliente } from 'src/app/models/cliente';
+import { Servico } from 'src/app/models/servico';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ServicoService } from 'src/app/services/servico.service';
 
@@ -25,8 +25,8 @@ export class ClienteDetailsComponent implements OnInit {
     )
   }
 
-  public enviarCLiente(cliente: Cliente){
-    this.clienteService.enviarCliente(cliente)
+  public enviarCliente(clienteId: number | undefined){
+    this.clienteService.enviarCliente(clienteId)
   }
   
   public listarServicosCliente(cliente: Cliente): void {

@@ -1,9 +1,8 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Cliente } from '../models/cliente.model';
+import { Cliente } from '../models/cliente';
 import { tap } from 'rxjs/operators';
-
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +21,6 @@ export class ClienteService {
 
   public listarClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(`${this.url}cliente`);
-  }
-
-  public enviarCliente(cliente: Cliente){
-      this.onClickAddServico.emit(cliente);
   }
 
   public criarCliente(cliente: Cliente): void {
@@ -55,6 +50,18 @@ export class ClienteService {
 
     return obs;
   }
+
+  public enviarCliente(clienteId: number | undefined){
+    let obs = this.http.get<Cliente>(`${this.url}cliente/pesquisa/${clienteId}`);
+
+    obs.subscribe(
+      (cliente: Cliente) => {
+        this.onClickAddServico.emit(cliente);
+      }
+    )
+
+    return obs;
+}
 
   public novoCliente(clienteNovo: Cliente) {
     this.cliente.nome = clienteNovo.nome;

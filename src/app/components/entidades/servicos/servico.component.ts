@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Servico } from 'src/app/models/servico.model';
+import { Servico } from 'src/app/models/servico';
 import { ServicoService } from 'src/app/services/servico.service';
 
 @Component({

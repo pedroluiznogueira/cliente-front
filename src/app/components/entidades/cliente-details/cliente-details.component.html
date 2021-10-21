@@ -9,7 +9,7 @@
         <div class="servicos">
             <div class="controller">
                 <button class = "button" (click) = "listarServicosCliente(cliente)">Servicos</button>
-                <button class = "button" (click) = "enviarCLiente(cliente)" [routerLink]="['/formulario-servico']">Adicionar Servico</button>
+                <button class = "button" (click) = "enviarCliente(cliente.id)" [routerLink]="['/formulario-servico']">Adicionar Servico</button>
             </div>
             <div class="lista-servicos" *ngFor="let servico of servicosCliente">
                 <p>Titulo:{{servico.titulo}}</p>

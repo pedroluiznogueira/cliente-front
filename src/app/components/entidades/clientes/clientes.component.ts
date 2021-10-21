@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Cliente } from 'src/app/models/cliente.model';
+import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/cliente.service';
 import {
   debounceTime, distinctUntilChanged, switchMap

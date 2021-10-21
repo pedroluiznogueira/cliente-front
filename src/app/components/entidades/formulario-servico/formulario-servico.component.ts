@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/models/cliente.model';
-import { Servico } from 'src/app/models/servico.model';
+import { Cliente } from 'src/app/models/cliente';
+import { Servico } from 'src/app/models/servico';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { ServicoService } from 'src/app/services/servico.service';
 
@@ -14,30 +14,32 @@ export class FormularioServicoComponent implements OnInit {
   public titulo?: string;
   public descricao?: string;
   public valor?: number | undefined;
-  public servico?: Servico;
-  public cliente: Cliente = new Cliente();
 
-  constructor(private servicoService: ServicoService, private clienteService: ClienteService) { }
+  cliente: Cliente = new Cliente();
+  public servico?: Servico = new Servico();
+
+  constructor(
+    private servicoService: ServicoService, 
+    private clienteService: ClienteService
+  ) { }
 
   ngOnInit(): void {
-    this.clienteService.onClickAddServico.subscribe((cliente: Cliente) =>
-    {
-      this.cliente = cliente;
+    this.clienteService.onClickAddServico.subscribe(
+      (cliente: Cliente) => {
+        this.cliente = cliente;
     })
   }
 
   public envioFormulario(): void {
-    this.servico = new Servico();
-    this.servico.cliente = new Cliente();
 
-    this.servico.titulo = this.titulo;
-    this.servico.descricao = this.descricao;
-    this.servico.valor = this.valor;
-    this.servico.cliente = this.cliente;
+    this.servico!.titulo = this.titulo;
+    this.servico!.descricao = this.descricao;
+    this.servico!.valor = this.valor;
+    this.servico!.cliente = this.cliente;
 
-    console.log(this.servico.cliente);
+    console.log(this.servico!.cliente)
 
-    this.servicoService.criarServico(this.servico);
+    this.servicoService.criarServico(this.servico!);
 
     this.titulo = "";
     this.descricao = "";

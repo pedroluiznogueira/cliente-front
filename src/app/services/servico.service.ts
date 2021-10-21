@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Cliente } from '../models/cliente.model';
-import { Servico } from '../models/servico.model';
+import { Cliente } from '../models/cliente';
+import { Servico } from '../models/servico';
 
 @Injectable({
   providedIn: 'root'

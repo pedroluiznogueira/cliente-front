@@ -2,23 +2,23 @@
     <div class="sub-container">
 
       <ul class="list-group">
-        <li class="list-group-item">{{cliente.nome}}</li>
-        <li class="list-group-item">{{cliente.sobrenome}}</li>
-        <li class="list-group-item">{{cliente.email}}</li>
+        <li class="list-group-item">{{professor.nome}}</li>
+        <li class="list-group-item">{{professor.sobrenome}}</li>
+        <li class="list-group-item">{{professor.email}}</li>
       </ul>
     
         <div class="servicos">
             <div class="controller">
-                <button class = "button" (click) = "listarServicosCliente(cliente)">Servicos</button>
+                <button class = "button" (click) = "listarCursosProfessor(professor)">Servicos</button>
                 <!-- <button class = "button" (click) = "enviarCliente(cliente.id)" [routerLink]="['/formulario-servico']">Adicionar Servico</button> -->
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6" *ngFor="let servico of servicosCliente">
+            <div class="col-sm-6" *ngFor="let cursos of cursosProfessor">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">{{servico.titulo}}</h5>
-                  <p class="card-text">{{servico.descricao}}</p>
+                  <h5 class="card-title">{{curso.titulo}}</h5>
+                  <p class="card-text">{{curso.descricao}}</p>
                   <!-- <a href="#" class="btn btn-primary">{{servico.valor}}</a> -->
                 </div>
                 <div class="div-icons">

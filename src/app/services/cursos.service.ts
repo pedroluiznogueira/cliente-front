@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Curso } from '../models/curso';
+import { Professor } from '../models/professor';
 
 @Injectable({
   providedIn: 'root'
@@ -61,7 +62,7 @@ export class CursosService {
     return obs;
   }
 
-  public listarServicosCliente(professor: Professor): Observable<Curso[]> {
+  public listarCursosProfessor(professor: Professor): Observable<Curso[]> {
 
     let obs =  this.http.post<Curso[]>(`${this.url}/curso/find-by-cliente`, professor);
 

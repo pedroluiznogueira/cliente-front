@@ -5,12 +5,12 @@ export class Curso {
     titulo?: string;
     descricao?: string;
     valor?: number;
-    cliente?: Cliente | undefined;
+    professor?: Professor | undefined;
     
-    constructor(titulo?: string, descricao?: string, valor?: number, cliente?: Cliente) {
+    constructor(titulo?: string, descricao?: string, valor?: number, cliente?: Professor) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.valor = valor;
-        this.cliente = cliente;
+        this.professor = cliente;
     }
 }

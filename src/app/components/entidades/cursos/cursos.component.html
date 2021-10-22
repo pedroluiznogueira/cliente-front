@@ -1,13 +1,10 @@
 <div class="container">
-
-    <div id="div-pai" class="col-sm-3 my-1">
-      <div class="input-group">
-        <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Curso...">
-        <div class="input-group-append">
-          <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
-        </div>
-      </div>
+  <div class="input-group">
+    <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Curso...">
+      <div class="input-group-append">
+      <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
     </div>
+  </div>
 
     <ul *ngFor="let cursoF of cursosFiltrados$ | async">
       <mat-card class="sub-container">

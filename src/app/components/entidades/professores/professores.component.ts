@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Cliente } from 'src/app/models/cliente';
-import { ClienteService } from 'src/app/services/cliente.service';
+import { Professor } from 'src/app/models/professor';
+import { ProfessorService } from 'src/app/services/professor.service';
 
 @Component({
   selector: 'app-professores',
@@ -14,13 +14,13 @@ export class ProfessoresComponent implements OnInit {
   pesquisando: boolean = true;
 
   // vou querer iterar no html no observable e não no array
-  professoresFiltrados$!: Observable<Cliente[]>
+  professoresFiltrados$!: Observable<Professor[]>
 
   private pesquisarTerms = new Subject<string>();
 
-  private professores: Array<Cliente> = new Array();
+  private professores: Array<Professor> = new Array();
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(private professorService:ProfessorService) { }
 
   ngOnInit(): void {
     this.listarProfessores();
@@ -33,7 +33,7 @@ export class ProfessoresComponent implements OnInit {
       distinctUntilChanged(),
 
       // troca para um novo observable de pesquisa toda vez que o term muda, ou seja, conforme digitamos
-      switchMap((term: string) => this.clienteService.pesquisarClientes(term)),
+      switchMap((term: string) => this.professorService.pesquisarProfessores(term)),
     );
   }
 
@@ -44,22 +44,22 @@ export class ProfessoresComponent implements OnInit {
   }
 
   public listarProfessores(): void {
-    this.clienteService.listarClientes().subscribe(professores => this.professores = professores)}
+    this.professorService.listarProfessores().subscribe(professores => this.professores = professores)}
   
-  public get getProfessores(): Array<Cliente> {
+  public get getProfessores(): Array<Professor> {
     return this.professores;
   }
 
   public getProfessorById(id:number | undefined): void {
-    this.clienteService.getClienteById(id);
+    this.professorService.getProfessorById(id);
   } 
 
   public enviarIdProfessor(id: number | undefined) {
-    this.clienteService.receberIdCliente(id);
+    this.professorService.receberIdProfessor(id);
   }
 
   public deletarProfessor(id: number | undefined): void {
-    this.clienteService.deletarCliente(id);
+    this.professorService.deletarProfessor(id);
     this.ngOnInit();
   }
 

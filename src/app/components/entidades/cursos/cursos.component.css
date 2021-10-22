@@ -1,13 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
-div .container{
-    margin: 30px auto;
+div.container{
+    margin: 0 auto;
     margin-bottom: 100px;
     font-family: 'Montserrat', sans-serif;
+    max-width: 90vw;
 }
 
 div .input-group{
     width: 30vw;
     display: flex;
     align-self: flex-start;
+    margin: 20px 0px;
+}
+
+div .cursos{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+ 
+ 
+   flex-wrap: wrap;
+}
+
+div button.btn {
+    width: 10vw;
+}
+
+.card-text{
+    height: 10vh;
+}
+
+.cursos-container{
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.curso-info {
+    right: 0;
+
+    background-color: black;
+    width: 30vw;
+    height: 100vh;
 }

@@ -6,7 +6,7 @@
     </div>
   </div>
 
-    <ul *ngFor="let cursoF of cursosFiltrados$ | async">
+    <!-- <ul *ngFor="let cursoF of cursosFiltrados$ | async">
       <mat-card class="sub-container">
         <mat-card-title-group class="header">
           <mat-card-title id="titulo">{{cursoF.titulo}}</mat-card-title>
@@ -18,9 +18,9 @@
           <button type="submit" class="botao">R$ {{cursoF.valor}}</button>
         </mat-card-content>
       </mat-card>
-    </ul>
+    </ul> -->
     
-    <ul *ngIf="pesquisando">
+    <!-- <ul *ngIf="pesquisando">
       <mat-card class="sub-container" *ngFor="let curso of cursos">
         <mat-card-title-group class="header">
           <mat-card-title id="titulo">{{curso.titulo}}</mat-card-title>
@@ -32,5 +32,16 @@
           <button type="submit" class="botao">R$ {{curso.valor}}</button>
         </mat-card-content>
       </mat-card>
-    </ul>
+    </ul> -->
+    <div class="cursos">
+      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;" *ngFor="let curso of cursos">
+        <img src="\assets\img\javaImg.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{curso.titulo}}</h5>
+          <p class="card-text">{{curso.descricao}}</p>
+          <button type="button" class="btn btn-secondary">R$ {{curso.valor}}</button>
+        </div>
+      </div>
+    </div>
+
   </div>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/layout/home/home.component';
-
 import { AuthenticationComponent } from './components/layout/authentication/authentication.component';
 import { FormularioUsuarioLoginComponent } from './components/conta/formulario-usuario-login/formulario-usuario-login.component';
 import { FormularioUsuarioComponent } from './components/conta/formulario-usuario/formulario-usuario.component';
@@ -25,6 +24,8 @@ const routes: Routes = [
       { path: '', component: MainComponent},  
 
       { path: 'professores', component:  ProfessoresComponent },
+      { path: 'professor-formulario', component:  ProfessorFormularioComponent },
+      { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
       { path: 'professor-details', component:  ProfessorDetailsComponent }, 
       { path: 'professor-formulario', component:  ProfessorFormularioComponent },
       { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },

@@ -31,6 +31,7 @@ import { AuthenticationComponent } from './components/layout/authentication/auth
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './components/entidades/main/main.component';
 import { ClienteDetailsComponent } from './components/entidades/cliente-details/cliente-details.component';
+import { ProfessoresComponent } from './components/entidades/professores/professores.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ClienteDetailsComponent } from './components/entidades/cliente-details/
     FormularioAdminComponent,
     AuthenticationComponent,
     MainComponent,
-    ClienteDetailsComponent
+    ClienteDetailsComponent,
+    ProfessoresComponent
   ],
   imports: [
     BrowserModule,

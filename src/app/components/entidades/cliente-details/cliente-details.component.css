@@ -80,5 +80,17 @@
     display: flex;
     justify-content: flex-end;
     padding: 20px;
+}
 
+.icon {
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: #43B02A;
+}
+
+.details {
+    font-family: 'Montserrat';
+    font-size: 20px;
 }

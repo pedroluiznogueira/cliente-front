@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/layout/home/home.component';
-import { ClientesComponent } from './components/entidades/clientes/clientes.component';
 import { FormularioClienteComponent } from './components/entidades/formulario-cliente/formulario-cliente.component';
 import { FormularioClienteUpdateComponent } from './components/entidades/formulario-cliente-update/formulario-cliente-update.component';
 import { ServicoComponent } from './components/entidades/servicos/servico.component';
@@ -16,6 +15,7 @@ import { FormularioAdminComponent } from './components/conta/formulario-admin/fo
 import { AuthGuard } from './components/conta/comp/auth.guard';
 import { MainComponent } from './components/entidades/main/main.component';
 import { ClienteDetailsComponent } from './components/entidades/cliente-details/cliente-details.component';
+import { ProfessoresComponent } from './components/entidades/professores/professores.component';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     children: [       
       { path: '', component: MainComponent},  
 
-      { path: 'clientes', component:  ClientesComponent }, 
+      { path: 'professores', component:  ProfessoresComponent },
       { path: 'cliente-details', component:  ClienteDetailsComponent }, 
       { path: 'formulario-cliente', component:  FormularioClienteComponent },
       { path: 'formulario-cliente-update', component:  FormularioClienteUpdateComponent },

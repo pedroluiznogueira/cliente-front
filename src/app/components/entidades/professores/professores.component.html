@@ -1,1 +1,39 @@
-<p>professores works!</p>
+<table class="table table-striped">
+    <thead>
+    <tr class="header">
+      <th class="row-table" scope="col">Nome</th>
+      <th class="row-table" scope="col">Sobrenome</th>
+      <th class="row-table" scope="col">Email</th>
+      <th class="row-table" id="th-cadastrar" scope="col">
+  
+        <div class="tools">
+          <input #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Professor...">
+          <mat-icon [routerLink]="['/formulario-cliente']" class="icon-cadastrar" >add</mat-icon>
+        </div>
+      </th>
+    </tr>
+    </thead>
+    <tbody  *ngIf="pesquisando">
+    <tr  *ngFor="let professor of getProfessores">
+      <td id="nome" class="row-table">{{professor.nome}}</td>
+      <td class="row-table">{{professor.sobrenome}}</td>
+      <td class="row-table">{{professor.email}} </td>
+      <td class="icons" id="icons-table">
+        <!-- <mat-icon (click)="enviarIdProfessor(professor.id)" [routerLink]="['/formulario-cliente-update']" class="icon">edit</mat-icon>
+          <mat-icon (click)="deletarProfessor(cliente.id)" class="icon">delete</mat-icon> -->
+          <mat-icon (click)="getProfessorById(professor.id)" [routerLink]="['/cliente-details']" class="icon">person_search</mat-icon>
+      </td>
+    </tr>
+    </tbody>
+    <tbody>
+      <tr  *ngFor="let professorF of professoresFiltrados$ | async">
+        <td id="nome" class="row-table">{{professorF.nome}}</td>
+        <td class="row-table">{{professorF.sobrenome}}</td>
+        <td class="row-table">{{professorF.email}} </td>
+        <td class="icons" id="icons-table">
+          <!-- <mat-icon (click)="deletarProfessor(professorF.id)" class="icon">delete</mat-icon> -->
+          <mat-icon (click)="enviarIdProfessor(professorF.id)" [routerLink]="['/formulario-cliente-update']" class="icon">edit</mat-icon>
+        </td>
+      </tr>
+      </tbody>
+  </table>

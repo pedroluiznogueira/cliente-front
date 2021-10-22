@@ -12,12 +12,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
-import { ServicoComponent } from './components/entidades/servicos/servico.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
-import { FormularioServicoComponent } from './components/entidades/formulario-servico/formulario-servico.component';
-import { FormularioServicoUpdateComponent } from './components/entidades/formulario-servico-update/formulario-servico-update.component';
 import { HomeComponent } from './components/layout/home/home.component';
 import { FormularioClienteComponent } from './components/entidades/formulario-cliente/formulario-cliente.component';
 import { FormularioClienteUpdateComponent } from './components/entidades/formulario-cliente-update/formulario-cliente-update.component';
@@ -37,9 +34,6 @@ import { CursosComponent } from './components/entidades/cursos/cursos.component'
 @NgModule({
   declarations: [
     AppComponent,
-    ServicoComponent,
-    FormularioServicoComponent,
-    FormularioServicoUpdateComponent,
     HomeComponent,
     FormularioClienteComponent,
     FormularioClienteUpdateComponent,

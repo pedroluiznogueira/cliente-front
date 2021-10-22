@@ -16,12 +16,14 @@
             <div class="col-sm-6" *ngFor="let servico of servicosCliente">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Titulo:{{servico.titulo}}</h5>
-                  <p class="card-text">Descricao:{{servico.titulo}}</p>
-                  <a href="#" class="btn btn-primary">Descricao:{{servico.titulo}}</a>
+                  <h5 class="card-title">{{servico.titulo}}</h5>
+                  <p class="card-text">{{servico.descricao}}</p>
+                  <!-- <a href="#" class="btn btn-primary">{{servico.valor}}</a> -->
                 </div>
-                <mat-icon class="icon" (click)="deletarServico(servico.id)"> delete</mat-icon>
+                <div class="div-icons">
+                  <mat-icon class="icon" (click)="deletarServico(servico.id)"> delete</mat-icon>
                 <mat-icon class="icon" (click)="enviarIdServico(servico.id)" [routerLink]="['/formulario-servico-update']">edit</mat-icon>
+                </div>
               </div>
             </div>
           </div>

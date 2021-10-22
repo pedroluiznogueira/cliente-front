@@ -8,6 +8,7 @@
 .sub-container{
     margin: 30px 0;
     font-size: 18px;
+    background-color: rgb(66, 66, 66);
 }
 
 .botoes{
@@ -63,8 +64,8 @@ flex-direction: column;
 }
 
 .input-group {
-    margin-left: 200px;
-    width: 500px;
+    margin: 25px;
+    width: 300px;
 }
 
 #icon-pesq {
@@ -74,4 +75,27 @@ flex-direction: column;
 
 .input-group-text {
     background-color: white;
+}
+mat-card-title {
+    margin: 30px;
+    color: #000;
+}
+
+mat-card-title:hover {
+    color: #33b117;
+}
+
+mat-card-content {
+    margin: 30px;
+    font-size: 30px;
+    color: #000;
+}
+
+mat-card-content:hover {
+    color: #33b117;
+}
+
+.mat-card {
+    background-color: #fff;
+    box-shadow: 4px 4px 8px rgb(5, 5, 5);
 }

@@ -8,11 +8,11 @@
         <input type="text" name="descricao" class="form-control" id="descricao" placeholder="Entre seu descricao" [(ngModel)]="descricao">
         
         <label class="label" for="exampleInputEmail1">Valor</label>
-        <input type="text" name="email" class="form-control" id="email" placeholder="Entre valor" [(ngModel)]="valor">
+        <input type="text" name="valor" class="form-control" id="valor" placeholder="Entre valor" [(ngModel)] = "valor">
       </div>
       
       <div class="control">
-        <p class="voltar" [routerLink]="['/servicos']">Voltar</p>
+        <p class="voltar" routerLink="['/cursos']">Voltar</p>
         <button type="submit" class="botao">Enviar</button>
       </div>
     </form>

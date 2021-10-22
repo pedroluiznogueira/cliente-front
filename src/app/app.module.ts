@@ -28,6 +28,8 @@ import { ProfessorFormularioComponent } from './components/entidades/professor-f
 import { ProfessorUpdateFormularioComponent } from './components/entidades/professor-update-formulario/professor-update-formulario.component';
 import { ProfessorDetailsComponent } from './components/entidades/professor-details/professor-details.component';
 import { CursosComponent } from './components/entidades/cursos/cursos.component';
+import { FormularioCursosComponent } from './components/entidades/formulario-cursos/formulario-cursos.component';
+import { FormularioCursosUpdateComponent } from './components/entidades/formulario-cursos-update/formulario-cursos-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,8 @@ import { CursosComponent } from './components/entidades/cursos/cursos.component'
     ProfessorFormularioComponent,
     ProfessorUpdateFormularioComponent,
     ProfessorDetailsComponent,
+    FormularioCursosComponent,
+    FormularioCursosUpdateComponent,
     CursosComponent
   ],
   imports: [

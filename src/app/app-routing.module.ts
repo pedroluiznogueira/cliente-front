@@ -12,6 +12,10 @@ import { MainComponent } from './components/entidades/main/main.component';
 import { ProfessoresComponent } from './components/entidades/professores/professores.component';
 import { ProfessorFormularioComponent } from './components/entidades/professor-formulario/professor-formulario.component';
 import { ProfessorUpdateFormularioComponent } from './components/entidades/professor-update-formulario/professor-update-formulario.component';
+import { ProfessorDetailsComponent } from './components/entidades/professor-details/professor-details.component';
+import { CursosComponent } from './components/entidades/cursos/cursos.component';
+import { FormularioCursosComponent } from './components/entidades/formulario-cursos/formulario-cursos.component';
+import { FormularioCursosUpdateComponent } from './components/entidades/formulario-cursos-update/formulario-cursos-update.component';
 
 const routes: Routes = [
   {
@@ -21,7 +25,14 @@ const routes: Routes = [
 
       { path: 'professores', component:  ProfessoresComponent },
       { path: 'professor-formulario', component:  ProfessorFormularioComponent },
-      { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent }
+      { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
+      { path: 'professor-details', component:  ProfessorDetailsComponent }, 
+      { path: 'professor-formulario', component:  ProfessorFormularioComponent },
+      { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
+
+      { path: 'cursos', component:  CursosComponent },
+      { path: 'curso-formulario', component:  FormularioCursosComponent },
+      { path: 'curso-update-formulario', component:  FormularioCursosUpdateComponent },
     ],
     canActivate: [AuthGuard],
   },

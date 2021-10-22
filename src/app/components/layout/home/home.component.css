@@ -6,69 +6,36 @@ main {
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
 }
-
-/* tool bar */
-.tool-bar {
+nav {
+    font-family: 'Montserrat', sans-serif;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);
-    font-family: 'Montserrat', sans-serif;
-    box-shadow: 0px 5px 10px gray;
-    height: 90px;
+    align-items: center;
 }
 
-.container-menu{
+nav .controller{
+    display: flex;
+    align-self: start;
+}
+
+nav .navbar-nav{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    flex-direction: row;
     gap: 30px;
 }
 
-.container-options{
-    display: flex;
-    justify-content: flex-end;
-    gap: 30px;
-    padding-right: 30px;
-}
-
-.item{
-    cursor: pointer;
-    color: #fff;
-    font-size: 23px;
-    font-weight: 400;
-}
-
-.item:hover{
-    color: #43B02A
-}
-
-.img {
-    width: 205px;
-    height: 100px;
-    cursor: pointer;
-}
-
-.icon{
-    cursor: pointer;
+nav .nav-link {
     color: #fff;
 }
 
-.icon:hover {
-    color: #43B02A;
+nav .icon{
+    color: #fff;
+    cursor: pointer;
 }
 
-/* footer */
-.footer {
-    background-color: #2B2B2B;
-    font-family: 'Montserrat', sans-serif;
-    box-shadow: 0px 5px 10px gray;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
+nav .icon:hover{
+    color: #999;
 }
 
 

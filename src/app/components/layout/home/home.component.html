@@ -1,14 +1,21 @@
-<mat-toolbar class="tool-bar">
-  <div class="container-menu">
-      <img [routerLink]="['/']" class="img" src="assets\img\Consult-logo.png" alt="logo-deloitte">
-      <h3 class="item" [routerLink]="['/servicos']">Serviços</h3>
-      <h3 class="item" [routerLink]="['/professores']">Professores</h3>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="controller">
+    <a class="navbar-brand" href="#">
+      <img [routerLink]="['/']" src="assets\img\Consult-logo.png" width="140" height="60" class="d-inline-block align-top" alt="">
+    </a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/cursos']">Cursos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/professores']">Professores</a>
+      </li>
+    </ul>
   </div>
-
   <div class="container-options">
-      <mat-icon [routerLink]="['/']" class="icon" (click)="logoutUsuario()">logout</mat-icon>
+    <mat-icon [routerLink]="['/']" class="icon" (click)="logoutUsuario()">logout</mat-icon>
   </div>
-</mat-toolbar>
+</nav>
 <main>
   <router-outlet></router-outlet>
 </main>

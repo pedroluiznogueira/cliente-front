@@ -14,7 +14,7 @@ export class ProfessorService {
   c: Professor = new Professor();
 
   @Output() onClickDetails: EventEmitter<Professor> = new EventEmitter<Professor>();
-  @Output() onClickAddServico: EventEmitter<Professor> = new EventEmitter<Professor>();
+  @Output() onClickAddCurso: EventEmitter<Professor> = new EventEmitter<Professor>();
 
 
   constructor(private http: HttpClient) { }
@@ -56,7 +56,7 @@ export class ProfessorService {
 
     obs.subscribe(
       (professor: Professor) => {
-        this.onClickAddServico.emit(professor);
+        this.onClickAddCurso.emit(professor);
       }
     )
 

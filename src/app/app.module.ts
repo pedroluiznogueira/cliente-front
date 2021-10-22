@@ -25,8 +25,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './components/entidades/main/main.component';
 import { ClienteDetailsComponent } from './components/entidades/cliente-details/cliente-details.component';
 import { ProfessoresComponent } from './components/entidades/professores/professores.component';
+<<<<<<< HEAD
 import { ProfessorFormularioComponent } from './components/entidades/professor-formulario/professor-formulario.component';
 import { ProfessorUpdateFormularioComponent } from './components/entidades/professor-update-formulario/professor-update-formulario.component';
+=======
+import { CursosComponent } from './components/entidades/cursos/cursos.component';
+>>>>>>> 03077b513680b6718bdcf71d1f73c84d76924046
 
 
 @NgModule({
@@ -41,8 +45,12 @@ import { ProfessorUpdateFormularioComponent } from './components/entidades/profe
     MainComponent,
     ClienteDetailsComponent,
     ProfessoresComponent,
+<<<<<<< HEAD
     ProfessorFormularioComponent,
     ProfessorUpdateFormularioComponent
+=======
+    CursosComponent
+>>>>>>> 03077b513680b6718bdcf71d1f73c84d76924046
   ],
   imports: [
     BrowserModule,

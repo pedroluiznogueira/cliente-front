@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente';
-import { Servico } from 'src/app/models/servico';
 import { ClienteService } from 'src/app/services/cliente.service';
-import { ServicoService } from 'src/app/services/servico.service';
+import { CursosService } from 'src/app/services/cursos.service';
 
 @Component({
   selector: 'app-cliente-details',
@@ -11,39 +10,38 @@ import { ServicoService } from 'src/app/services/servico.service';
 })
 export class ClienteDetailsComponent implements OnInit {
 
-  cliente: Cliente = new Cliente();
+  professor: Professor = new Professor();
 
-  servicosCliente: Array<Servico> = new Array();
+  servicosCliente: Array<Curso> = new Array();
 
   constructor(
     private clienteService:ClienteService, 
-    private servicoService: ServicoService
+    private cursosService: CursosService
   ) { }
 
   ngOnInit(): void {
     this.clienteService.onClickDetails.subscribe(
-      (cliente: Cliente) => {
-        this.cliente = cliente;
+      (professor: Cliente) => {
+        this.professor = professor;
       }
     )
   }
 
-  public enviarCliente(clienteId: number | undefined){
-    this.clienteService.enviarCliente(clienteId)
+  public enviarProfessor(professorId: number | undefined){
+    this.clienteService.enviarCliente(professorId)
   }
   
-  public listarServicosCliente(cliente: Cliente): void {
-    this.servicoService.listarServicosCliente(cliente).subscribe(
+  public listarCursosProfessor(professor: Professor): void {
+    this.cursosService.listarServicosCliente(professor).subscribe(
       servicos => this.servicosCliente = servicos);
   }
 
   public deletarServico(id: number | undefined): void {
-    this.servicoService.deletarServico(id);
+    this.cursosService.deletarCurso(id);
     this.ngOnInit();
   }
 
-  public enviarIdServico(id: number | undefined): void {
-    this.servicoService.receberIdServico(id);
+  public enviarIdCurso(id: number | undefined): void {
+    this.cursosService.receberIdCurso(id);
   }
-
 }

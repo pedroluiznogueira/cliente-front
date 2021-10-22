@@ -18,7 +18,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
 import { FormularioServicoComponent } from './components/entidades/formulario-servico/formulario-servico.component';
 import { FormularioServicoUpdateComponent } from './components/entidades/formulario-servico-update/formulario-servico-update.component';
-import { ClientesComponent } from './components/entidades/clientes/clientes.component';
 import { HomeComponent } from './components/layout/home/home.component';
 import { FormularioClienteComponent } from './components/entidades/formulario-cliente/formulario-cliente.component';
 import { FormularioClienteUpdateComponent } from './components/entidades/formulario-cliente-update/formulario-cliente-update.component';
@@ -32,6 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './components/entidades/main/main.component';
 import { ClienteDetailsComponent } from './components/entidades/cliente-details/cliente-details.component';
 import { ProfessoresComponent } from './components/entidades/professores/professores.component';
+import { CursosComponent } from './components/entidades/cursos/cursos.component';
 
 
 @NgModule({
@@ -40,7 +40,6 @@ import { ProfessoresComponent } from './components/entidades/professores/profess
     ServicoComponent,
     FormularioServicoComponent,
     FormularioServicoUpdateComponent,
-    ClientesComponent,
     HomeComponent,
     FormularioClienteComponent,
     FormularioClienteUpdateComponent,
@@ -51,7 +50,8 @@ import { ProfessoresComponent } from './components/entidades/professores/profess
     AuthenticationComponent,
     MainComponent,
     ClienteDetailsComponent,
-    ProfessoresComponent
+    ProfessoresComponent,
+    CursosComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { Professor } from '../models/professor';
 })
 export class ProfessorService {
 
-  private url: string = "http://localhost:8080/";
+  private url: string = "http://localhost:8080";
 
   professor: Professor = new Professor();
   c: Professor = new Professor();
@@ -20,19 +20,19 @@ export class ProfessorService {
   constructor(private http: HttpClient) { }
 
   public listarProfessores(): Observable<Professor[]> {
-    return this.http.get<Professor[]>(`${this.url}cliente`);
+    return this.http.get<Professor[]>(`${this.url}/professor/professores`);
   }
 
   public criarProfessor(professor: Professor): void {
-    this.http.post(`${this.url}cliente`, professor).subscribe(resultado => console.log(resultado));
+    this.http.post(`${this.url}/professor/create`, professor).subscribe();
   }
 
   public alterarProfessor(): void {
-    this.http.put(`${this.url}cliente`, this.professor).subscribe(resultado => console.log(resultado));
+    this.http.put(`${this.url}/professor/update`, this.professor).subscribe();
   }
 
   public deletarProfessor(id: number | undefined): void {
-    this.http.delete(`${this.url}cliente/${id}`).subscribe(resultado => console.log(resultado));
+    this.http.delete(`${this.url}/professor/delete/${id}`).subscribe();
   }
 
   public receberIdProfessor(id: number | undefined) {
@@ -40,7 +40,7 @@ export class ProfessorService {
   }
 
   public getProfessorById(id: number | undefined): Observable<Professor>{
-    let obs = this.http.get<Professor>(`${this.url}cliente/pesquisa/${id}`);
+    let obs = this.http.get<Professor>(`${this.url}/professor/search/${id}`);
 
     obs.subscribe(
       (professor: Professor) => {
@@ -52,7 +52,7 @@ export class ProfessorService {
   }
 
   public enviarProfessor(professorId: number | undefined){
-    let obs = this.http.get<Professor>(`${this.url}cliente/pesquisa/${professorId}`);
+    let obs = this.http.get<Professor>(`${this.url}/professor/search/${professorId}`);
 
     obs.subscribe(
       (professor: Professor) => {
@@ -80,7 +80,7 @@ export class ProfessorService {
     
     this.c.nome = term;
 
-    let obs = this.http.post<Professor[]>(`${this.url}cliente/pesquisa`, this.c)
+    let obs = this.http.post<Professor[]>(`${this.url}/professor/search`, this.c)
     obs.subscribe(res => {
         console.log(res)
       })

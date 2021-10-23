@@ -18,15 +18,15 @@ export class CursosService {
   ) { }
 
   public listarCursos(): Observable<Curso[]> {
-    return this.http.get<Curso[]>(`${this.url}/servico`);
+    return this.http.get<Curso[]>(`${this.url}/curso/cursos`);
   }
 
   public criarCurso(curso: Curso): void {
-    this.http.post(`${this.url}/servico`, curso).subscribe();
+    this.http.post(`${this.url}/curso/create`, curso).subscribe();
   }
 
   public deletarCurso(id: number | undefined): void {
-    this.http.delete(`${this.url}/servico/${id}`).subscribe();
+    this.http.delete(`${this.url}/curso/delete/${id}`).subscribe();
   }
 
   public receberIdCurso(id: number | undefined): void {
@@ -42,7 +42,7 @@ export class CursosService {
   }
 
   public alterarCurso(): void {
-    this.http.put(`${this.url}/servico`, this.curso).subscribe();
+    this.http.put(`${this.url}/curso/update`, this.curso).subscribe();
   }
 
   // pesquisar servicos
@@ -53,7 +53,7 @@ export class CursosService {
 
     this.cursoPesq.titulo = term;
 
-    let obs =  this.http.post<Curso[]>(`${this.url}/servico/pesquisa`, this.cursoPesq);
+    let obs =  this.http.post<Curso[]>(`${this.url}/curso/search`, this.cursoPesq);
     obs.subscribe(
       (res) => {
         console.log(res)
@@ -64,7 +64,7 @@ export class CursosService {
 
   public listarCursosProfessor(professor: Professor): Observable<Curso[]> {
 
-    let obs =  this.http.post<Curso[]>(`${this.url}/servico/find-by-cliente`, professor);
+    let obs =  this.http.post<Curso[]>(`${this.url}/curso/find-by-professor`, professor);
 
     obs.subscribe(
       (cursos: Curso[]) => {

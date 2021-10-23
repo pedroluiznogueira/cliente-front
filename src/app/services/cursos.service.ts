@@ -45,7 +45,6 @@ export class CursosService {
     this.http.put(`${this.url}/curso/update`, this.curso).subscribe();
   }
 
-  // pesquisar servicos
   public pesquisarCursos(term: string): Observable<Curso[]> {
     if (!term.trim()) {
       return of([])

@@ -39,6 +39,7 @@
   </table> -->
   
 <div class="container">
+
   <div class="input-group">
     <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Curso...">
       <div class="input-group-append">
@@ -46,21 +47,64 @@
     </div>
   </div>
 
-  <div class="card w-75" *ngFor="let professor of getProfessores">
+  <div class="card w-75" *ngFor="let professorF of professoresFiltrados$ | async">
+
     <div class="row no-gutters" >
+
       <div class="col-md-4">
         <img src="\assets\img\javaImg.jpg" alt="...">
       </div>
+
       <div class="col-md-8">
+
         <div class="card-body">
+
           <div class="infos">
-            <h5 class="card-title">{{professor.nome}} {{professor.sobrenome}}</h5>
-            <p class="card-text">{{professor.email}}</p>
+            <h5 class="card-title">{{professorF.nome}} {{professorF.sobrenome}}</h5>
+            <p class="card-text">{{professorF.email}}</p>
           </div>
-        <div class="tools">
-          <mat-icon (click)="getProfessorById(professor.id)" [routerLink]="['/professor-details']" class="icon">person_search</mat-icon>
+
+          <div class="tools">
+            <mat-icon (click)="getProfessorById(professorF.id)" [routerLink]="['/professor-details']" class="icon">person_search</mat-icon>
+          </div>
+
         </div>
+
       </div>
+
     </div>
   </div>
+
+  <div class="hide-on-search" *ngIf="pesquisando">
+
+    <div class="card w-75" *ngFor="let professor of getProfessores">
+
+      <div class="row no-gutters" >
+  
+        <div class="col-md-4">
+          <img src="\assets\img\javaImg.jpg" alt="...">
+        </div>
+  
+        <div class="col-md-8">
+  
+          <div class="card-body">
+  
+            <div class="infos">
+              <h5 class="card-title">{{professor.nome}} {{professor.sobrenome}}</h5>
+              <p class="card-text">{{professor.email}}</p>
+            </div>
+  
+            <div class="tools">
+              <mat-icon (click)="getProfessorById(professor.id)" [routerLink]="['/professor-details']" class="icon">person_search</mat-icon>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+
+  </div>
+
 </div>

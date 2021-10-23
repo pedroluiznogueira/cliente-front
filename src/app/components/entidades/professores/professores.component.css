@@ -1,5 +1,8 @@
+.container{
+    margin: 20px 0;
+}
 .card{
-    margin: 20px;
+    margin: 20px 0;
     color: black;
 }
 
@@ -17,4 +20,7 @@ img{
 }
 .icon:hover{
     color: #A435F0;
+}
+.input-group{
+    max-width: 32vw;
 }

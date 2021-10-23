@@ -34,12 +34,12 @@
       </mat-card>
     </ul> -->
     <div class="cursos">
-      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;" *ngFor="let curso of cursos">
+      <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursos">
         <img src="\assets\img\javaImg.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{curso.titulo}}</h5>
           <p class="card-text">{{curso.descricao}}</p>
-          <button type="button" class="btn btn-secondary">R$ {{curso.valor}}</button>
+          <button type="button" class="btn">R$ {{curso.valor}}</button>
         </div>
       </div>
     </div>

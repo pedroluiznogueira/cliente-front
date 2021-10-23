@@ -3,7 +3,7 @@
 /* tag main */
 main {
     margin: 0 auto;
-    color: #FFFFFF;
+    color: black;
     font-family: 'Montserrat', sans-serif;
     max-width: 1000px;
 }
@@ -12,6 +12,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: black;
+
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #999;
 }
 
 nav .controller{
@@ -27,16 +31,21 @@ nav .navbar-nav{
 }
 
 nav .nav-link {
-    color: #fff;
+    color: black;
+    font-weight: 500;
+}
+
+nav .nav-link:hover{
+    color: #A435F0;
 }
 
 nav .icon{
-    color: #fff;
+    color: black;
     cursor: pointer;
 }
 
 nav .icon:hover{
-    color: #999;
+    color: #A435F0;
 }
 
 

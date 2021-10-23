@@ -6,34 +6,18 @@
     </div>
   </div>
 
-    <!-- <ul *ngFor="let cursoF of cursosFiltrados$ | async">
-      <mat-card class="sub-container">
-        <mat-card-title-group class="header">
-          <mat-card-title id="titulo">{{cursoF.titulo}}</mat-card-title>
-        </mat-card-title-group>
-        <mat-card-content class="body">
-          {{cursoF.descricao}}
-        </mat-card-content>
-        <mat-card-content class="botoes">
-          <button type="submit" class="botao">R$ {{cursoF.valor}}</button>
-        </mat-card-content>
-      </mat-card>
-    </ul> -->
-    
-    <!-- <ul *ngIf="pesquisando">
-      <mat-card class="sub-container" *ngFor="let curso of cursos">
-        <mat-card-title-group class="header">
-          <mat-card-title id="titulo">{{curso.titulo}}</mat-card-title>
-        </mat-card-title-group>
-        <mat-card-content class="body">
-          {{curso.descricao}}
-        </mat-card-content>
-        <mat-card-content class="botoes">
-          <button type="submit" class="botao">R$ {{curso.valor}}</button>
-        </mat-card-content>
-      </mat-card>
-    </ul> -->
-    <div class="cursos">
+    <div class="cursos" *ngFor="let cursoF of cursosFiltrados$ | async">
+      <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursos">
+        <img src="\assets\img\javaImg.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{cursoF.titulo}}</h5>
+          <p class="card-text">{{cursoF.descricao}}</p>
+          <button type="button" class="btn">R$ {{cursoF.valor}}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cursos" *ngIf="pesquisando">
       <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursos">
         <img src="\assets\img\javaImg.jpg" class="card-img-top" alt="...">
         <div class="card-body">

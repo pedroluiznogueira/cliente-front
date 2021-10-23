@@ -2,9 +2,10 @@
 
 /* tag main */
 main {
-    margin: 10px 10px 10px 10px;
+    margin: 0 auto;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
+    max-width: 1000px;
 }
 nav {
     font-family: 'Montserrat', sans-serif;

@@ -25,6 +25,7 @@ export class ProfessorDetailsComponent implements OnInit {
     this.professorService.onClickDetails.subscribe(
       (professor: Professor) => {
         this.professor = professor;
+        this.listarCursosProfessor(professor);
       }
     )
   }

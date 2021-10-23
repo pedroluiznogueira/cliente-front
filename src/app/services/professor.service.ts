@@ -40,14 +40,13 @@ export class ProfessorService {
   }
 
   public getProfessorById(id: number | undefined): Observable<Professor>{
-    let obs = this.http.get<Professor>(`${this.url}/professor/search/${id}`);
+    let obs = this.http.get<Professor>(`${this.url}/professor/find/${id}`);
 
     obs.subscribe(
       (professor: Professor) => {
         this.onClickDetails.emit(professor)
       }
     )
-
     return obs;
   }
 

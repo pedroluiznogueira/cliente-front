@@ -10,4 +10,11 @@ img{
 .card-body{
     display: flex;
     justify-content: space-between;
+    font-weight: 500;
+}
+.icon{
+    cursor: pointer;
+}
+.icon:hover{
+    color: #A435F0;
 }

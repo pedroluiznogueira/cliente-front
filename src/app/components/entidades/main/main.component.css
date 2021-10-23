@@ -1,53 +1,11 @@
 .container{
     margin: 30px auto;
     color: #fff;
-}
-.container-info {
-    text-align: justify;
-    max-width: 1366px;
-    margin: 30px auto;
-    background-color: #222;
-    color: #fff;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 50px;
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0px 5px 10px #333;
-}
+    justify-content: space-between;
 
-.descricao{
-    display: flex;
-    flex-direction: column;
-    
 }
-
-.picsum-img-wrapper{
-    width: 100%;
-}
-.banner{
-    width: 100%;
-}
-
-.img{
-    width: 400px;
-    height: 400px;
-    box-shadow: 0px 5px 10px #151515;
-    
-    border-radius: 10px;
-}
-
-article div {
-    background-color: #333;
-    border: 2px solid #151515;
-    padding: 30px;
-    box-shadow: 0px 5px 10px #151515;
-    border-radius: 10px;
-}
-
-article div h3{
-    font-size: 35px;
-    color: #43B02A;
-    font-weight: 600;
+.info{
+    border: 1px solid black;
+    width: 25vw;
 }

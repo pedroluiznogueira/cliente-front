@@ -47,7 +47,6 @@ export class ProfessorService {
         this.onClickDetails.emit(professor)
       }
     )
-
     return obs;
   }
 

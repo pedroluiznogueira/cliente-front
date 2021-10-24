@@ -6,6 +6,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+div.card img{
+    width: 288px;
+    height: 138px;
+    max-width: 288px;
+    max-height: 138px;
+}
+
 div .input-group{
     width: 45vw;
     display: flex;
@@ -15,8 +22,10 @@ div .input-group{
 
 div .cursos{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+
+    gap: 30px;
     flex-wrap: wrap;
 }
 

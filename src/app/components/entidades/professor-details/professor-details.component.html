@@ -1,10 +1,15 @@
 <section class="container">
-
-  <ul class="list-group">
-    <li class="list-group-item">{{professor.nome}}</li>
-    <li class="list-group-item">{{professor.sobrenome}}</li>
-    <li class="list-group-item">{{professor.email}}</li>
-  </ul>
+  <div class="profile">
+    <img src="\assets\img\foto-perfil.jpg" class="rounded-circle" alt="...">
+    <ul class="list-group">
+      <a  class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{professor.nome}} {{professor.sobrenome}}</h5>
+        </div>
+        <p class="mb-1">{{professor.email}}</p>
+      </a>
+    </ul>
+  </div>
   <div class="cursos">
     <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursosProfessor">
       <img src="\assets\img\javaImg.jpg" class="card-img-top" alt="...">

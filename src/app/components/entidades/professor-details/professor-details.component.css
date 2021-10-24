@@ -13,6 +13,17 @@ div.card{
     box-shadow: 0px 0px 2px #999;
 }
 
+.list-group{
+    width: 100%;
+}
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
 div button.btn {
     width: 10vw;
 
@@ -37,5 +48,9 @@ div button.btn:hover {
     align-items: center;
     gap: 30px;
     flex-wrap: wrap;
+}
+
+.rounded-circle{
+    max-width: 200px;
 }
 

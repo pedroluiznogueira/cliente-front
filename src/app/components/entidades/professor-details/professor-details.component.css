@@ -6,6 +6,28 @@
     gap: 20px;
 }
 
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+div button.btn {
+    width: 10vw;
+
+    border: 1px solid black;
+
+    color: black;
+    font-weight: 500;
+}
+
+div button.btn:hover {
+    border: 1px solid #A435F0;
+    background-color: #A435F0;
+    color: #fff;
+}
+
 div.card{
     margin: 20px 0;
     background-color: #fff;
@@ -15,13 +37,19 @@ div.card{
 
 .list-group{
     width: 100%;
+    margin: 20px 0;
+}
+
+.list-group p{
+    color: black;
+    font-weight: 500;
 }
 
 .profile{
     display: flex;
     flex-direction: row;
     gap: 20px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 div button.btn {
@@ -52,5 +80,20 @@ div button.btn:hover {
 
 .rounded-circle{
     max-width: 200px;
+}
+.d-flex{
+    display: flex;
+    flex-direction: column;
+}
+h5{
+    font-size: 20px;
+    color: #A435F0;
+    font-weight: 500;
+}
+
+.list-group-item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 

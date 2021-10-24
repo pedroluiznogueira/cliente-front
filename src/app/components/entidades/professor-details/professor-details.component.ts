@@ -49,4 +49,8 @@ export class ProfessorDetailsComponent implements OnInit {
   public enviarIdCurso(id: number | undefined): void {
     this.cursosService.receberIdCurso(id);
   }
+
+  goToLink(url: string){
+    window.open(url, "_blank");
+  }
 }

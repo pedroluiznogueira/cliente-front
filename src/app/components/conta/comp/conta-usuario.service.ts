@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { Response } from 'src/app/models/response.model';
 import { Usuario } from 'src/app/models/usuario.model';
 import { catchError, map } from "rxjs/operators";
 import { isJSDocThisTag } from 'typescript';

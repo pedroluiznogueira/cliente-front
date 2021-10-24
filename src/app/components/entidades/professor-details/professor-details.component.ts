@@ -11,6 +11,7 @@ import { ProfessorService } from 'src/app/services/professor.service';
 })
 export class ProfessorDetailsComponent implements OnInit {
 
+  imagem?: string = "assets\\img\\perfil-professores\\foto-perfil.jpg";
 
   professor: Professor = new Professor();
 
@@ -26,6 +27,7 @@ export class ProfessorDetailsComponent implements OnInit {
       (professor: Professor) => {
         this.professor = professor;
         this.listarCursosProfessor(professor);
+        console.log(professor.imagem)
       }
     )
   }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;300;600;800&display=swap');
+
 .container{
     margin: 30px auto;
     color: #fff;
@@ -5,7 +7,19 @@
     justify-content: space-between;
 
 }
+
 .info{
-    border: 1px solid black;
     width: 25vw;
+    color: black;
+    font-family: 'Spartan';
+    font-size: 20px;
+    font-weight: 500;
+}
+
+img {
+    width: 500px;
+}
+
+.vue-code {
+    width: 500px;
 }

@@ -43,5 +43,12 @@ export class CarrinhoComponent implements OnInit {
    console.log(this.cursos);
   }
 
+  public removerCurso(curso: Curso): void {
+    this.cursos.splice(this.cursos.indexOf(curso), 1);
+    window.sessionStorage.setItem("cursos", JSON.stringify(this.cursos));
+  }
 
+  // this.tarefas.splice(this.tarefas.indexOf(novaTarefa), 1);
+  // window.localStorage.setItem("todolistPedro", JSON.stringify(this.tarefas));
+  // document.getElementById(novaTarefa.id).remove();
 }

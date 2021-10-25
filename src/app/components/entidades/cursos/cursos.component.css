@@ -14,7 +14,7 @@ div.card img{
 }
 
 div .input-group{
-    width: 45vw;
+    width: 450px;
     display: flex;
     align-self: flex-start;
     margin-top: 20px;
@@ -37,7 +37,7 @@ div.card{
 }
 
 div button.btn {
-    width: 15vw;
+    width: 201px;
 
     border: 1px solid black;
 

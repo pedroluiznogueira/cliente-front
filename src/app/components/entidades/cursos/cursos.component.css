@@ -37,7 +37,7 @@ div.card{
 }
 
 div button.btn {
-    width: 10vw;
+    width: 15vw;
 
     border: 1px solid black;
 
@@ -50,6 +50,17 @@ div button.btn:hover {
     background-color: #A435F0;
     color: #fff;
 }
+.card-title{
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.card-title:hover{
+    color: #A435F0;
+}
 .card-text{
     height: 10vh;
+}
+.card-price{
+    font-weight: 600;
 }

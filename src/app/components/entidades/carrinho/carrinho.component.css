@@ -1,0 +1,13 @@
+.carrinho-img {
+    display: flex;
+    justify-content: center;
+}
+
+.carrinho-text {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-weight: bolder;
+}

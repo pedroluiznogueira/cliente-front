@@ -32,6 +32,7 @@ import { FormularioCursosComponent } from './components/entidades/formulario-cur
 import { FormularioCursosUpdateComponent } from './components/entidades/formulario-cursos-update/formulario-cursos-update.component';
 import { CarrinhoComponent } from './components/entidades/carrinho/carrinho.component';
 import { CursoDetailsComponent } from './components/entidades/curso-details/curso-details.component';
+import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,8 @@ import { CursoDetailsComponent } from './components/entidades/curso-details/curs
     FormularioCursosUpdateComponent,
     CursosComponent,
     CarrinhoComponent,
-    CursoDetailsComponent
+    CursoDetailsComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

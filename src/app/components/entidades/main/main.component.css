@@ -2,24 +2,42 @@
 
 .container{
     margin: 30px auto;
-    color: #fff;
+    color: black;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
 
 }
 
+.sub-container{
+    display: flex;
+    flex-direction: column;
+}
+.d-block{
+    margin: 30px 0;
+
+    border-radius: 10px;
+}
 .info{
-    width: 25vw;
-    color: black;
-    font-family: 'Spartan';
-    font-size: 20px;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.sub-container h3{ 
+    font-size: 28px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.sub-container h3:hover{ 
+    color: #A435F0;
+}
+
+.sub-container p{
+    font-size: 20;
     font-weight: 500;
 }
 
 img {
-    width: 500px;
-}
-
-.vue-code {
     width: 500px;
 }

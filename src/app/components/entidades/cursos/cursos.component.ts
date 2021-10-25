@@ -13,6 +13,7 @@ export class CursosComponent implements OnInit {
 
   panelOpenState = false;
   cursos: Array<Curso> = new Array();
+  sessionCursos: Curso[] = [];
 
   pesquisando: boolean = true;
 
@@ -43,5 +44,11 @@ export class CursosComponent implements OnInit {
       cursos => this.cursos = cursos
     );
   }
-  
+
+  public sessionCurso(curso?: Curso) {
+    this.sessionCursos.push(curso!);
+    console.log(this.sessionCursos);
+    
+    window.sessionStorage.setItem("cursos", JSON.stringify(this.sessionCursos));
+  }
 }

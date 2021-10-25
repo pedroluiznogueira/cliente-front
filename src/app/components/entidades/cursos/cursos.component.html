@@ -12,7 +12,8 @@
         <div class="card-body">
           <h5 class="card-title">{{cursoF.titulo}}</h5>
           <p class="card-text">{{cursoF.descricao}}</p>
-          <button type="button" class="btn">R$ {{cursoF.valor}}</button>
+          <p class="card-text">R$ {{cursoF.valor}}</p>
+          <button type="button" class="btn" (click)="sessionCurso(cursoF)">Adicionar ao carrinho</button>
         </div>
       </div>
     </div>
@@ -23,7 +24,8 @@
         <div class="card-body">
           <h5 class="card-title">{{curso.titulo}}</h5>
           <p class="card-text">{{curso.descricao}}</p>
-          <button type="button" class="btn">R$ {{curso.valor}}</button>
+          <p class="card-title">R$ {{curso.valor}}</p>
+          <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>
         </div>
       </div>
     </div>

@@ -49,4 +49,8 @@ export class CursosComponent implements OnInit {
     this.sessionCursos.push(curso);
     window.sessionStorage.setItem("cursos", JSON.stringify(this.sessionCursos));
   }
+
+  public enviarIdCurso(curso: Curso): void {
+    this.cursosService.receberIdCurso(curso.id);
+  }
 }

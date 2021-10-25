@@ -19,7 +19,7 @@
       <div class="card-body">
         <h5 class="card-title">{{cursoF.titulo}}</h5>
         <p class="card-text">{{cursoF.descricao}}</p>
-        <p class="card-text">R$ {{cursoF.valor}}</p>
+        <p class="card-price">R$ {{cursoF.valor}}</p>
         <button type="button" class="btn" (click)="removerCurso(cursoF)">Remover do carrinho</button>
       </div>
     </div>
@@ -31,7 +31,7 @@
       <div class="card-body">
         <h5 class="card-title">{{curso.titulo}}</h5>
         <p class="card-text">{{curso.descricao}}</p>
-        <p class="card-title">R$ {{curso.valor}}</p>
+        <p class="card-price">R$ {{curso.valor}}</p>
         <button type="button" class="btn" (click)="removerCurso(curso)">Remover do carrinho</button>
       </div>
     </div>

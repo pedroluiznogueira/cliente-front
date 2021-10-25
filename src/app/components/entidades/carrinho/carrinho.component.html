@@ -4,3 +4,15 @@
 <div class="carrinho-text">
     <p>Estes são os seus cursos!</p>
 </div>
+
+<div class="cursos">
+    <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursos">
+      <img src="{{curso.imagem}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{curso.titulo}}</h5>
+        <p class="card-text">{{curso.descricao}}</p>
+        <p class="card-title">R$ {{curso.valor}}</p>
+        <button type="button" class="btn">Remover do carrinho</button>
+      </div>
+    </div>
+  </div>

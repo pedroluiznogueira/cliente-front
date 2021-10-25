@@ -45,10 +45,8 @@ export class CursosComponent implements OnInit {
     );
   }
 
-  public sessionCurso(curso?: Curso) {
-    this.sessionCursos.push(curso!);
-    console.log(this.sessionCursos);
-    
+  public sessionCurso(curso: Curso) {
+    this.sessionCursos.push(curso);
     window.sessionStorage.setItem("cursos", JSON.stringify(this.sessionCursos));
   }
 }

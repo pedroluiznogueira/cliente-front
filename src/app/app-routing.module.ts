@@ -18,6 +18,7 @@ import { FormularioCursosComponent } from './components/entidades/formulario-cur
 import { FormularioCursosUpdateComponent } from './components/entidades/formulario-cursos-update/formulario-cursos-update.component';
 import { CarrinhoComponent } from './components/entidades/carrinho/carrinho.component';
 import { CursoDetailsComponent } from './components/entidades/curso-details/curso-details.component';
+import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path: 'curso-update-formulario', component:  FormularioCursosUpdateComponent },
       { path: 'curso-details', component:  CursoDetailsComponent },
       { path: 'carrinho', component: CarrinhoComponent },
+      { path: 'wishlist', component: WishlistComponent },
     ],
     canActivate: [AuthGuard],
   },

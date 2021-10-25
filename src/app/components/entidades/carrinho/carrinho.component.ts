@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Curso } from 'src/app/models/curso';
+import { CursosService } from 'src/app/services/cursos.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -8,12 +11,31 @@ import { Curso } from 'src/app/models/curso';
 })
 export class CarrinhoComponent implements OnInit {
 
+  pesquisando: boolean = true;
+
+  cursosFiltrados$!: Observable<Curso[]>
+  private pesquisarTerms = new Subject<string>();
+
   cursos: Curso[] = [];
 
-  constructor() { }
+  public pesquisar(term: string): void {
+    this.pesquisando = false;
+    this.pesquisarTerms.next(term);
+  }
+
+  constructor(
+    private cursosService: CursosService
+  ) { }
+
 
   ngOnInit(): void {
     this.mostrarCursos();
+
+    this.cursosFiltrados$ = this.pesquisarTerms.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap((term: string) => this.cursosService.pesquisarCursos(term)),
+    );
   }
 
   public mostrarCursos(): void {

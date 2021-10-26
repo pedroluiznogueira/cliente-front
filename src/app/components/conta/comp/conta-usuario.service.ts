@@ -17,6 +17,8 @@ export class ContaUsuarioService {
   usuario?: Usuario = new Usuario();
   wishlist?: Wishlist = new Wishlist();
 
+  usuarioToken?: Usuario = new Usuario();
+
   private url: string = "http://localhost:8080";
 
   response: Response =  new Response();
@@ -38,7 +40,6 @@ export class ContaUsuarioService {
       (data: Usuario) => {
         this.usuario = data;
         this.getUsuarioByToken();
-        this.criarWishList();
     });
 
     return usuario;
@@ -50,8 +51,8 @@ export class ContaUsuarioService {
     
     obs.subscribe(
       (data) => {
-        console.log("FOIIIII")
-        console.log(data)
+        this.usuarioToken = data;
+        this.criarWishList();
       }
     );
 
@@ -60,6 +61,8 @@ export class ContaUsuarioService {
 
 
   public criarWishList(): void {
-    // this.http.post(`${this.url}/wishlist/create`, this.wishlist).subscribe();
+    this.wishlist!.usuario = this.usuarioToken;
+    console.log(this.wishlist)
+    this.http.post(`${this.url}/wishlist/create`, this.wishlist).subscribe();
   }
 }

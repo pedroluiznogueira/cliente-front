@@ -5,6 +5,7 @@ import { Curso } from 'src/app/models/curso';
 import { Wishlist } from 'src/app/models/wishlist';
 import { CursosService } from 'src/app/services/cursos.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
+import { ContaUsuarioService } from '../../conta/comp/conta-usuario.service';
 
 @Component({
   selector: 'app-cursos',
@@ -26,7 +27,8 @@ export class CursosComponent implements OnInit {
   
   constructor(
     private cursosService: CursosService,
-    private wishlistService: WishlistService
+    private wishlistService: WishlistService,
+    private contaUsuarioService: ContaUsuarioService
   ) { }
 
   public pesquisar(term: string): void {
@@ -59,7 +61,7 @@ export class CursosComponent implements OnInit {
     this.cursosService.receberIdCurso(curso.id);
   }
 
-  public addWish(curso: Curso){
-    this.wishlistService.addWish(this.wishlist);
+  public enviarCursoId(curso: Curso){
+    this.contaUsuarioService.getCursoId(curso);
   }
 }

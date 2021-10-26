@@ -6,6 +6,7 @@ import { catchError, map } from "rxjs/operators";
 import { isJSDocThisTag } from 'typescript';
 import { Router } from '@angular/router';
 import { Wishlist } from 'src/app/models/wishlist';
+import { Curso } from 'src/app/models/curso';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class ContaUsuarioService {
     ) { }
 
   public loginUsuario(usuario: Usuario): Observable<Usuario> {
-    let res: Observable<Usuario> = this.http.post<Usuario>("https://consultoria-api.herokuapp.com/login", usuario);
+    let res: Observable<Usuario> = this.http.post<Usuario>(`${this.url}/login`, usuario);
     return res;
   }
 
@@ -62,7 +63,22 @@ export class ContaUsuarioService {
 
   public criarWishList(): void {
     this.wishlist!.usuario = this.usuarioToken;
-    console.log(this.wishlist)
     this.http.post(`${this.url}/wishlist/create`, this.wishlist).subscribe();
+  }
+
+  public getCursoId(curso: Curso): void {
+    
+  }
+
+  public getWishlistByUsuario(): Observable<Wishlist> {
+    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, this.usuarioToken);
+    
+    obs.subscribe(
+      (data) => {
+        console.log(data);
+      }
+    );
+    
+    return obs;
   }
 }

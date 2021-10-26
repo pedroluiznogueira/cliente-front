@@ -15,7 +15,7 @@
           <p class="card-text">R$ {{cursoF.valor}}</p>
           <div class="controll">
             <button type="button" class="btn" (click)="sessionCurso(cursoF)">Adicionar ao carrinho</button>
-            <mat-icon class="icon" (click = "addWish(cursoF)")>favorite_border</mat-icon>
+            <mat-icon class="icon" (click) = "enviarCursoId(cursoF)">favorite_border</mat-icon>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
           <p class="card-price">R$ {{curso.valor}}</p>
           <div class="controll">
             <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>
-            <mat-icon class="icon" (click) = addWish(curso)>favorite_border</mat-icon>
+            <mat-icon class="icon" (click) = enviarCursoId(curso)>favorite_border</mat-icon>
           </div>
         </div>
       </div>

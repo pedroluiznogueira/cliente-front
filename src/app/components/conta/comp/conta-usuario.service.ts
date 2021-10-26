@@ -7,6 +7,7 @@ import { isJSDocThisTag } from 'typescript';
 import { Router } from '@angular/router';
 import { Wishlist } from 'src/app/models/wishlist';
 import { Curso } from 'src/app/models/curso';
+import { Cursowish } from 'src/app/models/cursowish';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,9 @@ export class ContaUsuarioService {
   wishlist?: Wishlist = new Wishlist();
 
   usuarioToken?: Usuario = new Usuario();
+
+  wishlistAdd?: Wishlist = new Wishlist();
+  cursoWishlist?: Cursowish = new Cursowish();
 
   private url: string = "http://localhost:8080";
 
@@ -67,7 +71,8 @@ export class ContaUsuarioService {
   }
 
   public getCursoId(curso: Curso): void {
-    
+    this.getWishlistByUsuario();
+
   }
 
   public getWishlistByUsuario(): Observable<Wishlist> {
@@ -75,7 +80,8 @@ export class ContaUsuarioService {
     
     obs.subscribe(
       (data) => {
-        console.log(data);
+        this.wishlistAdd = data;
+        console.log(this.wishlistAdd)
       }
     );
     

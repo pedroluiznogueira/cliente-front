@@ -15,6 +15,7 @@ import { Cursowish } from 'src/app/models/cursowish';
 export class ContaUsuarioService {
 
   @Output() loginValidado: EventEmitter<string> = new EventEmitter();
+  @Output() cursosWish: EventEmitter<Curso[]> = new EventEmitter();
 
   usuario?: Usuario = new Usuario();
   wishlist?: Wishlist = new Wishlist();
@@ -23,6 +24,10 @@ export class ContaUsuarioService {
 
   wishlistAdd?: Wishlist = new Wishlist();
   cursoWishlist?: Cursowish = new Cursowish();
+
+  wishlistAux?: Wishlist = new Wishlist();
+
+  idsCursosWish?: number[] = [];
 
   usuarioLogado?: Usuario = new Usuario();
 
@@ -113,22 +118,37 @@ export class ContaUsuarioService {
 
     obs.subscribe(
       (data) => {
-        this.getIdsCursosWish(this.cursoWishlist!.wishlist!)
+        this.wishlistAux = this.cursoWishlist!.wishlist!;
+        this.getIdsCursosWish();
       }
     );
     return obs;
   }
 
-  public getIdsCursosWish(wishlist: Wishlist) {
-    console.log(wishlist);
-    let obs = this.http.post<Wishlist>(`${this.url}/curso/cursos/wish`, wishlist);
+  public getIdsCursosWish(): Observable<number[]> {
+    let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, this.wishlistAux);
 
     obs.subscribe(
       (data) => {
-        console.log(data)
+        this.idsCursosWish = data;
+        console.log(this.idsCursosWish)
+        this.getCursosWish();
       }
     );
 
     return obs;
-  } 
+  }
+
+  public getCursosWish() {
+    let obs = this.http.post<Curso[]>(`${this.url}/curso/cursos/wish/all`, this.idsCursosWish);
+
+    obs.subscribe(
+      (cursos: Curso[]) => {
+        console.log(cursos)
+        this.cursosWish.emit(cursos)
+      }
+    );
+
+    return obs;
+  }
 }

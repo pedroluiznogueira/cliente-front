@@ -15,4 +15,9 @@ export class WishlistService {
     console.log(wishlist)
     this.http.post(`${this.url}/wishlist/create`, wishlist).subscribe();
   }
+
+  public criarWishList(): void {
+    let token = window.sessionStorage.getItem("tokenAux");
+    console.log(token)
+  }
 }

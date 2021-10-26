@@ -60,7 +60,6 @@ export class CursosComponent implements OnInit {
   }
 
   public addWish(curso: Curso){
-    this.wishlist.curso = curso;
     this.wishlistService.addWish(this.wishlist);
   }
 }

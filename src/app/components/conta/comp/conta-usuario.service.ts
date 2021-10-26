@@ -24,6 +24,8 @@ export class ContaUsuarioService {
   wishlistAdd?: Wishlist = new Wishlist();
   cursoWishlist?: Cursowish = new Cursowish();
 
+  usuarioLogado?: Usuario = new Usuario();
+
   private url: string = "http://localhost:8080";
 
   response: Response =  new Response();
@@ -35,6 +37,15 @@ export class ContaUsuarioService {
 
   public loginUsuario(usuario: Usuario): Observable<Usuario> {
     let res: Observable<Usuario> = this.http.post<Usuario>(`${this.url}/login`, usuario);
+    console.log("O usuario acaba de logar: ")
+    console.log(usuario)
+
+    res.subscribe(
+      (data: Usuario) => {
+        this.usuarioLogado = data;
+      }
+    );
+
     return res;
   }
 
@@ -43,7 +54,10 @@ export class ContaUsuarioService {
     
     usuario.subscribe(
       (data: Usuario) => {
+        // settando o usuario que veio como resposta na classe, para passar seu token em getUsuarioByToken
         this.usuario = data;
+
+        // apartir do usuario/token eu trago o usuario da API
         this.getUsuarioByToken();
     });
 
@@ -56,7 +70,10 @@ export class ContaUsuarioService {
     
     obs.subscribe(
       (data) => {
+        // usuário retornado apartir do token de quem fez o cadastro
         this.usuarioToken = data;
+
+        // criando uma wishlist que contenha o usuário que eu obtive
         this.criarWishList();
       }
     );
@@ -66,7 +83,9 @@ export class ContaUsuarioService {
 
 
   public criarWishList(): void {
+    // settando o atributo usuario do objeto wishlist
     this.wishlist!.usuario = this.usuarioToken;
+
     this.http.post(`${this.url}/wishlist/create`, this.wishlist).subscribe();
   }
 
@@ -78,7 +97,7 @@ export class ContaUsuarioService {
   }
 
   public getWishlistByUsuario(): Observable<Wishlist> {
-    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, this.usuarioToken);
+    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, this.usuarioLogado);
     
     obs.subscribe(
       (data) => {

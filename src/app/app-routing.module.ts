@@ -30,13 +30,12 @@ const routes: Routes = [
       { path: 'professor-formulario', component:  ProfessorFormularioComponent },
       { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
       { path: 'professor-details', component:  ProfessorDetailsComponent }, 
-      { path: 'professor-formulario', component:  ProfessorFormularioComponent },
-      { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
 
       { path: 'cursos', component:  CursosComponent },
       { path: 'curso-formulario', component:  FormularioCursosComponent },
       { path: 'curso-update-formulario', component:  FormularioCursosUpdateComponent },
       { path: 'curso-details', component:  CursoDetailsComponent },
+      
       { path: 'carrinho', component: CarrinhoComponent },
       { path: 'wl', component: WishlistComponent }
     ],

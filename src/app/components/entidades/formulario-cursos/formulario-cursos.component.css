@@ -114,3 +114,14 @@ form .controles{
     justify-content: space-between;
     margin-bottom: 0;
 }
+h5{
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    align-self: center;
+    cursor: default;
+}
+
+h5:hover{
+    color: #A435F0;
+}

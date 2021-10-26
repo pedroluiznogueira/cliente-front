@@ -67,17 +67,14 @@ export class ContaUsuarioService {
 
   }
 
-  // quando alguém se cadastrar já quero puxar o usuário da api, apartir do token do mesmo
+  // 1 - quando alguém se cadastrar já quero puxar o usuário da api, apartir do token do mesmo
   public getUsuarioByToken(usuario: Usuario): Observable<Usuario> {
     let obs = this.http.post<Usuario>(`${this.url}/find/token`, usuario);
     
     obs.subscribe(
       (data) => {
-        // usuário retornado apartir do token de quem fez o cadastro
-        this.usuarioToken = data;
-
         // criando uma wishlist que contenha o usuário que eu obtive
-        this.criarWishList();
+        this.criarWishList(data);
       }
     );
 
@@ -85,13 +82,24 @@ export class ContaUsuarioService {
   }
 
 
-  public criarWishList(): void {
+  // 2 - criar uma wishlist para o usuário que acaba de se cadastrar
+  public criarWishList(usuario: Usuario): void {
     // settando o atributo usuario do objeto wishlist
-    this.wishlist!.usuario = this.usuarioToken;
+    this.wishlist!.usuario = usuario;
 
+    // criada a wishlist para o usuário que acaba de se cadastrar
     this.http.post(`${this.url}/wishlist/create`, this.wishlist).subscribe();
   }
 
+  // -------------------------------------------------------------------------------------------------
+
+  // 1 - este é o curso que quero adicionar na wishlist do usuário
+  public getCursoId(curso: Curso): void {
+    this.getWishlistByUsuario();
+    this.cursoWishlist!.curso = curso;
+  }
+
+  // 2- quero traze a wishlist do usuário para adicionar um curso à ela
   public getWishlistByUsuario(): Observable<Wishlist> {
     let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, this.usuarioLogado);
     
@@ -106,10 +114,6 @@ export class ContaUsuarioService {
     return obs;
   }
 
-  public getCursoId(curso: Curso): void {
-    this.getWishlistByUsuario();
-    this.cursoWishlist!.curso = curso;
-  }
 
   public addCursoWish() {
     let obs = this.http.post<Wishlist>(`${this.url}/curso/teste`, this.cursoWishlist);

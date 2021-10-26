@@ -93,42 +93,45 @@ export class ContaUsuarioService {
 
   // -------------------------------------------------------------------------------------------------
 
-  // 1 - este é o curso que quero adicionar na wishlist do usuário
+  // 1 - este é o CURSO que quero adicionar na wishlist do usuário
   public getCursoId(curso: Curso): void {
-    this.getWishlistByUsuario();
-    this.cursoWishlist!.curso = curso;
+    this.getWishlistByUsuario(curso);
   }
 
-  // 2- quero traze a wishlist do usuário para adicionar um curso à ela
-  public getWishlistByUsuario(): Observable<Wishlist> {
+  // 2- quero trazer a WISHLIST do usuário para adicionar um curso à ela
+  public getWishlistByUsuario(curso: Curso): Observable<Wishlist> {
+
     let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, this.usuarioLogado);
     
     obs.subscribe(
-      (data: Wishlist) => {
-        this.wishlistAdd = data;
-        this.cursoWishlist!.wishlist = this.wishlistAdd;
-        this.addCursoWish();
+      (wishlist: Wishlist) => {
+        this.wishlistAdd = wishlist;
+        this.addCursoWish(curso, wishlist);
       }
     );
     
     return obs;
   }
 
+  // 3 - aqui usamos o CURSO e a WISHLIST para passar no objeto que contém os dois como atributos, para levar para a API
+  public addCursoWish(curso: Curso, wishlist: Wishlist) {
+    this.cursoWishlist!.curso = curso;
+    this.cursoWishlist!.wishlist = wishlist;
 
-  public addCursoWish() {
     let obs = this.http.post<Wishlist>(`${this.url}/curso/teste`, this.cursoWishlist);
 
     obs.subscribe(
-      (data) => {
-        this.wishlistAux = this.cursoWishlist!.wishlist!;
+      () => {
         this.getIdsCursosWish();
       }
     );
     return obs;
   }
 
+  // -----------------------------------------------------------------------------------------------------------------------------
+
   public getIdsCursosWish(): Observable<number[]> {
-    let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, this.wishlistAux);
+    let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, this.cursoWishlist!.wishlist!);
 
     obs.subscribe(
       (data) => {

@@ -73,6 +73,8 @@ export class ContaUsuarioService {
   public getCursoId(curso: Curso): void {
     this.getWishlistByUsuario();
 
+    this.cursoWishlist!.curso = curso;
+    this.cursoWishlist!.wishlist = this.wishlistAdd;
   }
 
   public getWishlistByUsuario(): Observable<Wishlist> {

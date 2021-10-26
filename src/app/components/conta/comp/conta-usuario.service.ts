@@ -96,7 +96,7 @@ export class ContaUsuarioService {
       (data: Wishlist) => {
         this.wishlistAdd = data;
         this.cursoWishlist!.wishlist = this.wishlistAdd;
-        this.teste();
+        this.addCursoWish();
       }
     );
     
@@ -108,24 +108,18 @@ export class ContaUsuarioService {
     this.cursoWishlist!.curso = curso;
   }
 
-  teste() {
-    var conta = {
-      obj: {
-        tUm: "fshfjshnfjs",
-        tDois: "fshfjshnfjs"
-      },
-      objD: {
-        tUm: "fshfjshnfjs",
-        tDois: "fshfjshnfjs"
-      }
-    }
-    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/teste`, this.cursoWishlist);
+  public addCursoWish() {
+    let obs = this.http.post<Wishlist>(`${this.url}/curso/teste`, this.cursoWishlist);
 
     obs.subscribe(
       (data) => {
-        console.log(data)
+        this.getCursosWish(this.cursoWishlist!.wishlist!)
       }
     );
     return obs;
   }
+
+  public getCursosWish(wishlist: Wishlist): void {
+    console.log(wishlist);
+  } 
 }

@@ -46,6 +46,10 @@ export class ProfessorDetailsComponent implements OnInit {
     this.ngOnInit();
   }
 
+  public sessionCurso(curso: Curso) {
+    window.sessionStorage.setItem("cursos", JSON.stringify(curso));
+  }
+
   public enviarIdCurso(id: number | undefined): void {
     this.cursosService.receberIdCurso(id);
   }

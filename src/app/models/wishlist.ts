@@ -1,4 +1,6 @@
+import { Curso } from "./curso";
+
 export class Wishlist {
     id?: number;
-    curso_id?: number; 
+    curso?: Curso; 
 }

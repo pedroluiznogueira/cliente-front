@@ -103,9 +103,31 @@ export class ContaUsuarioService {
       (data) => {
         this.wishlistAdd = data;
         console.log(this.wishlistAdd)
+        this.teste();
       }
     );
     
+    return obs;
+  }
+
+  teste() {
+    var conta = {
+      obj: {
+        tUm: "fshfjshnfjs",
+        tDois: "fshfjshnfjs"
+      },
+      objD: {
+        tUm: "fshfjshnfjs",
+        tDois: "fshfjshnfjs"
+      }
+    }
+    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/teste`, conta);
+
+    obs.subscribe(
+      (data) => {
+        console.log(data)
+      }
+    );
     return obs;
   }
 }

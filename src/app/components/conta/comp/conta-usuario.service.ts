@@ -89,25 +89,23 @@ export class ContaUsuarioService {
     this.http.post(`${this.url}/wishlist/create`, this.wishlist).subscribe();
   }
 
-  public getCursoId(curso: Curso): void {
-    this.getWishlistByUsuario();
-
-    this.cursoWishlist!.curso = curso;
-    this.cursoWishlist!.wishlist = this.wishlistAdd;
-  }
-
   public getWishlistByUsuario(): Observable<Wishlist> {
     let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, this.usuarioLogado);
     
     obs.subscribe(
-      (data) => {
+      (data: Wishlist) => {
         this.wishlistAdd = data;
-        console.log(this.wishlistAdd)
+        this.cursoWishlist!.wishlist = this.wishlistAdd;
         this.teste();
       }
     );
     
     return obs;
+  }
+
+  public getCursoId(curso: Curso): void {
+    this.getWishlistByUsuario();
+    this.cursoWishlist!.curso = curso;
   }
 
   teste() {
@@ -121,7 +119,7 @@ export class ContaUsuarioService {
         tDois: "fshfjshnfjs"
       }
     }
-    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/teste`, conta);
+    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/teste`, this.cursoWishlist);
 
     obs.subscribe(
       (data) => {

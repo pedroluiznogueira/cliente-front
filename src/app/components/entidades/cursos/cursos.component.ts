@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Curso } from 'src/app/models/curso';
+import { Wishlist } from 'src/app/models/wishlist';
 import { CursosService } from 'src/app/services/cursos.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 
 @Component({
   selector: 'app-cursos',
@@ -10,6 +12,8 @@ import { CursosService } from 'src/app/services/cursos.service';
   styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent implements OnInit {
+
+  wishlist: Wishlist = new Wishlist();
 
   panelOpenState = false;
   cursos: Array<Curso> = new Array();
@@ -21,7 +25,8 @@ export class CursosComponent implements OnInit {
   private pesquisarTerms = new Subject<string>();
   
   constructor(
-    private cursosService: CursosService
+    private cursosService: CursosService,
+    private wishlistService: WishlistService
   ) { }
 
   public pesquisar(term: string): void {
@@ -52,5 +57,10 @@ export class CursosComponent implements OnInit {
 
   public enviarIdCurso(curso: Curso): void {
     this.cursosService.receberIdCurso(curso.id);
+  }
+
+  public addWish(curso: Curso){
+    this.wishlist.curso_id = curso.id;
+    this.wishlistService.addWish(this.wishlist);
   }
 }

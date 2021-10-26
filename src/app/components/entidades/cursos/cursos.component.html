@@ -13,7 +13,10 @@
           <h5 class="card-title">{{cursoF.titulo}}</h5>
           <p class="card-text">{{cursoF.descricao}}</p>
           <p class="card-text">R$ {{cursoF.valor}}</p>
-          <button type="button" class="btn" (click)="sessionCurso(cursoF)">Adicionar ao carrinho</button>
+          <div class="controll">
+            <button type="button" class="btn" (click)="sessionCurso(cursoF)">Adicionar ao carrinho</button>
+            <mat-icon class="icon" (click = "addWish(cursoF)")>favorite_border</mat-icon>
+          </div>
         </div>
       </div>
     </div>
@@ -25,7 +28,10 @@
           <h5 class="card-title" (click)="enviarIdCurso(curso)" [routerLink]="['/curso-details']">{{curso.titulo}}</h5>
           <p class="card-text">{{curso.descricao}}</p>
           <p class="card-price">R$ {{curso.valor}}</p>
-          <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>
+          <div class="controll">
+            <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>
+            <mat-icon class="icon" (click) = addWish(curso)>favorite_border</mat-icon>
+          </div>
         </div>
       </div>
     </div>

@@ -104,7 +104,9 @@ export class ContaUsuarioService {
   // 2- quero trazer a WISHLIST do usuário para adicionar um curso à ela
   public getWishlistByUsuario(curso: Curso): Observable<Wishlist> {
 
-    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, this.usuarioLogado);
+    let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
+
+    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, usuario);
     
     obs.subscribe(
       (wishlist: Wishlist) => {

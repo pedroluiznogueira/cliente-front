@@ -17,10 +17,11 @@ export class WishlistComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.contaUsuarioService.getCursosWish().subscribe(
-      (data) => {
-        this.cursos = data;
-      }
-    );
+    this.contaUsuarioService.emitirCursos
+      .subscribe(
+        (cursos) => {
+          this.cursos = cursos;          
+        }
+      );
   }
 }

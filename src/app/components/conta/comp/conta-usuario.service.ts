@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { Usuario } from 'src/app/models/usuario.model';
 import { catchError, map } from "rxjs/operators";
 import { isJSDocThisTag } from 'typescript';
@@ -31,6 +31,8 @@ export class ContaUsuarioService {
 
   usuarioLogado?: Usuario = new Usuario();
 
+  clicked: boolean = false;
+
   private url: string = "http://localhost:8080";
 
   response: Response =  new Response();
@@ -48,6 +50,7 @@ export class ContaUsuarioService {
     res.subscribe(
       (data: Usuario) => {
         this.usuarioLogado = data;
+        sessionStorage.setItem("usuarioLogado", JSON.stringify(data))
       }
     );
 
@@ -122,7 +125,7 @@ export class ContaUsuarioService {
 
     obs.subscribe(
       () => {
-        this.getIdsCursosWish();
+        
       }
     );
     return obs;
@@ -131,23 +134,58 @@ export class ContaUsuarioService {
   // -----------------------------------------------------------------------------------------------------------------------------
 
   public getIdsCursosWish(): Observable<number[]> {
-    let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, this.cursoWishlist!.wishlist!);
+    // console.log("FOI CHAMADO")
+    // console.log(this.cursoWishlist!.wishlist);
 
-    obs.subscribe(
-      (data) => {
-        this.idsCursosWish = data;
-        console.log(this.idsCursosWish)
-        
-      }
+    // tenho o token -- token do session storage
+    let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
+
+    // tenho o usuario -- getUsuarioByToken
+    this.http.post<Usuario>(`${this.url}/find/token`, usuario!)
+      .subscribe(
+
+        (usuario: Usuario) => {
+          this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, usuario)
+            .subscribe(
+
+              (wishlist: Wishlist) => {
+                let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, wishlist)
+                  .subscribe(
+                    (ids) => {
+                      this.getCursosWish(ids);
+                    }
+                  );
+                  return obs;
+              }
+            );
+        }
     );
+    return of([]);
 
-    return obs;
+    // tenho a wishlist -- getWishlistByUsuario
+    
+    // let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, this.cursoWishlist!.wishlist!);
+
+    // obs.subscribe(
+    //   (data) => {
+    //     this.idsCursosWish = data;
+    //     console.log(this.idsCursosWish)
+        
+    //   }
+    // );
   }
 
-  public getCursosWish() {
-    let obs = this.http.post<Curso[]>(`${this.url}/curso/cursos/wish/all`, this.idsCursosWish);
+  @Output() emitirCursos: EventEmitter<Curso[]> = new EventEmitter();
 
-    obs.subscribe();
+  public getCursosWish(ids: number[]) {
+    let obs = this.http.post<Curso[]>(`${this.url}/curso/cursos/wish/all`, ids);
+
+    obs.subscribe(
+      (cursos) => {
+        console.log(cursos)
+        this.emitirCursos.emit(cursos)
+      }
+    );
 
     return obs;
   }

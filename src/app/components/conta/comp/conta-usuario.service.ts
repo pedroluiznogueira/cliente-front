@@ -113,13 +113,22 @@ export class ContaUsuarioService {
 
     obs.subscribe(
       (data) => {
-        this.getCursosWish(this.cursoWishlist!.wishlist!)
+        this.getIdsCursosWish(this.cursoWishlist!.wishlist!)
       }
     );
     return obs;
   }
 
-  public getCursosWish(wishlist: Wishlist): void {
+  public getIdsCursosWish(wishlist: Wishlist) {
     console.log(wishlist);
+    let obs = this.http.post<Wishlist>(`${this.url}/curso/cursos/wish`, wishlist);
+
+    obs.subscribe(
+      (data) => {
+        console.log(data)
+      }
+    );
+
+    return obs;
   } 
 }

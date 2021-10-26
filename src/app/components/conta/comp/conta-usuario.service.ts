@@ -132,7 +132,7 @@ export class ContaUsuarioService {
       (data) => {
         this.idsCursosWish = data;
         console.log(this.idsCursosWish)
-        this.getCursosWish();
+        
       }
     );
 
@@ -142,12 +142,7 @@ export class ContaUsuarioService {
   public getCursosWish() {
     let obs = this.http.post<Curso[]>(`${this.url}/curso/cursos/wish/all`, this.idsCursosWish);
 
-    obs.subscribe(
-      (cursos: Curso[]) => {
-        console.log(cursos)
-        this.cursosWish.emit(cursos)
-      }
-    );
+    obs.subscribe();
 
     return obs;
   }

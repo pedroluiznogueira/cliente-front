@@ -17,7 +17,7 @@ export class WishlistComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.contaUsuarioService.cursosWish.subscribe(
+    this.contaUsuarioService.getCursosWish().subscribe(
       (data) => {
         this.cursos = data;
       }

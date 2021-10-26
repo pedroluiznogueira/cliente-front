@@ -38,7 +38,7 @@ const routes: Routes = [
       { path: 'curso-update-formulario', component:  FormularioCursosUpdateComponent },
       { path: 'curso-details', component:  CursoDetailsComponent },
       { path: 'carrinho', component: CarrinhoComponent },
-      { path: 'wishlist', component: WishlistComponent },
+      { path: 'wl', component: WishlistComponent }
     ],
     canActivate: [AuthGuard],
   },

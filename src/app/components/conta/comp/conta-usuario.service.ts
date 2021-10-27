@@ -84,7 +84,6 @@ export class ContaUsuarioService {
     return obs;
   }
 
-
   // 2 - criar uma wishlist para o usuário que acaba de se cadastrar
   public criarWishList(usuario: Usuario): void {
     // settando o atributo usuario do objeto wishlist
@@ -151,6 +150,7 @@ export class ContaUsuarioService {
               (wishlist: Wishlist) => {
                 let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, wishlist)
                   .subscribe(
+                    
                     (ids) => {
                       this.getCursosWish(ids);
                     }

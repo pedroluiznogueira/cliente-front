@@ -46,6 +46,7 @@ div.card{
     margin: 20px 0;
     width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     height: 100%;
 =======
     margin: 20px 0;
@@ -55,6 +56,9 @@ div.card{
     color: black;
     font-weight: 500;
 >>>>>>> 9e759da0e519ee507164d3fefb45b0e0da2a91da
+=======
+    height: 100%;
+>>>>>>> dev
 }
 
 .profile{
@@ -139,6 +143,39 @@ h5{
     color:#A435F0;
 }
 
+<<<<<<< HEAD
+=======
+.d-flex{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.list-group-item{
+    color: black;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.list-group h5{
+    font-size: 20px;
+    color: #A435F0;
+    font-weight: 500;
+}
+
+.cursos h5{
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cursos h5:hover{
+    color:#A435F0;
+}
+
+>>>>>>> dev
 .card-price{
     font-weight: 600;
 }

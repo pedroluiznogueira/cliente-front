@@ -18,10 +18,14 @@
 
 img{
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: 10px;
 =======
     margin: 0;
 >>>>>>> 9e759da0e519ee507164d3fefb45b0e0da2a91da
+=======
+    margin: 10px;
+>>>>>>> dev
     width: 150px;
     height: 150px;
     max-width: 150px;
@@ -48,6 +52,15 @@ div button.btn:hover {
 .col-md-4{
     margin: 0;
 }
+
+.infos{
+    color: black;
+}
+
+.col-md-4{
+    max-width: 170px;
+}
+
 
 .infos{
     color: black;

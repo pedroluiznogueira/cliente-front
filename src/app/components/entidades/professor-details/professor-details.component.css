@@ -45,20 +45,19 @@ div.card{
 .list-group{
     margin: 20px 0;
     width: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD
+ 
+ 
     height: 100%;
-=======
+
     margin: 20px 0;
 }
 
 .list-group p{
     color: black;
     font-weight: 500;
->>>>>>> 9e759da0e519ee507164d3fefb45b0e0da2a91da
-=======
+
     height: 100%;
->>>>>>> dev
+ 
 }
 
 .profile{
@@ -143,8 +142,8 @@ h5{
     color:#A435F0;
 }
 
-<<<<<<< HEAD
-=======
+ 
+
 .d-flex{
     display: flex;
     flex-direction: column;
@@ -175,7 +174,7 @@ h5{
     color:#A435F0;
 }
 
->>>>>>> dev
+ 
 .card-price{
     font-weight: 600;
 }

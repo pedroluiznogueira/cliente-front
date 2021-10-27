@@ -2,19 +2,12 @@
   <div class="profile">
     <div class="links">
       <img src="{{professor.imagem}}" class="rounded-circle" alt="...">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> dev
       <button type="button" class="btn" (click)="goToLink('https://www.linkedin.com/')">Twitter</button>
       <button type="button" class="btn" (click)="goToLink('https://facebook.com/')">Facebook</button>
       <button type="button" class="btn" (click)="goToLink('https://www.instagram.com/')">Instagram</button>
       <button type="button" class="btn" (click)="goToLink('https://www.linkedin.com/')">Linkedin</button>
       <button type="button" class="btn" (click)="goToLink('https://twitter.com/')">Youtube</button>
     </div>
-    
-<<<<<<< HEAD
-=======
       
       <link rel="stylesheet" href="">
       <button type="button" class="btn" (click)="goToLink('https://twitter.com/')">Twitter</button>
@@ -23,32 +16,21 @@
       <button type="button" class="btn" (click)="goToLink('https://www.youtube.com/')">Youtube</button>
       <button type="button" class="btn" (click)="goToLink('https://www.instagram.com/')">Instagram</button>
     </div>
->>>>>>> 9e759da0e519ee507164d3fefb45b0e0da2a91da
-=======
->>>>>>> dev
     <ul class="list-group">
       <a  class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">{{professor.nome}} {{professor.sobrenome}}</h5>
           <p class="mb-1">{{professor.resumo}}</p>
           <p class="mb-1">{{professor.email}}</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
         </div>
         <p class="mb-1">{{professor.sobre}}</p>
-=======
-        </div>
+
         <div class="sobre">
           <p class="mb-1">{{professor.sobre}}</p>
         </div>
->>>>>>> 9e759da0e519ee507164d3fefb45b0e0da2a91da
-=======
-        </div>
         <p class="mb-1">{{professor.sobre}}</p>
->>>>>>> dev
       </a>
     </ul>
-  </div>
   <div class="cursos">
     <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursosProfessor">
       <img src="{{curso.imagem}}" class="card-img-top" alt="...">

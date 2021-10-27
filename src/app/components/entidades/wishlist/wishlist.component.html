@@ -1,0 +1,43 @@
+<div class="sub-header">
+  <div class="my-learning">
+    Meu aprendizado
+  </div>
+</div>
+
+<div class="container">
+    <div class="input-group">
+      <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa"  (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Pesquise em sua lista de desejos...">
+        <div class="input-group-append">
+        <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
+      </div>
+    </div>
+
+    <div class="cursos" *ngFor="let cursoF of cursosFiltrados$ | async">
+        <div class="card" style="max-width: 18rem;">
+          <img src="{{cursoF.imagem}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{cursoF.titulo}}</h5>
+            <p class="card-text">{{cursoF.descricao}}</p>
+            <p class="card-text">R$ {{cursoF.valor}}</p>
+            <div class="controll">
+              <button type="button" class="btn" (click)="sessionCurso(cursoF)">Adicionar ao carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="cursos" *ngIf="pesquisando">
+        <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursos">
+        <img src="{{curso.imagem}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title" (click)="enviarIdCurso(curso)" [routerLink]="['/curso-details']">{{curso.titulo}}</h5>
+            <p class="card-text">{{curso.descricao}}</p>
+            <p class="card-price">R$ {{curso.valor}}</p>
+            <div class="controll">
+            <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>

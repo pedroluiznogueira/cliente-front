@@ -2,29 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Curso } from 'src/app/models/curso';
-import { Wishlist } from 'src/app/models/wishlist';
+import { Usuario } from 'src/app/models/usuario.model';
 import { CursosService } from 'src/app/services/cursos.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 import { ContaUsuarioService } from '../../conta/comp/conta-usuario.service';
 
 @Component({
-  selector: 'app-cursos',
-  templateUrl: './cursos.component.html',
-  styleUrls: ['./cursos.component.css']
+  selector: 'app-wishlist',
+  templateUrl: './wishlist.component.html',
+  styleUrls: ['./wishlist.component.css']
 })
-export class CursosComponent implements OnInit {
+export class WishlistComponent implements OnInit {
 
-  wishlist: Wishlist = new Wishlist();
-
-  panelOpenState = false;
-  cursos: Array<Curso> = new Array();
+  cursos: Curso[] = [];
   sessionCursos: Curso[] = [];
 
   pesquisando: boolean = true;
 
   cursosFiltrados$!: Observable<Curso[]>
   private pesquisarTerms = new Subject<string>();
-  
+
   constructor(
     private cursosService: CursosService,
     private wishlistService: WishlistService,
@@ -37,19 +34,18 @@ export class CursosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listarCursos();
-    
-    this.cursosFiltrados$ = this.pesquisarTerms.pipe(
-      debounceTime(300),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.cursosService.pesquisarCursos(term)),
-    );
-  }
+    this.contaUsuarioService.emitirCursos
+      .subscribe(
+        (cursos) => {
+          this.cursos = cursos;          
+        }
+      );
 
-  public listarCursos(): void {
-    this.cursosService.listarCursos().subscribe(
-      cursos => this.cursos = cursos
-    );
+      this.cursosFiltrados$ = this.pesquisarTerms.pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        switchMap((term: string) => this.cursosService.pesquisarCursos(term)),
+      );
   }
 
   public sessionCurso(curso: Curso) {

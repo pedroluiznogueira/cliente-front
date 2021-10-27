@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Curso } from '../models/curso';
 import { Professor } from '../models/professor';
@@ -12,6 +12,8 @@ export class CursosService {
   private url: string = "http://localhost:8080";
   cursoPesq: Curso = new Curso();
   curso: Curso = new Curso();
+
+  @Output() onClickCursoDetails: EventEmitter<Curso> = new EventEmitter<Curso>();
 
   constructor(
     private http: HttpClient
@@ -29,8 +31,16 @@ export class CursosService {
     this.http.delete(`${this.url}/curso/delete/${id}`).subscribe();
   }
 
-  public receberIdCurso(id: number | undefined): void {
-    this.curso.id = id;
+  public receberIdCurso(id: number | undefined): Observable<Curso> {
+    let obs = this.http.get<Curso>(`${this.url}/curso/find/${id}`);
+    
+    obs.subscribe(
+      (curso: Curso) => {
+        this.onClickCursoDetails.emit(curso)
+        console.log(curso)
+      }
+    );
+    return obs;
   }
 
   public novoCurso(curso: Curso): void {

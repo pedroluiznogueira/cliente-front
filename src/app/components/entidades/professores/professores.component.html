@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="input-group">
-    <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Curso...">
+    <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Professores...">
       <div class="input-group-append">
       <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
     </div>
@@ -20,7 +20,7 @@
         <div class="card-body">
 
           <div class="infos">
-            <h5 class="card-title">{{professorF.nome}} {{professorF.sobrenome}}</h5>
+            <h5 class="card-title" (click)="getProfessorById(professorF.id)" [routerLink]="['/professor-details']">{{professorF.nome}} {{professorF.sobrenome}}</h5>
             <p class="card-text">{{professorF.email}}</p>
           </div>
 
@@ -50,8 +50,9 @@
           <div class="card-body">
   
             <div class="infos">
-              <h5 class="card-title">{{professor.nome}} {{professor.sobrenome}}</h5>
+              <h5 class="card-title" (click)="getProfessorById(professor.id)" [routerLink]="['/professor-details']">{{professor.nome}} {{professor.sobrenome}}</h5>
               <p class="card-text">{{professor.email}}</p>
+              <p class="card-text">{{professor.resumo}}</p>
             </div>
   
             <div class="tools">

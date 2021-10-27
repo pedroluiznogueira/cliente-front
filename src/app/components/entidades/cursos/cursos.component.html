@@ -12,7 +12,11 @@
         <div class="card-body">
           <h5 class="card-title">{{cursoF.titulo}}</h5>
           <p class="card-text">{{cursoF.descricao}}</p>
-          <button type="button" class="btn">R$ {{cursoF.valor}}</button>
+          <p class="card-text">R$ {{cursoF.valor}}</p>
+          <div class="controll">
+            <button type="button" class="btn" (click)="sessionCurso(cursoF)">Adicionar ao carrinho</button>
+            <mat-icon class="icon" (click) = "enviarCursoId(cursoF)" routerLink="wl">favorite_border</mat-icon>
+          </div>
         </div>
       </div>
     </div>
@@ -21,9 +25,13 @@
       <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursos">
         <img src="{{curso.imagem}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{curso.titulo}}</h5>
+          <h5 class="card-title" (click)="enviarIdCurso(curso)" [routerLink]="['/curso-details']">{{curso.titulo}}</h5>
           <p class="card-text">{{curso.descricao}}</p>
-          <button type="button" class="btn">R$ {{curso.valor}}</button>
+          <p class="card-price">R$ {{curso.valor}}</p>
+          <div class="controll">
+            <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>
+            <mat-icon class="icon" (click)="enviarCursoId(curso)">favorite_border</mat-icon>
+          </div>
         </div>
       </div>
     </div>

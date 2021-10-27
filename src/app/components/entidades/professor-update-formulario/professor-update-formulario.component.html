@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="form" (submit)="envioFormulario()">
+    <!-- <form class="form" (submit)="envioFormulario()">
       <div class="form-group">
         <label class="label" for="exampleInputEmail1">Nome</label>
         <input type="text" name="nome" class="form-control" id="nome" placeholder="Entre seu novo nome" [(ngModel)]="nome">
@@ -15,6 +15,26 @@
         <p class="voltar" [routerLink]="['/professores']">Voltar</p>
         <button type="submit" class="botao">Enviar</button>
       </div>
-    </form>
+    </form> -->
+
+    <form (submit)="envioFormulario()">
+      <h5>Adicionar curso</h5>
+      <label>
+          Titulo:
+          <input type="text" name="nome" id="titulo" placeholder="" [(ngModel)]="nome">
+      </label>
+      <label>
+          Descricao:
+          <input type="text" name="sobrenome" id="descricao" placeholder="" [(ngModel)]="sobrenome">
+      </label>
+      <label>
+          Valor:
+          <input type="number" name="email" id="valor" placeholder="" [(ngModel)]="email">
+      </label>
+      <div class="controles">      
+          <p class="link" [routerLink]="['/professores']">Voltar</p>
+          <button type="submit" class="btn">Salvar</button>
+      </div>
+  </form>
   </div>
   

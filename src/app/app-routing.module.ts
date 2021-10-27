@@ -16,6 +16,9 @@ import { ProfessorDetailsComponent } from './components/entidades/professor-deta
 import { CursosComponent } from './components/entidades/cursos/cursos.component';
 import { FormularioCursosComponent } from './components/entidades/formulario-cursos/formulario-cursos.component';
 import { FormularioCursosUpdateComponent } from './components/entidades/formulario-cursos-update/formulario-cursos-update.component';
+import { CarrinhoComponent } from './components/entidades/carrinho/carrinho.component';
+import { CursoDetailsComponent } from './components/entidades/curso-details/curso-details.component';
+import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -27,12 +30,14 @@ const routes: Routes = [
       { path: 'professor-formulario', component:  ProfessorFormularioComponent },
       { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
       { path: 'professor-details', component:  ProfessorDetailsComponent }, 
-      { path: 'professor-formulario', component:  ProfessorFormularioComponent },
-      { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
 
       { path: 'cursos', component:  CursosComponent },
       { path: 'curso-formulario', component:  FormularioCursosComponent },
       { path: 'curso-update-formulario', component:  FormularioCursosUpdateComponent },
+      { path: 'curso-details', component:  CursoDetailsComponent },
+      
+      { path: 'carrinho', component: CarrinhoComponent },
+      { path: 'wl', component: WishlistComponent }
     ],
     canActivate: [AuthGuard],
   },

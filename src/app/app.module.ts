@@ -30,6 +30,9 @@ import { ProfessorDetailsComponent } from './components/entidades/professor-deta
 import { CursosComponent } from './components/entidades/cursos/cursos.component';
 import { FormularioCursosComponent } from './components/entidades/formulario-cursos/formulario-cursos.component';
 import { FormularioCursosUpdateComponent } from './components/entidades/formulario-cursos-update/formulario-cursos-update.component';
+import { CarrinhoComponent } from './components/entidades/carrinho/carrinho.component';
+import { CursoDetailsComponent } from './components/entidades/curso-details/curso-details.component';
+import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +49,10 @@ import { FormularioCursosUpdateComponent } from './components/entidades/formular
     ProfessorDetailsComponent,
     FormularioCursosComponent,
     FormularioCursosUpdateComponent,
-    CursosComponent
+    CursosComponent,
+    CarrinhoComponent,
+    CursoDetailsComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

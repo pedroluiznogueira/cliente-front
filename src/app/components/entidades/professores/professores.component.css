@@ -17,6 +17,7 @@
 }
 
 img{
+    margin: 10px;
     width: 150px;
     height: 150px;
     max-width: 150px;
@@ -24,7 +25,17 @@ img{
     border-radius: 50%;
 }
 
+.infos{
+    color: black;
+}
+
+.col-md-4{
+    max-width: 170px;
+}
+
+
 .card-body{
+    margin: 20px 0;
     display: flex;
     justify-content: space-between;
     font-weight: 500;

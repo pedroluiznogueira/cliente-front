@@ -42,6 +42,7 @@ nav .nav-link:hover{
 nav .icon{
     color: black;
     cursor: pointer;
+    margin-right: 20px;
 }
 
 nav .icon:hover{

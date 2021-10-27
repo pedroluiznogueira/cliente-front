@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { ContaUsuarioService } from '../../conta/comp/conta-usuario.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,8 @@ export class HomeComponent implements OnInit {
   pauseOnFocus = true;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private contaUsuarioService: ContaUsuarioService
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +50,10 @@ export class HomeComponent implements OnInit {
     if (this.pauseOnIndicator && !slideEvent.paused && slideEvent.source === NgbSlideEventSource.INDICATOR) {
       this.togglePaused();
     }
+  }
+
+  public emitirClickWish() {
+    this.contaUsuarioService.getIdsCursosWish();
   }
 
 }

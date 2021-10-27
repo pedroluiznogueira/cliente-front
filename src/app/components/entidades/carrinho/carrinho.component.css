@@ -1,3 +1,13 @@
+.carrinho-img {
+    display: flex;
+    justify-content: center;
+}
+
+.carrinho-text {
+    display: flex;
+    justify-content: center;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 .container{
@@ -14,7 +24,7 @@ div.card img{
 }
 
 div .input-group{
-    width: 450px;
+    width: 45vw;
     display: flex;
     align-self: flex-start;
     margin-top: 20px;
@@ -36,14 +46,6 @@ div.card{
     box-shadow: 0px 0px 2px #999;
 }
 
-div.controll{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
 div button.btn {
     width: 201px;
 
@@ -61,10 +63,13 @@ div button.btn:hover {
 .card-title{
     font-size: 20px;
     font-weight: 500;
+    color: black;
     cursor: pointer;
+
 }
 .card-title:hover{
     color: #A435F0;
+
 }
 .card-text{
     height: 10vh;
@@ -73,11 +78,3 @@ div button.btn:hover {
     font-weight: 600;
 }
 
-.icon{
-    color: black;
-    cursor: pointer;
-}
-
-.icon:hover{
-    color: #A435F0;
-}

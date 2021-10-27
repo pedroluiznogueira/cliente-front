@@ -1,12 +1,22 @@
 <section class="container">
   <div class="profile">
-    <img src="{{professor.imagem}}" class="rounded-circle" alt="...">
+    <div class="links">
+      <img src="{{professor.imagem}}" class="rounded-circle" alt="...">
+      <button type="button" class="btn" (click)="goToLink('https://www.linkedin.com/')">Twitter</button>
+      <button type="button" class="btn" (click)="goToLink('https://facebook.com/')">Facebook</button>
+      <button type="button" class="btn" (click)="goToLink('https://www.instagram.com/')">Instagram</button>
+      <button type="button" class="btn" (click)="goToLink('https://www.linkedin.com/')">Linkedin</button>
+      <button type="button" class="btn" (click)="goToLink('https://twitter.com/')">Youtube</button>
+    </div>
+    
     <ul class="list-group">
       <a  class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
           <h5 class="mb-1">{{professor.nome}} {{professor.sobrenome}}</h5>
+          <p class="mb-1">{{professor.resumo}}</p>
+          <p class="mb-1">{{professor.email}}</p>
         </div>
-        <p class="mb-1">{{professor.email}}</p>
+        <p class="mb-1">{{professor.sobre}}</p>
       </a>
     </ul>
   </div>
@@ -16,9 +26,12 @@
       <div class="card-body">
         <h5 class="card-title">{{curso.titulo}}</h5>
         <p class="card-text">{{curso.descricao}}</p>
+        <p class="card-price">R$ {{curso.valor}}</p>
         <div class="div-icons">
+          <!-- <mat-icon class="icon" (click)="deletarServico(servico.id)"> delete</mat-icon>
+                <mat-icon class="icon" (click)="enviarIdServico(servico.id)" [routerLink]="['/curso-update-formulario']">edit</mat-icon> -->
         </div>
-        <button type="button" class="btn">R$ {{curso.valor}}</button>
+        <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>
       </div>
     </div>
   </div>

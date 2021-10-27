@@ -135,10 +135,8 @@ export class ContaUsuarioService {
 
   // -----------------------------------------------------------------------------------------------------------------------------
 
+  // 1 - Busca os ids dos cursos que estão na wishlist do usuário
   public getIdsCursosWish(): Observable<number[]> {
-    // console.log("FOI CHAMADO")
-    // console.log(this.cursoWishlist!.wishlist);
-
     // tenho o token -- token do session storage
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
 
@@ -163,22 +161,12 @@ export class ContaUsuarioService {
         }
     );
     return of([]);
-
-    // tenho a wishlist -- getWishlistByUsuario
-    
-    // let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, this.cursoWishlist!.wishlist!);
-
-    // obs.subscribe(
-    //   (data) => {
-    //     this.idsCursosWish = data;
-    //     console.log(this.idsCursosWish)
-        
-    //   }
-    // );
   }
 
+  // emitindo os cursos para o componente wishlist
   @Output() emitirCursos: EventEmitter<Curso[]> = new EventEmitter();
 
+  // 2 - buscando os cursos que tem os ids que o método acima trouxe 
   public getCursosWish(ids: number[]) {
     let obs = this.http.post<Curso[]>(`${this.url}/curso/cursos/wish/all`, ids);
 

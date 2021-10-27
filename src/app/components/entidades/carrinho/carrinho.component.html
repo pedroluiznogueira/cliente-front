@@ -9,12 +9,22 @@
 </div>
 
 <div class="container">
+   
+  <div class="input-pedido">
+
     <div class="input-group">
       <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Curso...">
-        <div class="input-group-append">
-        <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
+        
+      <div class="input-group-append">
+          <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
       </div>
     </div>
+
+    <div class="pedido">
+      <button type="button" class="btn">Fazer pedido</button>
+    </div>
+
+  </div>
 
 <div class="cursos" *ngFor="let cursoF of cursosFiltrados$ | async">
     <div class="card" style="max-width: 18rem;">
@@ -26,6 +36,7 @@
         <button type="button" class="btn" (click)="removerCurso(cursoF)">Remover do carrinho</button>
       </div>
     </div>
+    
   </div>
 
 <div class="cursos" *ngIf="pesquisando">

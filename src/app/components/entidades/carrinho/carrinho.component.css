@@ -92,3 +92,17 @@ div button.btn:hover {
     display: flex;
     justify-content: center;
 }
+
+.input-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-pedido {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pedido button {
+    margin-top: 20px;
+}

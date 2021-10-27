@@ -19,6 +19,7 @@ import { FormularioCursosUpdateComponent } from './components/entidades/formular
 import { CarrinhoComponent } from './components/entidades/carrinho/carrinho.component';
 import { CursoDetailsComponent } from './components/entidades/curso-details/curso-details.component';
 import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
+import { PagamentoComponent } from './components/entidades/pagamento/pagamento.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
       { path: 'curso-details', component:  CursoDetailsComponent },
       
       { path: 'carrinho', component: CarrinhoComponent },
-      { path: 'wl', component: WishlistComponent }
+      { path: 'wl', component: WishlistComponent },
+      { path: 'pagamento', component: PagamentoComponent }
     ],
     canActivate: [AuthGuard],
   },

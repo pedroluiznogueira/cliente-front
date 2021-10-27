@@ -33,6 +33,7 @@ import { FormularioCursosUpdateComponent } from './components/entidades/formular
 import { CarrinhoComponent } from './components/entidades/carrinho/carrinho.component';
 import { CursoDetailsComponent } from './components/entidades/curso-details/curso-details.component';
 import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
+import { PagamentoComponent } from './components/entidades/pagamento/pagamento.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { WishlistComponent } from './components/entidades/wishlist/wishlist.comp
     CursosComponent,
     CarrinhoComponent,
     CursoDetailsComponent,
-    WishlistComponent
+    WishlistComponent,
+    PagamentoComponent
   ],
   imports: [
     BrowserModule,

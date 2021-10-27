@@ -78,3 +78,17 @@ div button.btn:hover {
     font-weight: 600;
 }
 
+.btn {
+    width: 201px;
+
+    border: 1px solid black;
+
+    color: black;
+    font-weight: 500;
+}
+
+.continuar-comprando {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}

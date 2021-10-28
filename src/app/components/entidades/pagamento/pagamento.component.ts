@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { render } from 'creditcardpayments/creditCardPayments';
+import { Curso } from 'src/app/models/curso';
 
 @Component({
   selector: 'app-pagamento',
@@ -8,10 +9,15 @@ import { render } from 'creditcardpayments/creditCardPayments';
 })
 export class PagamentoComponent implements OnInit {
 
+  cursos: Curso[] = [];
+  valorTotal?: number;
+
   constructor() {
    }
 
   ngOnInit(): void {
+    this.mostrarCursosCarrinho();
+    this.valorTotal = this.calcularTotal();
     render(
       { 
         id: "#myPaypalButtons",
@@ -22,6 +28,19 @@ export class PagamentoComponent implements OnInit {
         }
       }
     );    
+  }
+
+  public mostrarCursosCarrinho(): void {
+    this.cursos = JSON.parse(sessionStorage.getItem("cursos")!);
+  }
+
+  public calcularTotal(): number {
+    let valor = 0;
+
+    for (let curso of this.cursos) {
+      valor += curso.valor!;
+    }
+    return valor;
   }
 
 }

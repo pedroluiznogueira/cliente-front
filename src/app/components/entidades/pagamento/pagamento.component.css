@@ -95,6 +95,9 @@ p {
 .pagamento {
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
     padding: 30px;
     margin: 30px;
 }
@@ -107,4 +110,66 @@ p {
 .pagamento-paypal {
     display: flex;
     justify-content: center;
+}
+
+.list-group {
+    width: 500px;
+    margin-top: 10px;
+}
+
+.list-group li {
+    height: 60px;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.total {
+    cursor: pointer;
+}
+.total:hover {
+    color:#A435F0;
+}
+
+.total-pedido {
+    cursor: pointer;
+}
+.total-pedido:hover {
+    color:#A435F0;
+}
+
+.total-pedido {
+    margin-top: 10px;
+
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.pedido {
+    margin-top: 50px;
+    width: 240px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.seu-pedido {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    cursor: pointer
+}
+
+.seu-pedido:hover {
+    color:#A435F0;
+}
+
+.img-curso img {
+    width: 70px;
+    margin-right: 40px;
+}
+
+.list-group li {
+    display: flex;
+    justify-content: flex-start;
 }

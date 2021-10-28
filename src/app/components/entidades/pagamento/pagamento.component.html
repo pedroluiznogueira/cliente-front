@@ -33,6 +33,28 @@
     <div class="pagamento-text">
         Finalize sua compra
     </div>
+    <div class="pedido">
+        <div class="total">
+          Total da compra: 
+        </div>
+        <div class="total-pedido">
+          R$ {{valorTotal}}
+        </div>
+    </div>
+    <div class="seu-pedido">
+        Detalhes do pedido
+    </div>
+    <ul class="list-group" *ngFor="let curso of cursos">
+        <li class="list-group-item disabled">
+            <div class="img-curso">
+                <img src="{{curso.imagem}}" alt="">
+            </div>
+
+            <div id="curso-titulo">
+                {{curso.titulo}}
+            </div>
+        </li>
+    </ul>
 </div>
 
 <div class="pagamento-paypal">

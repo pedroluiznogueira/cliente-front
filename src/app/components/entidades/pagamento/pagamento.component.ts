@@ -24,7 +24,8 @@ export class PagamentoComponent implements OnInit {
         currency: "USD",
         value: "100.0", 
         onApprove: (detais) => {
-          alert("Transaction Sucessfull")
+          alert("Transação foi um sucesso")
+          
         }
       }
     );    

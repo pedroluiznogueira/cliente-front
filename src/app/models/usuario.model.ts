@@ -1,3 +1,5 @@
+import { Pedido } from "./pedido";
+
 export class Usuario {
     id?: number;
     nome?: string;
@@ -6,4 +8,5 @@ export class Usuario {
     email?: string;
     tipo?: string = "usuario";
     token?: string;
+    pedidos?: Pedido[];
 }

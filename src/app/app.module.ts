@@ -36,6 +36,8 @@ import { CursoDetailsComponent } from './components/entidades/curso-details/curs
 import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
 import { PagamentoComponent } from './components/entidades/pagamento/pagamento.component';
 import { AprendizadoComponent } from './components/entidades/aprendizado/aprendizado.component';
+import { CursoAprendizadoComponent } from './components/entidades/curso-aprendizado/curso-aprendizado.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +59,8 @@ import { AprendizadoComponent } from './components/entidades/aprendizado/aprendi
     CursoDetailsComponent,
     WishlistComponent,
     PagamentoComponent,
-    AprendizadoComponent
+    AprendizadoComponent,
+    CursoAprendizadoComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +77,7 @@ import { AprendizadoComponent } from './components/entidades/aprendizado/aprendi
     MatTableModule,
     MatMenuModule,
     FormsModule,
+    YouTubePlayerModule,
     RouterModule.forRoot([]),
     AppRoutingModule
   ],

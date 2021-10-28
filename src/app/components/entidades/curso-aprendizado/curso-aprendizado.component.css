@@ -1,0 +1,26 @@
+.aproveite {
+    margin-top: 20px;
+    background-color: #1C1D1F;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seu-curso {
+    cursor: pointer;
+    font-size: 40px;
+    font-family: 'Montserrat';
+    color: white;
+}
+
+.seu-curso:hover {
+    color:#A435F0;
+}
+
+.video-curso {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

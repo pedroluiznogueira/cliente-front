@@ -12,7 +12,7 @@
 
 <div class="meus-cursos">
     <ul class="list-group" *ngFor="let curso of cursos">
-        <li class="list-group-item">
+        <li class="list-group-item" [routerLink]="['/curso-aprendizado']">
             <div class="img-curso">
                 <img src="{{curso.imagem}}" alt="">
             </div>

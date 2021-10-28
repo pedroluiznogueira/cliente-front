@@ -89,4 +89,22 @@ p {
 
 #myPaypalButtons {
     margin: 20px;
+    width: 500px;
+}
+
+.pagamento {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    margin: 30px;
+}
+
+.pagamento-text {
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.pagamento-paypal {
+    display: flex;
+    justify-content: center;
 }

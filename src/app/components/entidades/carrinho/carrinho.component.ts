@@ -17,6 +17,7 @@ export class CarrinhoComponent implements OnInit {
   private pesquisarTerms = new Subject<string>();
 
   cursos: Curso[] = [];
+  valorTotal?: number;
 
   public pesquisar(term: string): void {
     this.pesquisando = false;
@@ -36,6 +37,8 @@ export class CarrinhoComponent implements OnInit {
       distinctUntilChanged(),
       switchMap((term: string) => this.cursosService.pesquisarCursos(term)),
     );
+
+    this.valorTotal = this.calcularTotal();
   }
 
   public mostrarCursos(): void {
@@ -46,9 +49,15 @@ export class CarrinhoComponent implements OnInit {
   public removerCurso(curso: Curso): void {
     this.cursos.splice(this.cursos.indexOf(curso), 1);
     window.sessionStorage.setItem("cursos", JSON.stringify(this.cursos));
+    this.valorTotal = this.calcularTotal();
   }
 
-  // this.tarefas.splice(this.tarefas.indexOf(novaTarefa), 1);
-  // window.localStorage.setItem("todolistPedro", JSON.stringify(this.tarefas));
-  // document.getElementById(novaTarefa.id).remove();
+  public calcularTotal(): number {
+    let valor = 0;
+
+    for (let curso of this.cursos) {
+      valor += curso.valor!;
+    }
+    return valor;
+  }
 }

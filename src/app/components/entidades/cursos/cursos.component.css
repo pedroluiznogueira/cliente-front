@@ -18,6 +18,7 @@ div .input-group{
     display: flex;
     align-self: flex-start;
     margin-top: 20px;
+    margin-bottom: 80px;
 }
 
 div .cursos{
@@ -80,4 +81,20 @@ div button.btn:hover {
 
 .icon:hover{
     color: #A435F0;
+}
+
+.encontre-curso {
+    height: 200px;
+    color: white;
+    background-color: #1C1D1F;
+    font-size: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+}
+
+.para-voce {
+    text-align: center;
 }

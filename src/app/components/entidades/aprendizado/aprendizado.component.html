@@ -1,7 +1,25 @@
 <div class="aprendizado-column">
-
     <div class="seus-cursos">
-        Aqui você estuda <br>
-        seus cursos
+        Aqui você estuda seus cursos
     </div>
+</div>
+
+<div class="escolha">
+    <div class="selecione">
+        Selecione um curso para estudar
+    </div>
+</div>
+
+<div class="meus-cursos">
+    <ul class="list-group" *ngFor="let curso of cursos">
+        <li class="list-group-item">
+            <div class="img-curso">
+                <img src="{{curso.imagem}}" alt="">
+            </div>
+    
+            <div id="curso-titulo">
+                {{curso.titulo}}
+            </div>
+        </li>
+    </ul>
 </div>

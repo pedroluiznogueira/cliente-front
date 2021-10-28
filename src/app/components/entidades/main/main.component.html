@@ -21,7 +21,12 @@
         engineered to integrate seamlessly with all best frontend frameworks, including Angular, React, Vue, or even
         no framework at all with vanilla JavaScript.</p>
 
-        <button type="button" class="btn">Saiba mais</button>
+        <button mat-button [matMenuTriggerFor]="menu" class="btn">Acessar documentações</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="goToLink('https://angular.io/start')">Angular</button>
+          <button mat-menu-item (click)="goToLink('https://pt-br.reactjs.org/docs/getting-started.html')">React</button>
+          <button mat-menu-item (click)="goToLink('https://vuejs.org/v2/guide/')">Vue</button>
+        </mat-menu>
     </div>
   </section>
 </div>
@@ -33,7 +38,7 @@
         chefiada por James Gosling, na empresa Sun Microsystems. Em 2008 o Java foi adquirido pela empresa Oracle
         Corporation</p>
 
-        <button type="button" class="btn">Documentação</button>
+        <button type="button" class="btn" (click)="goToLink('https://docs.oracle.com/en/java/')">Documentação</button>
     </div>
     <div class="banner">
       <img src="assets\img\javajpg.jpg" alt="">
@@ -59,7 +64,7 @@
       <p>É uma linguagem de programação, multiparadigma, de tipagem forte, desenvolvida pela Microsoft como parte
         da plataforma .NET. A sua sintaxe orientada a objetos foi baseada no C++ mas inclui muitas influências de outras
         linguagens de programação, como Object Pascal</p>
-        <button type="button" class="btn">Page</button>
+        <button type="button" class="btn" (click)="goToLink('https://docs.microsoft.com/pt-br/dotnet/csharp/')">Documentação</button>
     </div>
   </section>
 </div>
@@ -78,7 +83,7 @@
       <h3>Vue JS</h3>
       <p>É um framework JavaScript de código-aberto, focado no desenvolvimento de interfaces de usuário e
         aplicativos de página única</p>
-        <button type="button" class="btn">Sobre</button>
+        <button type="button" class="btn" (click)="goToLink('https://vuejs.org/v2/guide/')">Documentação</button>
     </div>
     <div class="banner">
       <img src="assets\img\learnvue.png" alt="">
@@ -105,7 +110,7 @@
         pela Equipe Angular do Google e por uma comunidade de indivíduos e corporações. Angular é uma reescrita completa
         do
         AngularJS, feito pela mesma equipe que o construiu</p>
-        <button type="button" class="btn">Documentação</button>
+        <button type="button" class="btn" (click)="goToLink('https://angular.io/start')">Documentação</button>
     </div>
   </section>
 </div>
@@ -125,7 +130,7 @@
       <p>É um SDK de código aberto completo para desenvolvimento de aplicativo móvel híbrido criado por Max
         Lynch, Ben Sperry e Adam Bradley da Drifty Co. em 2013. A versão original foi lançada em 2013 e construída sobre
         AngularJS e Apache Cordova</p>
-        <button type="button" class="btn">Saiba mais</button>
+        <button type="button" class="btn" (click)="goToLink('https://ionicframework.com/docs')">Saiba mais</button>
     </div>
     <div class="banner">
       <img src="assets\img\1200px-Ionic-logo-landscape.svg.png" alt="">

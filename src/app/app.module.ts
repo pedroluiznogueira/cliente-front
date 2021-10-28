@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -71,6 +72,7 @@ import { AprendizadoComponent } from './components/entidades/aprendizado/aprendi
     MatIconModule,
     MatTabsModule,
     MatTableModule,
+    MatMenuModule,
     FormsModule,
     RouterModule.forRoot([]),
     AppRoutingModule

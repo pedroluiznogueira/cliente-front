@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Curso } from 'src/app/models/curso';
 
 @Component({
   selector: 'app-aprendizado',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AprendizadoComponent implements OnInit {
 
+  cursos?: Curso[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.cursos = JSON.parse(sessionStorage.getItem('cursos')!);
   }
 
 }

@@ -34,6 +34,7 @@ import { CarrinhoComponent } from './components/entidades/carrinho/carrinho.comp
 import { CursoDetailsComponent } from './components/entidades/curso-details/curso-details.component';
 import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
 import { PagamentoComponent } from './components/entidades/pagamento/pagamento.component';
+import { AprendizadoComponent } from './components/entidades/aprendizado/aprendizado.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import { PagamentoComponent } from './components/entidades/pagamento/pagamento.c
     CarrinhoComponent,
     CursoDetailsComponent,
     WishlistComponent,
-    PagamentoComponent
+    PagamentoComponent,
+    AprendizadoComponent
   ],
   imports: [
     BrowserModule,

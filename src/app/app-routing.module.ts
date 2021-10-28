@@ -20,6 +20,7 @@ import { CarrinhoComponent } from './components/entidades/carrinho/carrinho.comp
 import { CursoDetailsComponent } from './components/entidades/curso-details/curso-details.component';
 import { WishlistComponent } from './components/entidades/wishlist/wishlist.component';
 import { PagamentoComponent } from './components/entidades/pagamento/pagamento.component';
+import { AprendizadoComponent } from './components/entidades/aprendizado/aprendizado.component';
 
 const routes: Routes = [
   {
@@ -39,7 +40,9 @@ const routes: Routes = [
       
       { path: 'carrinho', component: CarrinhoComponent },
       { path: 'wl', component: WishlistComponent },
-      { path: 'pagamento', component: PagamentoComponent }
+      { path: 'pagamento', component: PagamentoComponent },
+      { path: 'aprendizado', component: AprendizadoComponent }
+
     ],
     canActivate: [AuthGuard],
   },

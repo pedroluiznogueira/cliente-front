@@ -1,0 +1,21 @@
+.aprendizado-column {
+    width: 300px;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.seus-cursos {
+    line-height: 30px;
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+
+.seus-cursos:hover {
+    color: #A435F0;
+}

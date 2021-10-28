@@ -6,4 +6,12 @@ export class Pedido {
     cursos?: Curso[];
     usuario?: Usuario;
 
+
+    constructor(id?: number, cursos?: Curso[], usuario?: Usuario) {
+        this.id = id;
+        this.cursos = cursos;
+        this.usuario = usuario;
+    }
+
+
 }

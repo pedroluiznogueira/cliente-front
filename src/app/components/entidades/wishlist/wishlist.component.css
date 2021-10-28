@@ -96,5 +96,9 @@ div button.btn:hover {
 }
 
 .my-learning {
+    cursor: pointer;
+}
 
+.my-learning:hover {
+    color: #A435F0;
 }

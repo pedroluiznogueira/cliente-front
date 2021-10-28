@@ -6,7 +6,13 @@
 .carrinho-text {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
+
+.carrinho-text:hover {
+    color:#A435F0;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 

@@ -97,4 +97,9 @@ div button.btn:hover {
 
 .para-voce {
     text-align: center;
+    cursor: pointer;
+}
+
+.para-voce:hover {
+    color: #A435F0;
 }

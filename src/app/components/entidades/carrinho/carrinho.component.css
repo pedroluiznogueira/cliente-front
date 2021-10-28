@@ -100,7 +100,7 @@ div button.btn:hover {
 
 .input-pedido {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .pedido button {

@@ -1,13 +1,18 @@
-<div class="container">
-<div class="cursos">
+<div class="main">
+
+  <div class="cursos">
     <div class="card" style="max-width: 18rem;">
       <img src="{{curso.imagem}}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{curso.titulo}}</h5>
-        <p class="card-text">{{curso.descricao}}</p>
         <p class="card-price">R$ {{curso.valor}}</p>
         <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>
       </div>
     </div>
   </div>
+
+  <div class="curso-info">
+    <h5 class="card-title">{{curso.titulo}}</h5>
+    <p class="card-text">{{curso.descricao}}</p>
+  </div>
+
 </div>

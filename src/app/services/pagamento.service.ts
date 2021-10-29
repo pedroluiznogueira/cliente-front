@@ -34,7 +34,16 @@ export class PagamentoService {
         () => {
           
         }
-      );
+    );
+    return obs;
+  }
+
+  public getCursosComprados(): Observable<Usuario> {
+    let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
+
+    let obs = this.http.post<Usuario>(`${this.url}/find/token`, usuario);
+      
+    obs.subscribe();
     return obs;
   }
 }

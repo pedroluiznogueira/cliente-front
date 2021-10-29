@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Curso } from 'src/app/models/curso';
+import { Usuario } from 'src/app/models/usuario.model';
+import { PagamentoService } from 'src/app/services/pagamento.service';
 
 @Component({
   selector: 'app-aprendizado',
@@ -8,12 +10,23 @@ import { Curso } from 'src/app/models/curso';
 })
 export class AprendizadoComponent implements OnInit {
 
-  cursos?: Curso[] = [];
+  cursosPedidos: Curso[] = [];
 
-  constructor() { }
+  constructor(
+    private pagamentoService: PagamentoService
+  ) { }
 
   ngOnInit(): void {
-    this.cursos = JSON.parse(sessionStorage.getItem('cursos')!);
+    this.pagamentoService.cursosComprados(this.cursosPedidos!).subscribe(
+      (usuario: Usuario) => {
+        for (let pedido of usuario.pedidos!) {
+          for (let curso of pedido.cursos!) {
+            this.cursosPedidos!.push(curso!);
+          }
+        }
+        console.log(this.cursosPedidos)
+      }
+    );
   }
 
 }

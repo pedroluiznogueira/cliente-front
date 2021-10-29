@@ -5,14 +5,14 @@
 </div>
 
 <div class="meus-cursos">
-    <ul class="list-group" *ngFor="let curso of cursos">
+    <ul class="list-group" *ngFor="let curso of cursosPedidos">
         <li class="list-group-item" [routerLink]="['/curso-aprendizado']">
             <div class="img-curso">
                 <img src="{{curso.imagem}}" alt="">
             </div>
     
             <div id="curso-titulo">
-                {{curso.titulo}}
+                {{curso.descricao}}
             </div>
         </li>
     </ul>

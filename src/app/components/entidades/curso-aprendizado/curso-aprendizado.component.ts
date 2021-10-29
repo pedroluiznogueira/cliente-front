@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+
 
 @Component({
   selector: 'app-curso-aprendizado',

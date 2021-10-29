@@ -1,10 +1,13 @@
 .aprendizado-column {
     height: 200px;
-    background-color: #1C1D1F;
+    background-color: #222;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin: 20px 0;
+
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px #111;
 }
 
 .seus-cursos {
@@ -18,37 +21,10 @@
     font-family: 'Montserrat';
 }
 
-.seus-cursos:hover {
-    color: #A435F0;
-}
-
-.selecione {
-    cursor: pointer;
-    line-height: 30px;
-    margin-top: 30px;
-    margin-left: 10px;
-    font-size: 25px;
-    font-weight: normal;
-    color: black;
-    cursor: pointer;
-    font-family: 'Montserrat';
-}
-
-.selecione:hover {
-    color:#A435F0;
-}
-
-.escolha {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
 
 .img-curso img {
-    width: 70px;
-    margin-right: 40px;
+    width: 200px;
+    margin-right: 20px;
 }
 
 .list-group li {
@@ -82,5 +58,14 @@
 
 #curso-titulo:hover {
     color:#A435F0;
+}
+
+.aprendizado-column h3{
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.aprendizado-column h3:hover {
+    font-weight: 500;
 }
 

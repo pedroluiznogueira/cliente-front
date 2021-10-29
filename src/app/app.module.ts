@@ -79,7 +79,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     FormsModule,
     YouTubePlayerModule,
     RouterModule.forRoot([]),
-    AppRoutingModule
+    AppRoutingModule,
+    YouTubePlayerModule
   ],
   exports: [RouterModule],
   providers: [HttpClientModule],

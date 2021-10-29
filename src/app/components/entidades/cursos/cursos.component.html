@@ -18,7 +18,7 @@
       <div class="card" style="max-width: 18rem;">
         <img src="{{cursoF.imagem}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{cursoF.titulo}}</h5>
+          <h5 class="card-title" [routerLink]="['/curso-details']" (click)="enviarIdCurso(cursoF)" >{{cursoF.titulo}}</h5>
           <p class="card-text">{{cursoF.descricao}}</p>
           <p class="card-text">R$ {{cursoF.valor}}</p>
           <div class="controll">

@@ -51,6 +51,10 @@ export class CarrinhoComponent implements OnInit {
     this.valorTotal = this.calcularTotal();
   }
 
+  public enviarIdCurso(id: number | undefined): void {
+    this.cursosService.receberIdCurso(id);
+  }
+
   public calcularTotal(): number {
     let valor = 0;
 

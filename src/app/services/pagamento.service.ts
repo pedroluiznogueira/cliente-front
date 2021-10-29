@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Curso } from '../models/curso';
 import { Pedido } from '../models/pedido';
 import { Usuario } from '../models/usuario.model';
@@ -12,28 +13,23 @@ export class PagamentoService {
   url?: string = "http://localhost:8080";
 
   pedidos: Pedido[] = [];
+  cursosPedidos: Curso[] = [];
   
   constructor(
     private http: HttpClient
   ) { }
 
-  public cursosComprados(cursos: Curso[]): void {
+  public cursosComprados(cursos: Curso[]): Observable<Usuario> {
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
-
     this.pedidos = [
       {
         cursos: cursos
       }
     ]
-
     usuario!.pedidos = this.pedidos!;
 
-    this.http.post(`${this.url}/pedido`, usuario)
-      .subscribe(
-        (resp) => {
-          console.log(resp)
-        }
-    );
+    let obs = this.http.post<Usuario>(`${this.url}/pedido`, usuario);
+    return obs;
   }
 
 

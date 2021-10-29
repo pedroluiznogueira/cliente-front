@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 .container{
-    margin: 0 auto;
+    margin: 20px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -12,12 +12,10 @@ div.card img{
     max-height: 138px;
 }
 
-div .input-group{
+.input-group{
     width: 450px;
     display: flex;
     align-self: flex-start;
-    margin: 20px 0;
-    margin-bottom: 20px;
 }
 
 div .cursos{

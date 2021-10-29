@@ -21,16 +21,16 @@ export class PagamentoComponent implements OnInit {
   ngOnInit(): void {
     this.mostrarCursosCarrinho();
     this.valorTotal = this.calcularTotal();
+    this.pagamentoService.receberValorTotal(this.valorTotal)
     render(
       { 
         id: "#myPaypalButtons",
         currency: "USD",
-        value: "100.0", 
+        value: `${this.valorTotal}`, 
         onApprove: (detais) => {
           alert("Transação foi um sucesso")
           this.pagamentoService.cursosComprados(this.cursos!);
           console.log(this.cursos!)
-
         }
       }
     );    

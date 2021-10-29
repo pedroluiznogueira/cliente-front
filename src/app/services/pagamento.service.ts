@@ -12,6 +12,7 @@ export class PagamentoService {
 
   url?: string = "http://localhost:8080";
 
+  valorTotal?: number;
   pedidos: Pedido[] = [];
   cursosPedidos: Curso[] = [];
   
@@ -23,6 +24,7 @@ export class PagamentoService {
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
     this.pedidos = [
       {
+        valorTotal:this.valorTotal,
         cursos: cursos
       }
     ]
@@ -36,5 +38,10 @@ export class PagamentoService {
         }
       );
     return obs;
+  }
+
+  public receberValorTotal(valorTotal: number): void{
+    this.valorTotal = valorTotal;
+    console.log(this.valorTotal)
   }
 }

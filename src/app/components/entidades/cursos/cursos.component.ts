@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Curso } from 'src/app/models/curso';
+import { Usuario } from 'src/app/models/usuario.model';
 import { Wishlist } from 'src/app/models/wishlist';
 import { CursosService } from 'src/app/services/cursos.service';
+import { PagamentoService } from 'src/app/services/pagamento.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
 import { ContaUsuarioService } from '../../conta/comp/conta-usuario.service';
 
@@ -24,11 +26,14 @@ export class CursosComponent implements OnInit {
 
   cursosFiltrados$!: Observable<Curso[]>
   private pesquisarTerms = new Subject<string>();
+
+  cursosPedidos: Curso[] = [];
   
   constructor(
     private cursosService: CursosService,
     private wishlistService: WishlistService,
-    private contaUsuarioService: ContaUsuarioService
+    private contaUsuarioService: ContaUsuarioService,
+    private pagamentoService: PagamentoService
   ) { }
 
   public pesquisar(term: string): void {
@@ -53,19 +58,38 @@ export class CursosComponent implements OnInit {
   }
 
   public sessionCurso(curso: Curso) {
-    let cursosGet: Curso[] = JSON.parse(sessionStorage.getItem("cursos")!) 
-    
-    if (cursosGet == null) {
-      cursosGet = [];
-    }
+    let cursosPedidos: Curso[] = [];
 
-    for (let c of cursosGet) {
-      if (c.titulo == curso.titulo) {
-        return
-      }
-    }
-    cursosGet.push(curso);
-    window.sessionStorage.setItem("cursos", JSON.stringify(cursosGet));
+    this.pagamentoService.getCursosComprados()
+    .subscribe(
+      (usuario: Usuario) => {
+        for (let pedido of usuario.pedidos!) {
+          for (let c of pedido.cursos!) {
+
+            if (JSON.stringify(c.titulo) === JSON.stringify(curso.titulo)) {
+              console.log("CURSO JÁ FOI COMPRADO")
+              console.log(c)
+              break;
+            } else {
+              let cursosGet: Curso[] = JSON.parse(sessionStorage.getItem("cursos")!) 
+    
+              if (cursosGet == null) {
+                cursosGet = [];
+              }
+          
+              for (let c of cursosGet) {
+                if (c.titulo == curso.titulo) {
+                  return
+                }
+              }
+              cursosGet.push(curso);
+              window.sessionStorage.setItem("cursos", JSON.stringify(cursosGet));
+            }
+
+          }
+        }
+      }        
+    );
   }
 
   public enviarIdCurso(curso: Curso): void {

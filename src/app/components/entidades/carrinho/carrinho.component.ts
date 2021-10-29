@@ -43,7 +43,6 @@ export class CarrinhoComponent implements OnInit {
 
   public mostrarCursos(): void {
    this.cursos = JSON.parse(sessionStorage.getItem("cursos")!);
-   console.log(this.cursos);
   }
 
   public removerCurso(curso: Curso): void {

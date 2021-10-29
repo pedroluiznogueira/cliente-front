@@ -94,19 +94,20 @@ div button.btn:hover {
 }
 
 .continuar-comprando {
-    margin-top: 20px;
+    margin: 20px 0;
     display: flex;
     justify-content: center;
 }
 
-.input-group {
-    display: flex;
-    justify-content: space-around;
+#continuar-btn{
+    width: 250px;
 }
 
 .input-pedido {
+    margin: 20px 0;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .pedido button {

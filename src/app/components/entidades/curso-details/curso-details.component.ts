@@ -28,16 +28,16 @@ export class CursoDetailsComponent implements OnInit {
     );
   }
 
-  public sessionCurso(curso: Curso): void {
-    this.cursos = JSON.parse(sessionStorage.getItem("cursos")!);
-    if (this.cursos == null) {
-      this.cursos = [];
-      this.cursos.push(curso);
-      window.sessionStorage.setItem("cursos", JSON.stringify(this.cursos));      
-    } else {
-      this.cursos.push(curso);
-      window.sessionStorage.setItem("cursos", JSON.stringify(this.cursos));
+  public sessionCurso(curso: Curso) {
+    let cursosGet: Curso[] = JSON.parse(sessionStorage.getItem("cursos")!) 
+    
+    for (let c of cursosGet) {
+      if (c.titulo == curso.titulo) {
+        return
+      }
     }
+    cursosGet.push(curso);
+    window.sessionStorage.setItem("cursos", JSON.stringify(cursosGet));
   }
 
 

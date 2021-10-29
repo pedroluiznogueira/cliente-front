@@ -59,6 +59,8 @@ export class CarrinhoComponent implements OnInit {
   public calcularTotal(): number {
     let valor = 0;
 
+    if (this.cursos == null) return 0;
+
     for (let curso of this.cursos) {
       valor += curso.valor!;
     }

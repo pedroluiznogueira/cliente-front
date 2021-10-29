@@ -53,8 +53,15 @@ export class CursosComponent implements OnInit {
   }
 
   public sessionCurso(curso: Curso) {
-    this.sessionCursos.push(curso);
-    window.sessionStorage.setItem("cursos", JSON.stringify(this.sessionCursos));
+    let cursosGet: Curso[] = JSON.parse(sessionStorage.getItem("cursos")!) 
+    
+    for (let c of cursosGet) {
+      if (c.titulo == curso.titulo) {
+        return
+      }
+    }
+    cursosGet.push(curso);
+    window.sessionStorage.setItem("cursos", JSON.stringify(cursosGet));
   }
 
   public enviarIdCurso(curso: Curso): void {

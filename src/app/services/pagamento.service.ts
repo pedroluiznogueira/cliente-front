@@ -28,9 +28,13 @@ export class PagamentoService {
     ]
     usuario!.pedidos = this.pedidos!;
 
-    let obs = this.http.post<Usuario>(`${this.url}/pedido`, usuario);
+    let obs = this.http.post<Usuario>(`${this.url}/pedido`, usuario)
+      
+    obs.subscribe(
+        () => {
+          
+        }
+      );
     return obs;
   }
-
-
 }

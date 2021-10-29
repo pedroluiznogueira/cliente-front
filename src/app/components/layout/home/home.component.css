@@ -3,6 +3,7 @@
 /* tag main */
 main {
     margin: 0 auto;
+    margin-bottom: 30px;
     color: black;
     font-family: 'Montserrat', sans-serif;
     max-width: 1000px;
@@ -49,5 +50,18 @@ nav .icon:hover{
     color: #A435F0;
 }
 
+footer{
+    margin: 0;
+    width: 100%;
+    height: 22px;
+    position: fixed;
+    bottom: 0;
+    color: #fff;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #222;
+}
 

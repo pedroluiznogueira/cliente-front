@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { render } from 'creditcardpayments/creditCardPayments';
 import { Curso } from 'src/app/models/curso';
+import { PagamentoService } from 'src/app/services/pagamento.service';
 
 @Component({
   selector: 'app-pagamento',
@@ -12,7 +13,9 @@ export class PagamentoComponent implements OnInit {
   cursos: Curso[] = [];
   valorTotal?: number;
 
-  constructor() {
+  constructor(
+    private pagamentoService: PagamentoService
+  ) {
    }
 
   ngOnInit(): void {
@@ -24,7 +27,9 @@ export class PagamentoComponent implements OnInit {
         currency: "USD",
         value: "100.0", 
         onApprove: (detais) => {
-          alert("Transaction Sucessfull")
+          alert("Transação foi um sucesso")
+          this.pagamentoService.cursosComprados(this.cursos!);
+
         }
       }
     );    

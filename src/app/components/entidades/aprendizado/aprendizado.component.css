@@ -11,53 +11,11 @@
 }
 
 .seus-cursos {
-    line-height: 30px;
-    margin-top: 30px;
-    margin-left: 10px;
     font-size: 30px;
     font-weight: normal;
     color: white;
     cursor: pointer;
     font-family: 'Montserrat';
-}
-
-
-.img-curso img {
-    width: 200px;
-    margin-right: 20px;
-}
-
-.list-group li {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.list-group {
-    width: 500px;
-    margin-top: 10px;
-}
-
-.list-group li {
-    height: 60px;
-    padding: 10px;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.meus-cursos {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#curso-titulo {
-    cursor: pointer;
-}
-
-#curso-titulo:hover {
-    color:#A435F0;
 }
 
 .aprendizado-column h3{
@@ -67,5 +25,70 @@
 
 .aprendizado-column h3:hover {
     font-weight: 500;
+}
+
+.card{
+    margin:20px 0;
+    color: black;
+    border-radius: 5px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-title{
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+.card-title:hover{
+    color: #A435F0;
+}
+
+img{
+    margin: 0;
+    border-radius: 5px;
+    width: 200px;
+    max-width: 200px;
+    display: flex;
+    align-self: center;
+}
+button.btn {
+    width: 10vw;
+
+    border: 1px solid black;
+
+    color: black;
+    font-weight: 500;
+}
+
+div button.btn:hover {
+    border: 1px solid #A435F0;
+    background-color: #A435F0;
+    color: #fff;
+}
+.col-md-4{
+    margin: 0;
+}
+
+.infos{
+    color: black;
+}
+
+
+.infos{
+    color: black;
+}
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    padding-left: 0;
 }
 

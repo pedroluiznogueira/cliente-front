@@ -14,7 +14,8 @@ export class FilesComponent {
   progress: { percentage: number } = { percentage: 0 };
   selectedFile = null;
   changeImage = false;
-  file?:string;
+  file?:string = "ionic.png";
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/" 
 
   constructor(
     private uploadService: UploadFileService, 

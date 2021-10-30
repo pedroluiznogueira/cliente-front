@@ -8,5 +8,6 @@ export class Usuario {
     email?: string;
     tipo?: string = "usuario";
     token?: string;
+    imagem?: string;
     pedidos?: Pedido[];
 }

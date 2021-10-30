@@ -24,6 +24,7 @@ import { AprendizadoComponent } from './components/entidades/aprendizado/aprendi
 import { CursoAprendizadoComponent } from './components/entidades/curso-aprendizado/curso-aprendizado.component';
 import { UploadFileService } from './services/uploadfile.service';
 import { FilesComponent } from './components/entidades/files/files.component';
+import { UsuarioDetailsComponent } from './components/entidades/usuario-details/usuario-details.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
       { path: 'pagamento', component: PagamentoComponent },
       { path: 'aprendizado', component: AprendizadoComponent },
       { path: 'curso-aprendizado', component: CursoAprendizadoComponent },
+      { path: 'usuario-details', component: UsuarioDetailsComponent },
       { path: 'files', component: FilesComponent }      
 
     ],

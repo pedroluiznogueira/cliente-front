@@ -56,6 +56,7 @@ export class FormularioUsuarioComponent implements OnInit {
     this.novoUsuario.nome = this.novoNomeUsuario;
     this.novoUsuario.email = this.email;
     this.novoUsuario.senha = this.senha;
+    this.novoUsuario.imagem = this.arquivoUpload!.name;
 
     console.log(this.novoUsuario);
 

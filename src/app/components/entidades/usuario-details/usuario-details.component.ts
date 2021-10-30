@@ -8,6 +8,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 })
 export class UsuarioDetailsComponent implements OnInit {
 
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
   usuario: Usuario = new Usuario();
 
   constructor() { }

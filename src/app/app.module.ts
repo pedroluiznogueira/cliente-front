@@ -38,6 +38,7 @@ import { PagamentoComponent } from './components/entidades/pagamento/pagamento.c
 import { AprendizadoComponent } from './components/entidades/aprendizado/aprendizado.component';
 import { CursoAprendizadoComponent } from './components/entidades/curso-aprendizado/curso-aprendizado.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { FilesComponent } from './components/entidades/files/files.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     WishlistComponent,
     PagamentoComponent,
     AprendizadoComponent,
-    CursoAprendizadoComponent
+    CursoAprendizadoComponent,
+    FilesComponent
   ],
   imports: [
     BrowserModule,

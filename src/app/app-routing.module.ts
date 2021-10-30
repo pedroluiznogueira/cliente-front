@@ -22,6 +22,8 @@ import { WishlistComponent } from './components/entidades/wishlist/wishlist.comp
 import { PagamentoComponent } from './components/entidades/pagamento/pagamento.component';
 import { AprendizadoComponent } from './components/entidades/aprendizado/aprendizado.component';
 import { CursoAprendizadoComponent } from './components/entidades/curso-aprendizado/curso-aprendizado.component';
+import { UploadFileService } from './services/uploadfile.service';
+import { FilesComponent } from './components/entidades/files/files.component';
 
 const routes: Routes = [
   {
@@ -43,7 +45,8 @@ const routes: Routes = [
       { path: 'wl', component: WishlistComponent },
       { path: 'pagamento', component: PagamentoComponent },
       { path: 'aprendizado', component: AprendizadoComponent },
-      { path: 'curso-aprendizado', component: CursoAprendizadoComponent }
+      { path: 'curso-aprendizado', component: CursoAprendizadoComponent },
+      { path: 'files', component: FilesComponent }      
 
     ],
     canActivate: [AuthGuard],

@@ -5,6 +5,11 @@
             Usuario:
             <input type="text" name="novoUsuario" id="usuario" placeholder="" [(ngModel)]="novoNomeUsuario">
         </label>
+        <div class="custom-file">
+            Foto:
+            <input id = "customFile" type="file" class="custom-file-input" id="customFile" (change)="arquivoSelecionado($event)" >
+            <label class="custom-file-label" for="customFile"></label>
+        </div>
         <label>
             Email:
             <input type="text" name="novoUsuario" id="usuario" placeholder="" [(ngModel)]="email">
@@ -25,6 +30,5 @@
             <p class="link" [routerLink]="['/login']">Voltar</p>
             <button type="submit" class="btn" [disabled]="!arquivosSelecionados" (click)="uploadArquivo()" (click)="validarCampos(senha, senhaConfirmada)">Cadastrar</button>
         </div>
-        <input type="file" id="customFile" (change)="arquivoSelecionado($event)" placeholder="File To Upload">
     </form>
 </article>

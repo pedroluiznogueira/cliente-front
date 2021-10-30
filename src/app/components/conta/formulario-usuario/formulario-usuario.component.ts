@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario.model';
+import { UploadFileService } from 'src/app/services/uploadfile.service';
 import { ContaUsuarioService } from '../comp/conta-usuario.service';
 
 @Component({
@@ -20,12 +21,32 @@ export class FormularioUsuarioComponent implements OnInit {
 
   novoUsuario?: Usuario;
 
+  arquivosSelecionados?: FileList;
+  arquivoUpload?: File;
+
   constructor(
     private contaUsuarioService: ContaUsuarioService,
+    private uploadService: UploadFileService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+  }
+
+  // persistência da imagem de perfil do usuário
+
+  public arquivoSelecionado(event: any): void {
+    this.arquivosSelecionados = event.target.files;
+  }
+
+  public uploadArquivo(): void {
+    this.arquivoUpload = this.arquivosSelecionados!.item(0)!;
+    this.uploadService.pushFileToStorage(this.arquivoUpload!)
+      .subscribe(
+        event => {
+          this.arquivosSelecionados = undefined;          
+        }
+      );
   }
 
   public envioFormulario(): void {

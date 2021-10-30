@@ -41,6 +41,7 @@ window.open('https://udeyou.s3.sa-east-1.amazonaws.com/'+this.file);
   upload() {
     this.progress.percentage = 0;
     this.currentFileUpload = this.selectedFiles!.item(0)!;
+    console.log(this.currentFileUpload.name)
     this.uploadService.pushFileToStorage(this.currentFileUpload!).subscribe(event => {
       this.selectedFiles = undefined;
     });

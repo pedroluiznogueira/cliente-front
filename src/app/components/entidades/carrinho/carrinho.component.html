@@ -27,7 +27,7 @@
       <div class="total-pedido">
         R$ {{valorTotal}}
       </div>
-        <button id="btn-pedido" type="button" class="btn" [routerLink]="['/pagamento']">Fazer pedido</button>
+        <button id="btn-pedido" type="button" class="btn" (click)="verificarCursosComprados()">Fazer pedido</button>
     </div>
 
   </div>

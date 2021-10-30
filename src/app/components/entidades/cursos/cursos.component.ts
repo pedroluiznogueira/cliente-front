@@ -58,38 +58,20 @@ export class CursosComponent implements OnInit {
   }
 
   public sessionCurso(curso: Curso) {
-    let cursosPedidos: Curso[] = [];
 
-    this.pagamentoService.getCursosComprados()
-    .subscribe(
-      (usuario: Usuario) => {
-        for (let pedido of usuario.pedidos!) {
-          for (let c of pedido.cursos!) {
-
-            if (JSON.stringify(c.titulo) === JSON.stringify(curso.titulo)) {
-              console.log("CURSO JÁ FOI COMPRADO")
-              console.log(c)
-              break;
-            } else {
-              let cursosGet: Curso[] = JSON.parse(sessionStorage.getItem("cursos")!) 
+    let cursosGet: Curso[] = JSON.parse(sessionStorage.getItem("cursos")!) 
     
-              if (cursosGet == null) {
-                cursosGet = [];
-              }
-          
-              for (let c of cursosGet) {
-                if (c.titulo == curso.titulo) {
-                  return
-                }
-              }
-              cursosGet.push(curso);
-              window.sessionStorage.setItem("cursos", JSON.stringify(cursosGet));
-            }
+    if (cursosGet == null) {
+      cursosGet = [];
+    }
 
-          }
-        }
-      }        
-    );
+    for (let c of cursosGet) {
+      if (c.titulo == curso.titulo) {
+        return
+      }
+    }
+    cursosGet.push(curso);
+    window.sessionStorage.setItem("cursos", JSON.stringify(cursosGet));
   }
 
   public enviarIdCurso(curso: Curso): void {

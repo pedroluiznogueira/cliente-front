@@ -51,6 +51,10 @@ export class WishlistComponent implements OnInit {
   public sessionCurso(curso: Curso) {
     let cursosGet: Curso[] = JSON.parse(sessionStorage.getItem("cursos")!) 
     
+    if (cursosGet == null) {
+      cursosGet = [];
+    }
+
     for (let c of cursosGet) {
       if (c.titulo == curso.titulo) {
         return

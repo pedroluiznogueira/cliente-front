@@ -1,11 +1,11 @@
 export class Professor {
     id?: number;
-    imagem?: string;
-    email?: string;
     nome?: string;
     sobrenome?: string;
+    email?: string;
     resumo?: string;
     sobre?: string;
+    imagem?: string;
 
     constructor(id?: number, imagem?: string,  email?: string, nome?: string, sobrenome?: string, resumo?: string, sobre?: string) {
         this.id = id;

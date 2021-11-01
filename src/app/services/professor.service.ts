@@ -24,6 +24,8 @@ export class ProfessorService {
   }
 
   public criarProfessor(professor: Professor): void {
+    console.log(professor)
+
     this.http.post(`${this.url}/professor/create`, professor).subscribe();
   }
 

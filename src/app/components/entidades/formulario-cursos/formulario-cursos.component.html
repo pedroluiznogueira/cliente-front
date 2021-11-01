@@ -2,7 +2,7 @@
   <div class="sub-container">
     <h5>Adicionar curso</h5>
     <div class="form-curso">
-      <form (submit)="envioFormulario()">
+      <form>
         <div class="inputs">
           <label>
             Titulo:
@@ -10,13 +10,24 @@
           </label>
 
           <label>
-            Descricao:
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" [(ngModel)]="descricao"></textarea>
+            Resumo:
+            <input type="text" name="resumo" id="resumo" placeholder="" [(ngModel)]="resumo">
           </label>
+
+          <label>
+            Descricao:
+            <textarea class="form-control" name="requisitos" id="exampleFormControlTextarea1" [(ngModel)] = "descricao" rows="4"></textarea>
+          </label>
+
+          <label>
+            Requisitos:
+            <textarea class="form-control" name = "requisitos" id="exampleFormControlTextarea1" [(ngModel)] = "requisitos" rows="2"></textarea>
+          </label>
+
 
           <div class="custom-file">
             Foto:
-            <input id="customFile" type="file" class="custom-file-input" id="customFile" (change)="arquivoSelecionado($event)">
+            <input id="customFile" type="file" class="custom-file-input" id="customFile">
             <label class="custom-file-label" for="customFile">foto</label>
           </div>
 
@@ -28,7 +39,7 @@
         </div>
         <div class="controles">
           <p class="link" [routerLink]="['/cursos']">Voltar</p>
-          <button type="submit" class="btn" [disabled]="!arquivosSelecionados" (click)="uploadArquivo()">Salvar</button>
+          <button type="submit" class="btn" (click)="envioFormulario()">Salvar</button>
         </div>
       </form>
     </div>

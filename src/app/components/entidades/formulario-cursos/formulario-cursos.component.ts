@@ -13,7 +13,9 @@ import { UploadFileService } from 'src/app/services/uploadfile.service';
 export class FormularioCursosComponent implements OnInit {
 
   titulo?: string;
+  resumo?: string;
   descricao?: string;
+  requisitos?: string;
   valor?: number | undefined;
 
   professor: Professor = new Professor();
@@ -54,7 +56,9 @@ export class FormularioCursosComponent implements OnInit {
   public envioFormulario(): void {
 
     this.curso!.titulo = this.titulo;
+    this.curso!.resumo = this.resumo;
     this.curso!.descricao = this.descricao;
+    this.curso!.requisitos = this.requisitos;
     this.curso!.valor = this.valor;
     this.curso!.professor = this.professor;
 

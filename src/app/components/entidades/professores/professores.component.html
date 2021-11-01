@@ -8,49 +8,22 @@
 
 <div class="container">
 
-  <div class="input-group">
-    <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Professores...">
-      <div class="input-group-append">
-      <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
+  <div class="input-pesquisa">
+    <div class="input-group">
+      <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Professores...">
+        <div class="input-group-append">
+        <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
+      </div>
     </div>
   </div>
 
-  <div class="card w-75" *ngFor="let professorF of professoresFiltrados$ | async">
-
-    <div class="row no-gutters" >
-
-      <div class="col-md-4">
-        <img src="{{professorF.imagem}}" alt="...">
-      </div>
-
-      <div class="col-md-8">
-
-        <div class="card-body">
-
-          <div class="infos">
-            <h5 class="card-title" (click)="getProfessorById(professorF.id)" [routerLink]="['/professor-details']">{{professorF.nome}} {{professorF.sobrenome}}</h5>
-            <p class="card-text">{{professorF.email}}</p>
-          </div>
-
-          <div class="tools">
-            <mat-icon (click)="getProfessorById(professorF.id)" [routerLink]="['/professor-details']" class="icon">person_search</mat-icon>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <div class="hide-on-search" *ngIf="pesquisando">
-
-    <div class="card w-75" *ngFor="let professor of getProfessores">
+  <div class="prof-content">
+    <div class="card w-75" *ngFor="let professorF of professoresFiltrados$ | async">
 
       <div class="row no-gutters" >
   
         <div class="col-md-4">
-          <img src="{{professor.imagem}}" alt="...">
+          <img src="{{professorF.imagem}}" alt="...">
         </div>
   
         <div class="col-md-8">
@@ -58,12 +31,12 @@
           <div class="card-body">
   
             <div class="infos">
-              <h5 class="card-title" (click)="getProfessorById(professor.id)" [routerLink]="['/professor-details']">{{professor.nome}} {{professor.sobrenome}}</h5>
-              <p class="card-text">{{professor.resumo}}</p>
+              <h5 class="card-title" (click)="getProfessorById(professorF.id)" [routerLink]="['/professor-details']">{{professorF.nome}} {{professorF.sobrenome}}</h5>
+              <p class="card-text">{{professorF.email}}</p>
             </div>
   
             <div class="tools">
-              <mat-icon (click)="getProfessorById(professor.id)" [routerLink]="['/professor-details']" class="icon">person_search</mat-icon>
+              <mat-icon (click)="getProfessorById(professorF.id)" [routerLink]="['/professor-details']" class="icon">person_search</mat-icon>
             </div>
   
           </div>
@@ -72,7 +45,39 @@
   
       </div>
     </div>
-
+  
+    <div class="hide-on-search" *ngIf="pesquisando">
+  
+      <div class="card w-75" *ngFor="let professor of getProfessores">
+  
+        <div class="row no-gutters" >
+    
+          <div class="col-md-4">
+            <img src="{{professor.imagem}}" alt="...">
+          </div>
+    
+          <div class="col-md-8">
+    
+            <div class="card-body">
+    
+              <div class="infos">
+                <h5 class="card-title" (click)="getProfessorById(professor.id)" [routerLink]="['/professor-details']">{{professor.nome}} {{professor.sobrenome}}</h5>
+                <p class="card-text">{{professor.resumo}}</p>
+              </div>
+    
+              <div class="tools">
+                <mat-icon (click)="getProfessorById(professor.id)" [routerLink]="['/professor-details']" class="icon">person_search</mat-icon>
+              </div>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+      </div>
+  
+    </div>
+  
   </div>
 
 </div>

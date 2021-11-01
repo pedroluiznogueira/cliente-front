@@ -7,13 +7,15 @@
 </div>
 
 <div class="container">
-  <div class="input-group">
-    <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Curso...">
-      <div class="input-group-append">
-      <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
+  <div class="input-pesquisa">
+    <div class="input-group">
+      <input class="form-control" type="search" aria-label="Search" #inputPesquisa id="input-pesquisa" (input)="pesquisar(inputPesquisa.value)" type="text" placeholder="Curso...">
+        <div class="input-group-append">
+        <div class="input-group-text"><mat-icon id="icon-pesq" class="material-icons-outlined">search</mat-icon></div>
+      </div>
     </div>
+  
   </div>
-
     <div class="cursos" *ngFor="let cursoF of cursosFiltrados$ | async">
       <div class="card" style="max-width: 18rem;">
         <img src="{{cursoF.imagem}}" class="card-img-top" alt="...">

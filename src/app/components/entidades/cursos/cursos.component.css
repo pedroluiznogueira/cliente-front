@@ -13,7 +13,7 @@ div.card img{
 }
 
 .input-group{
-    width: 450px;
+    width: 300px;
     display: flex;
     align-self: flex-start;
 }
@@ -110,4 +110,10 @@ div button.btn:hover {
 
 .para-voce h3:hover {
     font-weight: 500;
+}
+
+.input-pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

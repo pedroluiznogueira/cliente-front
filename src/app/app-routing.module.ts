@@ -25,6 +25,7 @@ import { CursoAprendizadoComponent } from './components/entidades/curso-aprendiz
 import { UploadFileService } from './services/uploadfile.service';
 import { FilesComponent } from './components/entidades/files/files.component';
 import { UsuarioDetailsComponent } from './components/entidades/usuario-details/usuario-details.component';
+import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/ensine-conosco.component';
 
 const routes: Routes = [
   {
@@ -48,7 +49,8 @@ const routes: Routes = [
       { path: 'aprendizado', component: AprendizadoComponent },
       { path: 'curso-aprendizado', component: CursoAprendizadoComponent },
       { path: 'usuario-details', component: UsuarioDetailsComponent },
-      { path: 'files', component: FilesComponent }      
+      { path: 'files', component: FilesComponent },     
+      { path: 'ensine-conosco', component: EnsineConoscoComponent }
 
     ],
     canActivate: [AuthGuard],

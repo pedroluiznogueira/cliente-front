@@ -40,6 +40,7 @@ import { CursoAprendizadoComponent } from './components/entidades/curso-aprendiz
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { FilesComponent } from './components/entidades/files/files.component';
 import { UsuarioDetailsComponent } from './components/entidades/usuario-details/usuario-details.component';
+import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/ensine-conosco.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,8 @@ import { UsuarioDetailsComponent } from './components/entidades/usuario-details/
     AprendizadoComponent,
     CursoAprendizadoComponent,
     FilesComponent,
-    UsuarioDetailsComponent
+    UsuarioDetailsComponent,
+    EnsineConoscoComponent
   ],
   imports: [
     BrowserModule,

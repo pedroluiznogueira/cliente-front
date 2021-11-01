@@ -1,0 +1,118 @@
+<div class="banner">
+    <div class="banner-text">
+        Torne-se um professor
+    </div>
+    <div class="banner-btn" class="btn" id="btn-pedido">
+        Comece agora
+    </div>
+</div>
+
+<div class="razoes">
+    <div class="razoes-text">
+        Algumas razões para começar essa jornada
+    </div>
+</div>
+
+<div class="razoes-imgs">
+    <img src="assets\img\razao-1.jpg" alt="">
+    <img src="assets\img\razao-2.jpg" alt="">
+    <img src="assets\img\razao-3.jpg" alt="">
+</div>
+
+<div class="razoes-texts">
+    <div>Ensine seu caminho</div>
+    <div>Inspire alunos</div>
+    <div>Seja recompensado</div>
+</div>
+
+<div class="tabs">    
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li [ngbNavItem]="1">
+        <a ngbNavLink>Planeje o conteúdo</a>
+        <ng-template ngbNavContent>
+            <div class="tab-um">    
+                <div class="ex">Antes</div>
+                <div class="antes-depois">
+                    <div class="antes-content">
+                        <img src="assets\img\antes-1.jpeg" alt="">
+                        <img src="assets\img\antes-2.jpeg" alt="">
+                        <img src="assets\img\antes-3.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="ex">Depois</div>
+                <div class="antes-depois">
+                    <div class="depois-content">
+                        <img src="assets\img\depois-1.jpeg" alt="">
+                        <img src="assets\img\depois-2.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+        <a ngbNavLink>Adicione vídeos</a>
+        <ng-template ngbNavContent>
+            <p>Tenha o id do vídeo que você deseja adicionar ao seu curso na hora de cadastrá-lo, e deixe que nós fazemos o resto</p>
+            <p>vídeo: https://www.youtube.com/watch?v=6_bjgBjlg-s</p>
+            <p>id: 6_bjgBjlg-s</p>
+        </ng-template>
+        </li>
+        <li [ngbNavItem]="3">
+        <a ngbNavLink>Insira o conteúdo</a>
+        <ng-template ngbNavContent>
+            <p>
+                Siga o passo à passo do nosso cadastro, inserindo onde for necessário para explicar as imagens que definem o conteúdo de seu curso
+            </p>
+            <p>
+                O curso de exemplo ficaria assim:
+            </p>
+            <p>
+                Este curso vai te mostrar como centralizar elementos usando css puro e flex-box
+            </p>
+            <div class="antes-depois">
+                <div class="antes-content">
+                    <p>
+                        Primeiro vamos preparar os elementos que queremos centralizar e manipular. Para esse tutorial, usaremos uma div sendo um container pai que engloba outras três divs sendo os filhos desse container pai. 
+                    </p>
+                    <img src="assets\img\antes-1.jpeg" alt="">
+                    <p>
+                        Quando trabalhamos com flex-box este conceito é muito importante, sempre que quisermos manipular ou aplicar qualquer funcionalidade do flex, precisamos aplicá-las pelo css do container pai que engloba os filhos que receberão estas funcionalidades 
+                    </p>
+
+                    <p>
+                        Agora vamos aplicar algumas propriedades do css para deixar os elementos esplícitos visualmente falando, de forma que fique mais fácil de vizualizar o que está acontecendo. 
+                    </p>
+                    <img src="assets\img\antes-2.jpeg" alt="">
+                    <p>
+                        Resultado...
+                    </p>
+                    <img src="assets\img\antes-3.jpeg" alt="">
+                </div>
+            </div>
+            <div class="antes-depois">
+                <div class="depois-content">
+                    <p>
+                        Para começarmos à utilizar flex box, nós fazemos o seguinte: 
+                    </p>
+                    <img src="assets\img\depois-1.jpeg" alt="">
+                    <p>
+                        Ao aplicarmos o "display: flex" dizemos que os filhos receberão as propriedades do flex
+                    </p>
+                    <p>
+                        "justify-content: center" centraliza os filhos na horizontal
+                    </p>
+                    <p>
+                        "align-items: center" centraliza os filhos na vertical
+                    </p>
+                    <p>
+                        No final ficariamos com esse resultado...
+                    </p>
+                    <img src="assets\img\depois-2.jpeg" alt="">
+                </div>
+            </div>
+        </ng-template>
+        </li>
+    </ul>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

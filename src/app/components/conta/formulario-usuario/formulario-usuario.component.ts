@@ -16,6 +16,7 @@ export class FormularioUsuarioComponent implements OnInit {
   senha?: string;
   senhaConfirmada?: string;
   email?: string;
+  sobrenome?: string;
 
   senhaInvalida?: boolean = false;
 
@@ -57,6 +58,7 @@ export class FormularioUsuarioComponent implements OnInit {
     this.novoUsuario.email = this.email;
     this.novoUsuario.senha = this.senha;
     this.novoUsuario.imagem = this.arquivoUpload!.name;
+    this.novoUsuario.sobrenome = this.sobrenome;
 
     console.log(this.novoUsuario);
 

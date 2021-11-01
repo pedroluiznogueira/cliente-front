@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Professor } from 'src/app/models/professor';
 import { ProfessorService } from 'src/app/services/professor.service';
+import { UploadFileService } from 'src/app/services/uploadfile.service';
 
 @Component({
   selector: 'app-professor-formulario',
@@ -16,9 +17,31 @@ export class ProfessorFormularioComponent implements OnInit {
   public resumo?: string;
   public professor?: Professor;
 
-  constructor(private professorService: ProfessorService) { }
+  arquivosSelecionados?: FileList;
+  arquivoUpload?: File;
+
+  constructor(
+    private professorService: ProfessorService,
+    private uploadService: UploadFileService
+    ) { }
 
   ngOnInit(): void {
+  }
+
+   // persistência da imagem de perfil do usuário
+
+   public arquivoSelecionado(event: any): void {
+    this.arquivosSelecionados = event.target.files;
+  }
+
+  public uploadArquivo(): void {
+    this.arquivoUpload = this.arquivosSelecionados!.item(0)!;
+    this.uploadService.pushFileToStorage(this.arquivoUpload!)
+      .subscribe(
+        event => {
+          this.arquivosSelecionados = undefined;          
+        }
+      );
   }
 
   public envioFormulario(): void {

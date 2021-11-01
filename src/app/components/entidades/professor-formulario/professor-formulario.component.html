@@ -23,7 +23,7 @@
 
   <div class="container">
     <div class="sub-container">
-      <h5>Adicionar Professor</h5>
+      <h5>Adicionar professor</h5>
       <div class="form-curso">
         <form (submit)="envioFormulario()">
           <div class="inputs">
@@ -43,7 +43,7 @@
             </label>
 
             <label>
-              resumo:
+              Resumo:
               <input type="text" name="resumo" id="titulo" placeholder="" [(ngModel)]="resumo">
             </label>
   
@@ -54,14 +54,14 @@
   
             <div class="custom-file">
               Foto:
-              <input id="customFile" type="file" class="custom-file-input" id="customFile">
+              <input id="customFile" type="file" class="custom-file-input" id="customFile" (change)="arquivoSelecionado($event)">
               <label class="custom-file-label" for="customFile">foto</label>
             </div>
   
           </div>
           <div class="controles">
             <p class="link" [routerLink]="['/cursos']">Voltar</p>
-            <button type="submit" class="btn">Salvar</button>
+            <button type="submit" class="btn" [disabled]="!arquivosSelecionados" (click)="uploadArquivo()">Salvar</button>
           </div>
         </form>
       </div>

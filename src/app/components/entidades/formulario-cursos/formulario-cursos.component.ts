@@ -3,6 +3,7 @@ import { Curso } from 'src/app/models/curso';
 import { Professor } from 'src/app/models/professor';
 import { CursosService } from 'src/app/services/cursos.service';
 import { ProfessorService } from 'src/app/services/professor.service';
+import { UploadFileService } from 'src/app/services/uploadfile.service';
 
 @Component({
   selector: 'app-formulario-cursos',
@@ -11,16 +12,20 @@ import { ProfessorService } from 'src/app/services/professor.service';
 })
 export class FormularioCursosComponent implements OnInit {
 
-   titulo?: string;
-  public descricao?: string;
-  public valor?: number | undefined;
+  titulo?: string;
+  descricao?: string;
+  valor?: number | undefined;
 
   professor: Professor = new Professor();
-  public curso?: Curso = new Curso();
+  curso?: Curso = new Curso();
+
+  arquivosSelecionados?: FileList;
+  arquivoUpload?: File;
 
   constructor(
     private cursosService: CursosService, 
-    private professoresService: ProfessorService
+    private professoresService: ProfessorService,
+    private uploadService: UploadFileService
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +34,22 @@ export class FormularioCursosComponent implements OnInit {
         this.professor = professor;
     })
   }
+
+    // persistência da imagem de perfil do usuário
+
+    public arquivoSelecionado(event: any): void {
+      this.arquivosSelecionados = event.target.files;
+    }
+  
+    public uploadArquivo(): void {
+      this.arquivoUpload = this.arquivosSelecionados!.item(0)!;
+      this.uploadService.pushFileToStorage(this.arquivoUpload!)
+        .subscribe(
+          event => {
+            this.arquivosSelecionados = undefined;          
+          }
+        );
+    }
 
   public envioFormulario(): void {
 

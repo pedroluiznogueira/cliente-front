@@ -11,12 +11,12 @@
 
           <label>
             Descricao:
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" [(ngModel)]="descricao"></textarea>
           </label>
 
           <div class="custom-file">
             Foto:
-            <input id="customFile" type="file" class="custom-file-input" id="customFile">
+            <input id="customFile" type="file" class="custom-file-input" id="customFile" (change)="arquivoSelecionado($event)">
             <label class="custom-file-label" for="customFile">foto</label>
           </div>
 
@@ -28,7 +28,7 @@
         </div>
         <div class="controles">
           <p class="link" [routerLink]="['/cursos']">Voltar</p>
-          <button type="submit" class="btn">Salvar</button>
+          <button type="submit" class="btn" [disabled]="!arquivosSelecionados" (click)="uploadArquivo()">Salvar</button>
         </div>
       </form>
     </div>

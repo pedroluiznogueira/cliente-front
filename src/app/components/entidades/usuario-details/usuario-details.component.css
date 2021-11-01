@@ -183,3 +183,25 @@ h5{
 .card-title{
     color: black;
 }
+
+.btn {
+    width: 201px;
+
+    border: 1px solid black;
+
+    color: black;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#btn-pedido{
+    border: #222;
+    color: #fff;
+    background-color: #222;
+}
+
+#btn-pedido:hover{
+    border: #111;
+    background-color: #111;
+    font-weight: 600;
+}

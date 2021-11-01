@@ -1,22 +1,37 @@
 <div class="container">
-    <form (submit)="envioFormulario()">
-      <h5>Adicionar curso</h5>
-      <label>
-          Titulo:
-          <input type="text" name="titulo" id="titulo" placeholder="" [(ngModel)]="titulo">
-      </label>
-      <label>
-          Descricao:
-          <input type="text" name="descricao" id="descricao" placeholder="" [(ngModel)]="descricao">
-      </label>
-      <label>
-          Valor:
-          <input type="number" name="valor" id="valor" placeholder="" [(ngModel)]="valor">
-      </label>
-      <div class="controles">      
+  <div class="sub-container">
+    <h5>Adicionar curso</h5>
+    <div class="form-curso">
+      <form (submit)="envioFormulario()">
+        <div class="inputs">
+          <label>
+            Titulo:
+            <input type="text" name="titulo" id="titulo" placeholder="" [(ngModel)]="titulo">
+          </label>
+
+          <label>
+            Descricao:
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+          </label>
+
+          <div class="custom-file">
+            Foto:
+            <input id="customFile" type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">foto</label>
+          </div>
+
+          <label>
+            Valor:
+            <input type="number" name="valor" id="valor" placeholder="" [(ngModel)]="valor">
+          </label>
+
+        </div>
+        <div class="controles">
           <p class="link" [routerLink]="['/cursos']">Voltar</p>
           <button type="submit" class="btn">Salvar</button>
-      </div>
-  </form>
+        </div>
+      </form>
+    </div>
   </div>
-  
+
+</div>

@@ -14,7 +14,7 @@
 
     <div class="cursos" *ngFor="let cursoF of cursosFiltrados$ | async">
         <div class="card" style="max-width: 18rem;">
-          <img src="{{cursoF.imagem}}" class="card-img-top" alt="...">
+          <img src="{{urlImagem}}{{cursoF.imagem}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{cursoF.titulo}}</h5>
             <p class="card-text">{{cursoF.descricao}}</p>
@@ -28,7 +28,7 @@
 
     <div class="cursos" *ngIf="pesquisando">
         <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursos">
-        <img src="{{curso.imagem}}" class="card-img-top" alt="...">
+        <img src="{{urlImagem}}{{curso.imagem}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title" (click)="enviarIdCurso(curso)" [routerLink]="['/curso-details']">{{curso.titulo}}</h5>
             <p class="card-text">{{curso.descricao}}</p>

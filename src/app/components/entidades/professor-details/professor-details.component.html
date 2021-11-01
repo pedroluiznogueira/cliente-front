@@ -1,7 +1,7 @@
 <section class="container">
   <div class="profile">
     <div class="links">
-      <img src="{{professor.imagem}}" class="rounded-circle" alt="...">
+      <img src="{{urlImagem}}{{professor.imagem}}" class="rounded-circle" alt="...">
       <button type="button" class="btn" (click)="goToLink('https://www.linkedin.com/')">Twitter</button>
       <button type="button" class="btn" (click)="goToLink('https://facebook.com/')">Facebook</button>
       <button type="button" class="btn" (click)="goToLink('https://www.instagram.com/')">Instagram</button>
@@ -26,7 +26,7 @@
   </div>
   <div class="cursos">
     <div class="card" style="max-width: 18rem;" *ngFor="let curso of cursosProfessor">
-      <img src="{{curso.imagem}}" class="card-img-top" alt="...">
+      <img src="{{urlImagem}}{{curso.imagem}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title" [routerLink]="['/curso-details']" (click)="enviarIdCurso(curso.id)">{{curso.titulo}}</h5>
         <p class="card-text">{{curso.descricao}}</p>

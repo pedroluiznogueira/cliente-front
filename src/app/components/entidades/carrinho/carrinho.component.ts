@@ -14,6 +14,8 @@ import { PagamentoService } from 'src/app/services/pagamento.service';
 })
 export class CarrinhoComponent implements OnInit {
 
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
+
   pesquisando: boolean = true;
 
   cursosFiltrados$!: Observable<Curso[]>

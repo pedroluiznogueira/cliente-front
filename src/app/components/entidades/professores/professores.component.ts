@@ -11,6 +11,8 @@ import { ProfessorService } from 'src/app/services/professor.service';
 })
 export class ProfessoresComponent implements OnInit {
 
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
+
   pesquisando: boolean = true;
 
   // vou querer iterar no html no observable e não no array

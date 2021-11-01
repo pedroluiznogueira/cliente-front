@@ -10,6 +10,8 @@ import { PagamentoService } from 'src/app/services/pagamento.service';
 })
 export class AprendizadoComponent implements OnInit {
 
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
+
   cursosPedidos: Curso[] = [];
 
   constructor(

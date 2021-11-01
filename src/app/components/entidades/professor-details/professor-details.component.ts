@@ -12,6 +12,7 @@ import { ProfessorService } from 'src/app/services/professor.service';
 export class ProfessorDetailsComponent implements OnInit {
 
   imagem?: string = "assets\\img\\perfil-professores\\foto-perfil.jpg";
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
 
   professor: Professor = new Professor();
 

@@ -10,6 +10,8 @@ import { CursosService } from 'src/app/services/cursos.service';
 })
 export class CursoDetailsComponent implements OnInit {
 
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
+
   curso: Curso = new Curso();
   cursos: Curso[] = [];
 

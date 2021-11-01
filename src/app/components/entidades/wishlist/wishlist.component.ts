@@ -14,6 +14,8 @@ import { ContaUsuarioService } from '../../conta/comp/conta-usuario.service';
 })
 export class WishlistComponent implements OnInit {
 
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
+
   cursos: Curso[] = [];
   sessionCursos: Curso[] = [];
 

@@ -2,7 +2,7 @@
 
   <div class="cursos">
     <div class="card" style="max-width: 18rem;">
-      <img src="{{curso.imagem}}" class="card-img-top" alt="...">
+      <img src="{{urlImagem}}{{curso.imagem}}" class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-price">R$ {{curso.valor}}</p>
         <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>

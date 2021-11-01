@@ -12,6 +12,8 @@ export class ProfessorFormularioComponent implements OnInit {
   public nome?: string;
   public sobrenome?: string;
   public email?: string;
+  public sobre?: string;
+  public resumo?: string;
   public professor?: Professor;
 
   constructor(private professorService: ProfessorService) { }

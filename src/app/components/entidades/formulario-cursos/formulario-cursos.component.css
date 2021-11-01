@@ -99,7 +99,7 @@ P {
 form .controles{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0;
+    margin: 20px 0;
 }
 h5{
     font-size: 23px;

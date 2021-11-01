@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 
     <form (submit)="envioFormulario()">
       <h5>Adicionar curso</h5>
@@ -19,5 +19,54 @@
           <button type="submit" class="btn">Salvar</button>
       </div>
   </form>
+  </div> -->
+
+  <div class="container">
+    <div class="sub-container">
+      <h5>Adicionar Professor</h5>
+      <div class="form-curso">
+        <form (submit)="envioFormulario()">
+          <div class="inputs">
+            <label>
+              Nome:
+              <input type="text" name="nome" id="titulo" placeholder="" [(ngModel)]="nome">
+            </label>
+
+            <label>
+              Nome:
+              <input type="text" name="sobrenome" id="titulo" placeholder="" [(ngModel)]="sobrenome">
+            </label>
+
+            <label>
+              Email:
+              <input type="text" name="sobrenome" id="titulo" placeholder="" [(ngModel)]="email">
+            </label>
+
+            <label>
+              resumo:
+              <input type="text" name="resumo" id="titulo" placeholder="" [(ngModel)]="resumo">
+            </label>
+  
+            <label>
+              Sobre:
+              <textarea class="form-control" name="sobre" id="exampleFormControlTextarea1" rows="4" [(ngModel)]="sobre"></textarea>
+            </label>
+  
+            <div class="custom-file">
+              Foto:
+              <input id="customFile" type="file" class="custom-file-input" id="customFile">
+              <label class="custom-file-label" for="customFile">foto</label>
+            </div>
+  
+          </div>
+          <div class="controles">
+            <p class="link" [routerLink]="['/cursos']">Voltar</p>
+            <button type="submit" class="btn">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
   </div>
+  
   

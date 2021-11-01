@@ -29,7 +29,7 @@ div.card img{
 }
 
 div .input-group{
-    width: 45vw;
+    width: 300px;
     display: flex;
     align-self: flex-start;
     margin-top: 20px;
@@ -108,6 +108,11 @@ div button.btn:hover {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.input-pesquisa {
+    width: 250px;
 }
 
 .pedido button {
@@ -122,6 +127,7 @@ div button.btn:hover {
 }
 
 .pedido {
+    margin-top: 40px;
     width: 240px;
     height: 140px;
     border: 1px solid black;

@@ -25,7 +25,7 @@
     <div class="sub-container">
       <h5>Adicionar professor</h5>
       <div class="form-curso">
-        <form (submit)="envioFormulario()">
+        <form>
           <div class="inputs">
             <label>
               Nome:
@@ -61,7 +61,7 @@
           </div>
           <div class="controles">
             <p class="link" [routerLink]="['/cursos']">Voltar</p>
-            <button type="submit" class="btn" [disabled]="!arquivosSelecionados" (click)="uploadArquivo()">Salvar</button>
+            <button type="submit" class="btn" [disabled]="!arquivosSelecionados" (click)="uploadArquivo()" (click)="envioFormulario()">Salvar</button>
           </div>
         </form>
       </div>

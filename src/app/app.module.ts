@@ -41,6 +41,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { FilesComponent } from './components/entidades/files/files.component';
 import { UsuarioDetailsComponent } from './components/entidades/usuario-details/usuario-details.component';
 import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/ensine-conosco.component';
+import { ConteudoCursoComponent } from './components/entidades/conteudo-curso/conteudo-curso.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +67,8 @@ import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/en
     CursoAprendizadoComponent,
     FilesComponent,
     UsuarioDetailsComponent,
-    EnsineConoscoComponent
+    EnsineConoscoComponent,
+    ConteudoCursoComponent
   ],
   imports: [
     BrowserModule,

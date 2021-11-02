@@ -25,6 +25,7 @@ export class ProfessorService {
 
   public criarProfessor(professor: Professor): void {
     this.http.post(`${this.url}/professor/create`, professor).subscribe();
+    this.onClickAddCurso.emit(professor)
   }
 
   public alterarProfessor(): void {

@@ -31,7 +31,7 @@ export class FormularioCursosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.professoresService.onClickAddCurso.subscribe(
+    this.professoresService.emitirProfessor.subscribe(
       (professor: Professor) => {
         this.professor = professor;
     })
@@ -62,9 +62,7 @@ export class FormularioCursosComponent implements OnInit {
     this.curso!.valor = this.valor;
     this.curso!.professor = this.professor;
     this.curso!.imagem = this.arquivoUpload!.name;
-
-    console.log(this.curso)
-
+    console.log(this.curso);
     this.cursosService.criarCurso(this.curso!);
 
     this.titulo = "";

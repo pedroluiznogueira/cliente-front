@@ -15,6 +15,5 @@ export class UsuarioDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
-    console.log(this.usuario)
   }
 }

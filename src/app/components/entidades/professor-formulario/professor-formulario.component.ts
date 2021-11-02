@@ -53,8 +53,6 @@ export class ProfessorFormularioComponent implements OnInit {
     this.professor.sobre = this.sobre;
     this.professor.imagem = this.arquivoUpload!.name
 
-    console.log(this.professor)
-
     this.professorService.criarProfessor(this.professor);
     this.nome = "";
     this.sobrenome = "";

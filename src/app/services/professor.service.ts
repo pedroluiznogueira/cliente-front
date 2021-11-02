@@ -15,6 +15,7 @@ export class ProfessorService {
 
   @Output() onClickDetails: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() onClickAddCurso: EventEmitter<Professor> = new EventEmitter<Professor>();
+  @Output() emitirProfessor: EventEmitter<Professor> = new EventEmitter<Professor>();
 
 
   constructor(private http: HttpClient) { }
@@ -24,8 +25,11 @@ export class ProfessorService {
   }
 
   public criarProfessor(professor: Professor): void {
-    this.http.post(`${this.url}/professor/create`, professor).subscribe();
-    this.onClickAddCurso.emit(professor)
+    this.http.post(`${this.url}/professor/create`, professor).subscribe(
+      (prof) => {
+        this.emitirProfessor.emit(prof)
+      }
+    );
   }
 
   public alterarProfessor(): void {

@@ -24,7 +24,6 @@ export class CursosService {
   }
 
   public criarCurso(curso: Curso): void {
-    console.log(curso)
     this.http.post(`${this.url}/curso/create`, curso).subscribe();
   }
 

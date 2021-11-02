@@ -10,5 +10,7 @@ export class Usuario {
     tipo?: string = "usuario";
     token?: string;
     imagem?: string;
+    manchete?: string;
+    biografia?: string;
     pedidos?: Pedido[];
 }

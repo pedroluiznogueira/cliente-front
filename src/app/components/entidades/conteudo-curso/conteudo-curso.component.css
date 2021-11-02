@@ -1,0 +1,119 @@
+.container{
+    font-family: 'Montserrat', sans-serif;
+    margin: 30px 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#valor{
+    max-width: 200px;
+    margin: 0;
+}
+
+form textarea{
+    color: #000;
+    margin: 5px auto;
+    width: 100%;
+
+    
+    border-radius: 7px;
+    background-color: #fff;
+    border: 2px solid #222;
+}
+
+form textarea:focus{
+    outline-style: solid;
+    outline-color: #A435F0;
+    outline-width: 2px;
+    border-radius: 7px;
+
+    border: 1px solid #A435F0;
+    box-shadow: 1px 1px 3px #A435F0;
+}
+
+form input{
+    color: #000;
+    margin: 5px auto;
+    width: 100%;
+    height: 35px;
+
+    
+    border-radius: 7px;
+    background-color: #fff;
+    border: 2px solid #222;
+}
+
+form input:focus{
+    outline-style: solid;
+    outline-color: #A435F0;
+    outline-width: 2px;
+    border-radius: 7px;
+
+    border: 1px solid #A435F0;
+    box-shadow: 1px 1px 3px #A435F0;
+}
+
+form .controles .btn{
+    width: 100px;
+    border: 1px solid black;
+    color: black;
+    font-weight: 500;
+}
+form .controles .btn:hover{
+    border: 1px solid #A435F0;
+    background-color: #A435F0;
+    color: #fff;
+}
+
+.link{
+    color: #A435F0;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0;
+
+}
+.link:hover{
+    font-weight: 600;
+}
+
+.campos-vazios {
+    border: 1px solid red;
+}
+
+P {
+    cursor: pointer;
+}
+
+form .controles{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+h5{
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    align-self: center;
+    cursor: default;
+}
+
+h5:hover{
+    color: #A435F0;
+}
+
+.custom-file{
+    margin: 10px 0;
+    max-width: 500px;
+}

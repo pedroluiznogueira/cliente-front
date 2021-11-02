@@ -31,10 +31,12 @@ export class FormularioCursosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.professoresService.emitirProfessor.subscribe(
-      (professor: Professor) => {
-        this.professor = professor;
-    })
+    this.professoresService.emitirProfessor
+      .subscribe(
+        (professor: Professor) => {
+          this.professor = professor;
+        }
+      );
   }
 
     // persistência da imagem de perfil do usuário

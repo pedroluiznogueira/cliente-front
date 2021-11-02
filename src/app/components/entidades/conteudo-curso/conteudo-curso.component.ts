@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Curso } from 'src/app/models/curso';
+import { Modulocurso } from 'src/app/models/modulocurso';
+import { CursosService } from 'src/app/services/cursos.service';
+import { UploadFileService } from 'src/app/services/uploadfile.service';
 
 @Component({
   selector: 'app-conteudo-curso',
@@ -7,9 +11,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConteudoCursoComponent implements OnInit {
 
-  constructor() { }
+  tituloConteudo?: string;
+  conteudoPrincipal?: string;
+
+  moduloCurso?: Modulocurso = new Modulocurso();
+  curso?: Curso = new Curso();
+
+  arquivosSelecionados?: FileList;
+  arquivoUpload?: File;
+
+  constructor(
+    private cursosService: CursosService,
+    private uploadService: UploadFileService
+  ) { }
 
   ngOnInit(): void {
+    this.cursosService.emitirCurso
+      .subscribe(
+        (curso: Curso) => {
+          this.curso = curso;
+        }
+      );
+  }
+
+  // persistência da imagem de perfil do usuário
+
+  public arquivoSelecionado(event: any): void {
+    this.arquivosSelecionados = event.target.files;
+  }
+
+  public uploadArquivo(): void {
+    this.arquivoUpload = this.arquivosSelecionados!.item(0)!;
+    this.uploadService.pushFileToStorage(this.arquivoUpload!)
+      .subscribe(
+        event => {
+          this.arquivosSelecionados = undefined;          
+        }
+      );
+  }
+
+  public envioFormulario(): void {
+
+    this.moduloCurso!.tituloConteudo = this.tituloConteudo;
+    this.moduloCurso!.conteudoPrincipal = this.conteudoPrincipal;
+    this.moduloCurso!.imagem = this.arquivoUpload!.name;
+    this.moduloCurso!.curso = this.curso;
+
+    this.cursosService.criarModuloCurso(this.moduloCurso!);
   }
 
 }

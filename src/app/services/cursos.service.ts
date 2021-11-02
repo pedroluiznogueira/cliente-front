@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Curso } from '../models/curso';
+import { Modulocurso } from '../models/modulocurso';
 import { Professor } from '../models/professor';
 
 @Injectable({
@@ -14,6 +15,7 @@ export class CursosService {
   curso: Curso = new Curso();
 
   @Output() onClickCursoDetails: EventEmitter<Curso> = new EventEmitter<Curso>();
+  @Output() emitirCurso: EventEmitter<Curso> = new EventEmitter<Curso>();
 
   constructor(
     private http: HttpClient
@@ -24,7 +26,12 @@ export class CursosService {
   }
 
   public criarCurso(curso: Curso): void {
-    this.http.post(`${this.url}/curso/create`, curso).subscribe();
+    this.http.post(`${this.url}/curso/create`, curso)
+      .subscribe(
+        (curso) => {
+          this.emitirCurso.emit(curso);
+        }
+      );
   }
 
   public deletarCurso(id: number | undefined): void {
@@ -81,6 +88,17 @@ export class CursosService {
       }
     )
 
+    return obs;
+  }
+
+  public criarModuloCurso(cursoModulo: Modulocurso): Observable<Modulocurso>{
+    let obs = this.http.post<Modulocurso>(`${this.url}/curso/modulo`, cursoModulo);
+    
+    obs.subscribe(
+      (resp) => {
+        console.log(resp)
+      }
+    );
     return obs;
   }
 }

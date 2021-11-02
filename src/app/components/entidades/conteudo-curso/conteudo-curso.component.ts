@@ -11,7 +11,7 @@ import { UploadFileService } from 'src/app/services/uploadfile.service';
 })
 export class ConteudoCursoComponent implements OnInit {
 
-  tituloConteudo?: string;
+  titulo?: string;
   conteudoPrincipal?: string;
 
   moduloCurso?: Modulocurso = new Modulocurso();
@@ -52,7 +52,7 @@ export class ConteudoCursoComponent implements OnInit {
 
   public envioFormulario(): void {
 
-    this.moduloCurso!.tituloConteudo = this.tituloConteudo;
+    this.moduloCurso!.titulo = this.titulo;
     this.moduloCurso!.conteudoPrincipal = this.conteudoPrincipal;
     this.moduloCurso!.imagem = this.arquivoUpload!.name;
     this.moduloCurso!.curso = this.curso;

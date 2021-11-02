@@ -5,11 +5,10 @@
             Usuario:
             <input type="text" name="novoUsuario" id="usuario" placeholder="" [(ngModel)]="novoNomeUsuario">
         </label>
-        <div class="custom-file">
-            Foto:
-            <input id = "customFile" type="file" class="custom-file-input" id="customFile" (change)="arquivoSelecionado($event)" >
-            <label class="custom-file-label" for="customFile"></label>
-        </div>
+        <label>
+            Sobrenome:
+            <input type="text" name="novoUsuario" id="usuario" placeholder="" [(ngModel)]="sobrenome">
+        </label>
         <label>
             Email:
             <input type="text" name="novoUsuario" id="usuario" placeholder="" [(ngModel)]="email">
@@ -25,6 +24,11 @@
         <div *ngIf="senhaInvalida" class="alert alert-danger" role="alert">
             Confirmação de senha inválida
             <span (click)="esconderErro()">x</span>
+        </div>
+        <div class="custom-file">
+            Foto:
+            <input id = "customFile" type="file" class="custom-file-input" id="customFile" (change)="arquivoSelecionado($event)" >
+            <label class="custom-file-label" for="customFile"></label>
         </div>
         <div class="controles">      
             <p class="link" [routerLink]="['/login']">Voltar</p>

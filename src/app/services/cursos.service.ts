@@ -92,7 +92,7 @@ export class CursosService {
   }
 
   public criarModuloCurso(cursoModulo: Modulocurso): Observable<Modulocurso>{
-    let obs = this.http.post<Modulocurso>(`${this.url}/curso/modulo`, cursoModulo);
+    let obs = this.http.post<Modulocurso>(`${this.url}/curso/modulo/create`, cursoModulo);
     
     obs.subscribe(
       (resp) => {

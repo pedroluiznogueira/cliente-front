@@ -104,6 +104,7 @@ export class CursosService {
   }
 
   public enviarCurso(curso: Curso) {
+    console.log(curso)
     this.http.post<Modulocurso[]>(`${this.url}/curso/modulo/find-by-curso`, curso)
       .subscribe(
         (modulo: Modulocurso[]) => {

@@ -24,3 +24,16 @@
     justify-content: center;
     align-items: center;
 }
+
+.conteudo-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cont-curso {
+    margin: 30px;
+    font-family: 'Montserrat';
+    font-size: 30px;
+}

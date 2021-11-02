@@ -4,19 +4,21 @@
     </div>
 </div>
 
-<ul *ngFor="let m of modulo">
-    <li>{{m.titulo}}</li>
-    <li>{{m.conteudoPrincipal}}</li>
-    <img src="{{urlImagem}}{{m.imagem}}" alt="">
-</ul>
-
-<div class="video-curso">
-    <youtube-player 
-        videoId="9SGDpanrc8U" 
-        suggestedQuality="highres" 
-        [height]="250" 
-        [width]="500" 
-        [startSeconds]="4"
-        [endSeconds]="8">
-    </youtube-player>
+<div *ngFor="let m of modulo" class="conteudo-principal">
+    
+    <div class="cont-curso">{{m.titulo}}</div>
+    <div class="cont-curso">{{m.conteudoPrincipal}}</div>
+    <img class="cont-curso" src="{{urlImagem}}{{m.imagem}}" alt="">
+    
+    <div class="cont-curso" class="video-curso">
+        <youtube-player 
+            videoId="{{m.videoId}}" 
+            suggestedQuality="highres" 
+            [height]="250" 
+            [width]="500" 
+            [startSeconds]="4"
+            [endSeconds]="8">
+        </youtube-player>
+    </div>
 </div>
+<!-- 9SGDpanrc8U -->

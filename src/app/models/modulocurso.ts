@@ -5,5 +5,6 @@ export class Modulocurso {
     titulo?: string;
     conteudoPrincipal?: string;
     imagem?: string;
+    videoId?: string;
     curso?: Curso;
 }

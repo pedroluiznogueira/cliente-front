@@ -16,6 +16,7 @@ export class CursosService {
 
   @Output() onClickCursoDetails: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirCurso: EventEmitter<Curso> = new EventEmitter<Curso>();
+  @Output() emitirModulo: EventEmitter<Modulocurso[]> = new EventEmitter<Modulocurso[]>();
 
   constructor(
     private http: HttpClient
@@ -100,5 +101,14 @@ export class CursosService {
       }
     );
     return obs;
+  }
+
+  public enviarCurso(curso: Curso) {
+    this.http.post<Modulocurso[]>(`${this.url}/curso/modulo/find-by-curso`, curso)
+      .subscribe(
+        (modulo: Modulocurso[]) => {
+          this.emitirModulo.emit(modulo);
+        }
+      );
   }
 }

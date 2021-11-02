@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Curso } from 'src/app/models/curso';
 import { Usuario } from 'src/app/models/usuario.model';
+import { CursosService } from 'src/app/services/cursos.service';
 import { PagamentoService } from 'src/app/services/pagamento.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class AprendizadoComponent implements OnInit {
   cursosPedidos: Curso[] = [];
 
   constructor(
-    private pagamentoService: PagamentoService
+    private pagamentoService: PagamentoService,
+    private cursosService: CursosService
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,10 @@ export class AprendizadoComponent implements OnInit {
           console.log(this.cursosPedidos)
         }        
       );
+  }
+
+  public enviarCurso(curso: Curso) {
+    this.cursosService.enviarCurso(curso);
   }
 
 }

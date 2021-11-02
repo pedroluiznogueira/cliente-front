@@ -18,7 +18,7 @@
         <div class="card-body">
 
           <div class="infos">
-            <h5 class="card-title" [routerLink]="['/curso-aprendizado']">{{curso.titulo}}</h5>
+            <h5 class="card-title" (click)="enviarCurso(curso)" [routerLink]="['/curso-aprendizado']">{{curso.titulo}}</h5>
             <p class="card-text">{{curso.descricao}}</p>
           </div>
 

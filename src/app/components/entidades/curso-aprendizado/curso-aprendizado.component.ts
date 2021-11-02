@@ -12,6 +12,8 @@ import { CursosService } from 'src/app/services/cursos.service';
 export class CursoAprendizadoComponent implements OnInit {
 
   urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
+
+  active = 1;
   
   modulo?: Modulocurso[] = [];
 

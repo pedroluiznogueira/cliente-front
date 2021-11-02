@@ -1,4 +1,4 @@
-<div class="aproveite">
+<!-- <div class="aproveite">
     <div class="seu-curso">
         Continue estudando
     </div>
@@ -20,5 +20,45 @@
             [endSeconds]="8">
         </youtube-player>
     </div>
-</div>
+</div> -->
 <!-- 9SGDpanrc8U -->
+
+
+
+<div class="container" *ngFor="let m of modulo">    
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+
+        <li [ngbNavItem]="1">
+            <a ngbNavLink>{{m.titulo}}</a>
+
+            <ng-template ngbNavContent>
+                <p>{{m.titulo}}</p>
+
+                <div class="video">
+                    <youtube-player 
+                        videoId="{{m.videoId}}" 
+                        suggestedQuality="highres" 
+                        [height]="250" 
+                        [width]="500" 
+                        [startSeconds]="4"
+                        [endSeconds]="8">
+                    </youtube-player>
+                </div>
+
+                <section>
+                    <div class="cont-curso">{{m.conteudoPrincipal}}</div>
+                    <img class="cont-curso" src="{{urlImagem}}{{m.imagem}}" alt="">
+                </section>
+            </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+            <a ngbNavLink>Adicione vídeos</a>
+
+            <ng-template ngbNavContent>
+                <p>Tenha o id do vídeo que você deseja adicionar ao seu curso na hora de cadastrá-lo, e deixe que nós fazemos o resto</p>
+            </ng-template>
+        </li>
+    
+    </ul>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

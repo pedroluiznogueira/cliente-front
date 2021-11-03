@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Curso } from '../models/curso';
@@ -9,6 +9,10 @@ import { Usuario } from '../models/usuario.model';
   providedIn: 'root'
 })
 export class PagamentoService {
+
+  header: HttpHeaders = new HttpHeaders({
+    'Authorization': sessionStorage.getItem('token')!
+  });
 
   url?: string = "http://localhost:8080";
 
@@ -30,7 +34,7 @@ export class PagamentoService {
     ]
     usuario!.pedidos = this.pedidos!;
 
-    let obs = this.http.post<Usuario>(`${this.url}/pedido`, usuario)
+    let obs = this.http.post<Usuario>(`${this.url}/pedido`, usuario, { headers: this.header })
       
     obs.subscribe(
         () => {
@@ -43,7 +47,7 @@ export class PagamentoService {
   public getCursosComprados(): Observable<Usuario> {
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
 
-    let obs = this.http.post<Usuario>(`${this.url}/find/token`, usuario);
+    let obs = this.http.post<Usuario>(`${this.url}/find/token`, usuario, { headers: this.header });
       
     obs.subscribe();
     return obs;

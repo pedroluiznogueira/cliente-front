@@ -15,7 +15,7 @@ export class CursoAprendizadoComponent implements OnInit {
 
   active = 1;
   
-  modulo?: Modulocurso[] = [];
+  modulos?: Modulocurso[] = [];
 
   constructor(
     private cursosService: CursosService
@@ -25,7 +25,7 @@ export class CursoAprendizadoComponent implements OnInit {
     this.cursosService.emitirModulo
       .subscribe(
         (modulo) => {
-          this.modulo = modulo;
+          this.modulos = modulo;
         }
       );
   }

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Curso } from '../models/curso';
@@ -9,6 +9,10 @@ import { Professor } from '../models/professor';
   providedIn: 'root'
 })
 export class CursosService {
+
+  header: HttpHeaders = new HttpHeaders({
+    'Authorization': sessionStorage.getItem('token')!
+  });
 
   private url: string = "http://localhost:8080";
   cursoPesq: Curso = new Curso();
@@ -23,11 +27,12 @@ export class CursosService {
   ) { }
 
   public listarCursos(): Observable<Curso[]> {
-    return this.http.get<Curso[]>(`${this.url}/curso/cursos`);
+
+    return this.http.get<Curso[]>(`${this.url}/curso/cursos`, { headers: this.header });
   }
 
   public criarCurso(curso: Curso): void {
-    this.http.post(`${this.url}/curso/create`, curso)
+    this.http.post(`${this.url}/curso/create`, curso, { headers: this.header })
       .subscribe(
         (curso) => {
           this.emitirCurso.emit(curso);
@@ -36,11 +41,11 @@ export class CursosService {
   }
 
   public deletarCurso(id: number | undefined): void {
-    this.http.delete(`${this.url}/curso/delete/${id}`).subscribe();
+    this.http.delete(`${this.url}/curso/delete/${id}`, { headers: this.header }).subscribe();
   }
 
   public receberIdCurso(id: number | undefined): Observable<Curso> {
-    let obs = this.http.get<Curso>(`${this.url}/curso/find/${id}`);
+    let obs = this.http.get<Curso>(`${this.url}/curso/find/${id}`, { headers: this.header });
     
     obs.subscribe(
       (curso: Curso) => {
@@ -60,7 +65,7 @@ export class CursosService {
   }
 
   public alterarCurso(): void {
-    this.http.put(`${this.url}/curso/update`, this.curso).subscribe();
+    this.http.put(`${this.url}/curso/update`, this.curso, { headers: this.header }).subscribe();
   }
 
   public pesquisarCursos(term: string): Observable<Curso[]> {
@@ -70,7 +75,7 @@ export class CursosService {
 
     this.cursoPesq.titulo = term;
 
-    let obs =  this.http.post<Curso[]>(`${this.url}/curso/search`, this.cursoPesq);
+    let obs =  this.http.post<Curso[]>(`${this.url}/curso/search`, this.cursoPesq, { headers: this.header });
     obs.subscribe(
       (res) => {
         console.log(res)
@@ -81,7 +86,7 @@ export class CursosService {
 
   public listarCursosProfessor(professor: Professor): Observable<Curso[]> {
 
-    let obs =  this.http.post<Curso[]>(`${this.url}/curso/find-by-professor`, professor);
+    let obs =  this.http.post<Curso[]>(`${this.url}/curso/find-by-professor`, professor, { headers: this.header });
 
     obs.subscribe(
       (cursos: Curso[]) => {
@@ -93,7 +98,7 @@ export class CursosService {
   }
 
   public criarModuloCurso(cursoModulo: Modulocurso): Observable<Modulocurso>{
-    let obs = this.http.post<Modulocurso>(`${this.url}/curso/modulo/create`, cursoModulo);
+    let obs = this.http.post<Modulocurso>(`${this.url}/curso/modulo/create`, cursoModulo, { headers: this.header });
     
     obs.subscribe(
       (resp) => {
@@ -105,7 +110,7 @@ export class CursosService {
 
   public enviarCurso(curso: Curso) {
     console.log(curso)
-    this.http.post<Modulocurso[]>(`${this.url}/curso/modulo/find-by-curso`, curso)
+    this.http.post<Modulocurso[]>(`${this.url}/curso/modulo/find-by-curso`, curso, { headers: this.header })
       .subscribe(
         (modulo: Modulocurso[]) => {
           this.emitirModulo.emit(modulo);

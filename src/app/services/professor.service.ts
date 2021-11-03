@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Professor } from '../models/professor';
 
@@ -7,6 +7,10 @@ import { Professor } from '../models/professor';
   providedIn: 'root'
 })
 export class ProfessorService {
+
+  header: HttpHeaders = new HttpHeaders({
+    'Authorization': sessionStorage.getItem('token')!
+  });
 
   private url: string = "http://localhost:8080";
 
@@ -21,11 +25,11 @@ export class ProfessorService {
   constructor(private http: HttpClient) { }
 
   public listarProfessores(): Observable<Professor[]> {
-    return this.http.get<Professor[]>(`${this.url}/professor/professores`);
+    return this.http.get<Professor[]>(`${this.url}/professor/professores`, { headers: this.header });
   }
 
   public criarProfessor(professor: Professor): void {
-    this.http.post(`${this.url}/professor/create`, professor).subscribe(
+    this.http.post(`${this.url}/professor/create`, professor, { headers: this.header }).subscribe(
       (prof) => {
         this.emitirProfessor.emit(prof)
       }
@@ -33,11 +37,11 @@ export class ProfessorService {
   }
 
   public alterarProfessor(): void {
-    this.http.put(`${this.url}/professor/update`, this.professor).subscribe();
+    this.http.put(`${this.url}/professor/update`, this.professor, { headers: this.header }).subscribe();
   }
 
   public deletarProfessor(id: number | undefined): void {
-    this.http.delete(`${this.url}/professor/delete/${id}`).subscribe();
+    this.http.delete(`${this.url}/professor/delete/${id}`, { headers: this.header }).subscribe();
   }
 
   public receberIdProfessor(id: number | undefined) {
@@ -45,7 +49,7 @@ export class ProfessorService {
   }
 
   public getProfessorById(id: number | undefined): Observable<Professor>{
-    let obs = this.http.get<Professor>(`${this.url}/professor/find/${id}`);
+    let obs = this.http.get<Professor>(`${this.url}/professor/find/${id}`, { headers: this.header });
 
     obs.subscribe(
       (professor: Professor) => {
@@ -56,7 +60,7 @@ export class ProfessorService {
   }
 
   public enviarProfessor(professorId: number | undefined){
-    let obs = this.http.get<Professor>(`${this.url}/professor/search/${professorId}`);
+    let obs = this.http.get<Professor>(`${this.url}/professor/search/${professorId}`, { headers: this.header });
 
     obs.subscribe(
       (professor: Professor) => {
@@ -84,7 +88,7 @@ export class ProfessorService {
     
     this.c.nome = term;
 
-    let obs = this.http.post<Professor[]>(`${this.url}/professor/search`, this.c)
+    let obs = this.http.post<Professor[]>(`${this.url}/professor/search`, this.c, { headers: this.header })
     obs.subscribe(res => {
         console.log(res)
       })

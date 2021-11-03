@@ -63,7 +63,7 @@ export class ContaUsuarioService {
     usuario.subscribe(
       (data: Usuario) => {
         // apartir do usuario/token eu trago o usuario da API
-        this.getUsuarioByToken(data);
+        this.getUsuarioByEmail(data);
     });
 
     return usuario;
@@ -71,8 +71,9 @@ export class ContaUsuarioService {
   }
 
   // 1 - quando alguém se cadastrar já quero puxar o usuário da api, apartir do token do mesmo
-  public getUsuarioByToken(usuario: Usuario): Observable<Usuario> {
-    let obs = this.http.post<Usuario>(`${this.url}/find/token`, usuario);
+  public getUsuarioByEmail(usuario: Usuario): Observable<Usuario> {
+    console.log(usuario)
+    let obs = this.http.post<Usuario>(`${this.url}/find/email`, usuario);
     
     obs.subscribe(
       (data) => {

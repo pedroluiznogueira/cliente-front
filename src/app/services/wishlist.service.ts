@@ -22,6 +22,5 @@ export class WishlistService {
 
   public criarWishList(): void {
     let token = window.sessionStorage.getItem("tokenAux");
-    console.log(token)
   }
 }

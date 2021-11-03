@@ -30,6 +30,8 @@ export class ConteudoCursoComponent implements OnInit {
     this.cursosService.emitirCurso
       .subscribe(
         (curso: Curso) => {
+          console.log("CHEGOU")
+          console.log(curso)
           this.curso = curso;
         }
       );
@@ -58,6 +60,9 @@ export class ConteudoCursoComponent implements OnInit {
     this.moduloCurso!.imagem = this.arquivoUpload!.name;
     this.moduloCurso!.curso = this.curso;
     this.moduloCurso!.videoId = this.videoId;
+
+    console.log("AQUI TB")
+    console.log(this.moduloCurso);
 
     this.cursosService.criarModuloCurso(this.moduloCurso!);
   }

@@ -25,6 +25,7 @@ export class CursoAprendizadoComponent implements OnInit {
     this.cursosService.emitirModulo
       .subscribe(
         (modulo) => {
+          console.log(this.modulos)
           this.modulos = modulo;
         }
       );

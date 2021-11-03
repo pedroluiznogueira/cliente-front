@@ -47,7 +47,7 @@ export class PagamentoService {
   public getCursosComprados(): Observable<Usuario> {
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
 
-    let obs = this.http.post<Usuario>(`${this.url}/find/token`, usuario, { headers: this.header });
+    let obs = this.http.post<Usuario>(`${this.url}/find/email`, usuario, { headers: this.header });
       
     obs.subscribe();
     return obs;

@@ -10,10 +10,6 @@ import { Professor } from '../models/professor';
 })
 export class CursosService {
 
-  header: HttpHeaders = new HttpHeaders({
-    'Authorization': sessionStorage.getItem('token')!
-  });
-
   private url: string = "http://localhost:8080";
   cursoPesq: Curso = new Curso();
   curso: Curso = new Curso();
@@ -28,24 +24,41 @@ export class CursosService {
 
   public listarCursos(): Observable<Curso[]> {
 
-    return this.http.get<Curso[]>(`${this.url}/curso/cursos`, { headers: this.header });
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    return this.http.get<Curso[]>(`${this.url}/curso/cursos`, { headers: header });
   }
 
   public criarCurso(curso: Curso): void {
-    this.http.post(`${this.url}/curso/create`, curso, { headers: this.header })
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    this.http.post(`${this.url}/curso/create`, curso, { headers: header })
       .subscribe(
         (curso) => {
+          console.log()
           this.emitirCurso.emit(curso);
         }
       );
   }
 
   public deletarCurso(id: number | undefined): void {
-    this.http.delete(`${this.url}/curso/delete/${id}`, { headers: this.header }).subscribe();
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    this.http.delete(`${this.url}/curso/delete/${id}`, { headers: header }).subscribe();
   }
 
   public receberIdCurso(id: number | undefined): Observable<Curso> {
-    let obs = this.http.get<Curso>(`${this.url}/curso/find/${id}`, { headers: this.header });
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    let obs = this.http.get<Curso>(`${this.url}/curso/find/${id}`, { headers: header });
     
     obs.subscribe(
       (curso: Curso) => {
@@ -65,17 +78,25 @@ export class CursosService {
   }
 
   public alterarCurso(): void {
-    this.http.put(`${this.url}/curso/update`, this.curso, { headers: this.header }).subscribe();
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    this.http.put(`${this.url}/curso/update`, this.curso, { headers: header }).subscribe();
   }
 
   public pesquisarCursos(term: string): Observable<Curso[]> {
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
     if (!term.trim()) {
       return of([])
     }
 
     this.cursoPesq.titulo = term;
 
-    let obs =  this.http.post<Curso[]>(`${this.url}/curso/search`, this.cursoPesq, { headers: this.header });
+    let obs =  this.http.post<Curso[]>(`${this.url}/curso/search`, this.cursoPesq, { headers: header });
     obs.subscribe(
       (res) => {
         console.log(res)
@@ -85,8 +106,11 @@ export class CursosService {
   }
 
   public listarCursosProfessor(professor: Professor): Observable<Curso[]> {
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
 
-    let obs =  this.http.post<Curso[]>(`${this.url}/curso/find-by-professor`, professor, { headers: this.header });
+    let obs =  this.http.post<Curso[]>(`${this.url}/curso/find-by-professor`, professor, { headers: header });
 
     obs.subscribe(
       (cursos: Curso[]) => {
@@ -98,7 +122,11 @@ export class CursosService {
   }
 
   public criarModuloCurso(cursoModulo: Modulocurso): Observable<Modulocurso>{
-    let obs = this.http.post<Modulocurso>(`${this.url}/curso/modulo/create`, cursoModulo, { headers: this.header });
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    let obs = this.http.post<Modulocurso>(`${this.url}/curso/modulo/create`, cursoModulo, { headers: header });
     
     obs.subscribe(
       (resp) => {
@@ -109,8 +137,12 @@ export class CursosService {
   }
 
   public enviarCurso(curso: Curso) {
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
     console.log(curso)
-    this.http.post<Modulocurso[]>(`${this.url}/curso/modulo/find-by-curso`, curso, { headers: this.header })
+    this.http.post<Modulocurso[]>(`${this.url}/curso/modulo/find-by-curso`, curso, { headers: header })
       .subscribe(
         (modulo: Modulocurso[]) => {
           this.emitirModulo.emit(modulo);

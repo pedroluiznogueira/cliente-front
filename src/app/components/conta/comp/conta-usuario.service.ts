@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { Usuario } from 'src/app/models/usuario.model';
@@ -13,6 +13,10 @@ import { Cursowish } from 'src/app/models/cursowish';
   providedIn: 'root'
 })
 export class ContaUsuarioService {
+
+  header: HttpHeaders = new HttpHeaders({
+    'Authorization': sessionStorage.getItem('token')!
+  });
 
   @Output() loginValidado: EventEmitter<string> = new EventEmitter();
   @Output() cursosWish: EventEmitter<Curso[]> = new EventEmitter();
@@ -106,7 +110,7 @@ export class ContaUsuarioService {
 
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
 
-    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, usuario);
+    let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, usuario, { headers: this.header });
     
     obs.subscribe(
       (wishlist: Wishlist) => {
@@ -123,7 +127,7 @@ export class ContaUsuarioService {
     this.cursoWishlist!.curso = curso;
     this.cursoWishlist!.wishlist = wishlist;
 
-    let obs = this.http.post<Wishlist>(`${this.url}/curso/teste`, this.cursoWishlist);
+    let obs = this.http.post<Wishlist>(`${this.url}/curso/add-curso-wish`, this.cursoWishlist, { headers: this.header });
 
     obs.subscribe(
       () => {
@@ -141,15 +145,15 @@ export class ContaUsuarioService {
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
 
     // tenho o usuario -- getUsuarioByToken
-    this.http.post<Usuario>(`${this.url}/find/token`, usuario!)
+    this.http.post<Usuario>(`${this.url}/find/email`, usuario!, { headers: this.header })
       .subscribe(
 
         (usuario: Usuario) => {
-          this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, usuario)
+          this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, usuario, { headers: this.header })
             .subscribe(
 
               (wishlist: Wishlist) => {
-                let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, wishlist)
+                let obs = this.http.post<number[]>(`${this.url}/curso/cursos/wish`, wishlist, { headers: this.header })
                   .subscribe(
                     
                     (ids) => {
@@ -169,7 +173,7 @@ export class ContaUsuarioService {
 
   // 2 - buscando os cursos que tem os ids que o método acima trouxe 
   public getCursosWish(ids: number[]) {
-    let obs = this.http.post<Curso[]>(`${this.url}/curso/cursos/wish/all`, ids);
+    let obs = this.http.post<Curso[]>(`${this.url}/curso/cursos/wish/all`, ids, { headers: this.header });
 
     obs.subscribe(
       (cursos) => {

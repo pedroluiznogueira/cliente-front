@@ -6,11 +6,7 @@ import { Professor } from '../models/professor';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfessorService {
-
-  header: HttpHeaders = new HttpHeaders({
-    'Authorization': sessionStorage.getItem('token')!
-  });
+export class ProfessorService {  
 
   private url: string = "http://localhost:8080";
 
@@ -25,11 +21,19 @@ export class ProfessorService {
   constructor(private http: HttpClient) { }
 
   public listarProfessores(): Observable<Professor[]> {
-    return this.http.get<Professor[]>(`${this.url}/professor/professores`, { headers: this.header });
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    return this.http.get<Professor[]>(`${this.url}/professor/professores`, { headers: header });
   }
 
   public criarProfessor(professor: Professor): void {
-    this.http.post(`${this.url}/professor/create`, professor, { headers: this.header }).subscribe(
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    this.http.post(`${this.url}/professor/create`, professor, { headers: header }).subscribe(
       (prof) => {
         this.emitirProfessor.emit(prof)
       }
@@ -37,11 +41,19 @@ export class ProfessorService {
   }
 
   public alterarProfessor(): void {
-    this.http.put(`${this.url}/professor/update`, this.professor, { headers: this.header }).subscribe();
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    this.http.put(`${this.url}/professor/update`, this.professor, { headers: header }).subscribe();
   }
 
   public deletarProfessor(id: number | undefined): void {
-    this.http.delete(`${this.url}/professor/delete/${id}`, { headers: this.header }).subscribe();
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    this.http.delete(`${this.url}/professor/delete/${id}`, { headers: header }).subscribe();
   }
 
   public receberIdProfessor(id: number | undefined) {
@@ -49,7 +61,11 @@ export class ProfessorService {
   }
 
   public getProfessorById(id: number | undefined): Observable<Professor>{
-    let obs = this.http.get<Professor>(`${this.url}/professor/find/${id}`, { headers: this.header });
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    let obs = this.http.get<Professor>(`${this.url}/professor/find/${id}`, { headers: header });
 
     obs.subscribe(
       (professor: Professor) => {
@@ -60,7 +76,11 @@ export class ProfessorService {
   }
 
   public enviarProfessor(professorId: number | undefined){
-    let obs = this.http.get<Professor>(`${this.url}/professor/search/${professorId}`, { headers: this.header });
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    let obs = this.http.get<Professor>(`${this.url}/professor/search/${professorId}`, { headers: header });
 
     obs.subscribe(
       (professor: Professor) => {
@@ -81,6 +101,10 @@ export class ProfessorService {
 
   // pesquisar clientes
   public pesquisarProfessores(term: string): Observable<Professor[]> {
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
     if (!term.trim()) {
       // if not search term, return empty hero array.
       return of([]);
@@ -88,7 +112,7 @@ export class ProfessorService {
     
     this.c.nome = term;
 
-    let obs = this.http.post<Professor[]>(`${this.url}/professor/search`, this.c, { headers: this.header })
+    let obs = this.http.post<Professor[]>(`${this.url}/professor/search`, this.c, { headers: header })
     obs.subscribe(res => {
         console.log(res)
       })

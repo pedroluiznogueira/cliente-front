@@ -10,10 +10,6 @@ import { Usuario } from '../models/usuario.model';
 })
 export class PagamentoService {
 
-  header: HttpHeaders = new HttpHeaders({
-    'Authorization': sessionStorage.getItem('token')!
-  });
-
   url?: string = "http://localhost:8080";
 
   valorTotal?: number;
@@ -25,6 +21,11 @@ export class PagamentoService {
   ) { }
 
   public cursosComprados(cursos: Curso[]): Observable<Usuario> {
+
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
     this.pedidos = [
       {
@@ -34,7 +35,7 @@ export class PagamentoService {
     ]
     usuario!.pedidos = this.pedidos!;
 
-    let obs = this.http.post<Usuario>(`${this.url}/pedido`, usuario, { headers: this.header })
+    let obs = this.http.post<Usuario>(`${this.url}/pedido`, usuario, { headers: header })
       
     obs.subscribe(
         () => {
@@ -45,9 +46,14 @@ export class PagamentoService {
   }
 
   public getCursosComprados(): Observable<Usuario> {
+
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
     let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
 
-    let obs = this.http.post<Usuario>(`${this.url}/find/email`, usuario, { headers: this.header });
+    let obs = this.http.post<Usuario>(`${this.url}/find/email`, usuario, { headers:header });
       
     obs.subscribe();
     return obs;

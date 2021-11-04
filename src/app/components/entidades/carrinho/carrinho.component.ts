@@ -75,26 +75,25 @@ export class CarrinhoComponent implements OnInit {
   }
 
   public verificarCursosComprados(): void {
-
-    this.pagamentoService.getCursosComprados()
-    .subscribe(
-      (usuario: Usuario) => {
-        if (usuario.pedidos!.length == 0) {
+    this.pagamentoService.getCursosPedidos().subscribe(
+      (cursos: Curso[]) => {
+        console.log(cursos)
+        if (cursos!.length == 0) {
           this.router.navigate(['/pagamento'])
         }
-        for (let pedido of usuario.pedidos!) {
-          for (let curso of pedido.cursos!) {
-            for (let cur of this.cursos) {
-              if (curso.titulo === cur.titulo) {
-                console.log("Curso já foi comprado")
-                this.router.navigate(['/carrinho'])
-              } else {
-                this.router.navigate(['/pagamento'])
-              }
+
+        for (let curso of cursos) {
+          for (let cur of this.cursos) {
+            if (curso.titulo === cur.titulo) {
+              console.log("Curso já foi comprado")
+              this.router.navigate(['/carrinho'])
+            } else {
+              this.router.navigate(['/pagamento'])
             }
           }
+
         }
-      }        
+      }
     );
   }
 }

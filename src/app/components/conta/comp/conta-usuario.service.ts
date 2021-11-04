@@ -63,7 +63,13 @@ export class ContaUsuarioService {
     usuario.subscribe(
       (data: Usuario) => {
         // apartir do usuario/token eu trago o usuario da API
-        this.getUsuarioByEmail(data);
+        this.getUsuarioByEmail(data)
+        .subscribe(
+          (data) => {
+            // criando uma wishlist que contenha o usuário que eu obtive
+            this.criarWishList(data);
+          }
+        );
     });
 
     return usuario;
@@ -75,12 +81,7 @@ export class ContaUsuarioService {
     console.log(usuario)
     let obs = this.http.post<Usuario>(`${this.url}/find/email`, usuario);
     
-    obs.subscribe(
-      (data) => {
-        // criando uma wishlist que contenha o usuário que eu obtive
-        this.criarWishList(data);
-      }
-    );
+    obs.subscribe();
 
     return obs;
   }
@@ -113,6 +114,7 @@ export class ContaUsuarioService {
       
     .subscribe(
         (usuario) => {
+          console.log(usuario)
           let obs = this.http.post<Wishlist>(`${this.url}/wishlist/get/usuario`, usuario, { headers: header });
     
           obs.subscribe(

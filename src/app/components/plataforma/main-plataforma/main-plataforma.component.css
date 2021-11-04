@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+.container-manage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.manage-courses {
+    margin-top: 100px;
+    width: 700px;
+    height: 150px;
+    box-shadow: 0px 0px 2px #999;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.manage-text {
+    font-family: 'Montserrat';
+    font-size: 20px;
+}
+
+.btn {
+    width: 201px;
+
+    border: 1px solid black;
+
+    color: black;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#btn-pedido{
+    border: #222;
+    color: #fff;
+    background-color: #8710D8;
+}
+
+#btn-pedido:hover{
+    border: #111;
+    background-color: #8710D8;
+    font-weight: 600;
+}

@@ -1,31 +1,33 @@
+<div class="container">
 
-  <div class="container">
-    <div class="card w-75" *ngFor="let curso of cursos">
-  
-      <div class="row no-gutters">
-  
-        <div class="col-md-4">
-          <img src="{{urlImagem}}{{curso.imagem}}" alt="...">
-        </div>
-  
-        <div class="col-md-8">
-  
-          <div class="card-body">
-  
-            <div class="infos">
-              <h5 class="card-title"  [routerLink]="['/curso-aprendizado']">{{curso.titulo}}</h5>
-              <p class="card-text">{{curso.descricao}}</p>
-            </div>
+  <button id="btn-pedido" type="button" class="btn">Adicionar curso</button>
 
-            <div class="tools">
-                <mat-icon [routerLink]="['/professor-details']" class="icon">delete</mat-icon>
-                <mat-icon [routerLink]="['/professor-details']" class="icon">edit</mat-icon>
-            </div>
-  
-          </div>
-  
-        </div>
-  
+  <div class="card w-75" *ngFor="let curso of cursos">
+
+    <div class="row no-gutters">
+
+      <div class="col-md-4">
+        <img src="{{urlImagem}}{{curso.imagem}}" alt="...">
       </div>
+
+      <div class="col-md-8">
+
+        <div class="card-body">
+
+          <div class="infos">
+            <h5 class="card-title" [routerLink]="['/curso-aprendizado']">{{curso.titulo}}</h5>
+            <p class="card-text">{{curso.descricao}}</p>
+          </div>
+
+          <div class="tools">
+            <mat-icon [routerLink]="['/professor-details']" class="icon">delete</mat-icon>
+            <mat-icon [routerLink]="['/professor-details']" class="icon">edit</mat-icon>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   </div>
+</div>

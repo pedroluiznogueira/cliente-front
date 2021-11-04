@@ -22,16 +22,11 @@ export class AprendizadoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.pagamentoService.getCursosComprados()
+    this.pagamentoService.emitirCursos
       .subscribe(
-        (usuario: Usuario) => {
-          for (let pedido of usuario.pedidos!) {
-            for (let curso of pedido.cursos!) {
-              this.cursosPedidos!.push(curso!);
-            }
-          }
-          console.log(this.cursosPedidos)
-        }        
+        (cursos) => {
+          this.cursosPedidos = cursos;
+        }
       );
   }
 

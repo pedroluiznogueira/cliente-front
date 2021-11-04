@@ -31,7 +31,7 @@ export class PagamentoComponent implements OnInit {
         value: `${this.valorTotal}`, 
         onApprove: (detais) => {
           alert("Transação foi um sucesso")
-          this.pagamentoService.cursosComprados(this.cursos!);
+          this.pagamentoService.criarPedido(this.cursos);
         }
       }
     );    

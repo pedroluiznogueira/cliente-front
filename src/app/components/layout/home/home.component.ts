@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { PagamentoService } from 'src/app/services/pagamento.service';
 import { ContaUsuarioService } from '../../conta/comp/conta-usuario.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private contaUsuarioService: ContaUsuarioService
+    private contaUsuarioService: ContaUsuarioService,
+    private pagamentoService: PagamentoService
   ) { }
 
   ngOnInit(): void {
@@ -54,6 +56,10 @@ export class HomeComponent implements OnInit {
 
   public emitirClickWish() {
     this.contaUsuarioService.getIdsCursosWish();
+  }
+
+  public emitirClickBook() {
+    this.pagamentoService.getCursosPedidos();
   }
 
 }

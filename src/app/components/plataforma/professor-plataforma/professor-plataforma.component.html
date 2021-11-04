@@ -1,1 +1,28 @@
-<p>professor-plataforma works!</p>
+<section class="container">
+    <div class="profile">
+      <div class="links">
+        <img src="{{urlImagem}}{{professor.imagem}}" class="rounded-circle" alt="...">
+        <button type="button" class="btn" (click)="goToLink('https://www.linkedin.com/')">Twitter</button>
+        <button type="button" class="btn" (click)="goToLink('https://facebook.com/')">Facebook</button>
+        <button type="button" class="btn" (click)="goToLink('https://www.instagram.com/')">Instagram</button>
+        <button type="button" class="btn" (click)="goToLink('https://www.linkedin.com/')">Linkedin</button>
+        <button type="button" class="btn" (click)="goToLink('https://twitter.com/')">Youtube</button>
+      </div>
+      
+      <ul class="list-group">
+        <a  class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{professor.nome}} {{professor.sobrenome}}</h5>
+            <p class="mb-1">{{professor.resumo}}</p>
+            <p class="mb-1">{{professor.email}}</p>
+          </div>
+  
+          <div class="sobre">
+            <p class="mb-1">{{professor.sobre}}</p>
+          </div>
+  
+        </a>
+      </ul>
+    </div>
+  </section>
+  

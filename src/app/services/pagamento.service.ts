@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Curso } from '../models/curso';
 import { Cursopedido } from '../models/cursopedido';
@@ -21,7 +22,8 @@ export class PagamentoService {
   cursoPedido: Cursopedido = new Cursopedido();
   
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   // 1 - trazer usuário que quero criar o pedido dele
@@ -67,7 +69,7 @@ export class PagamentoService {
   @Output() emitirCursos: EventEmitter<Curso[]> = new EventEmitter();
 
   // 3 - trazer os cursos que estão no pedido do usuário
-  public getCursosPedidos(): Observable<Curso[]>{
+  public getCursosPedidos(boo: boolean): Observable<Curso[]>{
     let header: HttpHeaders = new HttpHeaders({
       'Authorization': sessionStorage.getItem('token')!
     });
@@ -93,6 +95,9 @@ export class PagamentoService {
                         .subscribe(
                           (cursos) => {
                             this.emitirCursos.emit(cursos)
+                            if (boo) {
+                              this.router.navigate(['/aprendizado'])
+                            }
                           }
                         );
                       

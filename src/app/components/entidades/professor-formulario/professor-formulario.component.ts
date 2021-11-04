@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Professor } from 'src/app/models/professor';
+import { Usuario } from 'src/app/models/usuario.model';
 import { ProfessorService } from 'src/app/services/professor.service';
 import { UploadFileService } from 'src/app/services/uploadfile.service';
+import { ContaUsuarioService } from '../../conta/comp/conta-usuario.service';
 
 @Component({
   selector: 'app-professor-formulario',
@@ -10,22 +12,28 @@ import { UploadFileService } from 'src/app/services/uploadfile.service';
 })
 export class ProfessorFormularioComponent implements OnInit {
 
+  public professor?: Professor;
   public nome?: string;
   public sobrenome?: string;
   public email?: string;
   public sobre?: string;
   public resumo?: string;
-  public professor?: Professor;
+
+  public usuario?: Usuario;
 
   arquivosSelecionados?: FileList;
   arquivoUpload?: File;
 
   constructor(
+    private usuarioService: ContaUsuarioService,
     private professorService: ProfessorService,
     private uploadService: UploadFileService
     ) { }
 
   ngOnInit(): void {
+    let usuarioSession:Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
+    
+    this.usuarioService.getUsuarioByEmail(usuarioSession).subscribe((usuario)=> {this.usuario = usuario} );
   }
 
    // persistência da imagem de perfil do usuário
@@ -51,9 +59,11 @@ export class ProfessorFormularioComponent implements OnInit {
     this.professor.email = this.email;
     this.professor.resumo = this.resumo;
     this.professor.sobre = this.sobre;
-    this.professor.imagem = this.arquivoUpload!.name
+    this.professor.imagem = this.arquivoUpload!.name;
+    this.professor.usuario = this.usuario;
 
     this.professorService.criarProfessor(this.professor);
+
     this.nome = "";
     this.sobrenome = "";
     this.email = "";

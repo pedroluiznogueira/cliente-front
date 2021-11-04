@@ -25,6 +25,10 @@ export class CursosPlataformaComponent implements OnInit {
   ngOnInit(): void {
     let professor = JSON.parse(sessionStorage.getItem("plataforma")!);
 
+    this.cursoService.listarCursosProfessor(professor).subscribe((cursos) => {
+      this.cursos = cursos;
+    })
+
     this.professor = professor
 
   }

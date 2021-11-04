@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Professor } from 'src/app/models/professor';
 import { Usuario } from 'src/app/models/usuario.model';
 import { ProfessorService } from 'src/app/services/professor.service';
@@ -24,16 +25,26 @@ export class ProfessorFormularioComponent implements OnInit {
   arquivosSelecionados?: FileList;
   arquivoUpload?: File;
 
+  profCriado?: Professor;
+
   constructor(
     private usuarioService: ContaUsuarioService,
     private professorService: ProfessorService,
-    private uploadService: UploadFileService
+    private uploadService: UploadFileService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
     let usuarioSession:Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
     
     this.usuarioService.getUsuarioByEmail(usuarioSession).subscribe((usuario)=> {this.usuario = usuario} );
+
+    this.professorService.emitirProfessor.subscribe(
+      (prof) => {
+        console.log(prof)
+        this.profCriado = prof;
+      }
+    );
   }
 
    // persistência da imagem de perfil do usuário
@@ -69,6 +80,9 @@ export class ProfessorFormularioComponent implements OnInit {
     this.email = "";
     this.resumo = "";
     this.sobre = "";
+
+    window.sessionStorage.setItem("plataforma", JSON.stringify(this.professor))
+    this.router.navigate(['/home-plataforma'])
   }
 
 }

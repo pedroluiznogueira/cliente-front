@@ -100,6 +100,16 @@
     background: none;
 }
 
+.icon{
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.icon:hover{
+    color: #A435F0;
+}
+
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
@@ -110,7 +120,7 @@
     }
 
     #sidebar-wrapper {
-        width: 150px;
+        width: 100px;
     }
 
     #wrapper.toggled #sidebar-wrapper {

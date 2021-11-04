@@ -42,9 +42,9 @@ import { FilesComponent } from './components/entidades/files/files.component';
 import { UsuarioDetailsComponent } from './components/entidades/usuario-details/usuario-details.component';
 import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/ensine-conosco.component';
 import { ConteudoCursoComponent } from './components/entidades/conteudo-curso/conteudo-curso.component';
-import { ProfessorPlataformaComponent } from './components/entidades/professor-plataforma/professor-plataforma.component';
 import { HomePlataformaComponent } from './components/layout/home-plataforma/home-plataforma.component';
 import { CursosPlataformaComponent } from './components/plataforma/cursos-plataforma/cursos-plataforma.component';
+import { MainPlataformaComponent } from './components/plataforma/main-plataforma/main-plataforma.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,9 +72,9 @@ import { CursosPlataformaComponent } from './components/plataforma/cursos-plataf
     UsuarioDetailsComponent,
     EnsineConoscoComponent,
     ConteudoCursoComponent,
-    ProfessorPlataformaComponent,
     HomePlataformaComponent,
-    CursosPlataformaComponent
+    CursosPlataformaComponent,
+    MainPlataformaComponent
   ],
   imports: [
     BrowserModule,

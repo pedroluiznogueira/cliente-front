@@ -22,14 +22,14 @@ import { WishlistComponent } from './components/entidades/wishlist/wishlist.comp
 import { PagamentoComponent } from './components/entidades/pagamento/pagamento.component';
 import { AprendizadoComponent } from './components/entidades/aprendizado/aprendizado.component';
 import { CursoAprendizadoComponent } from './components/entidades/curso-aprendizado/curso-aprendizado.component';
-import { UploadFileService } from './services/uploadfile.service';
 import { FilesComponent } from './components/entidades/files/files.component';
 import { UsuarioDetailsComponent } from './components/entidades/usuario-details/usuario-details.component';
 import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/ensine-conosco.component';
 import { ConteudoCursoComponent } from './components/entidades/conteudo-curso/conteudo-curso.component';
-import { ProfessorPlataformaComponent } from './components/entidades/professor-plataforma/professor-plataforma.component';
 import { HomePlataformaComponent } from './components/layout/home-plataforma/home-plataforma.component';
 import { PlataformaGuard } from './components/plataforma/comp/plataforma.guard';
+import { CursosPlataformaComponent } from './components/plataforma/cursos-plataforma/cursos-plataforma.component';
+import { MainPlataformaComponent } from './components/plataforma/main-plataforma/main-plataforma.component';
 
 const routes: Routes = [  
   {
@@ -64,7 +64,8 @@ const routes: Routes = [
   { 
     path: 'home-plataforma', component:  HomePlataformaComponent,
     children: [
-      { path: '', component:  ProfessorPlataformaComponent },
+      { path: '', component: MainPlataformaComponent},
+      { path: 'cursos', component: CursosPlataformaComponent}
     ],
     canActivate: [PlataformaGuard],
   },

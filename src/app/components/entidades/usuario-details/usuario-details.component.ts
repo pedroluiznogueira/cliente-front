@@ -19,7 +19,6 @@ export class UsuarioDetailsComponent implements OnInit {
   professor?: Professor;
 
   isProfessor:boolean = false
-  onPlataforma: boolean = false;
 
   constructor(
     private professorService: ProfessorService,
@@ -42,13 +41,8 @@ export class UsuarioDetailsComponent implements OnInit {
     })
   }
 
-  public enviarProfessor(): void{
-    this.professorService.enviarProfessorByDetails(this.professor!)
-  }
-
   public entrarPlataforma() {
-    this.onPlataforma = !this.onPlataforma;
-    window.sessionStorage.setItem("plataforma", JSON.stringify(this.onPlataforma))
+    window.sessionStorage.setItem("plataforma", JSON.stringify(this.professor))
     this.router.navigate(['/home-plataforma'])
   }
 }

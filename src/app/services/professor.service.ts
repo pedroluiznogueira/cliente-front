@@ -21,7 +21,6 @@ export class ProfessorService {
   @Output() onClickAddCurso: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() emitirProfessor: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() emitirProfessorByUsuario: EventEmitter<Professor> = new EventEmitter<Professor>();
-  @Output() emitirCursoByProfessor: EventEmitter<Curso[]> = new EventEmitter<Curso[]>();
 
 
   constructor(
@@ -141,12 +140,6 @@ export class ProfessorService {
     this.usuarioService.getUsuarioByEmail(usuario).subscribe((usuarioBd) => {
       this.http.post<Professor>(`${this.url}/professor/byUsuario`, usuarioBd, { headers: header })
       .subscribe(res =>{this.emitirProfessorByUsuario.emit(res)})
-    })
-  }
-
-  public enviarProfessorByDetails(professor: Professor):void {
-    this.cursoService.listarCursosProfessor(professor).subscribe((cursos) => {
-      this.emitirCursoByProfessor.emit(cursos)
     })
   }
 

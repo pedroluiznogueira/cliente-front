@@ -42,6 +42,7 @@ import { FilesComponent } from './components/entidades/files/files.component';
 import { UsuarioDetailsComponent } from './components/entidades/usuario-details/usuario-details.component';
 import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/ensine-conosco.component';
 import { ConteudoCursoComponent } from './components/entidades/conteudo-curso/conteudo-curso.component';
+import { ProfessorPlataformaComponent } from './components/entidades/professor-plataforma/professor-plataforma.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,8 @@ import { ConteudoCursoComponent } from './components/entidades/conteudo-curso/co
     FilesComponent,
     UsuarioDetailsComponent,
     EnsineConoscoComponent,
-    ConteudoCursoComponent
+    ConteudoCursoComponent,
+    ProfessorPlataformaComponent
   ],
   imports: [
     BrowserModule,

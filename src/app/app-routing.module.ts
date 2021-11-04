@@ -30,6 +30,7 @@ import { HomePlataformaComponent } from './components/layout/home-plataforma/hom
 import { PlataformaGuard } from './components/plataforma/comp/plataforma.guard';
 import { CursosPlataformaComponent } from './components/plataforma/cursos-plataforma/cursos-plataforma.component';
 import { MainPlataformaComponent } from './components/plataforma/main-plataforma/main-plataforma.component';
+import { ProfessorPlataformaComponent } from './components/plataforma/professor-plataforma/professor-plataforma.component';
 
 const routes: Routes = [  
   {
@@ -65,7 +66,8 @@ const routes: Routes = [
     path: 'home-plataforma', component:  HomePlataformaComponent,
     children: [
       { path: '', component: MainPlataformaComponent},
-      { path: 'cursos', component: CursosPlataformaComponent}
+      { path: 'cursos', component: CursosPlataformaComponent},
+      { path: 'professor', component: ProfessorPlataformaComponent}
     ],
     canActivate: [PlataformaGuard],
   },

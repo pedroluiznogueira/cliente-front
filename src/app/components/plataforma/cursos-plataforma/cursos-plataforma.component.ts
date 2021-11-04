@@ -34,6 +34,8 @@ export class CursosPlataformaComponent implements OnInit {
   }
 
   public deletarCurso(curso:Curso): void {
+    this.cursos.splice(this.cursos.indexOf(curso), 1);
+
     this.cursoService.deletarCurso(curso.id)
   }
 

@@ -45,6 +45,7 @@ import { ConteudoCursoComponent } from './components/entidades/conteudo-curso/co
 import { HomePlataformaComponent } from './components/layout/home-plataforma/home-plataforma.component';
 import { CursosPlataformaComponent } from './components/plataforma/cursos-plataforma/cursos-plataforma.component';
 import { MainPlataformaComponent } from './components/plataforma/main-plataforma/main-plataforma.component';
+import { ProfessorPlataformaComponent } from './components/plataforma/professor-plataforma/professor-plataforma.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +75,8 @@ import { MainPlataformaComponent } from './components/plataforma/main-plataforma
     ConteudoCursoComponent,
     HomePlataformaComponent,
     CursosPlataformaComponent,
-    MainPlataformaComponent
+    MainPlataformaComponent,
+    ProfessorPlataformaComponent
   ],
   imports: [
     BrowserModule,

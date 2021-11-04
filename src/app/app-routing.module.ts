@@ -64,7 +64,7 @@ const routes: Routes = [
   { 
     path: 'home-plataforma', component:  HomePlataformaComponent,
     children: [
-      { path: '', component:  ProfessorPlataformaComponent }
+      { path: '', component:  ProfessorPlataformaComponent },
     ],
     canActivate: [PlataformaGuard],
   },

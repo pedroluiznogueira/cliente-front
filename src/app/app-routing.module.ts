@@ -27,6 +27,7 @@ import { FilesComponent } from './components/entidades/files/files.component';
 import { UsuarioDetailsComponent } from './components/entidades/usuario-details/usuario-details.component';
 import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/ensine-conosco.component';
 import { ConteudoCursoComponent } from './components/entidades/conteudo-curso/conteudo-curso.component';
+import { ProfessorPlataformaComponent } from './components/entidades/professor-plataforma/professor-plataforma.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,8 @@ const routes: Routes = [
       { path: 'professor-formulario', component:  ProfessorFormularioComponent },
       { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
       { path: 'professor-details', component:  ProfessorDetailsComponent }, 
+      { path: 'professor-plataforma', component:  ProfessorPlataformaComponent }, 
+
 
       { path: 'cursos', component:  CursosComponent },
       { path: 'curso-formulario', component:  FormularioCursosComponent },

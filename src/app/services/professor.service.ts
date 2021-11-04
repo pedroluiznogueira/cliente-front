@@ -2,6 +2,7 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Professor } from '../models/professor';
+import { Usuario } from '../models/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -117,5 +118,18 @@ export class ProfessorService {
         console.log(res)
       })
     return obs;
+  }
+
+  public getProfessorByUsuario(usuario:Usuario): Professor{
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    this.http.post<Professor>(`${this.url}/professorByUsuario`, usuario, { headers: header })
+    .subscribe(res => {this.professor = res})
+
+
+    return this.professor;
+
   }
 }

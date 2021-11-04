@@ -1,1 +1,26 @@
-<p>professor-plataforma works!</p>
+
+  <div class="container">
+    <div class="card w-75" *ngFor="let curso of cursos">
+  
+      <div class="row no-gutters">
+  
+        <div class="col-md-4">
+          <img src="{{urlImagem}}{{curso.imagem}}" alt="...">
+        </div>
+  
+        <div class="col-md-8">
+  
+          <div class="card-body">
+  
+            <div class="infos">
+              <h5 class="card-title"  [routerLink]="['/curso-aprendizado']">{{curso.titulo}}</h5>
+              <p class="card-text">{{curso.descricao}}</p>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
+  </div>

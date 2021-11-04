@@ -3,7 +3,7 @@
       <div class="links">
         <img src="{{urlImagem}}{{usuario.imagem}}" class="rounded-circle" alt="...">
         <button *ngIf="!isProfessor" id="btn-pedido" type="button" class="btn" [routerLink]="['/ensine-conosco']">Ensine conosco</button>
-        <button *ngIf="isProfessor" id="btn-pedido" type="button" class="btn" [routerLink]="['/professor-plataforma']">Plataforma professor</button>
+        <button *ngIf="isProfessor" (click) = "enviarProfessor()" id="btn-pedido" type="button" class="btn" [routerLink]="['/professor-plataforma']">Plataforma professor</button>
       </div>
       
       <ul class="list-group">

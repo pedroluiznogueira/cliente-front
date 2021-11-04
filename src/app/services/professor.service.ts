@@ -4,6 +4,8 @@ import { Observable, of } from 'rxjs';
 import { Professor } from '../models/professor';
 import { Usuario } from '../models/usuario.model';
 import { ContaUsuarioService } from '../components/conta/comp/conta-usuario.service';
+import { Curso } from '../models/curso';
+import { CursosService } from './cursos.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +21,13 @@ export class ProfessorService {
   @Output() onClickAddCurso: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() emitirProfessor: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() emitirProfessorByUsuario: EventEmitter<Professor> = new EventEmitter<Professor>();
+  @Output() emitirCursoByProfessor: EventEmitter<Curso[]> = new EventEmitter<Curso[]>();
 
 
   constructor(
     private http: HttpClient,
-    private usuarioService: ContaUsuarioService
+    private usuarioService: ContaUsuarioService,
+    private cursoService: CursosService
     ) { }
 
   public listarProfessores(): Observable<Professor[]> {
@@ -139,4 +143,12 @@ export class ProfessorService {
       .subscribe(res =>{this.emitirProfessorByUsuario.emit(res)})
     })
   }
+
+  public enviarProfessorByDetails(professor: Professor):void {
+    this.cursoService.listarCursosProfessor(professor).subscribe((cursos) => {
+      this.emitirCursoByProfessor.emit(cursos)
+    })
+  }
+
 }
+

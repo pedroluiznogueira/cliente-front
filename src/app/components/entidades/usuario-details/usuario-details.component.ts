@@ -34,7 +34,12 @@ export class UsuarioDetailsComponent implements OnInit {
       } else {
         this.isProfessor = true;
       }
+
+      this.professor = professor;
     })
   }
 
+  public enviarProfessor(): void{
+    this.professorService.enviarProfessorByDetails(this.professor!)
+  }
 }

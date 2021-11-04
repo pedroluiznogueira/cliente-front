@@ -112,11 +112,7 @@ export class CursosService {
 
     let obs =  this.http.post<Curso[]>(`${this.url}/curso/find-by-professor`, professor, { headers: header });
 
-    obs.subscribe(
-      (cursos: Curso[]) => {
-        console.log(cursos)
-      }
-    )
+    obs.subscribe()
 
     return obs;
   }

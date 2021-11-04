@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Curso } from 'src/app/models/curso';
@@ -35,7 +36,8 @@ export class CursosComponent implements OnInit {
     private cursosService: CursosService,
     private wishlistService: WishlistService,
     private contaUsuarioService: ContaUsuarioService,
-    private pagamentoService: PagamentoService
+    private pagamentoService: PagamentoService,
+    private router: Router
   ) { }
 
   public pesquisar(term: string): void {
@@ -81,6 +83,29 @@ export class CursosComponent implements OnInit {
   }
 
   public enviarCursoId(curso: Curso){
-    this.contaUsuarioService.getCursoId(curso);
+    this.pagamentoService.getCursosPedidos(false)
+    .subscribe(
+      () => {
+        this.pagamentoService.emitirCursos
+          .subscribe(
+            (resp) => {
+              if (resp.length == 0) {
+                this.contaUsuarioService.getCursoId(curso);
+              } 
+
+              for (let c of resp) {
+                if (curso.titulo === c.titulo) {
+                  console.log("curso ja comprado")
+                  this.router.navigate(['/cursos'])
+                  return
+                }
+                
+              }
+              this.contaUsuarioService.getCursoId(curso);
+              
+            }
+          );          
+      }
+    );
   }
 }

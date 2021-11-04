@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
   }
 
   public emitirClickBook() {
-    this.pagamentoService.getCursosPedidos();
+    this.pagamentoService.getCursosPedidos(true);
   }
 
 }

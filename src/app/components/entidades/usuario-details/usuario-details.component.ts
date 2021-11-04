@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Professor } from 'src/app/models/professor';
 import { Usuario } from 'src/app/models/usuario.model';
 import { ProfessorService } from 'src/app/services/professor.service';
 import { ContaUsuarioService } from '../../conta/comp/conta-usuario.service';
@@ -14,22 +15,26 @@ export class UsuarioDetailsComponent implements OnInit {
 
   usuario: Usuario = new Usuario();
 
-  isProfessor:boolean = true
+  professor?: Professor;
+
+  isProfessor:boolean = false
 
   constructor(
-    private usuarioService: ContaUsuarioService,
     private professorService: ProfessorService
     ) { }
 
   ngOnInit(): void {
     this.usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
-    this.usuarioService.getUsuarioByEmail(this.usuario).subscribe(usuario => {this.usuario.id = usuario.id})
 
-    if(this.professorService.getProfessorByUsuario(this.usuario) == null){
-      this.isProfessor = true
-    } else {
-      this.isProfessor = false;
-    }
-    
+    this.professorService.getProfessorByUsuario();
+
+    this.professorService.emitirProfessorByUsuario.subscribe((professor) => {
+      if(professor == null){
+        this.isProfessor = false
+      } else {
+        this.isProfessor = true;
+      }
+    })
   }
+
 }

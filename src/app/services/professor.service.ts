@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Professor } from '../models/professor';
 import { Usuario } from '../models/usuario.model';
+import { ContaUsuarioService } from '../components/conta/comp/conta-usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,13 @@ export class ProfessorService {
   @Output() onClickDetails: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() onClickAddCurso: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() emitirProfessor: EventEmitter<Professor> = new EventEmitter<Professor>();
+  @Output() emitirProfessorByUsuario: EventEmitter<Professor> = new EventEmitter<Professor>();
 
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private usuarioService: ContaUsuarioService
+    ) { }
 
   public listarProfessores(): Observable<Professor[]> {
     let header: HttpHeaders = new HttpHeaders({
@@ -120,16 +125,18 @@ export class ProfessorService {
     return obs;
   }
 
-  public getProfessorByUsuario(usuario:Usuario): Professor{
+  public getProfessorByUsuario(): void{
     let header: HttpHeaders = new HttpHeaders({
       'Authorization': sessionStorage.getItem('token')!
     });
 
-    this.http.post<Professor>(`${this.url}/professorByUsuario`, usuario, { headers: header })
-    .subscribe(res => {this.professor = res})
+    let usuario: Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
 
+    let professor!: Professor;
 
-    return this.professor;
-
+    this.usuarioService.getUsuarioByEmail(usuario).subscribe((usuarioBd) => {
+      this.http.post<Professor>(`${this.url}/professor/byUsuario`, usuarioBd, { headers: header })
+      .subscribe(res =>{this.emitirProfessorByUsuario.emit(res)})
+    })
   }
 }

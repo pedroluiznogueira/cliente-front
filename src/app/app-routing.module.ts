@@ -28,8 +28,10 @@ import { UsuarioDetailsComponent } from './components/entidades/usuario-details/
 import { EnsineConoscoComponent } from './components/entidades/ensine-conosco/ensine-conosco.component';
 import { ConteudoCursoComponent } from './components/entidades/conteudo-curso/conteudo-curso.component';
 import { ProfessorPlataformaComponent } from './components/entidades/professor-plataforma/professor-plataforma.component';
+import { HomePlataformaComponent } from './components/layout/home-plataforma/home-plataforma.component';
+import { PlataformaGuard } from './components/plataforma/comp/plataforma.guard';
 
-const routes: Routes = [
+const routes: Routes = [  
   {
     path: '', component: HomeComponent,
     children: [       
@@ -39,8 +41,6 @@ const routes: Routes = [
       { path: 'professor-formulario', component:  ProfessorFormularioComponent },
       { path: 'professor-update-formulario', component:  ProfessorUpdateFormularioComponent },
       { path: 'professor-details', component:  ProfessorDetailsComponent }, 
-      { path: 'professor-plataforma', component:  ProfessorPlataformaComponent }, 
-
 
       { path: 'cursos', component:  CursosComponent },
       { path: 'curso-formulario', component:  FormularioCursosComponent },
@@ -60,6 +60,15 @@ const routes: Routes = [
     ],
     canActivate: [AuthGuard],
   },
+
+  { 
+    path: 'home-plataforma', component:  HomePlataformaComponent,
+    children: [
+      { path: '', component:  ProfessorPlataformaComponent }
+    ],
+    canActivate: [PlataformaGuard],
+  },
+
   {
     path: '', component: AuthenticationComponent,
     children: [

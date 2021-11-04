@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Professor } from 'src/app/models/professor';
 import { Usuario } from 'src/app/models/usuario.model';
 import { ProfessorService } from 'src/app/services/professor.service';
@@ -18,9 +19,11 @@ export class UsuarioDetailsComponent implements OnInit {
   professor?: Professor;
 
   isProfessor:boolean = false
+  onPlataforma: boolean = false;
 
   constructor(
-    private professorService: ProfessorService
+    private professorService: ProfessorService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -41,5 +44,11 @@ export class UsuarioDetailsComponent implements OnInit {
 
   public enviarProfessor(): void{
     this.professorService.enviarProfessorByDetails(this.professor!)
+  }
+
+  public entrarPlataforma() {
+    this.onPlataforma = !this.onPlataforma;
+    window.sessionStorage.setItem("plataforma", JSON.stringify(this.onPlataforma))
+    this.router.navigate(['/home-plataforma'])
   }
 }

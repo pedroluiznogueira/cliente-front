@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   pauseOnHover = true;
   pauseOnFocus = true;
 
+  onPlataforma = true;
+
   constructor(
     private router: Router,
     private contaUsuarioService: ContaUsuarioService,

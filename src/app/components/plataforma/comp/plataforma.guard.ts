@@ -5,19 +5,21 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class PlataformaGuard implements CanActivate {
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router
+  ) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree{
-    const token = window.sessionStorage.getItem('token');
-
-    console.log(token)
+    const plataforma = window.sessionStorage.getItem('plataforma');
     
-    if (token) {
+    console.log(plataforma)
+
+    if (plataforma) {
       return true;
     } else {
-      this.router.navigate(['login']);
+      this.router.navigate(['/usuario-details']);
       return false;
     }
   }

@@ -18,13 +18,22 @@ export class ProfessorPlataformaComponent implements OnInit {
   urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
 
   constructor(
-    private professorService: ProfessorService
+    private professorService: ProfessorService,
+    private cursoService: CursosService
     ) { }
 
   ngOnInit(): void {
     this.professorService.emitirCursoByProfessor.subscribe((cursos) => {
       this.cursos = cursos
     })
+  }
+
+  public deletarCurso(curso:Curso): void {
+    this.cursoService.deletarCurso(curso.id)
+  }
+
+  public editarCurso(curso:Curso): void {
+    console.log("Editou")
   }
 
 }

@@ -31,6 +31,7 @@ import { PlataformaGuard } from './components/plataforma/comp/plataforma.guard';
 import { CursosPlataformaComponent } from './components/plataforma/cursos-plataforma/cursos-plataforma.component';
 import { MainPlataformaComponent } from './components/plataforma/main-plataforma/main-plataforma.component';
 import { ProfessorPlataformaComponent } from './components/plataforma/professor-plataforma/professor-plataforma.component';
+import { AdicionandoModulosComponent } from './components/plataforma/adicionando-modulos/adicionando-modulos.component';
 
 const routes: Routes = [  
   {
@@ -67,7 +68,9 @@ const routes: Routes = [
       { path: 'professor', component: ProfessorPlataformaComponent},
       { path: 'curso-formulario', component:  FormularioCursosComponent },
       { path: 'curso-update-formulario', component:  FormularioCursosUpdateComponent },
-      { path: 'conteudo-curso', component: ConteudoCursoComponent }
+      { path: 'conteudo-curso', component: ConteudoCursoComponent },
+      { path: 'adicionando-modulos', component: AdicionandoModulosComponent }
+
     ],
     canActivate: [PlataformaGuard],
   },

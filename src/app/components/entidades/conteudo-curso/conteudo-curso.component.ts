@@ -13,6 +13,7 @@ export class ConteudoCursoComponent implements OnInit {
 
   titulo?: string;
   conteudoPrincipal?: string;
+  conteudoPrincipalDois?: string;
   videoId?: string;
 
   moduloCurso?: Modulocurso = new Modulocurso();
@@ -57,6 +58,7 @@ export class ConteudoCursoComponent implements OnInit {
 
     this.moduloCurso!.titulo = this.titulo;
     this.moduloCurso!.conteudoPrincipal = this.conteudoPrincipal;
+    this.moduloCurso!.conteudoPrincipalDois = this.conteudoPrincipalDois;
     this.moduloCurso!.imagem = this.arquivoUpload!.name;
     this.moduloCurso!.curso = this.curso;
     this.moduloCurso!.videoId = this.videoId;

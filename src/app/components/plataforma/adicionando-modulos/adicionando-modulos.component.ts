@@ -21,9 +21,8 @@ export class AdicionandoModulosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.cursosService.emitirCursoByModulo.subscribe((curso:Curso) => {
-      this.curso = curso;
+      this.curso = curso
     })
 
     this.cursosService.emitirModByCurso.subscribe((modulos:Modulocurso[]) => {
@@ -52,5 +51,4 @@ export class AdicionandoModulosComponent implements OnInit {
   track(index:number, value:string){
     return index;
   }
-
 }

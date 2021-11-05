@@ -136,12 +136,12 @@ export class CursosService {
     
     obs.subscribe(
       (resp) => {
-        this.emitirCursoByModulo.emit(resp.curso)
+        this.emitirCursoByModulo.emit(resp.curso!)
         this.emitirModulosByCurso(resp.curso!)
-        this.router.navigate(['/home-plataforma/adicionando-modulos'])
-        }
+      }
       );
-
+      this.router.navigate(['/home-plataforma/adicionando-modulos'])
+      
     return obs;
   }
 

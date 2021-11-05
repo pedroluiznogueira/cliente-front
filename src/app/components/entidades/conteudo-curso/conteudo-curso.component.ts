@@ -74,4 +74,8 @@ export class ConteudoCursoComponent implements OnInit {
     this.cursosService.criarModuloCurso(this.moduloCurso!);
   }
 
+  public cancelar(){
+    this.cursosService.voltarModuloCurso(this.curso)
+  }
+
 }

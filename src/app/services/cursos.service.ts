@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { Curso } from '../models/curso';
 import { Modulocurso } from '../models/modulocurso';
@@ -23,7 +24,8 @@ export class CursosService {
   @Output() emitirCursoAprendizado: EventEmitter<Curso> = new EventEmitter<Curso>();
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router:Router
   ) { }
 
   public listarCursos(): Observable<Curso[]> {
@@ -43,8 +45,7 @@ export class CursosService {
     this.http.post(`${this.url}/curso/create`, curso, { headers: header })
       .subscribe(
         (curso) => {
-          console.log()
-          this.emitirCurso.emit(curso);
+          this.router.navigate(['home-plataforma/cursos'])        
         }
       );
   }
@@ -78,7 +79,9 @@ export class CursosService {
       'Authorization': sessionStorage.getItem('token')!
     });
 
-    this.http.put(`${this.url}/curso/update`, curso, { headers: header }).subscribe();
+    this.http.put(`${this.url}/curso/update`, curso, { headers: header }).subscribe(() => {
+      this.router.navigate(['/home-plataforma/cursos'])
+    });
   }
 
   public pesquisarCursos(term: string): Observable<Curso[]> {

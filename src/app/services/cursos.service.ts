@@ -19,6 +19,7 @@ export class CursosService {
   @Output() emitirModulo: EventEmitter<Modulocurso[]> = new EventEmitter<Modulocurso[]>();
   @Output() onEmitirCursoUpdate: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirCursoPlataforma: EventEmitter<Curso> = new EventEmitter<Curso>();
+  @Output() emitirCursoConteudo: EventEmitter<Curso> = new EventEmitter<Curso>();
 
   constructor(
     private http: HttpClient
@@ -174,5 +175,20 @@ export class CursosService {
         this.emitirCursoPlataforma.emit(curso)
       }
     );
+  }
+
+  public enviarCursoConteudo(curso: Curso) {
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    let obs = this.http.get<Curso>(`${this.url}/curso/find/${curso.id}`, { headers: header });
+
+    obs.subscribe(
+      (curso) => {
+        this.emitirCursoConteudo.emit(curso)
+      }
+    );
+
   }
 }

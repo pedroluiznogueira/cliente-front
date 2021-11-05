@@ -5,7 +5,7 @@
 </div>
 
 <div class="add-button">
-    <button [routerLink]="['/home-plataforma/conteudo-curso']">Adicionar módulo</button>
+    <button [routerLink]="['/home-plataforma/conteudo-curso']" (click)="enviarCursoConteudo()">Adicionar módulo</button>
 </div>
 
 <ul *ngFor="let modulo of modulos">

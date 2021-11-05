@@ -17,7 +17,7 @@ export class ConteudoCursoComponent implements OnInit {
   videoId?: string;
 
   moduloCurso?: Modulocurso = new Modulocurso();
-  curso?: Curso = new Curso();
+  curso: Curso = new Curso();
 
   arquivosSelecionados?: FileList;
   arquivoUpload?: File;
@@ -28,9 +28,18 @@ export class ConteudoCursoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.cursosService.emitirCurso
+    // this.cursosService.emitirCurso
+    //   .subscribe(
+    //     (curso: Curso) => {
+    //       console.log(curso)
+    //       this.curso = curso;
+    //     }
+    //   );
+    
+    this.cursosService.emitirCursoConteudo
       .subscribe(
         (curso: Curso) => {
+          console.log(curso)
           this.curso = curso;
         }
       );

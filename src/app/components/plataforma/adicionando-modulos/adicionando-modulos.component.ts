@@ -33,4 +33,8 @@ export class AdicionandoModulosComponent implements OnInit {
       );
   }
 
+  public enviarCursoConteudo() {
+    this.cursosService.enviarCursoConteudo(this.curso);
+  }
+
 }

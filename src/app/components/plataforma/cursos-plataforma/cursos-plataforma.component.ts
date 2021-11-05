@@ -44,7 +44,7 @@ export class CursosPlataformaComponent implements OnInit {
   }
 
   public emitirCurso(curso: Curso) {
-    
+    this.cursoService.cursoPlataforma(curso);    
   }
 
 }

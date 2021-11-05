@@ -18,6 +18,7 @@ export class CursosService {
   @Output() emitirCurso: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirModulo: EventEmitter<Modulocurso[]> = new EventEmitter<Modulocurso[]>();
   @Output() onEmitirCursoUpdate: EventEmitter<Curso> = new EventEmitter<Curso>();
+  @Output() emitirCursoPlataforma: EventEmitter<Curso> = new EventEmitter<Curso>();
 
   constructor(
     private http: HttpClient
@@ -151,5 +152,9 @@ export class CursosService {
         this.onEmitirCursoUpdate.emit(curso)
       }
     );
+  }
+
+  public cursoPlataforma(curso: Curso) {
+    this.emitirCursoPlataforma.emit(curso)
   }
 }

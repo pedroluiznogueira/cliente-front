@@ -38,13 +38,6 @@ export class ProfessorFormularioComponent implements OnInit {
     let usuarioSession:Usuario = JSON.parse(sessionStorage.getItem("usuarioLogado")!);
     
     this.usuarioService.getUsuarioByEmail(usuarioSession).subscribe((usuario)=> {this.usuario = usuario} );
-
-    this.professorService.emitirProfessor.subscribe(
-      (prof) => {
-        console.log(prof)
-        this.profCriado = prof;
-      }
-    );
   }
 
    // persistência da imagem de perfil do usuário
@@ -74,15 +67,6 @@ export class ProfessorFormularioComponent implements OnInit {
     this.professor.usuario = this.usuario;
 
     this.professorService.criarProfessor(this.professor);
-
-    this.nome = "";
-    this.sobrenome = "";
-    this.email = "";
-    this.resumo = "";
-    this.sobre = "";
-
-    window.sessionStorage.setItem("plataforma", JSON.stringify(this.professor))
-    this.router.navigate(['/home-plataforma'])
   }
 
 }

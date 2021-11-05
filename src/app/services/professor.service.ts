@@ -6,6 +6,7 @@ import { Usuario } from '../models/usuario.model';
 import { ContaUsuarioService } from '../components/conta/comp/conta-usuario.service';
 import { Curso } from '../models/curso';
 import { CursosService } from './cursos.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +20,15 @@ export class ProfessorService {
 
   @Output() onClickDetails: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() onClickAddCurso: EventEmitter<Professor> = new EventEmitter<Professor>();
-  @Output() emitirProfessor: EventEmitter<Professor> = new EventEmitter<Professor>();
+  // @Output() emitirProfessor: EventEmitter<Professor> = new EventEmitter<Professor>();
   @Output() emitirProfessorByUsuario: EventEmitter<Professor> = new EventEmitter<Professor>();
 
 
   constructor(
     private http: HttpClient,
     private usuarioService: ContaUsuarioService,
-    private cursoService: CursosService
+    private cursoService: CursosService,
+    private router:Router
     ) { }
 
   public listarProfessores(): Observable<Professor[]> {
@@ -44,9 +46,13 @@ export class ProfessorService {
 
     this.http.post(`${this.url}/professor/create`, professor, { headers: header }).subscribe(
       (prof) => {
-        this.emitirProfessor.emit(prof)
+        sessionStorage.setItem("plataforma", JSON.stringify(prof))
+
+        this.router.navigate(['/home-plataforma'])
       }
     );
+
+    
   }
 
   public alterarProfessor(): void {

@@ -23,6 +23,7 @@ export class CursosService {
   @Output() emitirCursoConteudo: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirCursoAprendizado: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirCursoByModulo: EventEmitter<Curso> = new EventEmitter<Curso>();
+  @Output() emitirModByCurso: EventEmitter<Modulocurso[]> = new EventEmitter<Modulocurso[]>();
 
   constructor(
     private http: HttpClient,
@@ -136,8 +137,11 @@ export class CursosService {
     obs.subscribe(
       (resp) => {
         this.emitirCursoByModulo.emit(resp.curso)
-      }
-    );
+        this.emitirModulosByCurso(resp.curso!)
+        this.router.navigate(['/home-plataforma/adicionando-modulos'])
+        }
+      );
+
     return obs;
   }
 
@@ -204,4 +208,19 @@ export class CursosService {
     );
 
   }
+
+  public emitirModulosByCurso(curso:Curso):void{
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+    
+    this.http.post<Modulocurso[]>(`${this.url}/curso/modulo/find-by-curso`, curso, { headers: header })
+      .subscribe(
+        (modulo: Modulocurso[]) => {
+          this.emitirModByCurso.emit(modulo)
+        }
+      );
+
+  }
+
 }

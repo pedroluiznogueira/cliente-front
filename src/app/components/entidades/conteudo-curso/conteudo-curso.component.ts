@@ -42,6 +42,8 @@ export class ConteudoCursoComponent implements OnInit {
           this.curso = curso;
         }
       );
+
+    
   }
 
   // persistência da imagem de perfil do usuário
@@ -68,7 +70,7 @@ export class ConteudoCursoComponent implements OnInit {
     this.moduloCurso!.imagem = this.arquivoUpload!.name;
     this.moduloCurso!.curso = this.curso;
     this.moduloCurso!.videoId = this.videoId;
-    
+
     this.cursosService.criarModuloCurso(this.moduloCurso!);
   }
 

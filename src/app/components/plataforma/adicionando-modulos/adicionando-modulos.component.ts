@@ -26,6 +26,10 @@ export class AdicionandoModulosComponent implements OnInit {
       this.curso = curso;
     })
 
+    this.cursosService.emitirModByCurso.subscribe((modulos:Modulocurso[]) => {
+      this.modulos = modulos;
+    })
+
     this.cursosService.emitirCursoPlataforma
       .subscribe(
         (curso: Curso) => {

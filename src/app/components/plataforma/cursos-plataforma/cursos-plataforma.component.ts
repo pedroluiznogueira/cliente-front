@@ -43,4 +43,8 @@ export class CursosPlataformaComponent implements OnInit {
     this.cursoService.emitirCursoUpdate(curso);
   }
 
+  public emitirCurso(curso: Curso) {
+    
+  }
+
 }

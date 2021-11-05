@@ -33,6 +33,7 @@ import { MainPlataformaComponent } from './components/plataforma/main-plataforma
 import { ProfessorPlataformaComponent } from './components/plataforma/professor-plataforma/professor-plataforma.component';
 import { AdicionandoModulosComponent } from './components/plataforma/adicionando-modulos/adicionando-modulos.component';
 import { FaleConoscoComponent } from './components/plataforma/fale-conosco/fale-conosco.component';
+import { FaleConoscoAppComponent } from './components/entidades/fale-conosco-app/fale-conosco-app.component';
 
 const routes: Routes = [  
   {
@@ -56,6 +57,7 @@ const routes: Routes = [
       { path: 'usuario-details', component: UsuarioDetailsComponent },
       { path: 'files', component: FilesComponent },     
       { path: 'ensine-conosco', component: EnsineConoscoComponent },
+      { path: 'fale-conosco', component: FaleConoscoAppComponent },
 
     ],
     canActivate: [AuthGuard],

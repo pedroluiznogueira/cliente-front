@@ -10,6 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RouterModule, Routes } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -48,6 +49,7 @@ import { MainPlataformaComponent } from './components/plataforma/main-plataforma
 import { ProfessorPlataformaComponent } from './components/plataforma/professor-plataforma/professor-plataforma.component';
 import { AdicionandoModulosComponent } from './components/plataforma/adicionando-modulos/adicionando-modulos.component';
 import { FaleConoscoComponent } from './components/plataforma/fale-conosco/fale-conosco.component';
+import { FaleConoscoAppComponent } from './components/entidades/fale-conosco-app/fale-conosco-app.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +82,8 @@ import { FaleConoscoComponent } from './components/plataforma/fale-conosco/fale-
     MainPlataformaComponent,
     ProfessorPlataformaComponent,
     AdicionandoModulosComponent,
-    FaleConoscoComponent
+    FaleConoscoComponent,
+    FaleConoscoAppComponent
   ],
   imports: [
     BrowserModule,
@@ -94,6 +97,7 @@ import { FaleConoscoComponent } from './components/plataforma/fale-conosco/fale-
     MatExpansionModule,
     MatIconModule,
     MatTabsModule,
+    MatProgressSpinnerModule,
     MatTableModule,
     MatMenuModule,
     FormsModule,

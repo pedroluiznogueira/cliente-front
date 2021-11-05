@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ThemePalette } from '@angular/material/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-fale-conosco',
-  templateUrl: './fale-conosco.component.html',
-  styleUrls: ['./fale-conosco.component.css']
+  selector: 'app-fale-conosco-app',
+  templateUrl: './fale-conosco-app.component.html',
+  styleUrls: ['./fale-conosco-app.component.css']
 })
-export class FaleConoscoComponent implements OnInit {
+export class FaleConoscoAppComponent implements OnInit {
 
   title = 'EmailTemplate';
   dataset: Details = {
@@ -16,10 +15,6 @@ export class FaleConoscoComponent implements OnInit {
     country:'',
     email:'udeyouproject@gmail.com'
   };
-
-  loading = false;
-
-  color: ThemePalette = 'primary';
 
   constructor(
     private https: HttpClient
@@ -37,15 +32,13 @@ export class FaleConoscoComponent implements OnInit {
     this.https.post<Details>('http://localhost:8080/testapp/getdetails', this.dataset, { headers: header }).subscribe(
         res => {
           this.dataset = res;
-          this.dataset.age = '';
+          console.log(this.dataset);
+          alert('Email Sent successfully');
+          this.dataset.age = null!;
           this.dataset.name = '';
           this.dataset.country = '';
           this.dataset.email = '';
         });
-  }
-
-  load() {
-    this.loading = !this.loading;
   }
 
   

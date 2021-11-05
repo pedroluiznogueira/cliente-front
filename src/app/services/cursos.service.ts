@@ -164,6 +164,16 @@ export class CursosService {
   }
 
   public cursoPlataforma(curso: Curso) {
-    this.emitirCursoPlataforma.emit(curso)
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    let obs = this.http.get<Curso>(`${this.url}/curso/find/${curso.id}`, { headers: header });
+
+    obs.subscribe(
+      (curso) => {
+        this.emitirCursoPlataforma.emit(curso)
+      }
+    );
   }
 }

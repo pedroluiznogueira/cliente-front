@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Curso } from 'src/app/models/curso';
 import { Professor } from 'src/app/models/professor';
 import { CursosService } from 'src/app/services/cursos.service';
@@ -25,7 +26,8 @@ export class FormularioCursosUpdateComponent implements OnInit {
 
   constructor(
     private cursosService: CursosService,
-    private uploadService: UploadFileService
+    private uploadService: UploadFileService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -63,6 +65,7 @@ export class FormularioCursosUpdateComponent implements OnInit {
     this.curso!.valor = this.valor;
 
     this.cursosService.alterarCurso(this.curso!);
+    this.router.navigate(['/home-plataforma/cursos'])
   }
 
 }

@@ -1,6 +1,6 @@
 <div class="container">
 
-    <button id="btn-pedido" type="button" class="btn" [routerLink]="['/curso-formulario']">Adicionar curso</button>
+    <button id="btn-pedido" type="button" class="btn" [routerLink]="['/home-plataforma/curso-formulario']">Adicionar curso</button>
   
     <div class="card w-75" *ngFor="let curso of cursos">
   
@@ -21,7 +21,7 @@
   
             <div class="tools">
               <mat-icon (click) = "deletarCurso(curso)" class="icon">delete</mat-icon>
-              <mat-icon (click) = "editarCurso(curso)" class="icon" [routerLink]="['/curso-update-formulario']">edit</mat-icon>
+              <mat-icon (click) = "editarCurso(curso)" class="icon" [routerLink]="['/home-plataforma/curso-update-formulario']">edit</mat-icon>
             </div>
   
           </div>

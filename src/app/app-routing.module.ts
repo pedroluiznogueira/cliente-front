@@ -44,8 +44,6 @@ const routes: Routes = [
       { path: 'professor-details', component:  ProfessorDetailsComponent }, 
 
       { path: 'cursos', component:  CursosComponent },
-      { path: 'curso-formulario', component:  FormularioCursosComponent },
-      { path: 'curso-update-formulario', component:  FormularioCursosUpdateComponent },
       { path: 'curso-details', component:  CursoDetailsComponent },
       
       { path: 'carrinho', component: CarrinhoComponent },
@@ -56,7 +54,6 @@ const routes: Routes = [
       { path: 'usuario-details', component: UsuarioDetailsComponent },
       { path: 'files', component: FilesComponent },     
       { path: 'ensine-conosco', component: EnsineConoscoComponent },
-      { path: 'conteudo-curso', component: ConteudoCursoComponent }
 
     ],
     canActivate: [AuthGuard],
@@ -67,7 +64,10 @@ const routes: Routes = [
     children: [
       { path: '', component: MainPlataformaComponent},
       { path: 'cursos', component: CursosPlataformaComponent},
-      { path: 'professor', component: ProfessorPlataformaComponent}
+      { path: 'professor', component: ProfessorPlataformaComponent},
+      { path: 'curso-formulario', component:  FormularioCursosComponent },
+      { path: 'curso-update-formulario', component:  FormularioCursosUpdateComponent },
+      { path: 'conteudo-curso', component: ConteudoCursoComponent }
     ],
     canActivate: [PlataformaGuard],
   },

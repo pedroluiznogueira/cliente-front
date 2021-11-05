@@ -59,7 +59,7 @@ export class FormularioCursosComponent implements OnInit {
     this.curso!.valor = this.valor;
     this.curso!.professor = this.professor;
     this.curso!.imagem = this.arquivoUpload!.name;
-    console.log(this.curso);
+    
     this.cursosService.criarCurso(this.curso!);
 
     this.titulo = "";

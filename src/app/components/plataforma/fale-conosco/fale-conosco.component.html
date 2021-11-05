@@ -1,4 +1,4 @@
-<h1>Enter the following details</h1>
+<!-- <h1>Enter the following details</h1>
 <table>
   <tr>
     <td><span>Name</span></td>
@@ -13,11 +13,36 @@
     <td><input type="text" [(ngModel)]="dataset.country" name="country"></td>
   </tr>
   <tr>
-    <td><span>Send Email to</span></td>
-    <td><input type="text" [(ngModel)]="dataset.email" name="email"></td>
-  </tr>
-  <tr>
     <td></td>
     <td><button (click)="onSubmit()">Submit</button></td>
   </tr>
-</table>
+</table> -->
+
+<div class="container-form">
+    
+    <div class="fale-conosco-text">
+        Fale conosco
+    </div>
+
+    <form>
+        <div class="bloco">
+            <label for="">Seu nome</label>
+            <input type="text" [(ngModel)]="dataset.name">
+        </div>
+    
+        <div class="bloco">
+            <label for="">Seu email</label>
+            <input type="number" [(ngModel)]="dataset.age">
+        </div>
+    
+        <div class="bloco">
+            <label for="">Comentário</label>
+            <textarea [(ngModel)]="dataset.country"></textarea>
+        </div>
+    
+        <div class="bloco">
+            <button id="btn-pedido" type="button" class="btn">Enviar</button>
+        </div>
+    </form>
+</div>
+

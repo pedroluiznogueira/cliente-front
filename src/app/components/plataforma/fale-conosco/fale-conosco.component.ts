@@ -13,7 +13,7 @@ export class FaleConoscoComponent implements OnInit {
     name:'',
     age:null!,
     country:'',
-    email:''
+    email:'udeyouproject@gmail.com'
   };
 
   constructor(

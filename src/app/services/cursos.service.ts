@@ -22,6 +22,7 @@ export class CursosService {
   @Output() emitirCursoPlataforma: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirCursoConteudo: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirCursoAprendizado: EventEmitter<Curso> = new EventEmitter<Curso>();
+  @Output() emitirCursoByModulo: EventEmitter<Curso> = new EventEmitter<Curso>();
 
   constructor(
     private http: HttpClient,
@@ -134,7 +135,7 @@ export class CursosService {
     
     obs.subscribe(
       (resp) => {
-        console.log(resp)
+        this.emitirCursoByModulo.emit(resp.curso)
       }
     );
     return obs;

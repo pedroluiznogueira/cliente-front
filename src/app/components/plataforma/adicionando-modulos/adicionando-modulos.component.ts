@@ -21,6 +21,11 @@ export class AdicionandoModulosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.cursosService.emitirCursoByModulo.subscribe((curso:Curso) => {
+      this.curso = curso;
+    })
+
     this.cursosService.emitirCursoPlataforma
       .subscribe(
         (curso: Curso) => {

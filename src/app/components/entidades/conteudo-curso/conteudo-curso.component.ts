@@ -39,7 +39,6 @@ export class ConteudoCursoComponent implements OnInit {
     this.cursosService.emitirCursoConteudo
       .subscribe(
         (curso: Curso) => {
-          console.log(curso)
           this.curso = curso;
         }
       );

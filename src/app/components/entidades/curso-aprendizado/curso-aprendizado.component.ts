@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { Curso } from 'src/app/models/curso';
 import { Modulocurso } from 'src/app/models/modulocurso';
 import { CursosService } from 'src/app/services/cursos.service';
 
@@ -15,7 +16,8 @@ export class CursoAprendizadoComponent implements OnInit {
 
   active = 1;
   
-  modulos?: Modulocurso[] = [];
+  modulos?: any[] = [];
+  curso: Curso = new Curso();
 
   constructor(
     private cursosService: CursosService
@@ -29,6 +31,17 @@ export class CursoAprendizadoComponent implements OnInit {
           this.modulos = modulo;
         }
       );
+
+      this.cursosService.emitirCursoAprendizado
+        .subscribe(
+          (curso: Curso) => {
+            this.curso = curso
+          }
+        );
+  }
+
+  track(index:number, value:string){
+    return index;
   }
 
 }

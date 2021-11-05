@@ -1,12 +1,26 @@
+<div class="add">
+    <div class="add-text">
+        Você está estudando o curso <b>{{curso.titulo}}</b>
+    </div>
+</div>
 
-<div *ngFor="let m of modulos" class="container">
+<div class="tabs">    
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
 
-    <h3>{{m.titulo}}</h3>
+        <li [ngbNavItem]="i" *ngFor="let mo of modulos; let i = index; trackBy: track;">
+            <a ngbNavLink>Módulo {{i + 1}}</a>
+            <ng-template ngbNavContent>
+                <h3>{{mo.titulo}}</h3>
 
     <div class="sub-container">
+        <div class="info-container">
+            <div id="titulo" class="cont-curso">{{mo.titulo}}</div>
+            <div id="conteudo" class="cont-curso">{{mo.conteudoPrincipal}}</div>
+            <img class="cont-curso" src="{{urlImagem}}{{mo.imagem}}" alt="">
+        </div>
         <div class="cont-curso" class="video-container">
             <youtube-player 
-                videoId="{{m.videoId}}" 
+                videoId="{{mo.videoId}}" 
                 suggestedQuality="highres" 
                 [height]="400" 
                 [width]="800" 
@@ -14,11 +28,10 @@
                 [endSeconds]="8">
             </youtube-player>
         </div>
-        <div class="info-container">
-            <div id="titulo" class="cont-curso">{{m.titulo}}</div>
-            <div id="conteudo" class="cont-curso">{{m.conteudoPrincipal}}</div>
-            <img class="cont-curso" src="{{urlImagem}}{{m.imagem}}" alt="">
-        </div>
-    </div>    
+    </div>  
+            </ng-template>
+        </li>
+
+    </ul>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
 </div>
-<!-- 9SGDpanrc8U -->

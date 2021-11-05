@@ -5,13 +5,49 @@
 </div>
 
 <div class="add-button">
-    <button [routerLink]="['/home-plataforma/conteudo-curso']" (click)="enviarCursoConteudo()">Adicionar módulo</button>
+    <button class="btn" id="btn-pedido" [routerLink]="['/home-plataforma/conteudo-curso']" (click)="enviarCursoConteudo()">Adicionar módulo</button>
 </div>
 
-<ul *ngFor="let modulo of modulos">
-    <li>{{modulo.titulo}}</li>
-    <li>{{modulo.conteudoPrincipal}}</li>
-    <li>{{modulo.conteudoPrincipalDois}}</li>
-    <li>{{modulo.imagem}}</li>
-    <li>{{modulo.videoId}}</li>
-</ul>
+<div class="tabs">    
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+
+        <li [ngbNavItem]="i" *ngFor="let mo of modulos; let i = index; trackBy: track;">
+            <a ngbNavLink>Módulo {{i + 1}}</a>
+            <ng-template ngbNavContent>
+                <h3>{{mo.titulo}}</h3>
+
+    <div class="sub-container">
+        <div class="info-container">
+            <div id="titulo" class="cont-curso">{{mo.titulo}}</div>
+            <div id="conteudo" class="cont-curso">{{mo.conteudoPrincipal}}</div>
+            <img class="cont-curso" src="{{urlImagem}}{{mo.imagem}}" alt="">
+        </div>
+        <div class="cont-curso" class="video-container">
+            <youtube-player 
+                videoId="{{mo.videoId}}" 
+                suggestedQuality="highres" 
+                [height]="400" 
+                [width]="800" 
+                [startSeconds]="4"
+                [endSeconds]="8">
+            </youtube-player>
+        </div>
+    </div>  
+            </ng-template>
+        </li>
+<!-- 
+        <li [ngbNavItem]="2">
+            <a ngbNavLink>Adicione vídeos</a>
+            <ng-template ngbNavContent>
+            </ng-template>
+        </li>
+
+        <li [ngbNavItem]="3">
+            <a ngbNavLink>Insira o conteúdo</a>
+            <ng-template ngbNavContent>
+            </ng-template>
+        </li>  -->
+
+    </ul>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

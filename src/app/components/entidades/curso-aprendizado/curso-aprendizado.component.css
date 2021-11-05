@@ -32,3 +32,262 @@ div img{
     font-size: 15px;
     font-weight: 400;
 }
+
+.tabs {
+    margin-top: 100px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.add-text {
+    font-family: 'Montserrat';
+    font-size: 30px;
+}
+
+#btn-pedido{
+    border: #222;
+    color: #fff;
+    background-color: #222;
+}
+
+#btn-pedido:hover{
+    border: #111;
+    background-color: #111;
+    font-weight: 600;
+}
+
+.btn {
+    width: 201px;
+
+    border: 1px solid black;
+
+    color: black;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+.add-button {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    margin: 30px auto;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+div h3{
+    font-size: 30px;
+    font-weight: 600px;
+}
+
+.info-container{
+
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+div img{
+    width: 500px;
+}
+
+#titulo{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#conteudo{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+.banner {
+    padding-top: 30px;
+    margin: 30px 0;
+    width: 100%;
+    height: 70vh;
+    border-radius: 10px;
+
+    background-image: url("src/assets/img/ensine-conosco.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-text {
+    font-size: 40px;
+    font-family: 'Montserrat';
+
+    margin-top: 200px;
+    margin-left: 40px;
+}
+
+.btn {
+    width: 201px;
+
+    border: 1px solid black;
+
+    color: black;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+#btn-pedido{
+    border: #222;
+    color: #fff;
+    background-color: #222;
+}
+
+#btn-pedido:hover{
+    border: #111;
+    background-color: #111;
+    font-weight: 600;
+}
+
+.razoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+    font-family: 'Montserrat';
+}
+
+.razoes-imgs {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.razoes-texts {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bolder;
+}
+
+.tabs {
+    margin-top: 100px;
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: black;
+}
+
+a {
+    color: black;
+    font-weight: bolder;
+}
+
+p {
+    margin: 40px;
+}
+
+.tab-um {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ex {
+    margin: 30px;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    font-weight: bolder;
+}
+
+.antes-depois {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.antes-content {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.antes-content img {
+    margin-top: 20px;
+}
+
+.depois-content {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.depois-content img {
+    margin-top: 20px;
+}
+
+.container-pai {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filho-1, .filho-2, .filho-3 {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    color: white;
+}
+
+.filho-1 {
+    background-color: blue;
+}
+
+.filho-2 {
+    background-color: red;
+}
+
+.filho-3 {
+    background-color: green;
+}
+
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.add-text {
+    font-family: 'Montserrat';
+    font-size: 30px;
+}

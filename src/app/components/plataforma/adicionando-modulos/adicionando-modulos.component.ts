@@ -9,9 +9,12 @@ import { CursosService } from 'src/app/services/cursos.service';
   styleUrls: ['./adicionando-modulos.component.css']
 })
 export class AdicionandoModulosComponent implements OnInit {
+  active = 1;
+
+  urlImagem?: string = "https://udeyou.s3.sa-east-1.amazonaws.com/"
 
   curso: Curso = new Curso();
-  modulos: Modulocurso[] = []
+  modulos: any[] = []
 
   constructor(
     private cursosService: CursosService
@@ -35,6 +38,10 @@ export class AdicionandoModulosComponent implements OnInit {
 
   public enviarCursoConteudo() {
     this.cursosService.enviarCursoConteudo(this.curso);
+  }
+
+  track(index:number, value:string){
+    return index;
   }
 
 }

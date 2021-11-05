@@ -63,7 +63,10 @@ export class FormularioCursosUpdateComponent implements OnInit {
     this.curso!.descricao = this.descricao;
     this.curso!.requisitos = this.requisitos;
     this.curso!.valor = this.valor;
-    this.curso!.imagem = this.arquivoUpload!.name;
+    
+    if(this.arquivoUpload != null){
+      this.curso!.imagem = this.arquivoUpload!.name;
+    }
 
     this.cursosService.alterarCurso(this.curso!);
   }

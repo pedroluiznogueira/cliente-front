@@ -110,6 +110,15 @@ export class CursosService {
 
     return obs;
   }
+  public listarCursosByProfessor(professor: Professor): Observable<Curso[]> {
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    let obs =  this.http.post<Curso[]>(`${this.url}/curso/find-by-professor`, professor, { headers: header });
+
+    return obs;
+  }
 
   public criarModuloCurso(cursoModulo: Modulocurso): Observable<Modulocurso>{
     let header: HttpHeaders = new HttpHeaders({

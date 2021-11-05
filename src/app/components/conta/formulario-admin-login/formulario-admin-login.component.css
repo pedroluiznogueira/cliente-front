@@ -16,7 +16,7 @@ article {
 }
 article form {
     color: #fff;
-    width: 306px;
+    width: 600px;
 
     display: flex;
     flex-direction: column;

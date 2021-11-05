@@ -40,7 +40,7 @@ export class CursosPlataformaComponent implements OnInit {
   }
 
   public editarCurso(curso:Curso): void {
-    console.log(this.professor)
+    this.cursoService.emitirCursoUpdate(curso);
   }
 
 }

@@ -17,6 +17,7 @@ export class CursosService {
   @Output() onClickCursoDetails: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirCurso: EventEmitter<Curso> = new EventEmitter<Curso>();
   @Output() emitirModulo: EventEmitter<Modulocurso[]> = new EventEmitter<Modulocurso[]>();
+  @Output() onEmitirCursoUpdate: EventEmitter<Curso> = new EventEmitter<Curso>();
 
   constructor(
     private http: HttpClient
@@ -69,20 +70,12 @@ export class CursosService {
     return obs;
   }
 
-  public novoCurso(curso: Curso): void {
-    this.curso.titulo = curso.titulo;
-    this.curso.descricao = curso.descricao;
-    this.curso.valor = curso.valor;
-
-    this.alterarCurso();
-  }
-
-  public alterarCurso(): void {
+  public alterarCurso(curso: Curso): void {
     let header: HttpHeaders = new HttpHeaders({
       'Authorization': sessionStorage.getItem('token')!
     });
 
-    this.http.put(`${this.url}/curso/update`, this.curso, { headers: header }).subscribe();
+    this.http.put(`${this.url}/curso/update`, curso, { headers: header }).subscribe();
   }
 
   public pesquisarCursos(term: string): Observable<Curso[]> {
@@ -144,5 +137,19 @@ export class CursosService {
           this.emitirModulo.emit(modulo);
         }
       );
+  }
+
+  public emitirCursoUpdate(curso:Curso): void{
+    let header: HttpHeaders = new HttpHeaders({
+      'Authorization': sessionStorage.getItem('token')!
+    });
+
+    let obs = this.http.get<Curso>(`${this.url}/curso/find/${curso.id}`, { headers: header });
+
+    obs.subscribe(
+      (curso: Curso) => {
+        this.onEmitirCursoUpdate.emit(curso)
+      }
+    );
   }
 }

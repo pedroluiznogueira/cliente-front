@@ -3,3 +3,15 @@
         Adicione módulos ao curso <b>{{curso.titulo}}</b>
     </div>
 </div>
+
+<div class="add-button">
+    <button [routerLink]="['/home-plataforma/conteudo-curso']">Adicionar módulo</button>
+</div>
+
+<ul *ngFor="let modulo of modulos">
+    <li>{{modulo.titulo}}</li>
+    <li>{{modulo.conteudoPrincipal}}</li>
+    <li>{{modulo.conteudoPrincipalDois}}</li>
+    <li>{{modulo.imagem}}</li>
+    <li>{{modulo.videoId}}</li>
+</ul>

@@ -140,7 +140,6 @@ export class CursosService {
       'Authorization': sessionStorage.getItem('token')!
     });
 
-    console.log(curso)
     this.http.post<Modulocurso[]>(`${this.url}/curso/modulo/find-by-curso`, curso, { headers: header })
       .subscribe(
         (modulo: Modulocurso[]) => {

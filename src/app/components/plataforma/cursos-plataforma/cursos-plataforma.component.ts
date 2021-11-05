@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Curso } from 'src/app/models/curso';
 import { Professor } from 'src/app/models/professor';
 import { CursosService } from 'src/app/services/cursos.service';
+import { PagamentoService } from 'src/app/services/pagamento.service';
 import { ProfessorService } from 'src/app/services/professor.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class CursosPlataformaComponent implements OnInit {
 
   constructor(
     private professorService: ProfessorService,
-    private cursoService: CursosService
+    private cursoService: CursosService,
+    private pagamentoService: PagamentoService
   ) { }
 
   ngOnInit(): void {
@@ -44,7 +46,8 @@ export class CursosPlataformaComponent implements OnInit {
   }
 
   public emitirCurso(curso: Curso) {
-    this.cursoService.cursoPlataforma(curso);    
+    this.cursoService.cursoPlataforma(curso);
+    this.cursoService.enviarCurso(curso);
   }
 
 }

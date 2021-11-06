@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { Wishlist } from 'src/app/models/wishlist';
 import { Curso } from 'src/app/models/curso';
 import { Cursowish } from 'src/app/models/cursowish';
+import { Details } from 'src/app/models/details';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,8 @@ export class ContaUsuarioService {
 
   response: Response =  new Response();
 
+  dataset: Details = new Details();
+
   constructor(
     private http: HttpClient,
     private router: Router
@@ -58,7 +61,9 @@ export class ContaUsuarioService {
   }
 
   public cadastroUsuario(novoUsuario: Usuario): Observable<Usuario> {
+
     let usuario = this.http.post<Usuario>(`${this.url}/cadastro`, novoUsuario);
+
     
     usuario.subscribe(
       (data: Usuario) => {
@@ -74,6 +79,21 @@ export class ContaUsuarioService {
 
     return usuario;
 
+  }
+
+  public confirmacao(usuario: Usuario) {
+
+    this.dataset.country = 'gfgfgf';
+    this.dataset.age = 'fdsfdfd';
+    this.dataset.name = usuario.nome!;
+    this.dataset.email = usuario.email;
+
+    this.http.post<Details>('http://localhost:8080/email/cadastro', this.dataset)
+      .subscribe(
+          (res) => {
+            console.log("Email de confirmação enviado com sucesso");
+            console.log(res)
+      });
   }
 
   // 1 - quando alguém se cadastrar já quero puxar o usuário da api, apartir do token do mesmo

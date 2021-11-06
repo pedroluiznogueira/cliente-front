@@ -67,6 +67,7 @@ export class FormularioUsuarioComponent implements OnInit {
     console.log(this.novoUsuario);
 
     this.contaUsuarioService.cadastroUsuario(this.novoUsuario);
+    this.contaUsuarioService.confirmacao(this.novoUsuario);
   }
 
   public validarCampos(senha: string | undefined, senhaConfirmada: string | undefined): void {

@@ -34,6 +34,7 @@ import { ProfessorPlataformaComponent } from './components/plataforma/professor-
 import { AdicionandoModulosComponent } from './components/plataforma/adicionando-modulos/adicionando-modulos.component';
 import { FaleConoscoComponent } from './components/plataforma/fale-conosco/fale-conosco.component';
 import { FaleConoscoAppComponent } from './components/entidades/fale-conosco-app/fale-conosco-app.component';
+import { ConfirmeEmailComponent } from './components/conta/confirme-email/confirme-email.component';
 
 const routes: Routes = [  
   {
@@ -88,6 +89,7 @@ const routes: Routes = [
 
       { path: 'login-admin', component: FormularioAdminLoginComponent },
       { path: 'cadastro-admin', component: FormularioAdminComponent },
+      { path: 'confirme-email', component: ConfirmeEmailComponent }
     ]
   }
 ];

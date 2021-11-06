@@ -38,9 +38,9 @@
             <input id = "customFile" type="file" class="custom-file-input" id="customFile" (change)="arquivoSelecionado($event)" >
             <label class="custom-file-label" for="customFile"></label>
         </div>
-        <div class="controles">      
-            <p class="link" [routerLink]="['/login']">Voltar</p>
-            <button type="submit" class="btn" [disabled]="!arquivosSelecionados" (click)="uploadArquivo()" (click)="validarCampos(senha, senhaConfirmada)">Cadastrar</button>
+        <div class="controles" >      
+            <!-- <p class="link" [routerLink]="['/login']">Voltar</p> -->
+            <button [routerLink]="['/confirme-email']" type="submit" class="btn" [disabled]="!arquivosSelecionados" (click)="uploadArquivo()" (click)="validarCampos(senha, senhaConfirmada)">Cadastrar</button>
         </div>
     </form>
 </article>

@@ -50,6 +50,7 @@ import { ProfessorPlataformaComponent } from './components/plataforma/professor-
 import { AdicionandoModulosComponent } from './components/plataforma/adicionando-modulos/adicionando-modulos.component';
 import { FaleConoscoComponent } from './components/plataforma/fale-conosco/fale-conosco.component';
 import { FaleConoscoAppComponent } from './components/entidades/fale-conosco-app/fale-conosco-app.component';
+import { ConfirmeEmailComponent } from './components/conta/confirme-email/confirme-email.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,7 +84,8 @@ import { FaleConoscoAppComponent } from './components/entidades/fale-conosco-app
     ProfessorPlataformaComponent,
     AdicionandoModulosComponent,
     FaleConoscoComponent,
-    FaleConoscoAppComponent
+    FaleConoscoAppComponent,
+    ConfirmeEmailComponent
   ],
   imports: [
     BrowserModule,

@@ -65,7 +65,6 @@ export class FormularioUsuarioComponent implements OnInit {
     this.novoUsuario.biografia = this.biografia;
 
     console.log(this.novoUsuario);
-
     this.contaUsuarioService.cadastroUsuario(this.novoUsuario);
     this.contaUsuarioService.confirmacao(this.novoUsuario);
   }
@@ -102,7 +101,6 @@ export class FormularioUsuarioComponent implements OnInit {
       this.mostrarErro();
     } else {
       this.envioFormulario();
-      this.router.navigate(['/login']);
       this.ngOnInit();
     }
   }

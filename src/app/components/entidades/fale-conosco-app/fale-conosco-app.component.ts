@@ -28,17 +28,15 @@ export class FaleConoscoAppComponent implements OnInit {
       'Authorization': sessionStorage.getItem('token')!
     });
 
-    console.log("fjksdfks")
-    this.https.post<Details>('http://localhost:8080/testapp/getdetails', this.dataset, { headers: header }).subscribe(
-        res => {
-          this.dataset = res;
-          console.log(this.dataset);
-          alert('Email Sent successfully');
-          this.dataset.age = null!;
-          this.dataset.name = '';
-          this.dataset.country = '';
-          this.dataset.email = '';
-        });
+    console.log("CHEGOU")
+    this.https.post<Details>('http://localhost:8080/email/fale-conosco', this.dataset, { headers: header }).subscribe(
+      res => {
+        this.dataset = res;
+        this.dataset.age = '';
+        this.dataset.name = '';
+        this.dataset.country = '';
+        this.dataset.email = '';
+      });
   }
 
   

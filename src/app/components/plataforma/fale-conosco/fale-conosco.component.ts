@@ -33,7 +33,7 @@ export class FaleConoscoComponent implements OnInit {
       'Authorization': sessionStorage.getItem('token')!
     });
 
-    this.https.post<Details>('http://localhost:8080/email/fale-conosco', this.dataset, { headers: header }).subscribe(
+    this.https.post<Details>('http://localhost:8080/email/fale-conosco-professor', this.dataset, { headers: header }).subscribe(
         res => {
           this.dataset = res;
           this.dataset.age = '';

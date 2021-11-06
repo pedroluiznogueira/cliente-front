@@ -29,7 +29,7 @@ export class FaleConoscoAppComponent implements OnInit {
     });
 
     console.log("CHEGOU")
-    this.https.post<Details>('http://localhost:8080/email/fale-conosco', this.dataset, { headers: header }).subscribe(
+    this.https.post<Details>('http://localhost:8080/email/fale-conosco-usuario', this.dataset, { headers: header }).subscribe(
       res => {
         this.dataset = res;
         this.dataset.age = '';

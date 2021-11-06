@@ -15,13 +15,13 @@
         <li [ngbNavItem]="i" *ngFor="let mo of modulos; let i = index; trackBy: track;">
             <a ngbNavLink>Módulo {{i + 1}}</a>
             <ng-template ngbNavContent>
-                <h3>{{mo.titulo}}</h3>
 
     <div class="sub-container">
         <div class="info-container">
-            <div id="titulo" class="cont-curso">{{mo.titulo}}</div>
+            <h1 id="titulo" class="cont-curso">{{mo.titulo}}</h1>
             <div id="conteudo" class="cont-curso">{{mo.conteudoPrincipal}}</div>
             <img class="cont-curso" src="{{urlImagem}}{{mo.imagem}}" alt="">
+            <div id="conteudo" class="cont-curso">{{mo.conteudoPrincipalDois}}</div>
         </div>
         <div class="cont-curso" class="video-container">
             <youtube-player 

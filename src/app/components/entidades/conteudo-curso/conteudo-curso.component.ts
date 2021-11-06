@@ -69,7 +69,13 @@ export class ConteudoCursoComponent implements OnInit {
     this.moduloCurso!.conteudoPrincipalDois = this.conteudoPrincipalDois;
     this.moduloCurso!.imagem = this.arquivoUpload!.name;
     this.moduloCurso!.curso = this.curso;
-    this.moduloCurso!.videoId = this.videoId;
+
+    for (let i = 0; i < this.videoId!.length; i++) {
+        if (this.videoId![i] == "=") {
+            console.log(this.videoId!.substring(i + 1))
+            this.moduloCurso!.videoId = this.videoId!.substring(i + 1);
+        }
+    }
 
     this.cursosService.criarModuloCurso(this.moduloCurso!);
   }

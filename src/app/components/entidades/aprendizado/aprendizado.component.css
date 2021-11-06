@@ -90,5 +90,6 @@ div button.btn:hover {
     justify-content: space-between;
     font-weight: 500;
     padding-left: 0;
+    margin-left: 50px;
 }
 

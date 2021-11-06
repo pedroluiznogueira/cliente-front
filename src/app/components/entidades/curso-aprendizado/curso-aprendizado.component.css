@@ -291,3 +291,36 @@ p {
     font-family: 'Montserrat';
     font-size: 30px;
 }
+
+
+.sub-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-container img {
+    margin-top: 50px;
+    width: 400px;
+    height: 300px;
+}
+
+.cont-curso {
+    width: 100px;
+    height: 50px;
+    font-size: 70px;
+    margin-top: 50px;
+}
+
+.video-container {
+    margin-top: 50px;
+}

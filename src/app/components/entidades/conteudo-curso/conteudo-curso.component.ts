@@ -72,8 +72,8 @@ export class ConteudoCursoComponent implements OnInit {
 
     for (let i = 0; i < this.videoId!.length; i++) {
         if (this.videoId![i] == "=") {
-            console.log(this.videoId!.substring(i + 1))
-            this.moduloCurso!.videoId = this.videoId!.substring(i + 1);
+            console.log(this.videoId!.trim().substring(i + 1))
+            this.moduloCurso!.videoId = this.videoId!.trim().substring(i + 1);
         }
     }
 

@@ -12,7 +12,7 @@ import { Usuario } from '../models/usuario.model';
 })
 export class PagamentoService {
 
-  url?: string = "http://localhost:8080";
+  url?: string = "https://udeyou-api.herokuapp.com";
 
   valorTotal?: number;
   pedidos: Pedido[] = [];

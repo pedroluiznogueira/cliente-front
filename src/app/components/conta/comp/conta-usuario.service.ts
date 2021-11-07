@@ -34,7 +34,7 @@ export class ContaUsuarioService {
 
   clicked: boolean = false;
 
-  private url: string = "http://localhost:8080";
+  private url: string = "https://udeyou-api.herokuapp.com";
 
   response: Response =  new Response();
 
@@ -88,7 +88,7 @@ export class ContaUsuarioService {
     this.dataset.name = usuario.nome!;
     this.dataset.email = usuario.email;
 
-    this.http.post<Details>('http://localhost:8080/email/cadastro', this.dataset)
+    this.http.post<Details>('https://udeyou-api.herokuapp.com/email/cadastro', this.dataset)
       .subscribe(
           (res) => {
             console.log("Email de confirmação enviado com sucesso");

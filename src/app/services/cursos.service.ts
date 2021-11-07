@@ -11,7 +11,7 @@ import { Professor } from '../models/professor';
 })
 export class CursosService {
 
-  private url: string = "http://localhost:8080";
+  private url: string = "https://udeyou-api.herokuapp.com";
   cursoPesq: Curso = new Curso();
   curso: Curso = new Curso();
 

@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class ProfessorService {  
 
-  private url: string = "http://localhost:8080";
+  private url: string = "https://udeyou-api.herokuapp.com";
 
   professor: Professor = new Professor();
   c: Professor = new Professor();

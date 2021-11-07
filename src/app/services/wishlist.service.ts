@@ -7,7 +7,7 @@ import { Wishlist } from '../models/wishlist';
 })
 export class WishlistService {
 
-  private url: string = "http://localhost:8080";
+  private url: string = "https://udeyou-api.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 }

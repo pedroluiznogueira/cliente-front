@@ -29,7 +29,7 @@
       <img src="{{urlImagem}}{{curso.imagem}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title" [routerLink]="['/curso-details']" (click)="enviarIdCurso(curso.id)">{{curso.titulo}}</h5>
-        <p class="card-text">{{curso.descricao}}</p>
+        <p class="card-text">{{curso.resumo}}</p>
         <p class="card-price">R$ {{curso.valor}}</p>
         <div class="div-icons">
           <!-- <mat-icon class="icon" (click)="deletarServico(servico.id)"> delete</mat-icon>

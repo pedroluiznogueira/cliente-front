@@ -37,7 +37,7 @@
       <img src="{{urlImagem}}{{cursoF.imagem}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title" [routerLink]="['/curso-details']" (click)="enviarIdCurso(cursoF.id)">{{cursoF.titulo}}</h5>
-        <p class="card-text">{{cursoF.descricao}}</p>
+        <p class="card-text">{{cursoF.resumo}}</p>
         <p class="card-price">R$ {{cursoF.valor}}</p>
         <button type="button" class="btn" (click)="removerCurso(cursoF)">Remover do carrinho</button>
       </div>
@@ -50,7 +50,7 @@
       <img src="{{urlImagem}}{{curso.imagem}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title" [routerLink]="['/curso-details']" (click)="enviarIdCurso(curso.id)">{{curso.titulo}}</h5>
-        <p class="card-text">{{curso.descricao}}</p>
+        <p class="card-text">{{curso.resumo}}</p>
         <p class="card-price">R$ {{curso.valor}}</p>
         <button type="button" class="btn" (click)="removerCurso(curso)">Remover do carrinho</button>
       </div>

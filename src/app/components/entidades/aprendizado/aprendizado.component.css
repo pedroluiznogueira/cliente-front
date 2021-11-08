@@ -31,6 +31,9 @@
     margin:20px 0;
     color: black;
     border-radius: 5px;
+
+    box-shadow: 0px 0px 2px #111;
+    padding: 15px;
 }
 
 .container{
@@ -78,18 +81,13 @@ div button.btn:hover {
 
 .infos{
     color: black;
-}
-
-
-.infos{
-    color: black;
+    text-align: justify;
 }
 
 .card-body{
     display: flex;
     justify-content: space-between;
     font-weight: 500;
-    padding-left: 0;
-    margin-left: 50px;
+    padding: 0;
 }
 

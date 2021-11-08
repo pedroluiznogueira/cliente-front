@@ -23,6 +23,11 @@
     color: #A435F0;
 }
 
+.card-text{
+    text-align: justify;
+    padding-right: 20px;
+}
+
 img{
     margin: 0;
     padding-left: 20px;
@@ -65,11 +70,12 @@ button.btn:hover {
     display: flex;
     justify-content: space-between;
     font-weight: 500;
-    padding-left: 0;
-    margin-left: 50px;
+    padding: 0;
+    padding-right: 20px;
 }
 
 .tools{
+    width: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;

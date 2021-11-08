@@ -61,7 +61,7 @@ export class ContaUsuarioService {
 
   public cadastroUsuario(novoUsuario: Usuario): Observable<Usuario> {
 
-    let usuario = this.http.post<Usuario>(`${this.url}/confirmar-cadastro/create`, novoUsuario);
+    let usuario = this.http.post<Usuario>(`${this.url}/cadastro`, novoUsuario);
 
     
     usuario.subscribe(

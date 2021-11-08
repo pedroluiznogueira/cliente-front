@@ -324,3 +324,45 @@ p {
 .video-container {
     margin-top: 50px;
 }
+
+.sub-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.info-container img {
+    margin-top: 50px;
+    width: 800px;
+    height: 500px;
+}
+
+.cont-curso {
+    width: 100%;
+    height: 50%;
+    font-size: 70px;
+    margin-top: 50px;
+}
+
+.video-container {
+    margin-top: 50px;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

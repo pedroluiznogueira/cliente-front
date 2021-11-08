@@ -17,7 +17,7 @@
           <img src="{{urlImagem}}{{cursoF.imagem}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{cursoF.titulo}}</h5>
-            <p class="card-text">{{cursoF.descricao}}</p>
+            <p class="card-text">{{cursoF.resumo}}</p>
             <p class="card-text">R$ {{cursoF.valor}}</p>
             <div class="controll">
               <button type="button" class="btn" (click)="sessionCurso(cursoF)">Adicionar ao carrinho</button>
@@ -31,7 +31,7 @@
         <img src="{{urlImagem}}{{curso.imagem}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title" (click)="enviarIdCurso(curso)" [routerLink]="['/curso-details']">{{curso.titulo}}</h5>
-            <p class="card-text">{{curso.descricao}}</p>
+            <p class="card-text">{{curso.resumo}}</p>
             <p class="card-price">R$ {{curso.valor}}</p>
             <div class="controll">
             <button type="button" class="btn" (click)="sessionCurso(curso)">Adicionar ao carrinho</button>

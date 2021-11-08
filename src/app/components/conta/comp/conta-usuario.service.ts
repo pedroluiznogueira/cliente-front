@@ -47,8 +47,7 @@ export class ContaUsuarioService {
 
   public loginUsuario(usuario: Usuario): Observable<Usuario> {
     let res: Observable<Usuario> = this.http.post<Usuario>(`${this.url}/login`, usuario);
-    console.log("O usuario acaba de logar: ")
-    console.log(usuario)
+    
 
     res.subscribe(
       (data: Usuario) => {
